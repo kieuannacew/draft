@@ -3,6 +3,7 @@
 Phần mềm luyện thi **Microsoft Office Specialist** cho Word (MO-100), Excel (MO-200), PowerPoint (MO-300).
 Giống GMetrix: học viên **làm bài trực tiếp trên Word/Excel/PowerPoint thật**, phần mềm tự đọc file để chấm điểm
 theo thang 1000 (đạt từ 700). Có **tài khoản** cho giáo viên / học viên và **soạn đề ngay trong app**.
+Giao diện dùng **Qt (PySide6)**: sắc nét trên màn hình độ phân giải cao, một cửa sổ với thanh menu bên trái.
 
 ## Cách chạy (Windows)
 
@@ -21,13 +22,13 @@ Muốn có file `.exe` để chép sang máy khác: nhấp đúp **`build_exe.ba
 
 **Lần đầu chạy:** đăng nhập bằng `admin` / `admin`. App sẽ bắt đổi mật khẩu ngay lần đăng nhập này.
 
-Cấp tài khoản cho học viên: bấm **⚙ Quản trị**, vào tab **Tài khoản**, rồi chọn:
+Cấp tài khoản cho học viên: vào mục **Tài khoản** ở thanh menu bên trái (chỉ tài khoản quản trị mới thấy), rồi chọn:
 - **Thêm tài khoản**: tạo từng người. Mật khẩu được tạo ngẫu nhiên, và có thể đặt **hạn dùng** (ví dụ `2026-12-31`).
 - **Tạo cho cả lớp**: dán danh sách, mỗi dòng dạng `tên_đăng_nhập, Họ tên`. App tạo tài khoản hàng loạt và cho
   **lưu danh sách tên đăng nhập / mật khẩu ra file CSV** để phát cho học viên.
 - **Đặt lại mật khẩu**, **Khóa / Mở khóa**, **Xóa**.
 
-Tab **Kết quả** hiện mọi lượt làm bài. Có thể lọc theo học viên và **xuất CSV** để mở bằng Excel.
+Mục **Kết quả học viên** hiện mọi lượt làm bài. Có thể lọc theo học viên và **xuất CSV** để mở bằng Excel.
 
 > Mật khẩu được lưu dạng mã băm (PBKDF2), không lưu mật khẩu thật. Dữ liệu nằm trong
 > `C:\Users\<tên>\MOS_Practice\` (`tai_khoan.json`, `history.json`, `de_thi\`).
@@ -37,7 +38,7 @@ Tab **Kết quả** hiện mọi lượt làm bài. Có thể lọc theo học v
 
 ## Soạn đề ngay trong app (không cần lập trình)
 
-Bấm **⚙ Quản trị**, vào tab **Đề thi**, chọn **Soạn đề mới**, rồi làm lần lượt:
+Vào mục **Đề thi** ở thanh menu bên trái, bấm **Soạn đề mới**, rồi làm lần lượt:
 
 1. Đặt **tên đề** và chọn **môn** (Word / Excel / PowerPoint).
 2. **① Dự án**: bấm *Thêm*, rồi chọn **file gốc** (file chưa làm, soạn sẵn bằng Office).
@@ -72,9 +73,10 @@ mos/
   rules.py           ← 46 luật chấm + thông tin để dựng form soạn đề
   custom.py          ← đọc / lưu đề tự soạn (de_thi/), gộp vào bài thi, kiểm tra đề
   ooxml.py           ← đọc XML bên trong file Office (.docx/.xlsx/.pptx là file ZIP)
-  ui.py              ← màu sắc, font, widget dùng chung
-  gui.py             ← đăng nhập, màn hình chính, thanh làm bài, kết quả
-  gui_admin.py       ← Quản trị: tài khoản, soạn đề, kết quả
+  qt/                ← giao diện (Qt / PySide6)
+    theme.py         ← hệ thống thiết kế: màu, font, stylesheet, thẻ, nút, bảng, vòng điểm
+    app.py           ← đăng nhập, khung ứng dụng (thanh bên), trang chủ, lịch sử, thanh làm bài, kết quả
+    admin.py         ← Quản trị: tài khoản, đề thi + form soạn đề, kết quả học viên
   exams/             ← đề có sẵn (word.py, excel.py, powerpoint.py)
 de_thi/              ← đề mẫu tự soạn (de.json + file gốc + dap_an/)
 kiem_tra_de.py       ← kiểm tra đề bằng dòng lệnh

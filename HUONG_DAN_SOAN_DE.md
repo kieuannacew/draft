@@ -1,7 +1,7 @@
 # Hướng dẫn soạn đề cho app Luyện thi MOS
 
-> **Cách dễ nhất:** soạn đề ngay trong app. Đăng nhập tài khoản quản trị, bấm **⚙ Quản trị**, vào tab
-> **Đề thi**, rồi chọn **Soạn đề mới**. Bạn chỉ cần chọn file, gõ yêu cầu và chọn luật chấm từ danh sách;
+> **Cách dễ nhất:** soạn đề ngay trong app. Đăng nhập tài khoản quản trị, vào mục
+> **Đề thi** ở thanh menu bên trái, rồi bấm **Soạn đề mới**. Bạn chỉ cần chọn file, gõ yêu cầu và chọn luật chấm từ danh sách;
 > app tự tạo `de.json`. Xem các bước trong [README](README.md#soạn-đề-ngay-trong-app-không-cần-lập-trình).
 >
 > Phần dưới đây dành cho ai muốn **viết `de.json` bằng tay**, và là **bảng tra các luật chấm**.
@@ -30,7 +30,7 @@ Mỗi nhiệm vụ gắn với một hoặc nhiều **luật chấm** có sẵn 
 
 ### Bước 1: Tạo thư mục đề
 Tạo một thư mục con trong `de_thi` cạnh app, hoặc trong `C:\Users\<tên>\MOS_Practice\de_thi`, ví dụ `Excel_De2`.
-Trong Quản trị › Đề thi, nút **Mở thư mục** sẽ mở nhanh chỗ lưu đề.
+Trong mục **Đề thi**, nút **Mở thư mục** sẽ mở nhanh chỗ lưu đề.
 
 ```
 de_thi\
