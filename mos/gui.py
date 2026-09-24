@@ -13,145 +13,104 @@ from __future__ import annotations
 
 import time
 import tkinter as tk
-from tkinter import font as tkfont
 from tkinter import messagebox, ttk
 
 from . import core
-from .custom import app_dir, load_custom_exams, merge_exams
+from .accounts import ROLE_NAMES, Account, AccountError, AccountStore
+from .custom import load_custom_exams, merge_exams
 from .exams import ALL_EXAMS
+from .gui_admin import AdminWindow, ChangePasswordDialog
+from .ui import (BG, BORDER, BRAND, CARD, DANGER, DANGER_BG, DARK, DARK_2, MUTED, PRIMARY, SUCCESS,
+                 SUCCESS_BG, TEXT, WARN, WARN_BG, Btn, F, Scrollable, _init_theme, badge, bind_click,
+                 card, entry, fmt_time, pill)
 
-# ====================================================================== Màu sắc & font
-
-BG = "#f1f5f9"          # nền ứng dụng
-CARD = "#ffffff"        # nền thẻ
-BORDER = "#e2e8f0"
-TEXT = "#0f172a"
-MUTED = "#64748b"
-PRIMARY = "#2563eb"
-PRIMARY_HOVER = "#1d4ed8"
-DARK = "#0f172a"
-DARK_2 = "#1e293b"
-SUCCESS, SUCCESS_BG = "#16a34a", "#dcfce7"
-DANGER, DANGER_BG = "#dc2626", "#fee2e2"
-WARN, WARN_BG = "#b45309", "#fef3c7"
-
-# Màu nhận diện từng môn: (chữ cái, màu chính, màu nền nhạt)
-BRAND = {
-    "WORD": ("W", "#2b579a", "#e8eef8"),
-    "EXCEL": ("X", "#217346", "#e6f2eb"),
-    "POWERPOINT": ("P", "#c43e1c", "#fbebe6"),
-}
-
-FAMILY = "Segoe UI"
+class AppState:
+    """Phiên đăng nhập hiện tại."""
+    store: AccountStore | None = None
+    account: Account | None = None
 
 
-def F(size=10, weight="normal"):
-    return (FAMILY, size, weight)
+STATE = AppState()
 
 
-def _init_theme(root: tk.Tk) -> None:
-    global FAMILY
-    families = set(tkfont.families(root))
-    for fam in ("Segoe UI", "Helvetica Neue", "Inter", "Noto Sans", "DejaVu Sans"):
-        if fam in families:
-            FAMILY = fam
-            break
-    root.configure(bg=BG)
-    st = ttk.Style(root)
-    st.theme_use("clam")
-    st.configure("Clean.Treeview", background=CARD, fieldbackground=CARD, foreground=TEXT,
-                 rowheight=32, font=F(10), borderwidth=0)
-    st.configure("Clean.Treeview.Heading", background=BG, foreground=MUTED, font=F(9, "bold"),
-                 relief="flat", padding=(8, 6))
-    st.map("Clean.Treeview", background=[("selected", "#dbeafe")], foreground=[("selected", TEXT)])
-    st.map("Clean.Treeview.Heading", background=[("active", BORDER)])
-    st.configure("Vertical.TScrollbar", background=BORDER, troughcolor=BG, borderwidth=0,
-                 arrowcolor=MUTED, relief="flat")
+def _clear(root) -> None:
+    for child in root.winfo_children():
+        child.destroy()
 
 
-# ====================================================================== Bộ widget
+def show_login(root) -> None:
+    STATE.account = None
+    _clear(root)
+    LoginWindow(root)
 
 
-class Btn(tk.Label):
-    """Nút phẳng có hiệu ứng hover. kind: primary | secondary | ghost | dark."""
-
-    STYLES = {
-        "primary": (PRIMARY, "white", PRIMARY_HOVER),
-        "secondary": (CARD, TEXT, "#e2e8f0"),
-        "ghost": (CARD, PRIMARY, "#eff6ff"),
-        "dark": (DARK_2, "white", "#334155"),
-    }
-
-    def __init__(self, parent, text, command, kind="secondary", size=10, padx=16, pady=7, **kw):
-        bg, fg, self.hover = self.STYLES[kind]
-        border = BORDER if kind == "secondary" else bg
-        super().__init__(parent, text=text, bg=bg, fg=fg, font=F(size, "bold"), padx=padx, pady=pady,
-                         cursor="hand2", highlightthickness=1, highlightbackground=border, **kw)
-        self.base_bg, self.base_fg, self.command, self.enabled = bg, fg, command, True
-        self.bind("<Enter>", lambda e: self.enabled and self.config(bg=self.hover))
-        self.bind("<Leave>", lambda e: self.config(bg=self.base_bg))
-        self.bind("<Button-1>", lambda e: self.enabled and self.command())
-
-    def set_enabled(self, enabled: bool) -> None:
-        self.enabled = enabled
-        self.config(fg=self.base_fg if enabled else "#94a3b8", cursor="hand2" if enabled else "arrow")
+def show_launcher(root) -> None:
+    _clear(root)
+    root.deiconify()
+    LauncherWindow(root)
 
 
-def pill(parent, text, fg, bg, size=9):
-    return tk.Label(parent, text=text, fg=fg, bg=bg, font=F(size, "bold"), padx=10, pady=2)
+# ====================================================================== Đăng nhập
 
 
-def card(parent, **kw):
-    return tk.Frame(parent, bg=CARD, highlightthickness=1, highlightbackground=BORDER, **kw)
+class LoginWindow:
+    def __init__(self, root: tk.Tk):
+        self.root = root
+        _init_theme(root)
+        root.title("Luyện thi MOS – Đăng nhập")
+        root.geometry("900x560")
+        store = STATE.store
 
+        side = tk.Frame(root, bg=DARK, padx=40, pady=40, width=380)
+        side.pack(side="left", fill="y")
+        side.pack_propagate(False)
+        row = tk.Frame(side, bg=DARK)
+        row.pack(anchor="w", pady=(60, 0))
+        for code in ("WORD", "EXCEL", "POWERPOINT"):
+            letter, color, _ = BRAND[code]
+            badge(row, letter, color, size=40, bg=DARK).pack(side="left", padx=(0, 8))
+        tk.Label(side, text="Luyện thi MOS", bg=DARK, fg="white", font=F(24, "bold")).pack(anchor="w", pady=(24, 4))
+        tk.Label(side, text="Làm bài trực tiếp trên Word, Excel,\nPowerPoint — chấm điểm tự động.",
+                 bg=DARK, fg="#94a3b8", font=F(11), justify="left").pack(anchor="w")
 
-def badge(parent, letter, color, size=44, bg=CARD):
-    """Ô vuông màu có chữ cái (W / X / P)."""
-    c = tk.Canvas(parent, width=size, height=size, bg=bg, highlightthickness=0)
-    r = size // 5
-    x0, y0, x1, y1 = 1, 1, size - 1, size - 1
-    for x, y in ((x0, y0), (x1 - 2 * r, y0), (x0, y1 - 2 * r), (x1 - 2 * r, y1 - 2 * r)):
-        c.create_oval(x, y, x + 2 * r, y + 2 * r, fill=color, outline=color)
-    c.create_rectangle(x0 + r, y0, x1 - r, y1, fill=color, outline=color)
-    c.create_rectangle(x0, y0 + r, x1, y1 - r, fill=color, outline=color)
-    c.create_text(size / 2, size / 2, text=letter, fill="white", font=F(int(size / 2.4), "bold"))
-    return c
+        main = tk.Frame(root, bg=BG)
+        main.pack(side="left", fill="both", expand=True)
+        form = card(main, padx=32, pady=28)
+        form.place(relx=0.5, rely=0.5, anchor="center")
+        tk.Label(form, text="Đăng nhập", bg=CARD, fg=TEXT, font=F(18, "bold")).pack(anchor="w")
+        tk.Label(form, text="Dùng tài khoản giáo viên cấp cho bạn.", bg=CARD, fg=MUTED, font=F(10)
+                 ).pack(anchor="w", pady=(2, 16))
+        self.user, self.pw = tk.StringVar(), tk.StringVar()
+        tk.Label(form, text="Tên đăng nhập", bg=CARD, fg=TEXT, font=F(9, "bold")).pack(anchor="w")
+        e_user = entry(form, self.user, width=32)
+        e_user.pack(fill="x", ipady=5, pady=(2, 10))
+        tk.Label(form, text="Mật khẩu", bg=CARD, fg=TEXT, font=F(9, "bold")).pack(anchor="w")
+        entry(form, self.pw, show="•", width=32).pack(fill="x", ipady=5, pady=(2, 6))
+        self.error = tk.Label(form, text="", bg=CARD, fg=DANGER, font=F(9), wraplength=300, justify="left")
+        self.error.pack(anchor="w", pady=(0, 8))
+        Btn(form, "Đăng nhập", self.login, kind="primary", size=11, pady=9).pack(fill="x")
+        admin = store.get("admin")
+        if admin and admin.doi_mat_khau and len(store.accounts) == 1:
+            tk.Label(form, text="Lần đầu sử dụng: đăng nhập  admin / admin\nrồi đặt mật khẩu mới.",
+                     bg=WARN_BG, fg=WARN, font=F(9), justify="left", padx=10, pady=6).pack(fill="x", pady=(14, 0))
+        root.bind("<Return>", lambda e: self.login())
+        e_user.focus_set()
 
-
-def bind_click(widget, fn):
-    widget.bind("<Button-1>", lambda e: fn())
-    widget.configure(cursor="hand2")
-    for child in widget.winfo_children():
-        bind_click(child, fn)
-
-
-def fmt_time(seconds: int) -> str:
-    m, s = divmod(max(int(seconds), 0), 60)
-    return f"{m:02d}:{s:02d}"
-
-
-class Scrollable(tk.Frame):
-    """Khung cuộn dọc; nội dung đặt vào `.inner`."""
-
-    def __init__(self, parent, bg=BG):
-        super().__init__(parent, bg=bg)
-        self.canvas = tk.Canvas(self, bg=bg, highlightthickness=0)
-        sb = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
-        self.inner = tk.Frame(self.canvas, bg=bg)
-        win = self.canvas.create_window((0, 0), window=self.inner, anchor="nw")
-        self.inner.bind("<Configure>", lambda e: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
-        self.canvas.bind("<Configure>", lambda e: self.canvas.itemconfigure(win, width=e.width))
-        self.canvas.configure(yscrollcommand=sb.set)
-        self.canvas.pack(side="left", fill="both", expand=True)
-        sb.pack(side="right", fill="y")
-        for seq in ("<MouseWheel>", "<Button-4>", "<Button-5>"):
-            self.bind_all(seq, self._wheel, add="+")
-
-    def _wheel(self, e):
-        if not str(e.widget).startswith(str(self)):
+    def login(self) -> None:
+        try:
+            acc = STATE.store.authenticate(self.user.get(), self.pw.get())
+        except AccountError as exc:
+            self.error.config(text=str(exc))
             return
-        step = -1 if (getattr(e, "delta", 0) > 0 or e.num == 4) else 1
-        self.canvas.yview_scroll(step, "units")
+        self.root.unbind("<Return>")
+        if acc.doi_mat_khau:
+            ChangePasswordDialog(self.root, STATE.store, acc, forced=True, on_done=lambda: self._enter(acc))
+        else:
+            self._enter(acc)
+
+    def _enter(self, acc) -> None:
+        STATE.account = STATE.store.get(acc.username)
+        show_launcher(self.root)
 
 
 # ====================================================================== Launcher
@@ -168,15 +127,26 @@ class LauncherWindow:
         root.minsize(820, 600)
         self.exam_idx = 0
         self.mode = "training"
-        if errors:
+        if errors and STATE.account.is_admin:
             root.after(300, lambda: messagebox.showwarning(
                 "Có đề tự soạn bị lỗi", "Các đề sau chưa được nạp:\n\n• " + "\n• ".join(errors[:15]) +
-                "\n\nChạy  py kiem_tra_de.py <thư mục đề>  để xem chi tiết.", parent=root))
+                "\n\nMở Quản trị › Đề thi để sửa.", parent=root))
 
+        acc = self.account = STATE.account
         head = tk.Frame(root, bg=DARK, padx=32, pady=22)
         head.pack(fill="x")
+        user_box = tk.Frame(head, bg=DARK)
+        user_box.pack(side="right", anchor="n")
+        tk.Label(user_box, text=acc.ho_ten, bg=DARK, fg="white", font=F(11, "bold")).pack(anchor="e")
+        links = tk.Frame(user_box, bg=DARK)
+        links.pack(anchor="e", pady=(4, 0))
+        pill(links, ROLE_NAMES[acc.vai_tro], "white", PRIMARY if acc.is_admin else DARK_2, size=8).pack(side="left")
+        for text, cmd in (("Đổi mật khẩu", self.change_password), ("Đăng xuất", lambda: show_login(root))):
+            link = tk.Label(links, text=text, bg=DARK, fg="#93c5fd", font=F(9, "underline"), cursor="hand2")
+            link.pack(side="left", padx=(12, 0))
+            link.bind("<Button-1>", lambda e, c=cmd: c())
         tk.Label(head, text="Luyện thi MOS", bg=DARK, fg="white", font=F(22, "bold")).pack(anchor="w")
-        tk.Label(head, text="Làm bài trực tiếp trên Word, Excel, PowerPoint — chấm điểm tự động như GMetrix",
+        tk.Label(head, text="Làm bài trực tiếp trên Word, Excel, PowerPoint — chấm điểm tự động",
                  bg=DARK, fg="#94a3b8", font=F(11)).pack(anchor="w", pady=(2, 0))
 
         body = tk.Frame(root, bg=BG, padx=32, pady=20)
@@ -189,7 +159,8 @@ class LauncherWindow:
         self.last_lbl.pack(side="left")
         Btn(foot, "Bắt đầu  →", self.start, kind="primary", size=12, padx=26, pady=10).pack(side="right")
         Btn(foot, "Lịch sử", self.show_history, size=12, pady=10).pack(side="right", padx=10)
-        Btn(foot, "Thư mục đề", self.open_exam_dir, size=12, pady=10).pack(side="right")
+        if acc.is_admin:
+            Btn(foot, "⚙ Quản trị", self.open_admin, size=12, pady=10).pack(side="right")
 
         self._section(body, "1", "Chọn bài thi")
         exams = tk.Frame(body, bg=BG)
@@ -248,7 +219,8 @@ class LauncherWindow:
         n_tasks = sum(len(p.tasks) for p in exam.projects)
         tk.Label(c, text=f"{len(exam.projects)} dự án  •  {n_tasks} nhiệm vụ  •  {exam.minutes} phút",
                  bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w", pady=(8, 0))
-        best = max((h["score"] for h in core.load_history() if h["exam"] == exam.name), default=None)
+        best = max((h["score"] for h in core.load_history(self.account.username) if h["exam"] == exam.name),
+                   default=None)
         tk.Label(c, text=f"Điểm cao nhất: {best}" if best is not None else "Chưa làm lần nào",
                  bg=CARD, fg=color if best is not None else MUTED, font=F(9, "bold")).pack(anchor="w")
         bind_click(c, lambda: self.select_exam(i))
@@ -270,7 +242,7 @@ class LauncherWindow:
                 dot.create_oval(6, 6, 12, 12, fill=PRIMARY, outline=PRIMARY)
 
     def refresh_last(self):
-        history = core.load_history()
+        history = core.load_history(self.account.username)
         if history:
             h = history[-1]
             name = h["exam"].replace("Microsoft ", "").split(" (")[0]
@@ -282,21 +254,19 @@ class LauncherWindow:
     def start(self) -> None:
         start_exam(self.root, self.exams[self.exam_idx], self.mode)
 
-    def open_exam_dir(self) -> None:
-        folder = app_dir() / "de_thi"
-        folder.mkdir(exist_ok=True)
-        try:
-            core.open_in_office(folder)
-        except OSError as exc:
-            messagebox.showerror("Lỗi", str(exc))
+    def open_admin(self) -> None:
+        AdminWindow(self.root, STATE.store, self.account, on_close=lambda: show_launcher(self.root))
+
+    def change_password(self) -> None:
+        ChangePasswordDialog(self.root, STATE.store, self.account)
 
     def show_history(self) -> None:
-        HistoryWindow(self.root)
+        HistoryWindow(self.root, self.account)
 
 
 def start_exam(root, exam, mode) -> None:
     try:
-        session = core.new_session(exam, mode)
+        session = core.new_session(exam, mode, user=STATE.account.username if STATE.account else None)
     except Exception:
         messagebox.showerror("Lỗi", "Không tạo được file bài thi:\n" + core.format_exception())
         return
@@ -308,23 +278,23 @@ def start_exam(root, exam, mode) -> None:
 
 
 class HistoryWindow:
-    def __init__(self, root):
+    def __init__(self, root, account):
         w = tk.Toplevel(root, bg=BG)
-        w.title("Lịch sử làm bài")
+        w.title(f"Lịch sử làm bài – {account.ho_ten}")
         w.geometry("820x460")
-        history = core.load_history()
+        history = core.load_history(account.username)
 
         stats = tk.Frame(w, bg=BG, padx=20, pady=16)
         stats.pack(fill="x")
         passed = sum(h["passed"] for h in history)
-        for i, (label, value) in enumerate((
+        for i, (title, value) in enumerate((
                 ("Số lần làm", str(len(history))),
                 ("Điểm cao nhất", str(max((h["score"] for h in history), default="—"))),
                 ("Tỉ lệ đạt", f"{round(100 * passed / len(history))}%" if history else "—"))):
             stats.columnconfigure(i, weight=1, uniform="s")
             c = card(stats, padx=16, pady=10)
             c.grid(row=0, column=i, sticky="nsew", padx=(0 if i == 0 else 8, 0))
-            tk.Label(c, text=label, bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w")
+            tk.Label(c, text=title, bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w")
             tk.Label(c, text=value, bg=CARD, fg=TEXT, font=F(18, "bold")).pack(anchor="w")
 
         box = card(w)
@@ -713,13 +683,11 @@ class ResultWindow:
 
     def close(self) -> None:
         self.win.destroy()
-        for child in self.root.winfo_children():
-            child.destroy()
-        LauncherWindow(self.root)   # dựng lại để cập nhật "điểm cao nhất"
-        self.root.deiconify()
+        show_launcher(self.root)   # dựng lại để cập nhật "điểm cao nhất"
 
 
 def main() -> None:
     root = tk.Tk()
-    LauncherWindow(root)
+    STATE.store = AccountStore()
+    show_login(root)
     root.mainloop()

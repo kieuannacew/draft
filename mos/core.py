@@ -14,6 +14,7 @@ import json
 import os
 import random
 import shutil
+import sys
 import traceback
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -23,8 +24,33 @@ from typing import Callable
 PASS_SCORE = 700
 MAX_SCORE = 1000
 
-APP_DIR = Path.home() / "MOS_Practice"
-HISTORY_FILE = APP_DIR / "history.json"
+APP_DIR = Path.home() / "MOS_Practice"     # thư mục làm bài trên từng máy
+
+
+def app_dir() -> Path:
+    """Thư mục chứa main.py (hoặc file .exe khi đã đóng gói)."""
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).parent
+    return Path(__file__).resolve().parents[1]
+
+
+def _data_dir() -> Path:
+    """Nơi lưu tài khoản, kết quả, đề tự soạn.
+
+    Mặc định là APP_DIR. Phòng máy dùng chung dữ liệu: tạo file cau_hinh.json
+    cạnh main.py / .exe với nội dung {"thu_muc_du_lieu": "\\\\MAYCHU\\MOS"}.
+    """
+    try:
+        cfg = json.loads((app_dir() / "cau_hinh.json").read_text(encoding="utf-8-sig"))
+        if cfg.get("thu_muc_du_lieu"):
+            return Path(cfg["thu_muc_du_lieu"])
+    except (OSError, ValueError):
+        pass
+    return APP_DIR
+
+
+DATA_DIR = _data_dir()
+HISTORY_FILE = DATA_DIR / "history.json"
 
 
 @dataclass
@@ -68,12 +94,13 @@ class Session:
     workdir: Path
     marked: set = field(default_factory=set)   # {(project_idx, task_idx)}
     done: set = field(default_factory=set)
+    user: str | None = None                    # tên đăng nhập của người làm bài
 
     def file_of(self, project_idx: int) -> Path:
         return self.workdir / self.exam.projects[project_idx].filename
 
 
-def new_session(exam: Exam, mode: str, base: Path | None = None) -> Session:
+def new_session(exam: Exam, mode: str, base: Path | None = None, user: str | None = None) -> Session:
     """Tạo thư mục làm bài mới và sinh toàn bộ file khởi đầu."""
     base = base or APP_DIR / "work"
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -81,7 +108,7 @@ def new_session(exam: Exam, mode: str, base: Path | None = None) -> Session:
     workdir.mkdir(parents=True, exist_ok=True)
     for project in exam.projects:
         project.build(workdir / project.filename)
-    return Session(exam=exam, mode=mode, workdir=workdir)
+    return Session(exam=exam, mode=mode, workdir=workdir, user=user)
 
 
 def reset_project(session: Session, project_idx: int) -> None:
@@ -120,6 +147,7 @@ def grade(session: Session) -> dict:
     score = round(MAX_SCORE * correct / total) if total else 0
     return {
         "exam": session.exam.name,
+        "user": session.user,
         "mode": session.mode,
         "time": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "correct": correct,
@@ -145,11 +173,13 @@ def open_in_office(path: Path) -> None:
         os.system(f'xdg-open "{path}" >/dev/null 2>&1 &')
 
 
-def load_history() -> list[dict]:
+def load_history(user: str | None = None) -> list[dict]:
+    """Toàn bộ lịch sử, hoặc chỉ của tài khoản `user`."""
     try:
-        return json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+        history = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return []
+    return history if user is None else [h for h in history if h.get("user") == user]
 
 
 def save_history(report: dict) -> None:

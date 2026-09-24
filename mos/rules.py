@@ -503,6 +503,164 @@ def xml_chua(path, part_regex, chua, bo_qua_hoa_thuong=False):
     return any_part_contains(path, part_regex, chua, re.IGNORECASE if bo_qua_hoa_thuong else 0)
 
 
+# ====================================================================== thông tin cho form soạn đề
+
+# tên tham số -> (nhãn, kiểu, lựa chọn). Kiểu: text, number, auto, list, bool, choice
+PARAM_UI = {
+    "ten": ("Tên", "text"),
+    "o": ("Ô / vùng (vd E2 hoặc E2:E11)", "text"),
+    "vung": ("Vùng (vd A1:E11)", "text"),
+    "sheet": ("Trang tính (để trống = trang đang chọn)", "text"),
+    "chua": ("Phải chứa", "text"),
+    "bang": ("Giá trị đúng", "auto"),
+    "dam": ("In đậm", "bool"),
+    "nghieng": ("In nghiêng", "bool"),
+    "co": ("Cỡ chữ", "number"),
+    "loai": ("Loại biểu đồ", "choice", ["bat_ky", "cot", "thanh", "duong", "tron"]),
+    "huong": ("Hướng trang", "choice", ["ngang", "doc"]),
+    "cot": ("Cột (vd C)", "text"),
+    "tu": ("Từ hàng", "number"),
+    "den": ("Đến hàng", "number"),
+    "chieu": ("Chiều sắp xếp", "choice", ["tang", "giam"]),
+    "doan": ("Đoạn văn bắt đầu bằng (nhiều đoạn: cách nhau bởi ;)", "list"),
+    "kieu": ("Style (vd Heading 1, Title)", "text"),
+    "can": ("Căn lề", "choice", ["trai", "giua", "phai", "deu"]),
+    "chu": ("Nội dung chữ", "text"),
+    "so_lan": ("Số lần xuất hiện", "number"),
+    "gia_tri": ("Giá trị", "auto"),
+    "so_cot": ("Số cột", "number"),
+    "so_hang": ("Số hàng", "number"),
+    "o_dau": ("Chữ trong ô đầu tiên", "text"),
+    "vi_tri": ("Vị trí", "choice", ["bat_ky", "chan_trang", "dau_trang"]),
+    "truong": ("Thuộc tính", "choice", ["title", "author", "subject", "keywords", "comments", "category"]),
+    "so": ("Số lượng", "number"),
+    "alt_text": ("Alt text phải chứa", "text"),
+    "tieu_de": ("Tiêu đề slide", "text"),
+    "slide": ("Hoặc số thứ tự slide", "number"),
+    "bo_cuc": ("Bố cục (vd Title and Content)", "text"),
+    "nhom": ("Nhóm hiệu ứng", "choice", ["entr", "exit", "emph", "bat_ky"]),
+    "ti_le": ("Tỉ lệ", "choice", ["16:9", "4:3"]),
+    "tru_slide_dau": ("Bỏ qua slide tiêu đề", "bool"),
+    "part_regex": ("Part XML (regex, vd word/document\\.xml)", "text"),
+    "bo_qua_hoa_thuong": ("Không phân biệt hoa/thường", "bool"),
+}
+PARAM_UI_RULE = {
+    ("excel_cong_thuc", "chua"): ("Công thức phải chứa (cách nhau bởi ; — {hang} = số hàng)", "list"),
+    ("excel_dinh_dang_so", "chua"): ("Mã định dạng phải chứa (vd %, 0.00)", "text"),
+    ("xml_chua", "chua"): ("Regex cần tìm", "text"),
+    ("ppt_co_slide", "vi_tri"): ("Vị trí (số thứ tự, hoặc cuoi)", "auto"),
+    ("word_gian_dong", "doan"): ("Đoạn văn bắt đầu bằng", "text"),
+    ("word_gian_dong", "gia_tri"): ("Giãn dòng (vd 1.5)", "number"),
+    ("word_thuoc_tinh", "gia_tri"): ("Giá trị", "text"),
+}
+BOOL_TEXT = {"Có": True, "Không": False}
+
+
+RULE_TITLES = {
+    "excel_ten_sheet": "Có trang tính với tên cho trước",
+    "excel_khong_co_sheet": "Không còn trang tính có tên cho trước (đã đổi tên / xóa)",
+    "excel_cong_thuc": "Ô / vùng chứa công thức đúng",
+    "excel_gia_tri": "Ô có giá trị đúng",
+    "excel_dinh_dang_so": "Định dạng số (Number Format) cho vùng",
+    "excel_font": "Font chữ: in đậm / in nghiêng / cỡ chữ",
+    "excel_co_bang": "Đã định dạng thành bảng (Format as Table)",
+    "excel_co_dinh": "Cố định hàng / cột (Freeze Panes)",
+    "excel_dinh_dang_dieu_kien": "Định dạng có điều kiện (Conditional Formatting)",
+    "excel_ten_vung": "Đặt tên vùng (Named Range)",
+    "excel_bieu_do": "Có biểu đồ (Chart)",
+    "excel_huong_trang": "Hướng trang in (ngang / dọc)",
+    "excel_sap_xep": "Dữ liệu được sắp xếp (Sort)",
+    "word_kieu_doan": "Đoạn văn dùng Style (Heading 1, Title…)",
+    "word_can_le": "Căn lề đoạn văn",
+    "word_co_chu": "Tài liệu có chứa đoạn chữ",
+    "word_khong_co_chu": "Tài liệu không còn đoạn chữ (vd sau Replace All)",
+    "word_dau_dong": "Đoạn văn là danh sách (Bullets / Numbering)",
+    "word_gian_dong": "Giãn dòng (Line Spacing)",
+    "word_bang": "Có bảng (Table) với số cột / hàng",
+    "word_muc_luc": "Có mục lục tự động (Table of Contents)",
+    "word_so_trang": "Có số trang (Page Number)",
+    "word_dau_trang_chan_trang": "Đầu trang / chân trang có chứa chữ",
+    "word_watermark": "Có watermark chữ",
+    "word_huong_trang": "Hướng trang (ngang / dọc)",
+    "word_so_cot": "Chia cột văn bản (Columns)",
+    "word_footnote": "Có chú thích cuối trang (Footnote)",
+    "word_thuoc_tinh": "Thuộc tính tài liệu (Title, Author…)",
+    "word_theo_doi_thay_doi": "Đã bật theo dõi thay đổi (Track Changes)",
+    "word_hinh_anh": "Có hình ảnh (và Alt Text)",
+    "ppt_co_slide": "Có slide với tiêu đề cho trước",
+    "ppt_khong_co_slide": "Đã xóa slide có tiêu đề cho trước",
+    "ppt_so_slide": "Bài có đúng số slide",
+    "ppt_ghi_chu": "Slide có ghi chú (Notes)",
+    "ppt_chuyen_trang": "Có hiệu ứng chuyển trang (Transition)",
+    "ppt_hieu_ung": "Có hiệu ứng động (Animation)",
+    "ppt_an_slide": "Slide bị ẩn (Hide Slide)",
+    "ppt_kich_thuoc": "Kích thước slide (16:9 / 4:3)",
+    "ppt_bang": "Slide có bảng với số cột / hàng",
+    "ppt_smartart": "Slide có SmartArt",
+    "ppt_bieu_do": "Slide có biểu đồ (Chart)",
+    "ppt_hinh_anh": "Slide có hình ảnh",
+    "ppt_section": "Có Section với tên cho trước",
+    "ppt_so_trang": "Hiện số slide (Slide Number)",
+    "ppt_co_chu": "Slide có chứa đoạn chữ",
+    "xml_chua": "Nâng cao: file chứa đoạn XML (regex)",
+}
+
+
+def rule_title(name: str) -> str:
+    """Tên ngắn tiếng Việt của luật (hiện trong form soạn đề)."""
+    return RULE_TITLES.get(name, name)
+
+
+def rules_for(mon: str) -> list[str]:
+    prefix = {"EXCEL": "excel_", "WORD": "word_", "POWERPOINT": "ppt_"}.get(mon.upper(), "")
+    return [n for n in RULES if n.startswith(prefix)] + [n for n in RULES if n.startswith("xml_")]
+
+
+def rule_params(name: str) -> list[dict]:
+    """Danh sách tham số kèm nhãn/kiểu để dựng form."""
+    out = []
+    for p in inspect.signature(RULES[name]).parameters.values():
+        if p.name == "path":
+            continue
+        label, kind, *rest = PARAM_UI_RULE.get((name, p.name)) or PARAM_UI.get(p.name, (p.name, "auto"))
+        required = p.default is inspect.Parameter.empty
+        out.append({"name": p.name, "label": label, "kind": kind, "choices": rest[0] if rest else None,
+                    "required": required, "default": None if required else p.default})
+    return out
+
+
+def parse_value(kind: str, text: str):
+    """Chuyển chữ người dùng gõ trong form thành giá trị cho luật. Chuỗi rỗng → None."""
+    text = (text or "").strip()
+    if not text:
+        return None
+    if kind == "list":
+        return [x.strip() for x in text.split(";") if x.strip()]
+    if kind == "bool":
+        if text not in BOOL_TEXT:
+            raise ValueError("chọn Có hoặc Không")
+        return BOOL_TEXT[text]
+    if kind in ("number", "auto"):
+        for conv in (int, float):
+            try:
+                return conv(text.replace(",", ".") if conv is float else text)
+            except ValueError:
+                pass
+        if kind == "number":
+            raise ValueError(f"'{text}' không phải là số")
+    return text
+
+
+def format_value(kind: str, value) -> str:
+    if value is None:
+        return ""
+    if kind == "list":
+        return "; ".join(str(v) for v in _as_list(value))
+    if kind == "bool":
+        return "Có" if value else "Không"
+    return str(value)
+
+
 # ====================================================================== kiểm tra khai báo
 
 

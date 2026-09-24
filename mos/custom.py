@@ -10,25 +10,17 @@ from __future__ import annotations
 import json
 import re
 import shutil
-import sys
 from dataclasses import replace
 from pathlib import Path
 
 from . import rules
-from .core import APP_DIR, Exam, Project, Task
+from .core import DATA_DIR, Exam, Project, Task, app_dir
 
 MON = {"WORD", "EXCEL", "POWERPOINT"}
 
 
-def app_dir() -> Path:
-    """Thư mục chứa main.py (hoặc file .exe khi đã đóng gói)."""
-    if getattr(sys, "frozen", False):
-        return Path(sys.executable).parent
-    return Path(__file__).resolve().parents[1]
-
-
 def search_dirs() -> list[Path]:
-    return [app_dir() / "de_thi", APP_DIR / "de_thi"]
+    return [app_dir() / "de_thi", DATA_DIR / "de_thi"]
 
 
 def _copier(src: Path):
@@ -113,3 +105,69 @@ def merge_exams(builtin: list[Exam], custom: list[Exam]) -> list[Exam]:
             renamed.append(replace(p, name=f"Dự án {i} – {short}", filename=filename))
         merged.append(replace(exam, projects=renamed))
     return merged
+
+
+# ====================================================================== dùng cho màn hình Soạn đề
+
+
+def editable_dir() -> Path:
+    """Nơi lưu đề soạn trong app (dùng chung khi cấu hình thư mục dữ liệu mạng)."""
+    return DATA_DIR / "de_thi"
+
+
+def list_exam_folders() -> list[Path]:
+    seen, out = set(), []
+    for base in search_dirs():
+        if base.is_dir():
+            for folder in sorted(p for p in base.iterdir() if (p / "de.json").is_file()):
+                if folder.resolve() not in seen:
+                    seen.add(folder.resolve())
+                    out.append(folder)
+    return out
+
+
+def read_exam_json(folder: Path) -> dict:
+    return json.loads((folder / "de.json").read_text(encoding="utf-8-sig"))
+
+
+def save_exam_json(folder: Path, data: dict) -> None:
+    folder.mkdir(parents=True, exist_ok=True)
+    tmp = folder / "de.json.tmp"
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(folder / "de.json")
+
+
+def new_exam_folder(title: str) -> Path:
+    """Tạo tên thư mục không dấu, không trùng, từ tên đề."""
+    import unicodedata
+    ascii_name = unicodedata.normalize("NFKD", title.replace("đ", "d").replace("Đ", "D"))
+    ascii_name = "".join(c for c in ascii_name if not unicodedata.combining(c))
+    slug = re.sub(r"[^A-Za-z0-9]+", "_", ascii_name).strip("_") or "De"
+    folder, n = editable_dir() / slug, 1
+    while folder.exists():
+        n += 1
+        folder = editable_dir() / f"{slug}_{n}"
+    return folder
+
+
+def check_exam(folder: Path, answers: dict[str, Path] | None = None) -> tuple[list[str], list[dict]]:
+    """Chấm thử đề: file gốc (phải SAI) và file đáp án (phải ĐÚNG).
+
+    answers: {tên file gốc: đường dẫn file đáp án}; mặc định lấy trong dap_an/.
+    Trả về (lỗi khai báo, danh sách dòng kết quả).
+    """
+    from .core import run_check
+    exam, errors = load_exam(folder)
+    if errors:
+        return errors, []
+    rows = []
+    for project in exam.projects:
+        answer = (answers or {}).get(project.filename) or folder / "dap_an" / project.filename
+        for i, task in enumerate(project.tasks, start=1):
+            start_ok, _ = run_check(task, folder / project.filename)
+            row = {"project": project.name, "file": project.filename, "index": i, "task": task.title,
+                   "start_ok": start_ok, "answer_ok": None, "error": ""}
+            if answer.is_file():
+                row["answer_ok"], row["error"] = run_check(task, answer)
+            rows.append(row)
+    return [], rows

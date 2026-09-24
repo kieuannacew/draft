@@ -12,8 +12,7 @@ import sys
 from pathlib import Path
 
 from mos import rules
-from mos.core import run_check
-from mos.custom import load_exam
+from mos.custom import check_exam, load_exam
 
 
 def main(argv) -> int:
@@ -27,36 +26,32 @@ def main(argv) -> int:
         return 0
 
     folder = Path(argv[0])
-    exam, errors = load_exam(folder)
+    errors, rows = check_exam(folder)
     if errors:
         print("LỖI KHAI BÁO:")
         for e in errors:
             print("  ✗", e)
         return 1
-    print(f"Đề: {exam.name}  ({exam.code}, {exam.minutes} phút)\n")
+    exam, _ = load_exam(folder)
+    print(f"Đề: {exam.name}  ({exam.code})\n")
 
-    problems = 0
-    for project in exam.projects:
-        print(f"■ {project.name}  [{project.filename}]")
-        answer = folder / "dap_an" / project.filename
-        for i, task in enumerate(project.tasks, start=1):
-            start_ok, start_err = run_check(task, folder / project.filename)
-            line = f"  {i:>2}. {task.title[:70]:<70}  file gốc: {'ĐÚNG ⚠' if start_ok else 'sai ✓'}"
-            if start_ok:
-                problems += 1
-            if answer.is_file():
-                ok, err = run_check(task, answer)
-                line += f"   đáp án: {'đúng ✓' if ok else 'SAI ✗'}"
-                if not ok:
-                    problems += 1
-                    if err:
-                        line += f"  ({err})"
-            print(line)
-        if not answer.is_file():
-            print(f"     (chưa có dap_an/{project.filename} để kiểm tra chiều đúng)")
-        print()
+    problems, current = 0, None
+    for r in rows:
+        if r["project"] != current:
+            current = r["project"]
+            print(f"\n■ {current}  [{r['file']}]")
+        line = f"  {r['index']:>2}. {r['task'][:70]:<70}  file gốc: {'ĐÚNG ⚠' if r['start_ok'] else 'sai ✓'}"
+        problems += r["start_ok"]
+        if r["answer_ok"] is None:
+            line += "   (chưa có đáp án)"
+        else:
+            line += f"   đáp án: {'đúng ✓' if r['answer_ok'] else 'SAI ✗'}"
+            problems += not r["answer_ok"]
+            if r["error"]:
+                line += f"  ({r['error']})"
+        print(line)
 
-    print("KẾT QUẢ:", "Đề ổn ✓" if not problems else f"Có {problems} điểm cần xem lại (⚠ / ✗ ở trên)")
+    print("\nKẾT QUẢ:", "Đề ổn ✓" if not problems else f"Có {problems} điểm cần xem lại (⚠ / ✗ ở trên)")
     return 1 if problems else 0
 
 
