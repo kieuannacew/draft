@@ -17,6 +17,7 @@ from tkinter import font as tkfont
 from tkinter import messagebox, ttk
 
 from . import core
+from .custom import app_dir, load_custom_exams
 from .exams import ALL_EXAMS
 
 # ====================================================================== Màu sắc & font
@@ -161,10 +162,19 @@ class LauncherWindow:
         self.root = root
         _init_theme(root)
         root.title("Luyện thi MOS")
-        root.geometry("900x620")
+        custom, errors = load_custom_exams()
+        self.exams = ALL_EXAMS + custom
+        self.custom_ids = {id(e) for e in custom}
+        rows = (len(self.exams) + 2) // 3
+        height = min(560 + 132 * (min(rows, 3) - 1), root.winfo_screenheight() - 80)
+        root.geometry(f"900x{height}")
         root.minsize(820, 600)
         self.exam_idx = 0
         self.mode = "training"
+        if errors:
+            root.after(300, lambda: messagebox.showwarning(
+                "Có đề tự soạn bị lỗi", "Các đề sau chưa được nạp:\n\n• " + "\n• ".join(errors[:15]) +
+                "\n\nChạy  py kiem_tra_de.py <thư mục đề>  để xem chi tiết.", parent=root))
 
         head = tk.Frame(root, bg=DARK, padx=32, pady=22)
         head.pack(fill="x")
@@ -175,12 +185,28 @@ class LauncherWindow:
         body = tk.Frame(root, bg=BG, padx=32, pady=20)
         body.pack(fill="both", expand=True)
 
+        # hàng nút pack trước để luôn nằm dưới cùng
+        foot = tk.Frame(body, bg=BG)
+        foot.pack(fill="x", side="bottom")
+        self.last_lbl = tk.Label(foot, bg=BG, fg=MUTED, font=F(10), justify="left")
+        self.last_lbl.pack(side="left")
+        Btn(foot, "Bắt đầu  →", self.start, kind="primary", size=12, padx=26, pady=10).pack(side="right")
+        Btn(foot, "Lịch sử", self.show_history, size=12, pady=10).pack(side="right", padx=10)
+        Btn(foot, "Thư mục đề", self.open_exam_dir, size=12, pady=10).pack(side="right")
+
         self._section(body, "1", "Chọn bài thi")
-        exams = tk.Frame(body, bg=BG)
-        exams.pack(fill="x", pady=(8, 18))
+        if rows > 3:   # nhiều đề: khung chọn đề cuộn được, cao 3 hàng thẻ
+            scroll = Scrollable(body)
+            scroll.canvas.configure(height=3 * 132)
+            scroll.pack(fill="x", pady=(8, 18))
+            exams = scroll.inner
+        else:
+            exams = tk.Frame(body, bg=BG)
+            exams.pack(fill="x", pady=(8, 18))
         self.exam_cards = []
-        for i, exam in enumerate(ALL_EXAMS):
-            exams.columnconfigure(i, weight=1, uniform="exam")
+        for col in range(3):
+            exams.columnconfigure(col, weight=1, uniform="exam")
+        for i, exam in enumerate(self.exams):
             self.exam_cards.append(self._exam_card(exams, i, exam))
 
         self._section(body, "2", "Chọn chế độ")
@@ -189,7 +215,7 @@ class LauncherWindow:
         self.mode_cards = {}
         for i, (key, title, desc) in enumerate((
                 ("training", "Luyện tập", "Không giới hạn giờ • có gợi ý • kiểm tra từng dự án"),
-                ("testing", "Thi thử", "50 phút • không gợi ý • chấm điểm khi nộp bài"))):
+                ("testing", "Thi thử", "Tính giờ • không gợi ý • chấm điểm khi nộp bài"))):
             modes.columnconfigure(i, weight=1, uniform="mode")
             c = card(modes, padx=16, pady=12)
             c.grid(row=0, column=i, sticky="nsew", padx=(0 if i == 0 else 8, 0))
@@ -202,12 +228,6 @@ class LauncherWindow:
             bind_click(c, lambda k=key: self.select_mode(k))
             self.mode_cards[key] = (c, dot)
 
-        foot = tk.Frame(body, bg=BG)
-        foot.pack(fill="x", side="bottom")
-        self.last_lbl = tk.Label(foot, bg=BG, fg=MUTED, font=F(10), justify="left")
-        self.last_lbl.pack(side="left")
-        Btn(foot, "Bắt đầu  →", self.start, kind="primary", size=12, padx=26, pady=10).pack(side="right")
-        Btn(foot, "Lịch sử", self.show_history, size=12, pady=10).pack(side="right", padx=10)
 
         self.select_exam(0)
         self.select_mode("training")
@@ -222,12 +242,20 @@ class LauncherWindow:
 
     def _exam_card(self, parent, i, exam):
         letter, color, _ = BRAND.get(exam.code, ("?", PRIMARY, "#eff6ff"))
-        c = card(parent, padx=16, pady=16)
-        c.grid(row=0, column=i, sticky="nsew", padx=(0 if i == 0 else 8, 0))
-        badge(c, letter, color).pack(anchor="w")
+        custom = id(exam) in self.custom_ids
+        c = card(parent, padx=14, pady=12)
+        row, col = divmod(i, 3)
+        c.grid(row=row, column=col, sticky="nsew", padx=(0 if col == 0 else 8, 0), pady=(0 if row == 0 else 8, 0))
+        top = tk.Frame(c, bg=CARD)
+        top.pack(fill="x")
+        badge(top, letter, color, size=38).pack(side="left")
+        names = tk.Frame(top, bg=CARD)
+        names.pack(side="left", padx=10, fill="x", expand=True)
         short, _, code = exam.name.replace("Microsoft ", "").partition(" (")
-        tk.Label(c, text=short, bg=CARD, fg=TEXT, font=F(14, "bold")).pack(anchor="w", pady=(10, 0))
-        tk.Label(c, text=code.rstrip(")"), bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w")
+        tk.Label(names, text=short, bg=CARD, fg=TEXT, font=F(13 if len(short) < 16 else 10, "bold"),
+                 wraplength=170, justify="left", anchor="w").pack(anchor="w")
+        tk.Label(names, text="Đề tự soạn" if custom else code.rstrip(")"), bg=CARD,
+                 fg=WARN if custom else MUTED, font=F(9, "bold" if custom else "normal")).pack(anchor="w")
         n_tasks = sum(len(p.tasks) for p in exam.projects)
         tk.Label(c, text=f"{len(exam.projects)} dự án  •  {n_tasks} nhiệm vụ  •  {exam.minutes} phút",
                  bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w", pady=(8, 0))
@@ -263,7 +291,15 @@ class LauncherWindow:
             self.last_lbl.config(text="Mẹo: làm xong mỗi dự án nhớ bấm Ctrl+S để lưu file.")
 
     def start(self) -> None:
-        start_exam(self.root, ALL_EXAMS[self.exam_idx], self.mode)
+        start_exam(self.root, self.exams[self.exam_idx], self.mode)
+
+    def open_exam_dir(self) -> None:
+        folder = app_dir() / "de_thi"
+        folder.mkdir(exist_ok=True)
+        try:
+            core.open_in_office(folder)
+        except OSError as exc:
+            messagebox.showerror("Lỗi", str(exc))
 
     def show_history(self) -> None:
         HistoryWindow(self.root)

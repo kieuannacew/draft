@@ -1,0 +1,66 @@
+{
+  "mon": "EXCEL",
+  "ten": "Excel – Đề mẫu tự soạn",
+  "thoi_gian": 20,
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Bảng điểm",
+      "file": "BangDiem.xlsx",
+      "mo_ta": "Bạn là giáo viên chủ nhiệm, cần hoàn thiện bảng điểm của lớp.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi tên trang tính “Sheet” thành “BangDiem”.",
+          "goi_y": "Nhấp đúp vào tab trang tính ở dưới cùng, gõ BangDiem, Enter.",
+          "cham": {
+            "luat": "excel_ten_sheet",
+            "ten": "BangDiem"
+          }
+        },
+        {
+          "yeu_cau": "Ô F2:F9 dùng hàm AVERAGE tính điểm trung bình 3 môn.",
+          "goi_y": "Chọn F2, gõ =AVERAGE(C2:E2), Enter, kéo xuống F9.",
+          "cham": {
+            "luat": "excel_cong_thuc",
+            "o": "F2:F9",
+            "chua": [
+              "AVERAGE(",
+              "C{hang}:E{hang}"
+            ]
+          }
+        },
+        {
+          "yeu_cau": "Định dạng F2:F9 hiển thị 1 chữ số thập phân.",
+          "goi_y": "Chọn F2:F9 > Home > Increase/Decrease Decimal cho đến khi còn 1 chữ số.",
+          "cham": {
+            "luat": "excel_dinh_dang_so",
+            "o": "F2:F9",
+            "chua": "0.0"
+          }
+        },
+        {
+          "yeu_cau": "In đậm hàng tiêu đề A1:F1.",
+          "goi_y": "Chọn A1:F1 > Home > Bold (Ctrl+B).",
+          "cham": {
+            "luat": "excel_font",
+            "o": "A1:F1",
+            "dam": true
+          }
+        },
+        {
+          "yeu_cau": "Cố định hàng tiêu đề và vẽ biểu đồ cột điểm trung bình theo Họ tên.",
+          "goi_y": "View > Freeze Panes > Freeze Top Row. Sau đó chọn B1:B9, giữ Ctrl chọn F1:F9 > Insert > Clustered Column.",
+          "cham": [
+            {
+              "luat": "excel_co_dinh",
+              "o": "A2"
+            },
+            {
+              "luat": "excel_bieu_do",
+              "loai": "cot"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

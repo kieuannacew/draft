@@ -10,7 +10,17 @@ theo thang 1000 (đạt từ 700).
 2. Tải repo này về, giải nén.
 3. Nhấp đúp **`run.bat`** (lần đầu sẽ tự cài thư viện).
 
-Muốn có file `.exe` để chép sang máy khác: nhấp đúp **`build_exe.bat`** → file nằm ở `dist\LuyenThiMOS.exe`.
+Muốn có file `.exe` để chép sang máy khác: nhấp đúp **`build_exe.bat`** → file nằm ở `dist\LuyenThiMOS.exe`
+(chép kèm thư mục `de_thi` đặt cạnh file `.exe` nếu có đề tự soạn).
+
+## Đưa đề của bạn vào app (không cần lập trình)
+
+1. Soạn file gốc bằng Word/Excel/PowerPoint.
+2. Viết `de.json`: liệt kê nhiệm vụ và chọn **luật chấm** có sẵn (46 luật), ví dụ:
+   `{"luat": "excel_co_dinh", "o": "A2"}`.
+3. Đặt cả hai vào `de_thi\<tên đề>\`, rồi kéo thả thư mục đó vào `kiem_tra_de.bat` để kiểm tra.
+
+Hướng dẫn chi tiết và bảng luật: **[HUONG_DAN_SOAN_DE.md](HUONG_DAN_SOAN_DE.md)**. Đề mẫu: `de_thi/Excel_Mau`.
 
 ## Cách làm bài
 
@@ -31,11 +41,15 @@ mos/
   core.py            ← Đề thi / Dự án / Nhiệm vụ, chấm điểm, lưu lịch sử
   ooxml.py           ← đọc XML bên trong file Office (.docx/.xlsx/.pptx là file ZIP)
   gui.py             ← giao diện Tkinter: màn hình chính, thanh làm bài, kết quả
+  rules.py           ← thư viện luật chấm dùng cho đề tự soạn (de.json)
+  custom.py          ← nạp đề tự soạn từ thư mục de_thi/
   exams/
     word.py          ← đề Word: tạo file mẫu + hàm chấm từng nhiệm vụ
     excel.py         ← đề Excel
     powerpoint.py    ← đề PowerPoint
-tests/test_exams.py  ← kiểm tra: file gốc = 0 điểm, file làm đúng = 1000 điểm
+de_thi/              ← đề tự soạn (mỗi đề một thư mục: de.json + file gốc + dap_an/)
+kiem_tra_de.py       ← công cụ kiểm tra đề tự soạn
+tests/               ← kiểm tra: file gốc = 0 điểm, file làm đúng = 1000 điểm; kiểm tra từng luật
 ```
 
 Luồng hoạt động:
@@ -61,7 +75,9 @@ Task("Cố định (freeze) hàng tiêu đề để luôn hiển thị khi cuộ
 Với những thứ thư viện không đọc được (biểu đồ, watermark, footnote, section…), chương trình mở file ZIP và
 tìm trực tiếp trong XML, ví dụ biểu đồ cột Excel nằm ở `xl/charts/chart1.xml` với thẻ `<c:barDir val="col"/>`.
 
-## Thêm đề mới
+## Thêm đề mới bằng code (cho người biết Python)
+
+Cách dễ nhất là soạn đề bằng `de.json` như ở trên. Nếu cần kiểu chấm đặc biệt:
 
 1. Viết hàm `build_xxx(path)` tạo file mẫu.
 2. Viết hàm `chk_xxx(path) -> bool` cho mỗi nhiệm vụ.
