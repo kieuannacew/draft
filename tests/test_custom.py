@@ -131,3 +131,24 @@ def test_loader_reports_missing_file_and_json(tmp_path):
     (tmp_path / "badjson").mkdir()
     (tmp_path / "badjson" / "de.json").write_text("{ sai", encoding="utf-8")
     assert any("JSON" in e for e in load_exam(tmp_path / "badjson")[1])
+
+
+def test_custom_projects_merge_into_same_subject(tmp_path):
+    from mos.custom import merge_exams
+    _write(tmp_path / "a", _exam({"luat": "excel_co_dinh"}))
+    data = _exam({"luat": "excel_co_dinh"})
+    data["du_an"][0]["ten"] = "Dự án 1 – Bảng điểm"
+    _write(tmp_path / "b", data)
+    custom = [load_exam(tmp_path / "a")[0], load_exam(tmp_path / "b")[0]]
+    merged = merge_exams(ALL_EXAMS, custom)
+
+    assert [e.code for e in merged] == [e.code for e in ALL_EXAMS]   # không thêm thẻ riêng
+    excel = next(e for e in merged if e.code == "EXCEL")
+    assert [p.name for p in excel.projects] == [
+        "Dự án 1 – Doanh số", "Dự án 2 – Nhân viên", "Dự án 3 – P", "Dự án 4 – Bảng điểm"]
+    assert [p.filename for p in excel.projects][2:] == ["BangDiem.xlsx", "BangDiem_2.xlsx"]
+    word = next(e for e in merged if e.code == "WORD")
+    assert len(word.projects) == 2
+
+    session = new_session(excel, "testing", tmp_path / "work")
+    assert all(session.file_of(i).is_file() for i in range(4))

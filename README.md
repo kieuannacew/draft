@@ -19,6 +19,7 @@ Muốn có file `.exe` để chép sang máy khác: nhấp đúp **`build_exe.ba
 2. Viết `de.json`: liệt kê nhiệm vụ và chọn **luật chấm** có sẵn (46 luật), ví dụ:
    `{"luat": "excel_co_dinh", "o": "A2"}`.
 3. Đặt cả hai vào `de_thi\<tên đề>\`, rồi kéo thả thư mục đó vào `kiem_tra_de.bat` để kiểm tra.
+4. Mở app: các dự án của bạn được gộp luôn vào bài thi của môn đó (Word/Excel/PowerPoint).
 
 Hướng dẫn chi tiết và bảng luật: **[HUONG_DAN_SOAN_DE.md](HUONG_DAN_SOAN_DE.md)**. Đề mẫu: `de_thi/Excel_Mau`.
 

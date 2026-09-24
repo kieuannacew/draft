@@ -17,7 +17,7 @@ from tkinter import font as tkfont
 from tkinter import messagebox, ttk
 
 from . import core
-from .custom import app_dir, load_custom_exams
+from .custom import app_dir, load_custom_exams, merge_exams
 from .exams import ALL_EXAMS
 
 # ====================================================================== Màu sắc & font
@@ -163,11 +163,8 @@ class LauncherWindow:
         _init_theme(root)
         root.title("Luyện thi MOS")
         custom, errors = load_custom_exams()
-        self.exams = ALL_EXAMS + custom
-        self.custom_ids = {id(e) for e in custom}
-        rows = (len(self.exams) + 2) // 3
-        height = min(560 + 132 * (min(rows, 3) - 1), root.winfo_screenheight() - 80)
-        root.geometry(f"900x{height}")
+        self.exams = merge_exams(ALL_EXAMS, custom)   # đề tự soạn gộp vào môn tương ứng
+        root.geometry("900x560")
         root.minsize(820, 600)
         self.exam_idx = 0
         self.mode = "training"
@@ -195,14 +192,8 @@ class LauncherWindow:
         Btn(foot, "Thư mục đề", self.open_exam_dir, size=12, pady=10).pack(side="right")
 
         self._section(body, "1", "Chọn bài thi")
-        if rows > 3:   # nhiều đề: khung chọn đề cuộn được, cao 3 hàng thẻ
-            scroll = Scrollable(body)
-            scroll.canvas.configure(height=3 * 132)
-            scroll.pack(fill="x", pady=(8, 18))
-            exams = scroll.inner
-        else:
-            exams = tk.Frame(body, bg=BG)
-            exams.pack(fill="x", pady=(8, 18))
+        exams = tk.Frame(body, bg=BG)
+        exams.pack(fill="x", pady=(8, 18))
         self.exam_cards = []
         for col in range(3):
             exams.columnconfigure(col, weight=1, uniform="exam")
@@ -242,7 +233,6 @@ class LauncherWindow:
 
     def _exam_card(self, parent, i, exam):
         letter, color, _ = BRAND.get(exam.code, ("?", PRIMARY, "#eff6ff"))
-        custom = id(exam) in self.custom_ids
         c = card(parent, padx=14, pady=12)
         row, col = divmod(i, 3)
         c.grid(row=row, column=col, sticky="nsew", padx=(0 if col == 0 else 8, 0), pady=(0 if row == 0 else 8, 0))
@@ -254,8 +244,7 @@ class LauncherWindow:
         short, _, code = exam.name.replace("Microsoft ", "").partition(" (")
         tk.Label(names, text=short, bg=CARD, fg=TEXT, font=F(13 if len(short) < 16 else 10, "bold"),
                  wraplength=170, justify="left", anchor="w").pack(anchor="w")
-        tk.Label(names, text="Đề tự soạn" if custom else code.rstrip(")"), bg=CARD,
-                 fg=WARN if custom else MUTED, font=F(9, "bold" if custom else "normal")).pack(anchor="w")
+        tk.Label(names, text=code.rstrip(")"), bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w")
         n_tasks = sum(len(p.tasks) for p in exam.projects)
         tk.Label(c, text=f"{len(exam.projects)} dự án  •  {n_tasks} nhiệm vụ  •  {exam.minutes} phút",
                  bg=CARD, fg=MUTED, font=F(9)).pack(anchor="w", pady=(8, 0))
@@ -438,6 +427,8 @@ class ExamBar:
         for i, p in enumerate(self.s.exam.projects):
             on = i == self.idx
             short = p.name.split("–")[-1].strip()
+            if n > 4:
+                short = short[:12] + ("…" if len(short) > 12 else "")
             tab = tk.Label(self.tabs_frame, text=f"{i + 1}  {short}", font=F(9, "bold"), padx=12, pady=3,
                            bg=CARD if on else DARK_2, fg=TEXT if on else "#cbd5e1", cursor="hand2")
             tab.pack(side="left", padx=3)
@@ -630,7 +621,8 @@ class ResultWindow:
         extent = -359.9 * report["score"] / core.MAX_SCORE
         if extent:
             ring.create_arc(10, 10, 140, 140, start=90, extent=extent, style="arc", outline=color, width=14)
-        ring.create_text(75, 68, text=str(report["score"]), fill=TEXT, font=F(28, "bold"))
+        ring.create_text(75, 68, text=str(report["score"]), fill=TEXT,
+                         font=F(24 if report["score"] >= 1000 else 28, "bold"))
         ring.create_text(75, 98, text="/ 1000", fill=MUTED, font=F(10))
 
         info = tk.Frame(head, bg=CARD)

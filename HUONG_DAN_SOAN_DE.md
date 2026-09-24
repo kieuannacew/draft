@@ -73,9 +73,9 @@ Mở bằng Notepad (hoặc VS Code) và **lưu với mã hóa UTF-8**. Cách d�
 
 | Trường | Ý nghĩa |
 |---|---|
-| `mon` | `WORD`, `EXCEL` hoặc `POWERPOINT` (quyết định biểu tượng và màu) |
-| `ten` | Tên đề hiển thị trong app |
-| `thoi_gian` | Số phút cho chế độ Thi thử (mặc định 50) |
+| `mon` | `WORD`, `EXCEL` hoặc `POWERPOINT`: các dự án sẽ được gộp vào bài thi của môn này |
+| `ten` | Tên đề (không bắt buộc, chỉ hiện khi chạy `kiem_tra_de`) |
+| `thoi_gian` | Không bắt buộc. Trong app, thời gian thi là thời gian của bài thi môn đó (50 phút) |
 | `du_an` | Danh sách dự án; mỗi dự án có một file gốc |
 | `file` | Tên file gốc nằm cùng thư mục với `de.json` |
 | `nhiem_vu` | Danh sách nhiệm vụ: `yeu_cau`, `goi_y`, `cham` |
@@ -95,7 +95,8 @@ Công cụ sẽ báo:
 - **File gốc: ĐÚNG ⚠**: nhiệm vụ đã đúng sẵn khi chưa làm gì, nghĩa là luật chấm quá dễ.
 - **Đáp án: SAI ✗**: làm đúng mà vẫn bị chấm sai. Cần sửa luật, hoặc báo lại cho người viết app.
 
-Khi thấy dòng `KẾT QUẢ: Đề ổn ✓`, mở lại app. Đề mới sẽ hiện trên màn hình chính với nhãn **TỰ SOẠN**.
+Khi thấy dòng `KẾT QUẢ: Đề ổn ✓`, mở lại app. Các dự án trong đề của bạn sẽ được **gộp thẳng vào bài thi
+của môn tương ứng**. Ví dụ đề có `"mon": "EXCEL"` sẽ thành Dự án 3, 4… của bài thi Excel, không hiện thành thẻ riêng.
 
 > Đề cũng có thể đặt ở `C:\Users\<tên>\MOS_Practice\de_thi\`. Khi dùng bản `.exe`, đặt thư mục `de_thi`
 > cạnh file `LuyenThiMOS.exe`.

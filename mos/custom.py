@@ -8,8 +8,10 @@ Mỗi đề là một thư mục con gồm:
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sys
+from dataclasses import replace
 from pathlib import Path
 
 from . import rules
@@ -87,3 +89,27 @@ def load_custom_exams() -> tuple[list[Exam], list[str]]:
             if exam:
                 exams.append(exam)
     return exams, errors
+
+
+def merge_exams(builtin: list[Exam], custom: list[Exam]) -> list[Exam]:
+    """Gộp dự án của đề tự soạn vào đề có sẵn cùng môn (Word/Excel/PowerPoint).
+
+    Dự án được đánh số lại liên tục ("Dự án 3 – …") và tên file trùng được
+    đổi (vd DoanhSo_2.xlsx) để không ghi đè lên nhau trong thư mục làm bài.
+    """
+    merged = []
+    for exam in builtin:
+        projects = list(exam.projects) + [p for c in custom if c.code == exam.code for p in c.projects]
+        used: set[str] = set()
+        renamed = []
+        for i, p in enumerate(projects, start=1):
+            short = re.sub(r"^Dự án\s*\d+\s*[–-]\s*", "", p.name).strip() or p.name
+            stem, dot, ext = p.filename.rpartition(".")
+            filename, n = p.filename, 1
+            while filename.casefold() in used:
+                n += 1
+                filename = f"{stem}_{n}{dot}{ext}"
+            used.add(filename.casefold())
+            renamed.append(replace(p, name=f"Dự án {i} – {short}", filename=filename))
+        merged.append(replace(exam, projects=renamed))
+    return merged
