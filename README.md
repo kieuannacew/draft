@@ -88,17 +88,25 @@ Trang chủ chỉ có **3 môn: Word, Excel, PowerPoint**. Bấm vào một môn
   (tối đa 6 dự án, mỗi lần một khác), không giới hạn giờ, có gợi ý.
 - Đề tự soạn: trong form Soạn đề, mỗi nhiệm vụ có ô **Chương** để xếp vào chương.
 
-## Tài liệu học (bài giảng PowerPoint, xem trong app, không tải về)
+## Tài liệu học: slide, video ngắn, bài tương tác SCORM → thực hành ngay
 
-- Mục **📖 Tài liệu học** ở thanh bên: danh sách bài giảng theo môn / chương, có tiến độ đã xem.
-  Trình xem có ảnh thu nhỏ, phím ← →, ghi chú của giáo viên.
-- Quản trị nhập bài bằng nút **Nhập bài giảng PPTX…** (chọn môn, chương). Trên máy có PowerPoint, từng slide được
-  xuất thành ảnh y như bản gốc; không có PowerPoint thì app tự dựng ảnh đơn giản hơn.
-- File `.pptx` gốc **không** được chép vào app; ảnh slide được đóng gói, mã hóa trong `slides.mosl`, chỉ giải mã khi
-  xem. Không có nút lưu / xuất. (Không chặn được chụp màn hình – phần mềm nào cũng vậy.)
-- Bài giảng đi kèm app nằm trong thư mục `tai_lieu\`; bài quản trị nhập thêm nằm trong thư mục dữ liệu chung.
-- **Video**: nên để giáo viên tự quay/xuất video bằng PowerPoint (*File → Export → Create a Video*) – nhanh, đẹp và
-  không tốn gì; app có thể thêm trình phát video sau.
+Mục **📖 Tài liệu học** ở thanh bên. Quản trị bấm **Thêm bài giảng…**, chọn file, môn và chương:
+
+| Loại | File | Học viên thấy |
+|---|---|---|
+| 🖼 Slide | `.pptx` | từng slide, ảnh thu nhỏ, phím ← →, ghi chú giáo viên (máy có PowerPoint: giống hệt bản gốc) |
+| 🎬 Video ngắn | `.mp4`, `.webm`, `.mov`… | trình phát trong app: phát/dừng, tua, tốc độ 0.75–1.5× |
+| 🧩 Tương tác | gói **SCORM** `.zip` (iSpring, Articulate, Captivate, H5P…) | bài tương tác chạy trong app; app ghi **hoàn thành** và **điểm** |
+
+- Bài có gắn chương có nút **▶ Thực hành ngay**: mở luôn bài luyện các câu của chương đó trên Office thật
+  (hết slide cuối / xem xong video cũng hiện nút này).
+- Không có nút tải về: file gốc không chép vào app, ảnh slide và video được mã hóa, chỉ giải mã trong bộ nhớ khi xem.
+  (Gói SCORM là trang web nên được giải nén trong thư mục bài; không chặn được chụp màn hình.)
+- Có sẵn 2 bài mẫu Word chương 1: slide *Quản lý tài liệu* và trắc nghiệm SCORM *Trắc nghiệm nhanh* (6 câu).
+- Bài đi kèm app nằm trong thư mục `tai_lieu\`; bài quản trị thêm nằm trong thư mục dữ liệu chung.
+- Gợi ý làm video: PowerPoint → *File → Export → Create a Video* (có ghi âm lời giảng), hoặc quay màn hình bằng
+  Clipchamp / OBS; mỗi video 2–5 phút cho một thao tác. Bài SCORM: soạn bằng iSpring Suite (add-in PowerPoint),
+  Articulate, Captivate hoặc H5P rồi xuất **SCORM 1.2 / 2004 dạng .zip**.
 
 ## Tra từ khóa
 
@@ -126,17 +134,17 @@ mos/
   custom.py          ← đọc / lưu đề tự soạn (de_thi/), gộp vào bài thi, kiểm tra đề
   ooxml.py           ← đọc XML bên trong file Office (.docx/.xlsx/.pptx là file ZIP)
   chuong.py          ← chương theo khung MOS, tạo bài luyện theo chương
-  tai_lieu.py        ← bài giảng PPTX: nhập, đóng gói ảnh slide, tiến độ học
+  tai_lieu.py        ← bài giảng (slide PPTX / video / SCORM): nhập, mã hóa, tiến độ, điểm SCORM
   tu_khoa.py         ← thuật ngữ MOS và tìm kiếm (thuật ngữ, câu trong đề, slide)
   qt/                ← giao diện (Qt / PySide6)
     theme.py         ← hệ thống thiết kế: màu, font, stylesheet, thẻ, nút, bảng, vòng điểm
     app.py           ← đăng nhập, khung ứng dụng (thanh bên), trang chủ, lịch sử, thanh làm bài, kết quả
     admin.py         ← Quản trị: tài khoản, đề thi + form soạn đề, kết quả học viên
-    hoc.py           ← Tài liệu học: danh sách bài giảng, trình xem slide, nhập PPTX
+    hoc.py           ← Tài liệu học: danh sách, trình xem slide / video / SCORM, thêm bài giảng
     tra_cuu.py       ← trang Tra từ khóa
   exams/             ← đề có sẵn (word.py, excel.py, powerpoint.py)
 de_thi/              ← đề mẫu tự soạn (de.json + file gốc + dap_an/)
-tai_lieu/            ← bài giảng đi kèm app (bai.json + slides.mosl)
+tai_lieu/            ← bài giảng đi kèm app (bai.json + slides.mosl / video.mosv / scorm/)
 kiem_tra_de.py       ← kiểm tra đề bằng dòng lệnh
 tests/               ← kiểm tra tự động (python -m pytest -q)
 ```

@@ -330,7 +330,7 @@ class Shell(QWidget):
         from . import admin, hoc, tra_cuu
         factories = {
             "lessons": lambda: hoc.LessonsPage(self, **kw),
-            "lesson": lambda: hoc.LessonViewer(self, **kw),
+            "lesson": lambda: hoc.open_viewer(self, **kw),
             "search": lambda: tra_cuu.SearchPage(self, **kw),
             "home": lambda: HomePage(self),
             "history": lambda: HistoryPage(self),
@@ -1277,6 +1277,7 @@ class ExamBar(QWidget):
 def main() -> None:
     if hasattr(Qt, "HighDpiScaleFactorRoundingPolicy"):
         QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_ShareOpenGLContexts)     # cần cho trình duyệt nhúng (bài SCORM)
     app = QApplication.instance() or QApplication(sys.argv)
     app.setApplicationName("Luyện thi MOS")
     app.setStyle("Fusion")

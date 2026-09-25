@@ -1,0 +1,19 @@
+{
+  "id": "word_chuong_1_trac_nghiem_nhanh-cc4aae0477",
+  "loai": "scorm",
+  "ten": "Word – Chương 1: Trắc nghiệm nhanh",
+  "ten_en": "Word – Chapter 1: Quick quiz",
+  "mon": "WORD",
+  "chuong": 1,
+  "mo_ta": "6 câu hỏi ôn nhanh phần Quản lý tài liệu",
+  "nguon": "scorm.zip",
+  "launch": "index.html",
+  "phien_ban": "1.2",
+  "slides": [
+    {
+      "text": "Word – Chương 1: Trắc nghiệm nhanh\nWord – Chapter 1: Quick quiz\n6 câu hỏi ôn nhanh phần Quản lý tài liệu\nWord – Chương 1: Trắc nghiệm nhanh\nQuản lý tài liệu – 6 câu hỏi",
+      "notes": ""
+    }
+  ],
+  "mo_ta_en": "6 quick review questions on Manage documents"
+}

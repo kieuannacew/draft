@@ -1,8 +1,10 @@
 """Tài liệu học (bài giảng PowerPoint) xem ngay trong app, không cho tải về.
 
-Mỗi bài giảng là một thư mục `tai_lieu/<id>/`:
-    bai.json      tên (Việt/Anh), môn, chương, chữ + ghi chú của từng slide (để tra cứu)
-    slides.mosl   ảnh các slide, đóng gói và mã hóa (không mở được bằng trình xem ảnh / PowerPoint)
+Mỗi bài giảng là một thư mục `tai_lieu/<id>/`, có 3 loại ("loai" trong bai.json):
+    slides  bai.json (tên Việt/Anh, môn, chương, chữ + ghi chú từng slide để tra cứu)
+            + slides.mosl: ảnh các slide, đóng gói và mã hóa (không mở được bằng trình xem ảnh / PowerPoint)
+    video   bai.json + video.mosv: video ngắn (mp4…) đã mã hóa, chỉ giải mã trong bộ nhớ khi phát
+    scorm   bai.json + scorm/: gói SCORM 1.2 / 2004 (HTML tương tác) giải nén, "launch" = trang mở đầu
 
 Nhập bài từ file .pptx:
   1. Trên Windows có PowerPoint: PowerPoint xuất từng slide thành ảnh PNG (đẹp y như bản gốc).
@@ -27,6 +29,9 @@ from pathlib import Path
 from .core import DATA_DIR, app_dir
 
 PACK = "slides.mosl"
+VIDEO = "video.mosv"
+SCORM_DIR = "scorm"
+VIDEO_EXT = (".mp4", ".m4v", ".mov", ".webm", ".mkv", ".avi", ".wmv")
 META = "bai.json"
 SLIDE_WIDTH = 1600
 _MAGIC = b"MOSL1"
@@ -49,8 +54,10 @@ def _key(lesson_id: str) -> bytes:
 
 
 def _xor(data: bytes, key: bytes) -> bytes:
+    if not data:
+        return b""
     k = (key * (len(data) // len(key) + 1))[:len(data)]
-    return bytes(a ^ b for a, b in zip(data, k))
+    return (int.from_bytes(data, "little") ^ int.from_bytes(k, "little")).to_bytes(len(data), "little")
 
 
 def pack_slides(folder: Path, lesson_id: str, images: list[bytes]) -> None:
@@ -81,10 +88,22 @@ class Lesson:
     mo_ta: str = ""
     mo_ta_en: str = ""
     slides: list[dict] = field(default_factory=list)   # [{"text": ..., "notes": ...}]
+    loai: str = "slides"                                # slides / video / scorm
+    launch: str = ""                                    # scorm: trang mở đầu (tương đối trong scorm/)
+    phien_ban: str = ""                                 # scorm: "1.2" / "2004"
 
     @property
     def count(self) -> int:
-        return len(self.slides)
+        """Số bước để tính tiến độ: slide = số slide; video / SCORM = 1 (xem hết / hoàn thành)."""
+        return len(self.slides) if self.loai == "slides" else 1
+
+    @property
+    def launch_path(self) -> Path:
+        return self.folder / SCORM_DIR / self.launch
+
+    def video(self) -> bytes:
+        """Dữ liệu video (đã giải mã, chỉ trong bộ nhớ)."""
+        return _xor((self.folder / VIDEO).read_bytes(), _key(self.id))
 
     def image(self, number: int) -> bytes:
         return read_slide(self.folder, self.id, number)
@@ -95,12 +114,16 @@ def load_lesson(folder: Path) -> Lesson | None:
         data = json.loads((folder / META).read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return None
-    if not (folder / PACK).is_file():
+    loai = data.get("loai", "slides")
+    need = {"slides": folder / PACK, "video": folder / VIDEO,
+            "scorm": folder / SCORM_DIR / str(data.get("launch", ""))}.get(loai)
+    if need is None or not need.is_file():
         return None
     return Lesson(id=data.get("id", folder.name), folder=folder, ten=data.get("ten", folder.name),
                   ten_en=data.get("ten_en", ""), mon=str(data.get("mon", "WORD")).upper(),
                   chuong=data.get("chuong"), mo_ta=data.get("mo_ta", ""), mo_ta_en=data.get("mo_ta_en", ""),
-                  slides=list(data.get("slides", [])))
+                  slides=list(data.get("slides", [])), loai=loai, launch=str(data.get("launch", "")),
+                  phien_ban=str(data.get("phien_ban", "")))
 
 
 def list_lessons() -> list[Lesson]:
@@ -370,6 +393,14 @@ def import_pptx(pptx: Path, ten: str, mon: str, chuong: int | None = None, ten_e
             images = export_with_powerpoint(pptx.resolve(), Path(tmp))
     if len(images) != len(slides):
         images = render_basic(pptx)
+    folder, lesson_id = _new_folder(ten, dest_base, pptx)
+    pack_slides(folder, lesson_id, images)
+    return _write_meta(folder, {"id": lesson_id, "loai": "slides", "ten": ten, "ten_en": ten_en,
+                                "mon": mon.upper(), "chuong": chuong, "mo_ta": mo_ta, "nguon": pptx.name,
+                                "slides": slides})
+
+
+def _new_folder(ten: str, dest_base, source: Path) -> tuple[Path, str]:
     base = Path(dest_base) if dest_base else editable_dir()
     slug = _slug(ten)
     folder, n = base / slug, 1
@@ -377,12 +408,121 @@ def import_pptx(pptx: Path, ten: str, mon: str, chuong: int | None = None, ten_e
         n += 1
         folder = base / f"{slug}_{n}"
     folder.mkdir(parents=True)
-    lesson_id = f"{slug}-{hashlib.sha1(pptx.read_bytes()).hexdigest()[:10]}"
-    pack_slides(folder, lesson_id, images)
-    data = {"id": lesson_id, "ten": ten, "ten_en": ten_en, "mon": mon.upper(), "chuong": chuong,
-            "mo_ta": mo_ta, "nguon": pptx.name, "slides": slides}
+    h = hashlib.sha1()
+    if source.is_file():
+        with open(source, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""):
+                h.update(chunk)
+    else:
+        h.update(str(source).encode("utf-8"))
+    return folder, f"{slug}-{h.hexdigest()[:10]}"
+
+
+def _write_meta(folder: Path, data: dict) -> Lesson:
     (folder / META).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    return load_lesson(folder)
+    lesson = load_lesson(folder)
+    if lesson is None:
+        shutil.rmtree(folder, ignore_errors=True)
+        raise ValueError("bài giảng không hợp lệ")
+    return lesson
+
+
+def import_video(video: Path, ten: str, mon: str, chuong: int | None = None, ten_en: str = "",
+                 mo_ta: str = "", dest_base: Path | None = None) -> Lesson:
+    """Nhập một video ngắn: mã hóa và cất trong thư mục bài giảng (không chép file gốc)."""
+    video = Path(video)
+    if video.suffix.lower() not in VIDEO_EXT:
+        raise ValueError(f"không phải file video ({', '.join(VIDEO_EXT)})")
+    folder, lesson_id = _new_folder(ten, dest_base, video)
+    (folder / VIDEO).write_bytes(_xor(video.read_bytes(), _key(lesson_id)))
+    return _write_meta(folder, {"id": lesson_id, "loai": "video", "ten": ten, "ten_en": ten_en,
+                                "mon": mon.upper(), "chuong": chuong, "mo_ta": mo_ta, "nguon": video.name,
+                                "dinh_dang": video.suffix.lower(),
+                                "slides": [{"text": f"{ten}\n{ten_en}\n{mo_ta}".strip(), "notes": ""}]})
+
+
+# ---------------------------------------------------------------- SCORM
+
+
+def _local(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1]
+
+
+def read_manifest(xml: bytes) -> dict:
+    """Đọc imsmanifest.xml → {"launch": trang mở đầu, "phien_ban": "1.2"/"2004", "tieu_de": [...]}."""
+    from xml.etree import ElementTree as ET
+    root = ET.fromstring(xml)
+    text = xml.decode("utf-8", "ignore")
+    version = "2004" if ("2004" in text and "adlcp_v1p3" in text) or "CAM 1.3" in text else "1.2"
+    for el in root.iter():
+        if _local(el.tag) == "schemaversion" and el.text:
+            version = "2004" if ("2004" in el.text or "1.3" in el.text) else "1.2"
+    resources = {}
+    for el in root.iter():
+        if _local(el.tag) == "resource" and el.get("href"):
+            base = next((v for k, v in el.attrib.items() if _local(k) == "base"), "")
+            resources[el.get("identifier")] = (base + el.get("href")).split("?")[0]
+    titles, launch = [], ""
+    for el in root.iter():
+        if _local(el.tag) == "title" and el.text and el.text.strip():
+            titles.append(el.text.strip())
+        if _local(el.tag) == "item" and not launch and el.get("identifierref") in resources:
+            launch = resources[el.get("identifierref")]
+    if not launch and resources:
+        launch = next(iter(resources.values()))
+    if not launch:
+        raise ValueError("imsmanifest.xml không có trang mở đầu (resource href)")
+    return {"launch": launch, "phien_ban": version, "tieu_de": titles}
+
+
+def import_scorm(package: Path, ten: str, mon: str, chuong: int | None = None, ten_en: str = "",
+                 mo_ta: str = "", dest_base: Path | None = None) -> Lesson:
+    """Nhập gói SCORM (.zip hoặc thư mục có imsmanifest.xml)."""
+    package = Path(package)
+    if package.is_dir():
+        man = package / "imsmanifest.xml"
+        if not man.is_file():
+            raise ValueError("thư mục không có imsmanifest.xml")
+        info = read_manifest(man.read_bytes())
+        folder, lesson_id = _new_folder(ten, dest_base, package)
+        shutil.copytree(package, folder / SCORM_DIR)
+    else:
+        with zipfile.ZipFile(package) as z:
+            names = z.namelist()
+            man = next((n for n in names if n.rsplit("/", 1)[-1].lower() == "imsmanifest.xml"), None)
+            if man is None:
+                raise ValueError("file .zip không phải gói SCORM (thiếu imsmanifest.xml)")
+            info = read_manifest(z.read(man))
+            prefix = man[:-len("imsmanifest.xml")]
+            folder, lesson_id = _new_folder(ten, dest_base, package)
+            dest = (folder / SCORM_DIR).resolve()
+            for n in names:
+                if not n.startswith(prefix) or n.endswith("/"):
+                    continue
+                target = (dest / n[len(prefix):]).resolve()
+                if dest not in target.parents:       # chặn đường dẫn "../" trong zip
+                    continue
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(z.read(n))
+    text = "\n".join([ten, ten_en, mo_ta] + info["tieu_de"]).strip()
+    return _write_meta(folder, {"id": lesson_id, "loai": "scorm", "ten": ten, "ten_en": ten_en,
+                                "mon": mon.upper(), "chuong": chuong, "mo_ta": mo_ta, "nguon": package.name,
+                                "launch": info["launch"], "phien_ban": info["phien_ban"],
+                                "slides": [{"text": text, "notes": ""}]})
+
+
+def import_file(path: Path, ten: str, mon: str, chuong: int | None = None, ten_en: str = "",
+                mo_ta: str = "", dest_base: Path | None = None) -> Lesson:
+    """Nhập bài giảng theo đuôi file: .pptx → slide, video → video, .zip / thư mục → SCORM."""
+    path = Path(path)
+    ext = path.suffix.lower()
+    if ext == ".pptx":
+        return import_pptx(path, ten, mon, chuong, ten_en, mo_ta, dest_base)
+    if ext in VIDEO_EXT:
+        return import_video(path, ten, mon, chuong, ten_en, mo_ta, dest_base)
+    if ext == ".zip" or path.is_dir():
+        return import_scorm(path, ten, mon, chuong, ten_en, mo_ta, dest_base)
+    raise ValueError("chỉ nhận .pptx, video (.mp4…) hoặc gói SCORM (.zip)")
 
 
 # ====================================================================== tiến độ học
@@ -411,3 +551,47 @@ def save_progress(user: str | None, lesson_id: str, slide: int) -> None:
         mine[lesson_id] = slide
         _progress_file().parent.mkdir(parents=True, exist_ok=True)
         _progress_file().write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+# ====================================================================== dữ liệu SCORM (cmi.*) của học viên
+
+
+def _scorm_file() -> Path:
+    return DATA_DIR / "scorm_hoc_vien.json"
+
+
+def load_scorm(user: str | None, lesson_id: str) -> dict[str, str]:
+    try:
+        data = json.loads(_scorm_file().read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return dict(data.get(user or "", {}).get(lesson_id, {}))
+
+
+def save_scorm(user: str | None, lesson_id: str, cmi: dict[str, str]) -> None:
+    """Lưu dữ liệu cmi.* mà bài SCORM gửi về; hoàn thành / đạt → tính là đã học."""
+    try:
+        data = json.loads(_scorm_file().read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        data = {}
+    data.setdefault(user or "", {})[lesson_id] = {k: str(v) for k, v in cmi.items()}
+    _scorm_file().parent.mkdir(parents=True, exist_ok=True)
+    _scorm_file().write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    if scorm_done(cmi):
+        save_progress(user, lesson_id, 1)
+
+
+def scorm_done(cmi: dict) -> bool:
+    status = {str(cmi.get(k, "")).lower() for k in ("cmi.core.lesson_status", "cmi.completion_status",
+                                                     "cmi.success_status")}
+    return bool(status & {"completed", "passed"})
+
+
+def scorm_score(cmi: dict) -> str:
+    """Điểm bài SCORM dạng chữ (vd "80/100"), rỗng nếu chưa có."""
+    raw = cmi.get("cmi.core.score.raw") or cmi.get("cmi.score.raw")
+    if raw in (None, ""):
+        scaled = cmi.get("cmi.score.scaled")
+        return f"{round(float(scaled) * 100)}%" if scaled not in (None, "") else ""
+    top = cmi.get("cmi.core.score.max") or cmi.get("cmi.score.max") or "100"
+    return f"{raw}/{top}"

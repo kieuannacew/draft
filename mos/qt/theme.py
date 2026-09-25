@@ -206,6 +206,10 @@ def stylesheet(family: str, heading: str | None = None) -> str:
     /* ---------- thanh tiến độ */
     QProgressBar {{ background: #E8E6DC; border: none; border-radius: 4px; max-height: 8px; min-height: 8px; }}
     QProgressBar::chunk {{ background: {SUCCESS}; border-radius: 4px; }}
+    QSlider::groove:horizontal {{ background: #E8E6DC; height: 6px; border-radius: 3px; }}
+    QSlider::sub-page:horizontal {{ background: {FOREST}; border-radius: 3px; }}
+    QSlider::handle:horizontal {{ background: {SURFACE}; border: 2px solid {FOREST}; width: 14px; height: 14px;
+                                  margin: -6px 0; border-radius: 9px; }}
     QProgressBar[tone="warn"]::chunk {{ background: #C98A1B; }}
     QProgressBar[tone="danger"]::chunk {{ background: {DANGER}; }}
     QProgressBar[tone="xp"] {{ background: rgba(255,255,255,0.18); max-height: 10px; min-height: 10px;

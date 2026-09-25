@@ -10,6 +10,7 @@ from .. import core, tai_lieu, tu_khoa
 from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
 from ..i18n import is_en, pick, tr
+from . import hoc
 from . import theme as T
 from .app import _clear_page, esc, exam_name, page_body
 from .theme import GOLD_SOFT, PRIMARY_SOFT, Card, button, chip, label
@@ -125,11 +126,15 @@ class SearchPage(QScrollArea):
         c.lay.addWidget(T.badge(h.lesson.mon, 30))
         col = QVBoxLayout()
         col.setSpacing(2)
-        col.addWidget(label(tr("{lesson} · slide {n}").format(lesson=pick(h.lesson.ten, h.lesson.ten_en), n=h.number),
-                            "h3"))
+        name = pick(h.lesson.ten, h.lesson.ten_en)
+        if h.lesson.loai == "slides":
+            title = tr("{lesson} · slide {n}").format(lesson=name, n=h.number)
+        else:
+            title = f"{name} · {hoc.kind_name(h.lesson.loai)}"
+        col.addWidget(label(title, "h3"))
         col.addWidget(label(esc(h.snippet), "caption", wrap=True))
         c.lay.addLayout(col, 1)
-        c.lay.addWidget(button(tr("Xem slide"), lambda: self.shell.go("lesson", lesson=h.lesson, start=h.number),
+        c.lay.addWidget(button(tr("Xem slide") if h.lesson.loai == "slides" else tr("Mở bài"), lambda: self.shell.go("lesson", lesson=h.lesson, start=h.number),
                                "ghost", "sm"))
         return c
 

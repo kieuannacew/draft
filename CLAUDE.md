@@ -26,8 +26,10 @@ mos/i18n.py             song ngữ: tr("chữ Việt") tra mos/i18n_en.json; pic
 mos/dich_de.json        bộ nhớ dịch cho bộ đề nhập (đề bài Anh→Việt, gợi ý Việt→Anh)
 mos/gamify.py           XP, cấp độ, chuỗi ngày, huy hiệu, sao, mẹo mỗi ngày (tính từ history)
 mos/chuong.py           chương theo khung MOS (CHAPTERS), count_tasks, practice_exam (chế độ "chapter")
-mos/tai_lieu.py         bài giảng PPTX: import_pptx (PowerPoint COM → PNG, không có thì render_basic bằng Qt),
-                        ảnh slide mã hóa trong slides.mosl + bai.json; tiến độ học tien_do_hoc.json
+mos/tai_lieu.py         bài giảng, "loai" slides/video/scorm; import_file theo đuôi: import_pptx (PowerPoint COM →
+                        PNG, không có thì render_basic bằng Qt; ảnh mã hóa slides.mosl), import_video (video.mosv mã
+                        hóa XOR), import_scorm (.zip/thư mục có imsmanifest.xml → scorm/, read_manifest lấy launch);
+                        tiến độ tien_do_hoc.json, dữ liệu cmi.* scorm_hoc_vien.json
 mos/tu_khoa.py          thuật ngữ MOS song ngữ (_GLOSSARY), fold() bỏ dấu, search_terms/search_tasks/search_slides
 mos/ooxml.py            đọc XML trong file .docx/.xlsx/.pptx (ZIP)
 mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(path) -> bool
@@ -35,7 +37,9 @@ mos/qt/theme.py         hệ thống thiết kế Forest Canopy: màu, QSS, Card
                         LevelBadge, stars, badge_tile, lang_switch, Confetti, hộp thoại
 mos/qt/app.py           đăng nhập, Shell (sidebar + trang), Home, History, Result, ExamBar (thanh làm bài)
 mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ExamEditor, RuleDialog, CheckReportDialog
-mos/qt/hoc.py           LessonsPage (Tài liệu học), LessonViewer (xem slide, không lưu/xuất), ImportLessonDialog
+mos/qt/hoc.py           LessonsPage, open_viewer → LessonViewer (slide) / VideoViewer (QtMultimedia, phát từ QBuffer) /
+                        ScormViewer (QtWebEngine, profile ẩn danh chặn tải; API SCORM 1.2+2004 giả lập bằng JS,
+                        gửi cmi về qua console.log "MOS_SCORM:"); practice_button = "Thực hành ngay"; ImportLessonDialog
 mos/qt/tra_cuu.py       SearchPage (Tra từ khóa)
 kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
 nhap_de.py / .bat       nhập bộ đề bằng dòng lệnh / kéo thả
@@ -53,7 +57,8 @@ python -m pytest -q                 # phải pass hết
 python -m pyflakes mos main.py kiem_tra_de.py
 QT_QPA_PLATFORM=offscreen python ...   # chạy/chụp giao diện Qt không cần màn hình: widget.grab().save(...)
 ```
-Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcommon0 libfontconfig1`.
+Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcommon0 libfontconfig1 libpulse0 libnss3`
+(QtWebEngine chạy offscreen dưới root cần `QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox`).
 
 ## Quy ước
 - Chữ trên giao diện, docstring, thông báo lỗi: **tiếng Việt**. Tên biến/hàm theo code hiện có.
