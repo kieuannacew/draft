@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QFil
 
 from .. import chuong, core, custom, nhap_de, rules
 from ..i18n import is_en, pick, role_name, tr
-from ..accounts import ROLE_NAMES, STUDENT, AccountError
+from ..accounts import ROLE_NAMES, STUDENT, TEACHER, AccountError
 from . import theme as T
 from .app import _banner, mode_name, page_body
 from .theme import (DANGER, DANGER_SOFT, MUTED, SUCCESS, SUCCESS_SOFT, WARN, WARN_SOFT, Card, button, chip,
@@ -216,7 +216,8 @@ class UserDialog(_Dialog):
             self.password = self.field(tr("Mật khẩu"), QLineEdit(_random_password()), tr("Đã tạo ngẫu nhiên, có thể sửa."))
         self.role = QComboBox()
         for key, name in ROLE_NAMES.items():
-            self.role.addItem(role_name(name), key)
+            if key != TEACHER or (acc and acc.vai_tro == TEACHER):     # giáo viên chỉ dùng ở chế độ Lớp học
+                self.role.addItem(role_name(name), key)
         self.role.setCurrentIndex(self.role.findData(acc.vai_tro if acc else STUDENT))
         self.field(tr("Vai trò"), self.role)
         self.han = self.field(tr("Hạn dùng (tuỳ chọn)"), QLineEdit((acc.han_dung or "") if acc else ""),

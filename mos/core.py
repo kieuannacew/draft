@@ -197,11 +197,16 @@ def load_history(user: str | None = None) -> list[dict]:
     return history if user is None else [h for h in history if h.get("user") == user]
 
 
+def history_entry(report: dict) -> dict:
+    """Bản ghi lịch sử (không kèm chi tiết từng câu) của một lần chấm."""
+    entry = {k: v for k, v in report.items() if k not in ("results", "xp", "new_badges")}
+    entry["wrong"] = [f"{r.project}: {r.task}" for r in report.get("results", []) if r.correct is False]
+    return entry
+
+
 def save_history(report: dict) -> None:
     history = load_history()
-    entry = {k: v for k, v in report.items() if k != "results"}
-    entry["wrong"] = [f"{r.project}: {r.task}" for r in report["results"] if r.correct is False]
-    history.append(entry)
+    history.append(history_entry(report))
     HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
     HISTORY_FILE.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
 

@@ -108,6 +108,15 @@ Mục **📖 Tài liệu học** ở thanh bên. Quản trị bấm **Thêm bài
   Clipchamp / OBS; mỗi video 2–5 phút cho một thao tác. Bài SCORM: soạn bằng iSpring Suite (add-in PowerPoint),
   Articulate, Captivate hoặc H5P rồi xuất **SCORM 1.2 / 2004 dạng .zip**.
 
+## Lớp học trực tuyến (giáo viên quản lý học sinh ở mọi nơi)
+
+Học sinh tải app về laptop, **đăng ký bằng mã lớp**; điểm và tiến độ học tự gửi lên máy chủ (Supabase, miễn phí),
+giáo viên xem ở mục **🏫 Lớp học**: bảng điểm cả lớp, chi tiết từng học sinh, xuất Excel, đặt lại mật khẩu.
+Mất mạng vẫn học được, điểm gửi sau. Vai trò: **Quản trị** (người đăng ký đầu tiên) · **Giáo viên** · **Học viên**.
+
+👉 Cách tạo máy chủ, từng bước có hình dung: **[HUONG_DAN_MAY_CHU.md](HUONG_DAN_MAY_CHU.md)**.
+Không cấu hình máy chủ thì app chạy ngoại tuyến như cũ (tài khoản trên từng máy).
+
 ## Tra từ khóa
 
 Mục **🔎 Tra từ khóa**: gõ tên lệnh tiếng Anh hoặc tiếng Việt (không cần dấu, vd `hinh mo`, `freeze panes`) → xem
@@ -136,14 +145,17 @@ mos/
   chuong.py          ← chương theo khung MOS, tạo bài luyện theo chương
   tai_lieu.py        ← bài giảng (slide PPTX / video / SCORM): nhập, mã hóa, tiến độ, điểm SCORM
   tu_khoa.py         ← thuật ngữ MOS và tìm kiếm (thuật ngữ, câu trong đề, slide)
+  lop_hoc.py         ← Lớp học trực tuyến: kết nối Supabase, hàng đợi gửi điểm, báo cáo lớp, xuất Excel
   qt/                ← giao diện (Qt / PySide6)
     theme.py         ← hệ thống thiết kế: màu, font, stylesheet, thẻ, nút, bảng, vòng điểm
     app.py           ← đăng nhập, khung ứng dụng (thanh bên), trang chủ, lịch sử, thanh làm bài, kết quả
     admin.py         ← Quản trị: tài khoản, đề thi + form soạn đề, kết quả học viên
     hoc.py           ← Tài liệu học: danh sách, trình xem slide / video / SCORM, thêm bài giảng
     tra_cuu.py       ← trang Tra từ khóa
+    lop.py           ← trang Lớp học, Tài khoản máy chủ, Đăng ký bằng mã lớp, Cài đặt máy chủ
   exams/             ← đề có sẵn (word.py, excel.py, powerpoint.py)
 de_thi/              ← đề mẫu tự soạn (de.json + file gốc + dap_an/)
+may_chu/             ← supabase_lop_hoc.sql: cài đặt máy chủ Lớp học (chạy 1 lần trong Supabase)
 tai_lieu/            ← bài giảng đi kèm app (bai.json + slides.mosl / video.mosv / scorm/)
 kiem_tra_de.py       ← kiểm tra đề bằng dòng lệnh
 tests/               ← kiểm tra tự động (python -m pytest -q)

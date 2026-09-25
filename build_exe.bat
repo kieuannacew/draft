@@ -8,6 +8,8 @@ where py >nul 2>nul || set PY=python
 rem Chep kem thu muc de thi (de mau + bo de da nhap) canh file .exe
 xcopy /e /i /y /q de_thi dist\de_thi >nul
 xcopy /e /i /y /q tai_lieu dist\tai_lieu >nul
+xcopy /e /i /y /q may_chu dist\may_chu >nul
+if exist cau_hinh.json copy /y cau_hinh.json dist\ >nul
 echo.
 echo Xong! File chay: dist\LuyenThiMOS.exe (chep ca thu muc dist\de_thi va dist\tai_lieu di kem)
 pause

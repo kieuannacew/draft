@@ -76,7 +76,7 @@ def tr(text: str) -> str:
     return english().get(text, text)
 
 
-ROLE_EN = {"Quản trị": "Admin", "Học viên": "Student"}
+ROLE_EN = {"Quản trị": "Admin", "Giáo viên": "Teacher", "Học viên": "Student"}
 
 
 def role_name(vi: str) -> str:

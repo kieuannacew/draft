@@ -238,8 +238,9 @@ def render_basic(pptx: Path, width: int = SLIDE_WIDTH) -> list[bytes]:
     from PySide6.QtGui import QColor, QFont, QFontDatabase, QFontMetricsF, QGuiApplication, QImage, QPainter, QPen
 
     global _QT_APP
-    if QGuiApplication.instance() is None:
-        _QT_APP = QGuiApplication([])   # cần để vẽ chữ khi chạy ngoài giao diện
+    if QGuiApplication.instance() is None:   # cần để vẽ chữ khi chạy ngoài giao diện; dùng QApplication để
+        from PySide6.QtWidgets import QApplication   # sau đó vẫn tạo được cửa sổ / widget trong cùng tiến trình
+        _QT_APP = QApplication([])
     families = set(QFontDatabase.families())
     prs = Presentation(str(pptx))
     sw, sh = prs.slide_width or 12192000, prs.slide_height or 6858000
@@ -541,7 +542,8 @@ def load_progress(user: str | None) -> dict[str, int]:
     return data.get(user or "", {})
 
 
-def save_progress(user: str | None, lesson_id: str, slide: int) -> None:
+def save_progress(user: str | None, lesson_id: str, slide: int) -> bool:
+    """Ghi slide xa nhất đã xem; True nếu tiến độ tăng."""
     try:
         data = json.loads(_progress_file().read_text(encoding="utf-8"))
     except (OSError, ValueError):
@@ -551,6 +553,8 @@ def save_progress(user: str | None, lesson_id: str, slide: int) -> None:
         mine[lesson_id] = slide
         _progress_file().parent.mkdir(parents=True, exist_ok=True)
         _progress_file().write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+        return True
+    return False
 
 
 # ====================================================================== dữ liệu SCORM (cmi.*) của học viên

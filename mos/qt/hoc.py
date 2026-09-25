@@ -55,6 +55,13 @@ def _start_practice(shell, lesson):
         shell.start_exam(exam, "chapter")
 
 
+def _sync(shell, lesson, xem: int, xong: bool, diem: str = "") -> None:
+    """Gửi tiến độ học lên máy chủ lớp học (nếu có)."""
+    fn = getattr(shell, "sync_lesson", None)
+    if fn:
+        fn(lesson, xem, xong, diem)
+
+
 def open_viewer(shell, lesson, start: int = 1) -> QWidget:
     """Trình xem phù hợp với loại bài giảng."""
     if lesson.loai == "video":
@@ -300,7 +307,8 @@ class LessonViewer(QWidget):
         self.thumbs.blockSignals(True)
         self.thumbs.setCurrentRow(n - 1)
         self.thumbs.blockSignals(False)
-        tai_lieu.save_progress(self.shell.account.username, self.lesson.id, n)
+        if tai_lieu.save_progress(self.shell.account.username, self.lesson.id, n):
+            _sync(self.shell, self.lesson, n, n >= self.lesson.count)
         if n == self.lesson.count and n > 1:
             T.Confetti(self.view, count=60, seconds=2.2)
 
@@ -460,6 +468,7 @@ class VideoViewer(QWidget):
             return
         self.done = True
         tai_lieu.save_progress(self.shell.account.username, self.lesson.id, 1)
+        _sync(self.shell, self.lesson, 1, True)
         self.end_banner.setVisible(practice_exam(self.lesson) is not None)
         T.Confetti(self.video, count=50, seconds=2.0)
 
@@ -608,6 +617,7 @@ class ScormViewer(QWidget):
         self.cmi = data
         if kind in ("commit", "finish") or (tai_lieu.scorm_done(data) and not was_done):
             tai_lieu.save_scorm(self.user, self.lesson.id, data)
+            _sync(self.shell, self.lesson, 1, tai_lieu.scorm_done(data), tai_lieu.scorm_score(data))
         self._show_status()
         if tai_lieu.scorm_done(data) and not was_done:
             T.Confetti(self, count=60, seconds=2.2)

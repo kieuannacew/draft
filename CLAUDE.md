@@ -30,6 +30,10 @@ mos/tai_lieu.py         bài giảng, "loai" slides/video/scorm; import_file the
                         PNG, không có thì render_basic bằng Qt; ảnh mã hóa slides.mosl), import_video (video.mosv mã
                         hóa XOR), import_scorm (.zip/thư mục có imsmanifest.xml → scorm/, read_manifest lấy launch);
                         tiến độ tien_do_hoc.json, dữ liệu cmi.* scorm_hoc_vien.json
+mos/lop_hoc.py          Lớp học trực tuyến (Supabase qua urllib): load_server/save_server (cau_hinh.json "may_chu" cạnh
+                        app, hoặc ~/MOS_Practice/may_chu.json), Cloud (auth + PostgREST + RPC, tự refresh token,
+                        CloudError/OfflineError thông báo tiếng Việt), hàng đợi cho_dong_bo.json (queue_result/
+                        queue_progress/flush/flush_in_background), summarize, export_excel
 mos/tu_khoa.py          thuật ngữ MOS song ngữ (_GLOSSARY), fold() bỏ dấu, search_terms/search_tasks/search_slides
 mos/ooxml.py            đọc XML trong file .docx/.xlsx/.pptx (ZIP)
 mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(path) -> bool
@@ -41,6 +45,11 @@ mos/qt/hoc.py           LessonsPage, open_viewer → LessonViewer (slide) / Vide
                         ScormViewer (QtWebEngine, profile ẩn danh chặn tải; API SCORM 1.2+2004 giả lập bằng JS,
                         gửi cmi về qua console.log "MOS_SCORM:"); practice_button = "Thực hành ngay"; ImportLessonDialog
 mos/qt/tra_cuu.py       SearchPage (Tra từ khóa)
+mos/qt/lop.py           ClassPage (giáo viên: lớp, mã lớp, bảng điểm; học sinh: vào lớp), OnlineAccountsPage (quản trị),
+                        RegisterDialog, ServerDialog; err_text/busy/act cho thao tác mạng
+may_chu/supabase_lop_hoc.sql  bảng ho_so/lop/thanh_vien/ket_qua/tien_do + RLS + RPC (vao_lop, tao_lop, lop_cua_toi,
+                        luu_tien_do, dat_vai_tro, dat_khoa, dat_lai_mat_khau, xoa_tai_khoan…); chạy lại được
+HUONG_DAN_MAY_CHU.md    hướng dẫn người dùng tạo Supabase
 kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
 nhap_de.py / .bat       nhập bộ đề bằng dòng lệnh / kéo thả
 de_thi/Excel_Mau/       đề mẫu (de.json + file gốc + dap_an/)
@@ -48,7 +57,10 @@ de_thi/Word365_DeThucTe_De_01..10/  bộ đề Word 365 đã nhập (luật word
 tai_lieu/<bài>/          bài giảng đi kèm app (bai.json + slides.mosl); bài nhập thêm ở DATA_DIR/tai_lieu
 tests/                  pytest
 ```
-Dữ liệu người dùng (không nằm trong repo): `~/MOS_Practice/` → `tai_khoan.json`, `history.json`, `de_thi/`, `work/`.
+Dữ liệu người dùng (không nằm trong repo): `~/MOS_Practice/` → `tai_khoan.json`, `history.json`, `de_thi/`, `work/`,
+`tai_lieu/`, `tien_do_hoc.json`, `scorm_hoc_vien.json`, `cho_dong_bo.json` (hàng đợi gửi lên máy chủ lớp học).
+Chế độ Lớp học: tài khoản thật trên Supabase; `tai_khoan.json` giữ bản sao (Account.nguon="may_chu") để đăng nhập
+lúc mất mạng. Vai trò: quan_tri / giao_vien (chỉ dùng khi có máy chủ) / hoc_vien.
 
 ## Lệnh
 ```bash
@@ -82,4 +94,9 @@ Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcomm
 - Nhiệm vụ có chương: `Task(..., chapter=N)` (đề có sẵn) hoặc `"chuong": N` trong de.json; bộ đề nhập lấy chương
   từ domain. Chương mới / đổi tên chương sửa trong `mos/chuong.py`.
 - Thuật ngữ tra cứu mới: thêm dòng vào `_GLOSSARY` trong `mos/tu_khoa.py` (Việt + Anh + đường dẫn menu).
+- **Lớp học trực tuyến**: đổi cấu trúc máy chủ thì sửa `may_chu/supabase_lop_hoc.sql` (phải chạy lại được nhiều lần,
+  quyền qua RLS/RPC, không tin client) + `tests/test_lop_hoc.py`. Test tích hợp chạy trên Postgres + PostgREST thật
+  với auth giả (`tests/supabase_gia.py`), cần `MOS_TEST_PG` + `POSTGREST_BIN`; thiếu thì tự bỏ qua. Trên cloud:
+  `apt-get install -y postgresql-16 && service postgresql start`, đặt mật khẩu postgres, tải PostgREST (github
+  releases, bản linux-static-x64). Không bao giờ đưa khóa service_role vào app.
 - Hàm chấm trả `None` = không chấm tự động (hiện "Tự kiểm tra", không tính điểm).

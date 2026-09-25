@@ -1,8 +1,12 @@
 """Tài khoản người dùng (lưu trong DATA_DIR/tai_khoan.json).
 
 Vai trò:
-  * quan_tri – giáo viên: tạo/khóa tài khoản, soạn đề, xem kết quả mọi người.
+  * quan_tri – quản trị: tạo/khóa tài khoản, soạn đề, xem kết quả mọi người.
+  * giao_vien – giáo viên (chế độ Lớp học trực tuyến): tạo lớp, xem kết quả học sinh lớp mình.
   * hoc_vien – chỉ làm bài và xem kết quả của mình.
+
+Khi dùng máy chủ lớp học (mos/lop_hoc.py), tài khoản thật nằm trên máy chủ; máy chỉ giữ bản sao (mirror) để
+đăng nhập được lúc mất mạng.
 
 Lần chạy đầu tiên tự tạo tài khoản quản trị  admin / admin  và bắt đổi mật khẩu
 khi đăng nhập. Mật khẩu không lưu dạng chữ mà lưu mã băm PBKDF2 + salt.
@@ -21,8 +25,8 @@ from pathlib import Path
 from .core import DATA_DIR
 from .i18n import tr
 
-ADMIN, STUDENT = "quan_tri", "hoc_vien"
-ROLE_NAMES = {ADMIN: "Quản trị", STUDENT: "Học viên"}
+ADMIN, TEACHER, STUDENT = "quan_tri", "giao_vien", "hoc_vien"
+ROLE_NAMES = {ADMIN: "Quản trị", TEACHER: "Giáo viên", STUDENT: "Học viên"}
 DEFAULT_ADMIN = ("admin", "admin")
 USERNAME_RE = re.compile(r"[a-z0-9_.]{3,32}")
 MIN_PASSWORD = 4
@@ -40,10 +44,16 @@ class Account:
     han_dung: str | None = None        # "YYYY-MM-DD" – hết hạn sau ngày này
     doi_mat_khau: bool = False         # bắt đổi mật khẩu ở lần đăng nhập tới
     tao_luc: str = ""
+    nguon: str = ""                    # "may_chu" = bản sao tài khoản trên máy chủ lớp học
 
     @property
     def is_admin(self) -> bool:
         return self.vai_tro == ADMIN
+
+    @property
+    def is_teacher(self) -> bool:
+        """Giáo viên hoặc quản trị: quản lý lớp học."""
+        return self.vai_tro in (ADMIN, TEACHER)
 
     def expired(self, today: date | None = None) -> bool:
         return bool(self.han_dung) and (today or date.today()) > date.fromisoformat(self.han_dung)
@@ -134,6 +144,21 @@ class AccountStore:
             raise AccountError("Không thể xóa tài khoản quản trị cuối cùng.")
         del self.accounts[acc.username]
         self.save()
+
+    def mirror(self, username: str, ho_ten: str, vai_tro: str, password: str) -> Account:
+        """Lưu bản sao tài khoản máy chủ (đăng nhập được khi mất mạng). Không kiểm tra độ dài mật khẩu."""
+        username = username.strip().lower()
+        acc = self.accounts.get(username)
+        if acc is None:
+            acc = Account(username, ho_ten or username, tao_luc=datetime.now().strftime("%Y-%m-%d %H:%M"))
+            self.accounts[username] = acc
+        acc.ho_ten = ho_ten or acc.ho_ten
+        acc.vai_tro = vai_tro if vai_tro in ROLE_NAMES else STUDENT
+        acc.khoa, acc.doi_mat_khau, acc.han_dung, acc.nguon = False, False, None, "may_chu"
+        salt = os.urandom(16)
+        acc.salt, acc.hash = salt.hex(), _hash(password, salt)
+        self.save()
+        return acc
 
     def authenticate(self, username: str, password: str) -> Account:
         acc = self.get(username)

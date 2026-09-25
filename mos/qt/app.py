@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (QApplication, QButtonGroup, QDialog, QFrame, QGri
                                QLineEdit, QMainWindow, QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
                                QVBoxLayout, QWidget)
 
-from .. import chuong, core, gamify, i18n, nhap_de
+from .. import chuong, core, gamify, i18n, lop_hoc, nhap_de
 from ..accounts import ROLE_NAMES, AccountError, AccountStore
 from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
@@ -130,9 +130,13 @@ class LoginPage(QWidget):
         lay.addSpacing(14)
         lay.addWidget(button(tr("Đăng nhập"), self.login, "primary", "lg"))
 
+        self.server = lop_hoc.load_server()
         store = main.store
         admin = store.get("admin")
-        if admin and admin.doi_mat_khau and len(store.accounts) == 1:
+        if self.server:
+            lay.addSpacing(10)
+            lay.addWidget(button(tr("Chưa có tài khoản? Đăng ký bằng mã lớp"), self.register, "ghost"))
+        elif admin and admin.doi_mat_khau and len(store.accounts) == 1:
             lay.addSpacing(16)
             tip = QFrame()
             tip.setObjectName("Banner")
@@ -147,6 +151,14 @@ class LoginPage(QWidget):
         foot.setStyleSheet("color: rgba(255,255,255,0.7);")
         outer.addWidget(foot, 0, Qt.AlignCenter)
         outer.addStretch(1)
+        bottom = QHBoxLayout()
+        state = label(("🌐  " + tr("Lớp học trực tuyến")) if self.server else ("💻  " + tr("Dùng trên máy này")),
+                      "caption")
+        state.setStyleSheet("color: rgba(255,255,255,0.7);")
+        bottom.addWidget(state)
+        bottom.addStretch()
+        bottom.addWidget(button("⚙  " + tr("Máy chủ lớp học"), self.server_settings, "side", "sm"))
+        outer.addLayout(bottom)
 
         self.user.returnPressed.connect(self.pw.setFocus)
         self.pw.returnPressed.connect(self.login)
@@ -155,22 +167,67 @@ class LoginPage(QWidget):
         super().showEvent(e)
         self.user.setFocus()
 
+    def _error(self, text: str) -> None:
+        self.err.setText(text)
+        self.err.show()
+
     def login(self):
+        if self.server:
+            return self._login_online(self.user.text().strip().lower(), self.pw.text())
         try:
             acc = self.main.store.authenticate(self.user.text(), self.pw.text())
         except AccountError as exc:
-            self.err.setText(tr(str(exc)))
-            self.err.show()
+            self._error(tr(str(exc)))
             return
         self.err.hide()
         self.pw.clear()
         self.main.enter(acc)
 
+    def _login_online(self, user: str, pw: str):
+        """Đăng nhập máy chủ lớp học; mất mạng thì dùng bản sao tài khoản đã lưu trên máy."""
+        from .lop import err_text
+        cloud = lop_hoc.Cloud(**self.server)
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        try:
+            profile = cloud.login(user, pw)
+        except lop_hoc.OfflineError:
+            QApplication.restoreOverrideCursor()
+            acc = self.main.store.get(user)
+            if acc is None or acc.nguon != "may_chu":
+                return self._error(tr("Không kết nối được máy chủ lớp học. Kiểm tra mạng Internet."))
+            try:
+                acc = self.main.store.authenticate(user, pw)
+            except AccountError as exc:
+                return self._error(tr(str(exc)))
+            self.pw.clear()
+            T.info(self, tr("Ngoại tuyến"), tr("Không kết nối được máy chủ – bạn đang học ngoại tuyến. Bài làm được lưu "
+                                               "trên máy và tự gửi cho giáo viên khi đăng nhập lại lúc có mạng."))
+            return self.main.enter(acc)
+        except lop_hoc.CloudError as exc:
+            QApplication.restoreOverrideCursor()
+            return self._error(err_text(exc))
+        QApplication.restoreOverrideCursor()
+        self.err.hide()
+        self.pw.clear()
+        self.main.enter_online(cloud, profile, pw)
+
+    def register(self):
+        from .lop import RegisterDialog
+        dlg = RegisterDialog(self, self.server)
+        if dlg.exec() and dlg.result_data:
+            cloud, profile, _, pw = dlg.result_data
+            self.main.enter_online(cloud, profile, pw)
+
+    def server_settings(self):
+        from .lop import ServerDialog
+        if ServerDialog(self).exec():
+            self.main.logout()
+
 
 class ChangePasswordDialog(QDialog):
-    def __init__(self, parent, store: AccountStore, acc, forced=False):
+    def __init__(self, parent, store: AccountStore, acc, forced=False, cloud=None):
         super().__init__(parent)
-        self.store, self.acc, self.forced = store, acc, forced
+        self.store, self.acc, self.forced, self.cloud = store, acc, forced, cloud
         self.setWindowTitle(tr("Đổi mật khẩu"))
         self.setMinimumWidth(420)
         lay = QVBoxLayout(self)
@@ -216,9 +273,19 @@ class ChangePasswordDialog(QDialog):
                 raise AccountError("Hai lần nhập mật khẩu mới không giống nhau.")
             if self.forced and self.new.text() == "admin":
                 raise AccountError("Hãy chọn mật khẩu khác mật khẩu mặc định.")
+            if self.acc.nguon == "may_chu" and lop_hoc.load_server():   # tài khoản lớp học: đổi trên máy chủ trước
+                if self.cloud is None:
+                    raise AccountError("Cần kết nối máy chủ lớp học để đổi mật khẩu.")
+                if len(self.new.text()) < lop_hoc.MIN_PASSWORD:
+                    raise AccountError("Mật khẩu phải có ít nhất 6 ký tự.")
+                self.cloud.change_password(self.new.text())
             self.store.set_password(self.acc.username, self.new.text())
         except AccountError as exc:
             self.err.setText(tr(str(exc)))
+            return
+        except lop_hoc.CloudError as exc:
+            from .lop import err_text
+            self.err.setText(err_text(exc))
             return
         self.accept()
 
@@ -239,7 +306,8 @@ class Shell(QWidget):
         self.content = QStackedWidget()
         lay.addWidget(self.content, 1)
         self.current = None
-        self.go(page if page in ("home", "history", "lessons", "search", "accounts", "exams", "results") else "home")
+        self.go(page if page in ("home", "history", "lessons", "search", "lop", "accounts", "exams", "results")
+                else "home")
 
     # ------------------------------------------------------------ thanh bên
     def _sidebar(self) -> QWidget:
@@ -286,13 +354,16 @@ class Shell(QWidget):
         nav("lessons", "📖", tr("Tài liệu học"))
         nav("search", "🔎", tr("Tra từ khóa"))
         nav("history", "📈", tr("Lịch sử của tôi"))
+        if self.main.online:
+            nav("lop", "🏫", tr("Lớp học"))
         if self.account.is_admin:
             lay.addSpacing(18)
             lay.addWidget(label(tr("QUẢN TRỊ"), "overline"))
             lay.addSpacing(4)
             nav("accounts", "👥", tr("Tài khoản"))
             nav("exams", "📝", tr("Đề thi"))
-            nav("results", "📊", tr("Kết quả học viên"))
+            if not self.main.online:
+                nav("results", "📊", tr("Kết quả học viên"))
         lay.addStretch()
 
         lang_row = QHBoxLayout()
@@ -318,6 +389,10 @@ class Shell(QWidget):
                               "caption"))
         top.addLayout(names, 1)
         ml.addLayout(top)
+        if self.main.online:
+            net = label(("🌐  " + tr("Đã kết nối lớp học")) if self.main.cloud else ("📡  " + tr("Ngoại tuyến")),
+                        "caption")
+            ml.addWidget(net)
         row = QHBoxLayout()
         row.addWidget(button(tr("Mật khẩu"), self.change_password, "side"))
         row.addWidget(button(tr("Đăng xuất"), self.main.logout, "side"))
@@ -327,15 +402,16 @@ class Shell(QWidget):
 
     # ------------------------------------------------------------ điều hướng
     def go(self, key: str, **kw) -> None:
-        from . import admin, hoc, tra_cuu
+        from . import admin, hoc, lop, tra_cuu
         factories = {
+            "lop": lambda: lop.ClassPage(self, **kw),
             "lessons": lambda: hoc.LessonsPage(self, **kw),
             "lesson": lambda: hoc.open_viewer(self, **kw),
             "search": lambda: tra_cuu.SearchPage(self, **kw),
             "home": lambda: HomePage(self),
             "history": lambda: HistoryPage(self),
             "result": lambda: ResultPage(self, **kw),
-            "accounts": lambda: admin.AccountsPage(self),
+            "accounts": lambda: (lop.OnlineAccountsPage(self) if self.main.online else admin.AccountsPage(self)),
             "exams": lambda: admin.ExamsPage(self),
             "results": lambda: admin.ResultsPage(self),
         }
@@ -357,7 +433,13 @@ class Shell(QWidget):
             self.nav.setExclusive(True)
 
     def change_password(self):
-        ChangePasswordDialog(self, self.main.store, self.account).exec()
+        ChangePasswordDialog(self, self.main.store, self.account, cloud=self.main.cloud).exec()
+
+    # ------------------------------------------------------------ gửi dữ liệu lên lớp học
+    def sync_lesson(self, lesson, xem: int, xong: bool, diem: str = "") -> None:
+        if self.main.online:
+            lop_hoc.queue_progress(self.account.username, lesson.id, lesson.ten, xem, lesson.count, xong, diem)
+            lop_hoc.flush_in_background(self.main.cloud, self.account.username)
 
     # ------------------------------------------------------------ làm bài
     def start_exam(self, exam, mode) -> None:
@@ -371,6 +453,12 @@ class Shell(QWidget):
         self.bar.show()
 
     def show_result(self, session, report) -> None:
+        if self.main.online:
+            try:
+                lop_hoc.queue_result(self.account.username, core.history_entry(report))
+            except OSError:
+                pass
+            lop_hoc.flush_in_background(self.main.cloud, self.account.username)
         self.main.show()
         self.main.raise_()
         self.main.activateWindow()
@@ -382,6 +470,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.store = store
         self.account = None
+        self.cloud: lop_hoc.Cloud | None = None      # phiên máy chủ lớp học (None = ngoại tuyến)
         self.setWindowTitle(tr("Luyện thi MOS"))
         self.setWindowIcon(app_icon())
         self.resize(1280, 820)
@@ -398,9 +487,24 @@ class MainWindow(QMainWindow):
             self.stack.removeWidget(old)
             old.deleteLater()
 
+    @property
+    def online(self) -> bool:
+        """Đang dùng chế độ Lớp học trực tuyến (đã cấu hình máy chủ)."""
+        return lop_hoc.load_server() is not None
+
     def logout(self):
+        if self.cloud:
+            self.cloud.logout()
         self.account = None
+        self.cloud = None
         self._set(LoginPage(self))
+
+    def enter_online(self, cloud, profile: dict, password: str):
+        """Đăng nhập máy chủ thành công: lưu bản sao tài khoản trên máy rồi vào app, gửi dữ liệu đang chờ."""
+        acc = self.store.mirror(profile["username"], profile.get("ho_ten", ""), profile.get("vai_tro", ""), password)
+        self.cloud = cloud
+        self.enter(acc)
+        lop_hoc.flush_in_background(cloud, acc.username)
 
     def enter(self, acc, page: str = "home"):
         if acc.doi_mat_khau:
