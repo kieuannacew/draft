@@ -1,0 +1,228 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 7: Nâng cao (Expert) – Đề 1",
+  "ten_en": "Word – Chapter 7: Advanced (Expert) – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_7_De_1",
+  "dau_vet": "eaf26dd3136f562a",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Space (Expert)",
+      "ten_en": "Project 1 – Space (Expert)",
+      "file": "C7D1_P1_Space_Expert.docx",
+      "mo_ta": "Mở file C7D1_P1_Space_Expert.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C7D1_P1_Space_Expert.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục tùy chỉnh (custom table of contents) hiển thị 2 cấp tiêu đề và gồm các mục định dạng style Subtitle ở TOC level 3.",
+          "yeu_cau_en": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 2 heading levels and includes entries formatted with the Subtitle style at TOC level 3.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới banner tiêu đề.  2) References > Table of Contents > Custom Table of Contents > Show levels: 2.  3) Options… > tìm Subtitle, nhập 3 vào ô TOC level > OK > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph right below the title banner.  2) References > Table of Contents > Custom Table of Contents > Show levels: 2.  3) Options… > find Subtitle, type 3 in its TOC level box > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_toc",
+            "de_bai": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 2 heading levels and includes entries formatted with the Subtitle style at TOC level 3."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Tạo paragraph style mới tên “Key Point” dùng phông Verdana, 12 pt, nghiêng, khoảng cách sau đoạn 12 pt. Áp dụng style cho đoạn văn bắt đầu bằng “Shows start every hour and last …”.",
+          "yeu_cau_en": "Create a new paragraph style named “Key Point” that uses the Verdana font, 12 pt, italic, with 12 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “Shows start every hour and last …”.",
+          "goi_y": "1) Đặt con trỏ trong đoạn cần áp dụng.  2) Home > Styles pane (Ctrl+Alt+Shift+S) > New Style.  3) Name: Key Point; Style type: Paragraph; Font: Verdana, 12, Italic.  4) Format > Paragraph > Spacing After: 12 pt > OK > OK (style được áp dụng vào đoạn hiện tại).",
+          "goi_y_en": "1) Put the cursor in the paragraph to format.  2) Home > Styles pane (Ctrl+Alt+Shift+S) > New Style.  3) Name: Key Point; Style type: Paragraph; Font: Verdana, 12, Italic.  4) Format > Paragraph > Spacing After: 12 pt > OK > OK (the style is applied to the current paragraph).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_style_new",
+            "de_bai": "Create a new paragraph style named “Key Point” that uses the Verdana font, 12 pt, italic, with 12 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “Shows start every hour and last …”."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Trong đoạn trống ở cuối tài liệu, chèn trường (field) SaveDate. Dùng định dạng ngày hiển thị dd/MM/yyyy.",
+          "yeu_cau_en": "In the blank paragraph at the end of the document, insert the SaveDate field. Use the date format that displays the date as dd/MM/yyyy.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống cuối tài liệu.  2) Insert > Quick Parts > Field > Field names: SaveDate.  3) Date formats: nhập dd/MM/yyyy > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the document.  2) Insert > Quick Parts > Field > Field names: SaveDate.  3) Date formats: type dd/MM/yyyy > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fields",
+            "de_bai": "In the blank paragraph at the end of the document, insert the SaveDate field. Use the date format that displays the date as dd/MM/yyyy."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Đặt ngôn ngữ soát lỗi (proofing language) cho toàn bộ tài liệu là Vietnamese.",
+          "yeu_cau_en": "Set the proofing language for the entire document to Vietnamese.",
+          "goi_y": "1) Ctrl+A.  2) Review > Language > Set Proofing Language > chọn Vietnamese > OK.",
+          "goi_y_en": "1) Ctrl+A.  2) Review > Language > Set Proofing Language > Vietnamese > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "language",
+            "de_bai": "Set the proofing language for the entire document to Vietnamese."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Thay mọi chỗ dùng style Heading 3 trong tài liệu bằng style Heading 2.",
+          "yeu_cau_en": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+          "goi_y": "1) Home > Replace > More >> > để trống Find what và Replace with.  2) Đặt con trỏ ở ô Find what > Format > Style > Heading 3 > OK.  3) Đặt con trỏ ở ô Replace with > Format > Style > Heading 2 > OK > Replace All.",
+          "goi_y_en": "1) Home > Replace > More >> > leave Find what and Replace with empty.  2) Put the cursor in Find what > Format > Style > Heading 3 > OK.  3) Put the cursor in Replace with > Format > Style > Heading 2 > OK > Replace All.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_style",
+            "de_bai": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+            "goc": {
+              "n": 3
+            }
+          },
+          "chuong": 7
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Energy (Expert)",
+      "ten_en": "Project 2 – Energy (Expert)",
+      "file": "C7D1_P2_Energy_Expert.docx",
+      "mo_ta": "Mở file C7D1_P2_Energy_Expert.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C7D1_P2_Energy_Expert.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Thêm tiêu đề alt text “Energy table” cho bảng trong mục “Partners”.",
+          "yeu_cau_en": "Add the alt text title “Energy table” to the table in the “Partners” section.",
+          "goi_y": "1) Nhấp phải bảng > Table Properties > tab Alt Text.  2) Title: Energy table > OK.",
+          "goi_y_en": "1) Right-click the table > Table Properties > Alt Text tab.  2) Title: Energy table > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "alt_table",
+            "de_bai": "Add the alt text title “Energy table” to the table in the “Partners” section."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Bắt đầu trộn thư (mail merge) kiểu Letters. Dùng workbook Recipients_Energy.xlsx trong thư mục Files làm danh sách người nhận. Trong đoạn bắt đầu bằng “Dear”, chèn trường trộn First_Name giữa chữ “Dear” và dấu phẩy.",
+          "yeu_cau_en": "Start a Letters mail merge. Use the Recipients_Energy.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma.",
+          "goi_y": "1) Mailings > Start Mail Merge > Letters.  2) Select Recipients > Use an Existing List > chọn Recipients_Energy.xlsx > sheet Recipients$ > OK.  3) Đặt con trỏ giữa \"Dear \" và dấu phẩy > Insert Merge Field > First_Name.",
+          "goi_y_en": "1) Mailings > Start Mail Merge > Letters.  2) Select Recipients > Use an Existing List > choose Recipients_Energy.xlsx > sheet Recipients$ > OK.  3) Put the cursor between \"Dear \" and the comma > Insert Merge Field > First_Name.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "mailmerge",
+            "de_bai": "Start a Letters mail merge. Use the Recipients_Energy.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Trong mục “Introduction”, tắt Widow/Orphan control cho hai đoạn văn sau tiêu đề và giữ các dòng của mỗi đoạn liền nhau (Keep lines together).",
+          "yeu_cau_en": "In the “Introduction” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together.",
+          "goi_y": "1) Chọn hai đoạn.  2) Home > Paragraph dialog > Line and Page Breaks: bỏ Widow/Orphan control; tích Keep lines together > OK.",
+          "goi_y_en": "1) Select the two paragraphs.  2) Home > Paragraph dialog > Line and Page Breaks: clear Widow/Orphan control; check Keep lines together > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "widow",
+            "de_bai": "In the “Introduction” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Sửa style Heading 1 để dùng cỡ 22 pt, đậm, màu chữ Orange, Accent 2, Darker 25%. Chỉ áp dụng thay đổi cho tài liệu này.",
+          "yeu_cau_en": "Modify the Heading 1 style so that it uses 22 pt, bold, Orange, Accent 2, Darker 25% font color. Apply the changes to this document only.",
+          "goi_y": "1) Home > Styles > nhấp phải Heading 1 > Modify.  2) Size: 22; Bold; Color: Orange, Accent 2, Darker 25%.  3) Chọn Only in this document > OK.",
+          "goi_y_en": "1) Home > Styles > right-click Heading 1 > Modify.  2) Size: 22; Bold; Color: Orange, Accent 2, Darker 25%.  3) Choose Only in this document > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "modify_style",
+            "de_bai": "Modify the Heading 1 style so that it uses 22 pt, bold, Orange, Accent 2, Darker 25% font color. Apply the changes to this document only."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Đánh dấu mọi lần xuất hiện của chữ “Green Volt Energy” làm mục chỉ mục (index entry). Sau đó, trong đoạn trống ở cuối tài liệu, chèn chỉ mục (index) định dạng Modern, hai cột.",
+          "yeu_cau_en": "Mark all occurrences of the text “Green Volt Energy” as index entries. Then, in the blank paragraph at the end of the document, insert an index that uses the Modern format and two columns.",
+          "goi_y": "1) Chọn một cụm \"Green Volt Energy\" > References > Mark Entry (Alt+Shift+X) > Mark All > Close.  2) Home > Show/Hide ¶ để tắt ký hiệu (tránh lệch trang).  3) Đặt con trỏ vào đoạn trống cuối tài liệu > References > Insert Index > Formats: Modern; Columns: 2 > OK.",
+          "goi_y_en": "1) Select one \"Green Volt Energy\" > References > Mark Entry (Alt+Shift+X) > Mark All > Close.  2) Home > Show/Hide ¶ to hide the marks (so pages do not shift).  3) Put the cursor in the blank paragraph at the end of the document > References > Insert Index > Formats: Modern; Columns: 2 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "index",
+            "de_bai": "Mark all occurrences of the text “Green Volt Energy” as index entries. Then, in the blank paragraph at the end of the document, insert an index that uses the Modern format and two columns.",
+            "goc": {
+              "n": 6
+            }
+          },
+          "chuong": 7
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Weekdays (Expert)",
+      "ten_en": "Project 3 – Weekdays (Expert)",
+      "file": "C7D1_P3_Weekdays_Expert.docx",
+      "mo_ta": "Mở file C7D1_P3_Weekdays_Expert.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C7D1_P3_Weekdays_Expert.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Tạo character style tên “Key Term” dùng chữ đậm, màu Dark Red. Áp dụng style cho chữ “Today, the seven-day week is used almost everywhere in the world.”.",
+          "yeu_cau_en": "Create a character style named “Key Term” that uses bold, Dark Red font color. Apply the style to the text “Today, the seven-day week is used almost everywhere in the world.”.",
+          "goi_y": "1) Chọn câu văn.  2) Styles pane > New Style.  3) Name: Key Term; Style type: Character; Bold; Font color: Dark Red > OK.",
+          "goi_y_en": "1) Select the sentence.  2) Styles pane > New Style.  3) Name: Key Term; Style type: Character; Bold; Font color: Dark Red > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style_new",
+            "de_bai": "Create a character style named “Key Term” that uses bold, Dark Red font color. Apply the style to the text “Today, the seven-day week is used almost everywhere in the world.”."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Thêm số dòng (line numbers) cho tài liệu, đánh lại từ đầu ở mỗi trang.",
+          "yeu_cau_en": "Add line numbers to the document that restart on each page.",
+          "goi_y": "Layout > Line Numbers > Restart Each Page.",
+          "goi_y_en": "Layout > Line Numbers > Restart Each Page.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_numbers",
+            "de_bai": "Add line numbers to the document that restart on each page."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Liên kết text box trong mục “Moaning about Mondays” với text box trống trong mục “Which Day of the Week Is the Favourite?” để phần chữ tràn chảy sang text box thứ hai.",
+          "yeu_cau_en": "Link the text box in the “Moaning about Mondays” section to the empty text box in the “Which Day of the Week Is the Favourite?” section so that the overflow text flows into the second text box.",
+          "goi_y": "1) Chọn text box thứ nhất.  2) Shape Format > Create Link (con trỏ đổi thành bình).  3) Bấm vào text box trống thứ hai.",
+          "goi_y_en": "1) Select the first text box.  2) Shape Format > Create Link (the cursor becomes a pitcher).  3) Click the empty second text box.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "link_textbox",
+            "de_bai": "Link the text box in the “Moaning about Mondays” section to the empty text box in the “Which Day of the Week Is the Favourite?” section so that the overflow text flows into the second text box."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Ở cuối đoạn “Name:” ở cuối tài liệu, chèn content control Date Picker. Đặt Title của control là “Name”.",
+          "yeu_cau_en": "At the end of the paragraph “Name:” at the end of the document, insert a Date Picker content control. Set the title of the control to “Name”.",
+          "goi_y": "1) File > Options > Customize Ribbon > tích Developer (nếu chưa có tab Developer).  2) Đặt con trỏ sau \"Name: \" ở cuối tài liệu.  3) Developer > Date Picker Content Control > Properties > Title: Name > OK.",
+          "goi_y_en": "1) File > Options > Customize Ribbon > check Developer (if the Developer tab is not shown).  2) Put the cursor after \"Name: \" at the end of the document.  3) Developer > Date Picker Content Control > Properties > Title: Name > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "content_control",
+            "de_bai": "At the end of the paragraph “Name:” at the end of the document, insert a Date Picker content control. Set the title of the control to “Name”."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Tạo bộ theme font tùy chỉnh tên “Weekdays Fonts” dùng Century Gothic cho tiêu đề và Garamond cho nội dung.",
+          "yeu_cau_en": "Create a custom theme font set named “Weekdays Fonts” that uses Century Gothic as the heading font and Garamond as the body font.",
+          "goi_y": "1) Design > Fonts > Customize Fonts.  2) Heading font: Century Gothic; Body font: Garamond; Name: Weekdays Fonts > Save.",
+          "goi_y_en": "1) Design > Fonts > Customize Fonts.  2) Heading font: Century Gothic; Body font: Garamond; Name: Weekdays Fonts > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_fonts",
+            "de_bai": "Create a custom theme font set named “Weekdays Fonts” that uses Century Gothic as the heading font and Garamond as the body font."
+          },
+          "chuong": 7
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "Recipients_Energy.xlsx"
+  ],
+  "chuong": 7
+}

@@ -2581,6 +2581,35 @@ def _(d, t, g):
     return dr is not None and bool(m) and _has_effect(_sppr(dr), m.group(1))
 
 
+def _local_els(root, name):
+    return [x for x in root.iter() if isinstance(x.tag, str) and etree.QName(x).localname == name]
+
+
+@grader("pic_correct")
+def _(d, t, g):
+    """Corrections (độ sáng / tương phản) + đổi màu ảnh (Saturation, Grayscale, Sepia)."""
+    m = re.search(r"Brightness: ([+-]?\d+)%.*?Contrast: ([+-]?\d+)%", t)
+    dr = _pic(d, t)
+    if not m:
+        return None
+    if dr is None:
+        return False
+    want = (int(m.group(1)) * 1000, int(m.group(2)) * 1000)
+    got = [(_int(x.get("bright"), 0), _int(x.get("contrast"), 0))
+           for x in _local_els(dr, "brightnessContrast") + _local_els(dr, "lum")]
+    if want not in got:
+        return False
+    sat = re.search(r"Saturation: (\d+)%", t)
+    if sat and int(sat.group(1)) * 1000 not in [_int(x.get("sat"), -1) for x in _local_els(dr, "saturation")]:
+        return False
+    if "Grayscale" in t and not (_local_els(dr, "grayscl")
+                                 or 0 in [_int(x.get("sat"), -1) for x in _local_els(dr, "saturation")]):
+        return False
+    if "Sepia" in t and not _local_els(dr, "duotone"):
+        return False
+    return True
+
+
 PIC_STYLES = {
     "soft edge rectangle": lambda sp: sp.find(".//a:softEdge", NS) is not None,
     "center shadow rectangle": lambda sp: sp.find(".//a:outerShdw", NS) is not None,
@@ -2753,6 +2782,13 @@ def _(d, t, g):
 
 @grader("textbox_type")
 def _(d, t, g):
+    val = norm(quotes(t)[-1])
+    return any(val in norm(txbx_text(dr)) for dr in sec_objects(d, t, "wps"))
+
+
+@grader("textbox_builtin")
+def _(d, t, g):
+    """Chèn text box dựng sẵn (Insert > Text Box) chứa câu yêu cầu, trong section đó."""
     val = norm(quotes(t)[-1])
     return any(val in norm(txbx_text(dr)) for dr in sec_objects(d, t, "wps"))
 
@@ -3172,6 +3208,15 @@ def _(d, t, g):
     return bool(c_id and p_id) and any(c.get("srcId") == p_id and c.get("destId") == c_id for c in cxns)
 
 
+@grader("sa_move")
+def _(d, t, g):
+    q = quotes(t)
+    item, before = norm(q[1]), norm(q[2])
+    dr = _dgm(d, t)
+    order = _dgm_order(d, dr) if dr is not None else []
+    return item in order and before in order and order.index(item) < order.index(before)
+
+
 @grader("sa_rtl")
 def _(d, t, g):
     dr = _dgm(d, t)
@@ -3211,6 +3256,9 @@ def _(d, t, g):
             continue
         if st and SA_STYLES.get(norm(st.group(1))) and not _id_is(_unique_id(d, parts.get("qs")),
                                                                   SA_STYLES[norm(st.group(1))]):
+            continue
+        co = re.search(r"Change the colors to (.+?)\.?$", t)
+        if co and _sa_color_id(co.group(1)) and not _id_is(_unique_id(d, parts.get("cs")), _sa_color_id(co.group(1))):
             continue
         return True
     return False

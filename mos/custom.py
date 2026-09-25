@@ -94,7 +94,7 @@ def load_exam(folder: Path) -> tuple[Exam | None, list[str]]:
         return None, errors
     return Exam(code=mon, name=data.get("ten", folder.name), projects=projects,
                 minutes=int(data.get("thoi_gian", 50)), standalone=bool(data.get("rieng")),
-                name_en=data.get("ten_en", "")), []
+                name_en=data.get("ten_en", ""), chapter=_chapter(data.get("chuong"))), []
 
 
 def load_custom_exams() -> tuple[list[Exam], list[str]]:

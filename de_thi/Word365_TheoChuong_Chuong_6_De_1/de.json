@@ -1,0 +1,190 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 6: Cộng tác (comment, theo dõi thay đổi) – Đề 1",
+  "ten_en": "Word – Chapter 6: Manage document collaboration – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_6_De_1",
+  "dau_vet": "afd922379dcf5537",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Robotics",
+      "ten_en": "Project 1 – Robotics",
+      "file": "C6D1_P1_Robotics.docx",
+      "mo_ta": "Mở file C6D1_P1_Robotics.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C6D1_P1_Robotics.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Bật Track Changes và khóa theo dõi để người khác không tắt được. Dùng mật khẩu “MOS”.",
+          "yeu_cau_en": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “MOS” as the password.",
+          "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập mật khẩu MOS hai lần > OK (Track Changes tự bật).",
+          "goi_y_en": "1) Review > Track Changes arrow > Lock Tracking.  2) Enter the password MOS twice > OK (Track Changes turns on automatically).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_lock",
+            "de_bai": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “MOS” as the password."
+          },
+          "chuong": 6
+        },
+        {
+          "yeu_cau": "Xóa mọi comment trong tài liệu.",
+          "yeu_cau_en": "Delete all comments in the document.",
+          "goi_y": "Review > mũi tên Delete > Delete All Comments in Document.",
+          "goi_y_en": "Review > Delete arrow > Delete All Comments in Document.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_delete_all",
+            "de_bai": "Delete all comments in the document."
+          },
+          "chuong": 6
+        },
+        {
+          "yeu_cau": "Trong mục “Safety”, thêm bình luận (comment) cho chữ “wear safety glasses” với nội dung “Check this figure.”.",
+          "yeu_cau_en": "In the “Safety” section, add a comment to the text “wear safety glasses” that says “Check this figure.”.",
+          "goi_y": "1) Chọn \"wear safety glasses\".  2) Review > New Comment.  3) Gõ \"Check this figure.\" > Post (Ctrl+Enter).",
+          "goi_y_en": "1) Select \"wear safety glasses\".  2) Review > New Comment.  3) Type \"Check this figure.\" > Post (Ctrl+Enter).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_add",
+            "de_bai": "In the “Safety” section, add a comment to the text “wear safety glasses” that says “Check this figure.”.",
+            "goc": {
+              "n": 2,
+              "done": 0
+            }
+          },
+          "chuong": 6
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Resume",
+      "ten_en": "Project 2 – Resume",
+      "file": "C6D1_P2_Resume.docx",
+      "mo_ta": "Mở file C6D1_P2_Resume.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C6D1_P2_Resume.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Chấp nhận mọi phần chèn và xóa đang được theo dõi (tracked). Từ chối mọi thay đổi định dạng.",
+          "yeu_cau_en": "Accept all tracked insertions and deletions. Reject all formatting changes.",
+          "goi_y": "1) Review > Show Markup > bỏ tích Formatting (chỉ còn hiện Insertions and Deletions).  2) Review > Accept > Accept All Changes Shown.  3) Review > Show Markup > tích lại Formatting.  4) Review > Reject > Reject All Changes (lúc này chỉ còn các thay đổi định dạng).",
+          "goi_y_en": "1) Review > Show Markup > clear Formatting (only Insertions and Deletions stay visible).  2) Review > Accept > Accept All Changes Shown.  3) Review > Show Markup > check Formatting again.  4) Review > Reject > Reject All Changes (only formatting changes are left now).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_accept",
+            "de_bai": "Accept all tracked insertions and deletions. Reject all formatting changes.",
+            "goc": {
+              "ins": [
+                " for all customers"
+              ],
+              "del": [
+                "Singapore focused"
+              ],
+              "fmt": 1
+            }
+          },
+          "chuong": 6
+        },
+        {
+          "yeu_cau": "Trả lời bình luận gắn với chữ “managed social media” với nội dung “Done.”.",
+          "yeu_cau_en": "Reply to the comment attached to the text “managed social media” with the text “Done.”.",
+          "goi_y": "1) Bấm vào comment.  2) Ô Reply: gõ \"Done.\" > Post.",
+          "goi_y_en": "1) Click the comment.  2) Reply box: type \"Done.\" > Post.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_reply",
+            "de_bai": "Reply to the comment attached to the text “managed social media” with the text “Done.”.",
+            "goc": {
+              "n": 1,
+              "done": 0
+            }
+          },
+          "chuong": 6
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Recycle",
+      "ten_en": "Project 3 – Recycle",
+      "file": "C6D1_P3_Recycle.docx",
+      "mo_ta": "Mở file C6D1_P3_Recycle.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C6D1_P3_Recycle.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Bật Track Changes. Sau đó thay từ “collected” bằng “COLLECTED”. Để Track Changes vẫn bật.",
+          "yeu_cau_en": "Turn on Track Changes. Then, replace the word “collected” with “COLLECTED”. Leave Track Changes turned on.",
+          "goi_y": "1) Review > Track Changes (bật, For Everyone).  2) Tìm từ \"collected\", chọn và gõ đè \"COLLECTED\".  3) Không tắt Track Changes.",
+          "goi_y_en": "1) Review > Track Changes (turn on, For Everyone).  2) Find the word \"collected\", select it and type \"COLLECTED\" over it.  3) Do not turn off Track Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_on",
+            "de_bai": "Turn on Track Changes. Then, replace the word “collected” with “COLLECTED”. Leave Track Changes turned on."
+          },
+          "chuong": 6
+        },
+        {
+          "yeu_cau": "Trong mục “What Cannot Be Recycled?”, xóa bình luận gắn với chữ “collection”.",
+          "yeu_cau_en": "In the “What Cannot Be Recycled?” section, delete the comment that is attached to the text “collection”.",
+          "goi_y": "1) Bấm vào comment đó.  2) Review > Delete (hoặc … > Delete thread).",
+          "goi_y_en": "1) Click that comment.  2) Review > Delete (or … > Delete thread).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_delete",
+            "de_bai": "In the “What Cannot Be Recycled?” section, delete the comment that is attached to the text “collection”.",
+            "goc": {
+              "n": 1,
+              "done": 0
+            }
+          },
+          "chuong": 6
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – Weekdays",
+      "ten_en": "Project 4 – Weekdays",
+      "file": "C6D1_P4_Weekdays.docx",
+      "mo_ta": "Mở file C6D1_P4_Weekdays.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C6D1_P4_Weekdays.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Which Day of the Week Is the Favourite?”, đánh dấu đã giải quyết (Resolve) bình luận.",
+          "yeu_cau_en": "In the “Which Day of the Week Is the Favourite?” section, resolve the comment.",
+          "goi_y": "1) Bấm vào comment.  2) Bấm … (More thread actions) > Resolve thread.",
+          "goi_y_en": "1) Click the comment.  2) Click … (More thread actions) > Resolve thread.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_resolve",
+            "de_bai": "In the “Which Day of the Week Is the Favourite?” section, resolve the comment.",
+            "goc": {
+              "n": 1,
+              "done": 0
+            }
+          },
+          "chuong": 6
+        },
+        {
+          "yeu_cau": "Chấp nhận phần chèn đang theo dõi của chữ “every week”. Từ chối mọi thay đổi đang theo dõi khác trong tài liệu.",
+          "yeu_cau_en": "Accept the tracked insertion of the text “every week”. Reject all other tracked changes in the document.",
+          "goi_y": "1) Bấm vào đoạn chèn \"every week\" > Review > Accept > Accept This Change.  2) Review > Reject > Reject All Changes.",
+          "goi_y_en": "1) Click the inserted text \"every week\" > Review > Accept > Accept This Change.  2) Review > Reject > Reject All Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_reject",
+            "de_bai": "Accept the tracked insertion of the text “every week”. Reject all other tracked changes in the document.",
+            "goc": {
+              "ins": [
+                " every week"
+              ],
+              "del": [
+                "god Saturn"
+              ],
+              "fmt": 1
+            }
+          },
+          "chuong": 6
+        }
+      ]
+    }
+  ],
+  "chuong": 6
+}

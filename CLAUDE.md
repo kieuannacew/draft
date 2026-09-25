@@ -54,6 +54,8 @@ kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
 nhap_de.py / .bat       nhập bộ đề bằng dòng lệnh / kéo thả
 de_thi/Excel_Mau/       đề mẫu (de.json + file gốc + dap_an/)
 de_thi/Word365_DeThucTe_De_01..10/  bộ đề Word 365 đã nhập (luật word_mau_de)
+de_thi/Word365_TheoChuong_Chuong_<c>_De_<k>/  14 đề theo chương ("chuong" ở cấp đề → Exam.chapter; chỉ hiện ở chế độ
+                        Luyện theo chương), sinh bằng Cong_cu_sinh_de của Mít tin học (chọn câu cùng domain), phủ 183 dạng
 tai_lieu/<bài>/          bài giảng đi kèm app (bai.json + slides.mosl); bài nhập thêm ở DATA_DIR/tai_lieu
 tests/                  pytest
 ```

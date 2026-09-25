@@ -1,0 +1,266 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 3: Bảng và danh sách – Đề 2",
+  "ten_en": "Word – Chapter 3: Manage tables and lists – Test 2",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_3_De_2",
+  "dau_vet": "b78ed4b2e613cdca",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Bakery",
+      "ten_en": "Project 1 – Bakery",
+      "file": "C3D2_P1_Bakery.docx",
+      "mo_ta": "Mở file C3D2_P1_Bakery.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D2_P1_Bakery.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Pastry Platters”, áp dụng table style Grid Table 4 - Accent 1 cho bảng.",
+          "yeu_cau_en": "In the “Pastry Platters” section, apply the Grid Table 4 - Accent 1 table style to the table.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > Grid Table 4 - Accent 1.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Design > Table Styles > Grid Table 4 - Accent 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_style",
+            "de_bai": "In the “Pastry Platters” section, apply the Grid Table 4 - Accent 1 table style to the table."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Pastry Platters”, đổi màu nền (shading) của hàng tiêu đề bảng thành Gold, Accent 4.",
+          "yeu_cau_en": "In the “Pastry Platters” section, change the shading of the header row of the table to Gold, Accent 4.",
+          "goi_y": "1) Chọn hàng tiêu đề của bảng.  2) Table Design > Shading > Gold, Accent 4.",
+          "goi_y_en": "1) Select the table's header row.  2) Table Design > Shading > Gold, Accent 4.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_shading",
+            "de_bai": "In the “Pastry Platters” section, change the shading of the header row of the table to Gold, Accent 4."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Pastry Platters”, đặt khoảng cách giữa các ô của bảng là 0.05\" (0.13 cm).",
+          "yeu_cau_en": "In the “Pastry Platters” section, set the spacing between the cells of the table to 0.05\" (0.13 cm).",
+          "goi_y": "1) Đặt con trỏ trong bảng > Table Layout > Cell Margins.  2) Tích Allow spacing between cells: 0.05\" > OK.",
+          "goi_y_en": "1) Put the cursor in the table > Table Layout > Cell Margins.  2) Check Allow spacing between cells: 0.05\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cell_spacing",
+            "de_bai": "In the “Pastry Platters” section, set the spacing between the cells of the table to 0.05\" (0.13 cm)."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Thiết lập bảng trong mục “Pastry Platters” để hàng tiêu đề lặp lại ở đầu mỗi trang.",
+          "yeu_cau_en": "Configure the table in the “Pastry Platters” section so that the header row repeats at the top of each page.",
+          "goi_y": "1) Đặt con trỏ vào hàng tiêu đề của bảng.  2) Table Layout > Repeat Header Rows.",
+          "goi_y_en": "1) Put the cursor in the table's header row.  2) Table Layout > Repeat Header Rows.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "repeat_header",
+            "de_bai": "Configure the table in the “Pastry Platters” section so that the header row repeats at the top of each page."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Computer",
+      "ten_en": "Project 2 – Computer",
+      "file": "C3D2_P2_Computer.docx",
+      "mo_ta": "Mở file C3D2_P2_Computer.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D2_P2_Computer.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Computer Connections”, sắp xếp dữ liệu bảng theo “Price ($)” tăng dần.",
+          "yeu_cau_en": "In the “Computer Connections” section, sort the table data by “Price ($)” in ascending order.",
+          "goi_y": "1) Table Layout > Sort; My list has: Header row.  2) Sort by: Price ($); Type: Number; Ascending > OK.",
+          "goi_y_en": "1) Table Layout > Sort; My list has: Header row.  2) Sort by: Price ($); Type: Number; Ascending > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sort_table",
+            "de_bai": "In the “Computer Connections” section, sort the table data by “Price ($)” in ascending order."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “What Parts Are Needed for a Computer to Work?”, đổi định dạng số của danh sách đánh số thành A..",
+          "yeu_cau_en": "In the “What Parts Are Needed for a Computer to Work?” section, change the number format of the numbered list to A..",
+          "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn A. (hoặc Define New Number Format).",
+          "goi_y_en": "1) Select the list.  2) Home > Numbering arrow > choose A. (or Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "num_format",
+            "de_bai": "In the “What Parts Are Needed for a Computer to Work?” section, change the number format of the numbered list to A.."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “History of the Computer”, đổi danh sách đánh số để bắt đầu từ 5.",
+          "yeu_cau_en": "In the “History of the Computer” section, change the numbered list so that it starts at 5.",
+          "goi_y": "1) Nhấp phải vào mục đầu tiên của danh sách > Set Numbering Value.  2) Start new list; Set value to: 5 > OK.",
+          "goi_y_en": "1) Right-click the first item of the list > Set Numbering Value.  2) Start new list; Set value to: 5 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restart_num",
+            "de_bai": "In the “History of the Computer” section, change the numbered list so that it starts at 5."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Chuyển bảng bắt đầu bằng “Department” ở gần đầu tài liệu thành văn bản. Phân tách bằng tab.",
+          "yeu_cau_en": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Tabs > OK.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > Convert to Text > Tabs > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_to_text",
+            "de_bai": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+            "goc": {
+              "rows": [
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Recycle",
+      "ten_en": "Project 3 – Recycle",
+      "file": "C3D2_P3_Recycle.docx",
+      "mo_ta": "Mở file C3D2_P3_Recycle.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D2_P3_Recycle.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Get Involved”, xóa cột “Recycling rate (%)” khỏi bảng.",
+          "yeu_cau_en": "In the “Get Involved” section, delete the “Recycling rate (%)” column from the table.",
+          "goi_y": "1) Đặt con trỏ trong cột \"Recycling rate (%)\".  2) Table Layout > Delete > Delete Columns.",
+          "goi_y_en": "1) Put the cursor in the \"Recycling rate (%)\" column.  2) Table Layout > Delete > Delete Columns.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "delete_col",
+            "de_bai": "In the “Get Involved” section, delete the “Recycling rate (%)” column from the table.",
+            "goc": {
+              "cols": 3
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Áp dụng table style Grid Table 1 Light cho bảng bắt đầu bằng “Date”. Bỏ chọn tùy chọn Header Row.",
+          "yeu_cau_en": "Apply the Grid Table 1 Light table style to the table that starts with “Date”. Clear the Header Row table style option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > Grid Table 1 Light.  3) Table Style Options: bỏ tích Header Row.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Design > Table Styles > Grid Table 1 Light.  3) Table Style Options: clear Header Row.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_style",
+            "de_bai": "Apply the Grid Table 1 Light table style to the table that starts with “Date”. Clear the Header Row table style option."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Collection Schedule”, định dạng 5 đoạn văn bắt đầu từ “Paper” thành danh sách đánh số kiểu a).",
+          "yeu_cau_en": "In the “Collection Schedule” section, format the 5 paragraphs starting with “Paper” as a numbered list that uses the a) number format.",
+          "goi_y": "1) Chọn các đoạn từ \"Paper\" đến \"Plastic containers\".  2) Home > Numbering > chọn định dạng a) (nếu không có: Define New Number Format).",
+          "goi_y_en": "1) Select the paragraphs from \"Paper\" to \"Plastic containers\".  2) Home > Numbering > choose the a) format (if missing: Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "numbers_from_paras",
+            "de_bai": "In the “Collection Schedule” section, format the 5 paragraphs starting with “Paper” as a numbered list that uses the a) number format."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Composting at Home”, chuyển 5 đoạn văn bắt đầu từ “Paper” thành danh sách dấu đầu dòng. Dùng dấu chấm tròn mặc định và căn dấu đầu dòng thẳng lề trái trang (không đổi khoảng thụt treo).",
+          "yeu_cau_en": "In the “Composting at Home” section, convert the 5 paragraphs starting with “Paper” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
+          "goi_y": "1) Chọn 5 đoạn từ \"Paper\" đến \"Plastic containers\".  2) Home > Bullets > chọn dấu chấm tròn •.  3) Nhấp phải vào danh sách > Adjust List Indents > Bullet position: 0\" (giữ nguyên Text indent/khoảng cách treo) > OK. (Hoặc Home > Decrease Indent 1 lần.)",
+          "goi_y_en": "1) Select the 5 paragraphs from \"Paper\" to \"Plastic containers\".  2) Home > Bullets > choose the round bullet •.  3) Right-click the list > Adjust List Indents > Bullet position: 0\" (keep the Text indent / hanging distance) > OK. (Or Home > Decrease Indent once.)",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bullets_from_paras",
+            "de_bai": "In the “Composting at Home” section, convert the 5 paragraphs starting with “Paper” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – School",
+      "ten_en": "Project 4 – School",
+      "file": "C3D2_P4_School.docx",
+      "mo_ta": "Mở file C3D2_P4_School.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D2_P4_School.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Working with Families”, thêm viền ngoài 1 ½ pt màu Black, Text 1 cho bảng. Không đổi viền bên trong.",
+          "yeu_cau_en": "In the “Working with Families” section, apply a 1 ½ pt Black, Text 1 outside border to the table. Do not change the inside borders.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Design > Pen Weight: 1 ½ pt; Pen Color: Black, Text 1.  3) Table Design > Borders > Outside Borders.",
+          "goi_y_en": "1) Select the whole table.  2) Table Design > Pen Weight: 1 ½ pt; Pen Color: Black, Text 1.  3) Table Design > Borders > Outside Borders.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_borders",
+            "de_bai": "In the “Working with Families” section, apply a 1 ½ pt Black, Text 1 outside border to the table. Do not change the inside borders."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Co giãn bảng trong mục “Working with Families” vừa với nội dung.",
+          "yeu_cau_en": "Fit the table in the “Working with Families” section to its contents.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > AutoFit > AutoFit Contents.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > AutoFit > AutoFit Contents.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "autofit",
+            "de_bai": "Fit the table in the “Working with Families” section to its contents.",
+            "goc": {
+              "grid": [
+                3120,
+                3120,
+                3120
+              ]
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Working with Families”, căn lề hàng tiêu đề của bảng thành Align Top Center.",
+          "yeu_cau_en": "In the “Working with Families” section, set the alignment of the header row of the table to Align Top Center.",
+          "goi_y": "1) Chọn hàng đầu của bảng.  2) Table Layout > Alignment > Align Top Center.",
+          "goi_y_en": "1) Select the first row of the table.  2) Table Layout > Alignment > Align Top Center.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cell_align",
+            "de_bai": "In the “Working with Families” section, set the alignment of the header row of the table to Align Top Center."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Working with Families”, đặt chiều cao mọi hàng của bảng là 0.4\" (1.02 cm) và căn giữa theo chiều dọc chữ trong mọi ô.",
+          "yeu_cau_en": "In the “Working with Families” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Layout > Height: 0.4\".  3) Table Layout > Alignment > Align Center Left (hoặc Align Center) – căn giữa theo chiều dọc.",
+          "goi_y_en": "1) Select the whole table.  2) Table Layout > Height: 0.4\".  3) Table Layout > Alignment > Align Center Left (or Align Center) – centers vertically.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_rowheight",
+            "de_bai": "In the “Working with Families” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell."
+          },
+          "chuong": 3
+        }
+      ]
+    }
+  ],
+  "chuong": 3
+}

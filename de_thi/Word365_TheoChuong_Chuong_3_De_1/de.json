@@ -1,0 +1,270 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 3: Bảng và danh sách – Đề 1",
+  "ten_en": "Word – Chapter 3: Manage tables and lists – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_3_De_1",
+  "dau_vet": "92afe086aae087e9",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Space",
+      "ten_en": "Project 1 – Space",
+      "file": "C3D1_P1_Space.docx",
+      "mo_ta": "Mở file C3D1_P1_Space.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D1_P1_Space.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Planetarium Shows”, chuyển bảng thành văn bản. Ngăn cách bằng dấu phẩy.",
+          "yeu_cau_en": "In the “Planetarium Shows” section, convert the table to text. Separate the text with commas.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Separate text with: Commas > OK.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > Convert to Text > Separate text with: Commas > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_to_text",
+            "de_bai": "In the “Planetarium Shows” section, convert the table to text. Separate the text with commas.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Planet",
+                "Type",
+                "Moons"
+              ]
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “School Visits”, đổi danh sách đánh số để bắt đầu từ 10.",
+          "yeu_cau_en": "In the “School Visits” section, change the numbered list so that it starts at 10.",
+          "goi_y": "1) Nhấp phải vào mục đầu tiên của danh sách > Set Numbering Value.  2) Start new list; Set value to: 10 > OK.",
+          "goi_y_en": "1) Right-click the first item of the list > Set Numbering Value.  2) Start new list; Set value to: 10 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restart_num",
+            "de_bai": "In the “School Visits” section, change the numbered list so that it starts at 10."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “The Inner Planets”, đổi định dạng số của danh sách đánh số thành i..",
+          "yeu_cau_en": "In the “The Inner Planets” section, change the number format of the numbered list to i..",
+          "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn i. (hoặc Define New Number Format).",
+          "goi_y_en": "1) Select the list.  2) Home > Numbering arrow > choose i. (or Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "num_format",
+            "de_bai": "In the “The Inner Planets” section, change the number format of the numbered list to i.."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Bỏ mọi đường viền của bảng bắt đầu bằng “Date” ở gần đầu tài liệu.",
+          "yeu_cau_en": "Remove all borders from the table that starts with “Date” near the top of the document.",
+          "goi_y": "1) Chọn toàn bộ bảng bắt đầu bằng \"Date\".  2) Table Design > Borders > No Border.",
+          "goi_y_en": "1) Select the whole table that starts with \"Date\".  2) Table Design > Borders > No Border.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_noborder",
+            "de_bai": "Remove all borders from the table that starts with “Date” near the top of the document."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Resume",
+      "ten_en": "Project 2 – Resume",
+      "file": "C3D1_P2_Resume.docx",
+      "mo_ta": "Mở file C3D1_P2_Resume.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D1_P2_Resume.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Marketing Assistant”, chèn cột mới bên phải cột “Area” của bảng. Gõ “Code” vào ô đầu tiên của cột mới.",
+          "yeu_cau_en": "In the “Marketing Assistant” section, insert a new column to the right of the “Area” column of the table. Type “Code” in the first cell of the new column.",
+          "goi_y": "1) Đặt con trỏ trong cột \"Area\".  2) Table Layout > Insert Right.  3) Gõ \"Code\" vào ô đầu tiên của cột mới.",
+          "goi_y_en": "1) Put the cursor in the \"Area\" column.  2) Table Layout > Insert Right.  3) Type \"Code\" in the first cell of the new column.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_insert_col",
+            "de_bai": "In the “Marketing Assistant” section, insert a new column to the right of the “Area” column of the table. Type “Code” in the first cell of the new column.",
+            "goc": {
+              "cols": 3
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Áp dụng table style Grid Table 1 Light cho bảng bắt đầu bằng “Email”. Bỏ chọn tùy chọn Header Row.",
+          "yeu_cau_en": "Apply the Grid Table 1 Light table style to the table that starts with “Email”. Clear the Header Row table style option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > Grid Table 1 Light.  3) Table Style Options: bỏ tích Header Row.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Design > Table Styles > Grid Table 1 Light.  3) Table Style Options: clear Header Row.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_style",
+            "de_bai": "Apply the Grid Table 1 Light table style to the table that starts with “Email”. Clear the Header Row table style option."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Marketing Specialist”, chuyển đoạn văn bản cách nhau bằng tab bắt đầu bằng “Certificate” thành bảng hai cột. Giữ AutoFit mặc định.",
+          "yeu_cau_en": "In the “Marketing Specialist” section, convert the tab-delimited text that starts with “Certificate” to a two-column table. Accept the default AutoFit behavior.",
+          "goi_y": "1) Chọn các dòng văn bản phân cách bằng Tab (bắt đầu từ \"Certificate\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; giữ AutoFit mặc định (Fixed column width: Auto) > OK.",
+          "goi_y_en": "1) Select the tab-separated lines (starting with \"Certificate\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; keep the default AutoFit (Fixed column width: Auto) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_to_table",
+            "de_bai": "In the “Marketing Specialist” section, convert the tab-delimited text that starts with “Certificate” to a two-column table. Accept the default AutoFit behavior."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Contact”, đổi dấu đầu dòng thành ký hiệu tùy chỉnh: ô đánh dấu (check box) của phông Webdings, mã ký tự “97”.",
+          "yeu_cau_en": "In the “Contact” section, change the bullet points to custom ones. Use the check box symbol from the Webdings font and character code “97”.",
+          "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Webdings; Character code: 97 > OK > OK.",
+          "goi_y_en": "1) Select the whole bulleted list.  2) Home > Bullets arrow > Define New Bullet > Symbol.  3) Font: Webdings; Character code: 97 > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_bullet",
+            "de_bai": "In the “Contact” section, change the bullet points to custom ones. Use the check box symbol from the Webdings font and character code “97”."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Fitness",
+      "ten_en": "Project 3 – Fitness",
+      "file": "C3D1_P3_Fitness.docx",
+      "mo_ta": "Mở file C3D1_P3_Fitness.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D1_P3_Fitness.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Nutrition”, ở ô cuối của hàng “Total” trong bảng, chèn công thức tính tổng các giá trị “Monthly price ($)” phía trên. Dùng định dạng số #,##0.",
+          "yeu_cau_en": "In the “Nutrition” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Monthly price ($)” values above it. Use the #,##0 number format.",
+          "goi_y": "1) Đặt con trỏ vào ô cuối cùng của dòng Total.  2) Table Layout > Formula.  3) Formula: =SUM(ABOVE); Number format: #,##0 > OK.",
+          "goi_y_en": "1) Put the cursor in the last cell of the Total row.  2) Table Layout > Formula.  3) Formula: =SUM(ABOVE); Number format: #,##0 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_formula",
+            "de_bai": "In the “Nutrition” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Monthly price ($)” values above it. Use the #,##0 number format."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Personal Training”, đổi cấp danh sách của “Boxing” thành Level 1.",
+          "yeu_cau_en": "In the “Personal Training” section, change the list level for “Boxing” to Level 1.",
+          "goi_y": "1) Đặt con trỏ vào mục \"Boxing\".  2) Home > mũi tên Bullets/Numbering > Change List Level > Level 1.",
+          "goi_y_en": "1) Put the cursor in the \"Boxing\" item.  2) Home > Bullets/Numbering arrow > Change List Level > Level 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "list_level",
+            "de_bai": "In the “Personal Training” section, change the list level for “Boxing” to Level 1."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Classes”, định dạng 4 đoạn văn bắt đầu từ “Yoga” thành danh sách đánh số kiểu A..",
+          "yeu_cau_en": "In the “Classes” section, format the 4 paragraphs starting with “Yoga” as a numbered list that uses the A. number format.",
+          "goi_y": "1) Chọn các đoạn từ \"Yoga\" đến \"Dance\".  2) Home > Numbering > chọn định dạng A. (nếu không có: Define New Number Format).",
+          "goi_y_en": "1) Select the paragraphs from \"Yoga\" to \"Dance\".  2) Home > Numbering > choose the A. format (if missing: Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "numbers_from_paras",
+            "de_bai": "In the “Classes” section, format the 4 paragraphs starting with “Yoga” as a numbered list that uses the A. number format."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Our Story”, tiếp tục đánh số cho danh sách thứ hai để các mục được đánh số từ 1 đến 6.",
+          "yeu_cau_en": "In the “Our Story” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
+          "goi_y": "1) Nhấp phải vào mục \"Dance\" (đang đánh số 1).  2) Chọn Continue Numbering.",
+          "goi_y_en": "1) Right-click the \"Dance\" item (currently numbered 1).  2) Choose Continue Numbering.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "continue_num",
+            "de_bai": "In the “Our Story” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – Library",
+      "ten_en": "Project 4 – Library",
+      "file": "C3D1_P4_Library.docx",
+      "mo_ta": "Mở file C3D1_P4_Library.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D1_P4_Library.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Digital Resources”, chuyển 4 đoạn văn bắt đầu từ “Borrow books” thành danh sách dấu đầu dòng. Dùng dấu chấm tròn mặc định và căn dấu đầu dòng thẳng lề trái trang (không đổi khoảng thụt treo).",
+          "yeu_cau_en": "In the “Digital Resources” section, convert the 4 paragraphs starting with “Borrow books” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
+          "goi_y": "1) Chọn 4 đoạn từ \"Borrow books\" đến \"Join events\".  2) Home > Bullets > chọn dấu chấm tròn •.  3) Nhấp phải vào danh sách > Adjust List Indents > Bullet position: 0\" (giữ nguyên Text indent/khoảng cách treo) > OK. (Hoặc Home > Decrease Indent 1 lần.)",
+          "goi_y_en": "1) Select the 4 paragraphs from \"Borrow books\" to \"Join events\".  2) Home > Bullets > choose the round bullet •.  3) Right-click the list > Adjust List Indents > Bullet position: 0\" (keep the Text indent / hanging distance) > OK. (Or Home > Decrease Indent once.)",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bullets_from_paras",
+            "de_bai": "In the “Digital Resources” section, convert the 4 paragraphs starting with “Borrow books” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Borrowing Books”, tách ô tiêu đề “Loan days” thành hai cột, một hàng.",
+          "yeu_cau_en": "In the “Borrowing Books” section, split the “Loan days” header cell into two columns and one row.",
+          "goi_y": "1) Đặt con trỏ vào ô \"Loan days\".  2) Table Layout > Split Cells > Number of columns: 2; Number of rows: 1 > OK.",
+          "goi_y_en": "1) Put the cursor in the \"Loan days\" cell.  2) Table Layout > Split Cells > Number of columns: 2; Number of rows: 1 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "split_cell",
+            "de_bai": "In the “Borrowing Books” section, split the “Loan days” header cell into two columns and one row.",
+            "goc": {
+              "cols": 3
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Chuyển bảng bắt đầu bằng “Department” ở gần đầu tài liệu thành văn bản. Phân tách bằng tab.",
+          "yeu_cau_en": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Tabs > OK.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > Convert to Text > Tabs > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_to_text",
+            "de_bai": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+            "goc": {
+              "rows": [
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Events for Children”, đổi dấu đầu dòng thành ký hiệu tùy chỉnh: dấu tích của phông Wingdings, mã ký tự “252”.",
+          "yeu_cau_en": "In the “Events for Children” section, change the bullet points to custom ones. Use the check mark symbol from the Wingdings font and character code “252”.",
+          "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Wingdings; Character code: 252 > OK > OK.",
+          "goi_y_en": "1) Select the whole bulleted list.  2) Home > Bullets arrow > Define New Bullet > Symbol.  3) Font: Wingdings; Character code: 252 > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_bullet",
+            "de_bai": "In the “Events for Children” section, change the bullet points to custom ones. Use the check mark symbol from the Wingdings font and character code “252”."
+          },
+          "chuong": 3
+        }
+      ]
+    }
+  ],
+  "chuong": 3
+}

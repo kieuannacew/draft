@@ -1,0 +1,267 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 1: Quản lý tài liệu – Đề 1",
+  "ten_en": "Word – Chapter 1: Manage documents – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_1_De_1",
+  "dau_vet": "24a2de4b837d57a6",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Coffee",
+      "ten_en": "Project 1 – Coffee",
+      "file": "C1D1_P1_Coffee.docx",
+      "mo_ta": "Mở file C1D1_P1_Coffee.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D1_P1_Coffee.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Kiểm tra tài liệu (Inspect Document) và xóa mọi header, footer và watermark tìm thấy. Không xóa thông tin nào khác.",
+          "yeu_cau_en": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information.",
+          "goi_y": "1) File > Info > Check for Issues > Inspect Document > Inspect.  2) Tại mục Headers, Footers, and Watermarks bấm Remove All.  3) Không xoá các mục khác. Close.",
+          "goi_y_en": "1) File > Info > Check for Issues > Inspect Document > Inspect.  2) In Headers, Footers, and Watermarks click Remove All.  3) Do not remove other items. Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "inspect_hf",
+            "de_bai": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Đổi hướng toàn bộ tài liệu sang Landscape (ngang).",
+          "yeu_cau_en": "Change the orientation of the entire document to Landscape.",
+          "goi_y": "Layout > Orientation > Landscape.",
+          "goi_y_en": "Layout > Orientation > Landscape.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "orient_all",
+            "de_bai": "Change the orientation of the entire document to Landscape."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Tìm đoạn văn bắt đầu bằng “Display muffins in the glass case …” và thêm bookmark tên “Coffee” ở đầu đoạn này.",
+          "yeu_cau_en": "Locate the paragraph that starts with “Display muffins in the glass case …” and add a bookmark at the beginning of this paragraph named “Coffee”.",
+          "goi_y": "1) Đặt con trỏ ở đầu đoạn văn (trước chữ đầu tiên).  2) Insert > Bookmark > Bookmark name: Coffee > Add.",
+          "goi_y_en": "1) Put the cursor at the beginning of the paragraph (before the first character).  2) Insert > Bookmark > Bookmark name: Coffee > Add.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bookmark",
+            "de_bai": "Locate the paragraph that starts with “Display muffins in the glass case …” and add a bookmark at the beginning of this paragraph named “Coffee”."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong thuộc tính tệp, thêm “Training” làm Category.",
+          "yeu_cau_en": "In the file properties, add “Training” as a category.",
+          "goi_y": "1) File > Info > Properties > Show All Properties (hoặc Advanced Properties > Summary).  2) Ô Categories: nhập \"Training\". Nhấn ra ngoài/OK để lưu.",
+          "goi_y_en": "1) File > Info > Properties > Show All Properties (or Advanced Properties > Summary).  2) Categories box: enter \"Training\". Click outside / OK to save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_category",
+            "de_bai": "In the file properties, add “Training” as a category."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng file văn bản thuần (Plain Text) tên “Coffee2026”. Chấp nhận mọi thiết lập mặc định.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a plain-text file named “Coffee2026”. Accept all default settings.",
+          "goi_y": "1) File > Save a Copy (hoặc Save As) > Browse > thư mục Documents.  2) File name: Coffee2026; Save as type: Plain Text (*.txt) > Save.  3) Hộp thoại File Conversion: giữ mặc định > OK.",
+          "goi_y_en": "1) File > Save a Copy (or Save As) > Browse > Documents folder.  2) File name: Coffee2026; Save as type: Plain Text (*.txt) > Save.  3) File Conversion dialog: keep the defaults > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_txt",
+            "de_bai": "Save a copy of the document in your Documents folder as a plain-text file named “Coffee2026”. Accept all default settings."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Resume",
+      "ten_en": "Project 2 – Resume",
+      "file": "C1D1_P2_Resume.docx",
+      "mo_ta": "Mở file C1D1_P2_Resume.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D1_P2_Resume.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến bảng trong kết quả kiểm tra bằng hành động được đề xuất đầu tiên.",
+          "yeu_cau_en": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action.",
+          "goi_y": "1) Review > Check Accessibility.  2) Trong ngăn Accessibility, mở mục lỗi liên quan đến bảng (Missing table header / No header row).  3) Bấm mũi tên cạnh tên bảng > chọn hành động đầu tiên trong Recommended Actions (Use First Row as Header).",
+          "goi_y_en": "1) Review > Check Accessibility.  2) In the Accessibility pane, open the table-related issue (Missing table header / No header row).  3) Click the arrow next to the table name > choose the first Recommended Action (Use First Row as Header).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "access_table",
+            "de_bai": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong mục “Skills”, thêm hyperlink cho chữ “Vietnamese and English” liên kết tới tiêu đề “Objective” trong tài liệu này.",
+          "yeu_cau_en": "In the “Skills” section, add a hyperlink to the text “Vietnamese and English” that links to the “Objective” heading in this document.",
+          "goi_y": "1) Chọn \"Vietnamese and English\".  2) Insert > Link > Place in This Document.  3) Mở Headings > chọn \"Objective\" > OK.",
+          "goi_y_en": "1) Select \"Vietnamese and English\".  2) Insert > Link > Place in This Document.  3) Expand Headings > select \"Objective\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_place",
+            "de_bai": "In the “Skills” section, add a hyperlink to the text “Vietnamese and English” that links to the “Objective” heading in this document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Đổi thuộc tính Company của tài liệu thành Northwind Traders.",
+          "yeu_cau_en": "Change the Company property of the document to Northwind Traders.",
+          "goi_y": "1) File > Info > Show All Properties.  2) Ô Company: nhập \"Northwind Traders\" (nếu không thấy, dùng Properties > Advanced Properties > Summary > Company).",
+          "goi_y_en": "1) File > Info > Show All Properties.  2) Company box: type \"Northwind Traders\" (if it is not shown, use Properties > Advanced Properties > Summary > Company).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_company",
+            "de_bai": "Change the Company property of the document to Northwind Traders."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Đổi khổ giấy của tài liệu thành A5.",
+          "yeu_cau_en": "Change the paper size of the document to A5.",
+          "goi_y": "Layout > Size > A5.",
+          "goi_y_en": "Layout > Size > A5.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "paper",
+            "de_bai": "Change the paper size of the document to A5."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu dạng Word template tên “Resume” không hỗ trợ macro. Lưu template vào thư mục Documents.",
+          "yeu_cau_en": "Save a copy of the document as a Word template named “Resume” that does not support macros. Save the template in the Documents folder.",
+          "goi_y": "1) File > Save a Copy > Browse.  2) Save as type: Word Template (*.dotx) (không chọn .dotm).  3) Chọn thư mục Documents, File name: Resume > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse.  2) Save as type: Word Template (*.dotx) (not .dotm).  3) Choose the Documents folder, File name: Resume > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_template",
+            "de_bai": "Save a copy of the document as a Word template named “Resume” that does not support macros. Save the template in the Documents folder."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Bank",
+      "ten_en": "Project 3 – Bank",
+      "file": "C1D1_P3_Bank.docx",
+      "mo_ta": "Mở file C1D1_P3_Bank.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D1_P3_Bank.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Thêm watermark DRAFT 1 vào tài liệu.",
+          "yeu_cau_en": "Add the DRAFT 1 watermark to the document.",
+          "goi_y": "Design > Watermark > chọn DRAFT 1.",
+          "goi_y_en": "Design > Watermark > select DRAFT 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "watermark",
+            "de_bai": "Add the DRAFT 1 watermark to the document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Kiểm tra tài liệu (Inspect Document) và xóa mọi Document Properties and Personal Information. Không xóa thông tin nào khác.",
+          "yeu_cau_en": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information.",
+          "goi_y": "1) File > Info > Check for Issues > Inspect Document (chọn Yes nếu được hỏi lưu).  2) Bấm Inspect.  3) Tại dòng Document Properties and Personal Information bấm Remove All.  4) Không bấm Remove All ở các mục khác. Close.",
+          "goi_y_en": "1) File > Info > Check for Issues > Inspect Document (choose Yes if asked to save).  2) Click Inspect.  3) On the Document Properties and Personal Information row click Remove All.  4) Do not click Remove All for other items. Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "inspect_props",
+            "de_bai": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Đổi lề cho toàn bộ tài liệu: lề trên và dưới 1\" (2.54 cm), lề trái và phải 1.2\" (3.05 cm).",
+          "yeu_cau_en": "Change the margins of the entire document by setting the top and bottom margins to 1\" (2.54 cm) and the left and right margins to 1.2\" (3.05 cm).",
+          "goi_y": "1) Layout > Margins > Custom Margins.  2) Top = Bottom = 1\"; Left = Right = 1.2\" (hoặc nhập theo cm).  3) Apply to: Whole document > OK.",
+          "goi_y_en": "1) Layout > Margins > Custom Margins.  2) Top = Bottom = 1\"; Left = Right = 1.2\" (or enter the values in cm).  3) Apply to: Whole document > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "margins",
+            "de_bai": "Change the margins of the entire document by setting the top and bottom margins to 1\" (2.54 cm) and the left and right margins to 1.2\" (3.05 cm)."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Memo”, tối ưu cho Minimum size (publishing online). Không mở file sau khi xuất.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a PDF file named “Memo” that is optimized for minimum size (publishing online). Do not open the file after publishing.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) File name: Memo; Save as type: PDF (*.pdf).  3) Optimize for: chọn Minimum size (publishing online); bỏ chọn Open file after publishing > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) File name: Memo; Save as type: PDF (*.pdf).  3) Optimize for: Minimum size (publishing online); clear Open file after publishing > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_pdf",
+            "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Memo” that is optimized for minimum size (publishing online). Do not open the file after publishing."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – Tea",
+      "ten_en": "Project 4 – Tea",
+      "file": "C1D1_P4_Tea.docx",
+      "mo_ta": "Mở file C1D1_P4_Tea.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D1_P4_Tea.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Thêm viền trang kiểu Box, dày 3 pt, màu Automatic chỉ cho trang đầu tiên.",
+          "yeu_cau_en": "Add a 3 pt Automatic Box page border to the first page only.",
+          "goi_y": "1) Design > Page Borders.  2) Setting: Box; Color: Automatic; Width: 3 pt.  3) Apply to: This section - First page only > OK.",
+          "goi_y_en": "1) Design > Page Borders.  2) Setting: Box; Color: Automatic; Width: 3 pt.  3) Apply to: This section - First page only > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_border",
+            "de_bai": "Add a 3 pt Automatic Box page border to the first page only."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong thuộc tính file, đổi thuộc tính Title thành “Moc Chau Tea House Brochure”.",
+          "yeu_cau_en": "In the file properties, change the Title property to “Moc Chau Tea House Brochure”.",
+          "goi_y": "1) File > Info > Properties.  2) Ô Title: xoá nội dung cũ, nhập \"Moc Chau Tea House Brochure\".",
+          "goi_y_en": "1) File > Info > Properties.  2) Title box: delete the old text and type \"Moc Chau Tea House Brochure\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_title",
+            "de_bai": "In the file properties, change the Title property to “Moc Chau Tea House Brochure”."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Áp dụng theme Banded cho tài liệu.",
+          "yeu_cau_en": "Apply the Banded theme to the document.",
+          "goi_y": "Design > Themes > Banded.",
+          "goi_y_en": "Design > Themes > Banded.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "doc_theme",
+            "de_bai": "Apply the Banded theme to the document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Áp dụng style set Lines (Stylish) cho tài liệu.",
+          "yeu_cau_en": "Apply the Lines (Stylish) style set to the document.",
+          "goi_y": "Design > nhóm Document Formatting > mở gallery Style Set > chọn Lines (Stylish).",
+          "goi_y_en": "Design > Document Formatting group > open the Style Set gallery > select Lines (Stylish).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "style_set",
+            "de_bai": "Apply the Lines (Stylish) style set to the document.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          },
+          "chuong": 1
+        }
+      ]
+    }
+  ],
+  "chuong": 1
+}

@@ -82,6 +82,7 @@ class Exam:
     minutes: int = 50
     standalone: bool = False        # đề riêng (bộ đề nhập), không gộp vào bài thi có sẵn
     name_en: str = ""
+    chapter: int | None = None      # đề theo chương: chỉ hiện ở chế độ "Luyện theo chương"
 
 
 @dataclass

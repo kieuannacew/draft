@@ -24,6 +24,8 @@ ALREADY_DONE = {
     ("De04_P3_Tea.docx", "change_case"), ("De05_P4_Resume.docx", "keep_next"),
     ("De05_P6_Pharma.docx", "biblio_style"), ("De08_P2_Festival.docx", "keep_next"),
     ("De09_P3_Rock.docx", "repeat_header"),
+    ("C2D1_P1_Bakery.docx", "change_case"), ("C2D2_P2_Hotel.docx", "keep_next"),
+    ("C3D2_P1_Bakery.docx", "repeat_header"),
 }
 
 
@@ -42,16 +44,40 @@ def _tasks():
 TASKS = _tasks()
 
 
+MOCK = [f for f in SETS if "_DeThucTe_" in f.name]          # 10 đề thi thử (7 project)
+BY_CHAPTER = [f for f in SETS if "_TheoChuong_" in f.name]   # đề theo chương
+
+
 def test_sets_are_bundled():
-    assert len(SETS) == 10
+    assert len(MOCK) == 10 and len(BY_CHAPTER) == 14
     for folder in SETS:
         exam, errors = custom.load_exam(folder)
         assert not errors, errors
-        assert exam.standalone and len(exam.projects) == 7
+        assert exam.standalone
+        if folder in MOCK:
+            assert len(exam.projects) == 7 and exam.chapter is None
+        else:
+            assert exam.chapter == int(folder.name.split("_")[-3])
+
+
+def test_chapter_sets_cover_every_type():
+    """Mỗi đề theo chương chỉ có câu của đúng chương; cả bộ phủ mọi dạng câu của bộ sinh đề."""
+    kinds = set()
+    for folder in BY_CHAPTER:
+        data = json.loads((folder / "de.json").read_text(encoding="utf-8"))
+        c = data["chuong"]
+        assert f"Chương {c}:" in data["ten"] and f"Chapter {c}:" in data["ten_en"]
+        for p in data["du_an"]:
+            for t in p["nhiem_vu"]:
+                assert t["chuong"] == c
+                assert t["yeu_cau"] != t["yeu_cau_en"], "thiếu bản dịch tiếng Việt"
+                assert t["goi_y_en"], "thiếu gợi ý tiếng Anh"
+                kinds.add(t["cham"]["dang"])
+    assert len(kinds) == 183
 
 
 def test_every_task_is_auto_graded():
-    assert len(TASKS) == 380
+    assert len(TASKS) == 380 + 211
     missing = {p.values[1]["dang"] for p in TASKS} - set(word_auto.GRADERS)
     assert not missing
 

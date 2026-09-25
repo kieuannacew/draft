@@ -831,8 +831,11 @@ def _(pkg, t):
 @sol("highlight")
 def _(pkg, t):
     s = quotes(t)[-1]
+    m = re.search(r"in (Bright Green|Yellow|Turquoise|Pink)\.?$", t)
+    val = {"bright green": "green", "yellow": "yellow", "turquoise": "cyan", "pink": "magenta"}.get(
+        A.norm(m.group(1)) if m else "", "green")
     for r in split_phrase(para_with(pkg, s.rstrip(".")), s):
-        rset(r, "highlight", val="green")
+        rset(r, "highlight", val=val)
 
 
 @sol("para_shading")
@@ -1438,8 +1441,11 @@ def _(pkg, t):
 @sol("fn_format")
 def _(pkg, t):
     sp = A.final_sect(pkg.d)
-    pr = etree.Element(W + "footnotePr")
-    wattr(el("w:numFmt", pr), "val", "lowerRoman")
+    kind = "endnote" if "endnotes" in t else "footnote"
+    fmt = "lowerRoman" if "i, ii" in t else "upperRoman" if "I, II" in t else \
+        "lowerLetter" if "a, b" in t else "upperLetter" if "A, B" in t else "chicago"
+    pr = etree.Element(W + f"{kind}Pr")
+    wattr(el("w:numFmt", pr), "val", fmt)
     sp.insert(0, pr)
 
 
@@ -1457,7 +1463,12 @@ def _(pkg, t):
 
 @sol("custom_toc")
 def _(pkg, t):
-    _field(_blank_below_banner(pkg), 'TOC \\o "1-3" \\h \\z \\t "Subtitle,4"')
+    lv = re.search(r"shows (\d) heading levels", t)
+    st = re.search(r"formatted with the (.+?) style at TOC level (\d)", t)
+    instr = f'TOC \\o "1-{lv.group(1) if lv else 3}" \\h \\z'
+    if st:
+        instr += f' \\t "{st.group(1)},{st.group(2)}"'
+    _field(_blank_below_banner(pkg), instr)
 
 
 @sol("toc_modify")
@@ -1602,6 +1613,31 @@ def _(pkg, t):
     _add_effect(_sppr(pkg, t), re.search(r"apply the (.+?) effect", t, re.I).group(1))
 
 
+@sol("pic_correct")
+def _(pkg, t):
+    a14 = "{http://schemas.microsoft.com/office/drawing/2010/main}"
+    m = re.search(r"Brightness: ([+-]?\d+)%.*?Contrast: ([+-]?\d+)%", t)
+    blip = sec_obj(pkg, t, "pic").find(".//a:blip", NS)
+    ext = el("a:ext", el("a:extLst", blip), uri="{BEBA8EAE-BF5A-486C-A8C5-ECC9F3942E4B}")
+    layer = etree.SubElement(etree.SubElement(ext, a14 + "imgProps"), a14 + "imgLayer")
+    eff = etree.SubElement(layer, a14 + "imgEffect")
+    bc = etree.SubElement(eff, a14 + "brightnessContrast")
+    if int(m.group(1)):
+        bc.set("bright", str(int(m.group(1)) * 1000))
+    bc.set("contrast", str(int(m.group(2)) * 1000))
+    sat = re.search(r"Saturation: (\d+)%", t)
+    if sat:
+        etree.SubElement(etree.SubElement(layer, a14 + "imgEffect"), a14 + "saturation").set(
+            "sat", str(int(sat.group(1)) * 1000))
+    if "Grayscale" in t:
+        blip.insert(0, etree.Element(q("a:grayscl")))
+    if "Sepia" in t:
+        duo = etree.Element(q("a:duotone"))
+        el("a:prstClr", duo, val="black")
+        el("a:srgbClr", duo, val="D9C3A5")
+        blip.insert(0, duo)
+
+
 @sol("pic_style")
 def _(pkg, t):
     name = A.norm(re.search(r"apply the (.+?) picture style", t, re.I).group(1))
@@ -1642,8 +1678,13 @@ def _(pkg, t):
 @sol("pic_border")
 def _(pkg, t):
     m = re.search(r"Add a (.+?) pt (.+?) border", t)
-    ln = el("a:ln", _sppr(pkg, t), w=int(float(m.group(1)) * 12700))
-    el("a:schemeClr", el("a:solidFill", ln), val="bg1")
+    w = {"½": 0.5, "¾": 0.75, "1 ½": 1.5, "2 ¼": 2.25, "4 ½": 4.5}.get(m.group(1).strip()) or float(m.group(1))
+    ln = el("a:ln", _sppr(pkg, t), w=int(w * 12700))
+    spec = A.color_spec(m.group(2))
+    if "hex" in spec:
+        el("a:srgbClr", el("a:solidFill", ln), val=spec["hex"])
+    else:
+        el("a:schemeClr", el("a:solidFill", ln), val=A.DML_THEME.get(spec["theme"], spec["theme"]))
 
 
 def _to_anchor(dr, v, h, wrap):
@@ -1734,13 +1775,23 @@ def _textbox_xml(text, prst="rect", anchor=True, v="bottom", h="left", wrap="Tig
 def _(pkg, t):
     m = re.search(r"insert an? (.+?) shape that contains the text [“\"]([^”\"]+)", t)
     last = [b for b in A.blocks(pkg.d) if b.tag == A.P][-1]
-    last.append(etree.fromstring(_textbox_xml(m.group(2), A.SHAPES[A.norm(m.group(1))])))
+    v, h = A._pos_text(t) or ("bottom", "left")
+    wm = re.search(r"with (\w+) text wrapping", t)
+    wrap = {"tight": "Tight", "square": "Square", "through": "Through"}.get(wm.group(1).lower(), "Tight") if wm else "Tight"
+    last.append(etree.fromstring(_textbox_xml(m.group(2), A.SHAPES[A.norm(m.group(1))], v=v, h=h, wrap=wrap)))
 
 
 @sol("textbox_type")
 def _(pkg, t):
     dr = sec_obj(pkg, t, "wps")
     run(quotes(t)[-1], dr.find(".//w:txbxContent/w:p", NS))
+
+
+@sol("textbox_builtin")
+def _(pkg, t):
+    from xml.sax.saxutils import escape
+    p = para_with(pkg, quotes(t)[-1])          # đoạn đầu section (chứa câu cần chép vào text box)
+    p.insert(0, etree.fromstring(_textbox_xml(escape(quotes(t)[-1]), "rect")))
 
 
 @sol("callout_text")
@@ -2019,6 +2070,17 @@ def _(pkg, t):
             c.set("srcOrd", "0")
 
 
+@sol("sa_move")
+def _(pkg, t):
+    root = _dm(pkg, t)
+    a, b = _pt_by_text(root, quotes(t)[1]), _pt_by_text(root, quotes(t)[2])
+    ca = next(c for c in root.find("dgm:cxnLst", NS) if c.get("destId") == a.get("modelId") and c.get("type") in (None, "parOf"))
+    cb = next(c for c in root.find("dgm:cxnLst", NS) if c.get("destId") == b.get("modelId") and c.get("type") in (None, "parOf"))
+    oa, ob = ca.get("srcOrd", "0"), cb.get("srcOrd", "0")
+    ca.set("srcOrd", ob)
+    cb.set("srcOrd", oa)
+
+
 @sol("sa_rtl")
 def _(pkg, t):
     root = _dm(pkg, t)
@@ -2050,6 +2112,7 @@ def _(pkg, t):
 def _(pkg, t):
     m = re.search(r"insert an? (.+?) SmartArt graphic", t)
     st = re.search(r"Apply the (.+?) SmartArt style", t, re.I)
+    co = re.search(r"Change the colors to (.+?)\.?$", t)
     items = quotes(t)[1:]
     pts = '<dgm:pt modelId="{D}" type="doc"/>' + "".join(
         f'<dgm:pt modelId="{{P{i}}}"><dgm:t><a:p><a:r><a:t>{x}</a:t></a:r></a:p></dgm:t></dgm:pt>'
@@ -2062,8 +2125,9 @@ def _(pkg, t):
         "lo": f'<dgm:layoutDef {ns} uniqueId="urn:microsoft.com/office/officeart/2005/8/layout/'
               f'{A.SA_LAYOUTS[A.norm(m.group(1))]}"/>',
         "qs": f'<dgm:styleDef {ns} uniqueId="urn:microsoft.com/office/officeart/2005/8/quickstyle/'
-              f'{A.SA_STYLES[A.norm(st.group(1))]}"/>',
-        "cs": f'<dgm:colorsDef {ns} uniqueId="urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"/>',
+              f'{A.SA_STYLES[A.norm(st.group(1))] if st else "simple1"}"/>',
+        "cs": f'<dgm:colorsDef {ns} uniqueId="urn:microsoft.com/office/officeart/2005/8/colors/'
+              f'{A._sa_color_id(co.group(1)) if co else "accent1_2"}"/>',
     }
     ids = {}
     for k, xml in parts.items():

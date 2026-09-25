@@ -1,0 +1,214 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 2: Chèn và định dạng chữ, đoạn, section – Đề 1",
+  "ten_en": "Word – Chapter 2: Insert and format text, paragraphs and sections – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_2_De_1",
+  "dau_vet": "10d4926c13bd9bde",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Bakery",
+      "ten_en": "Project 1 – Bakery",
+      "file": "C2D1_P1_Bakery.docx",
+      "mo_ta": "Mở file C2D1_P1_Bakery.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D1_P1_Bakery.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi kiểu chữ hoa của tiêu đề “Pastry Platters” thành Capitalize Each Word.",
+          "yeu_cau_en": "Change the case of the heading “Pastry Platters” to Capitalize Each Word.",
+          "goi_y": "1) Chọn tiêu đề.  2) Home > Change Case (Aa) > Capitalize Each Word.",
+          "goi_y_en": "1) Select the heading.  2) Home > Change Case (Aa) > Capitalize Each Word.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "change_case",
+            "de_bai": "Change the case of the heading “Pastry Platters” to Capitalize Each Word."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Đặt giãn dòng 1.6 lines cho toàn bộ tài liệu.",
+          "yeu_cau_en": "Set the line spacing to 1.6 lines for the entire document.",
+          "goi_y": "1) Ctrl+A để chọn toàn bộ.  2) Home > Line and Paragraph Spacing > Line Spacing Options.  3) Line spacing: Multiple; At: 1.6 > OK.",
+          "goi_y_en": "1) Press Ctrl+A to select everything.  2) Home > Line and Paragraph Spacing > Line Spacing Options.  3) Line spacing: Multiple; At: 1.6 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_doc",
+            "de_bai": "Set the line spacing to 1.6 lines for the entire document."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Áp dụng text effect Fill: Orange, Accent color 2; Outline: Orange, Accent color 2 cho tiêu đề tài liệu.",
+          "yeu_cau_en": "Apply the Fill: Orange, Accent color 2; Outline: Orange, Accent color 2 text effect to the document title.",
+          "goi_y": "1) Chọn tiêu đề tài liệu.  2) Home > Text Effects and Typography > chọn Fill: Orange, Accent color 2; Outline: Orange, Accent color 2.",
+          "goi_y_en": "1) Select the document title.  2) Home > Text Effects and Typography > select Fill: Orange, Accent color 2; Outline: Orange, Accent color 2.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_effect",
+            "de_bai": "Apply the Fill: Orange, Accent color 2; Outline: Orange, Accent color 2 text effect to the document title."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Trong mục “Delivery”, chia hai đoạn văn sau tiêu đề thành 2 cột.",
+          "yeu_cau_en": "In the “Delivery” section, format the two paragraphs after the heading into 2 columns.",
+          "goi_y": "1) Chọn hai đoạn văn (không chọn tiêu đề).  2) Layout > Columns > Two.",
+          "goi_y_en": "1) Select the two paragraphs (not the heading).  2) Layout > Columns > Two.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "columns",
+            "de_bai": "In the “Delivery” section, format the two paragraphs after the heading into 2 columns."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Ở cuối câu “Golden Crust Bakery can print a photo or message on the top of any cake.”, chèn ngắt section kiểu Continuous.",
+          "yeu_cau_en": "At the end of the sentence “Golden Crust Bakery can print a photo or message on the top of any cake.”, insert a continuous section break.",
+          "goi_y": "1) Đặt con trỏ ngay sau dấu chấm cuối câu.  2) Layout > Breaks > Section Breaks: Continuous.",
+          "goi_y_en": "1) Put the cursor right after the period at the end of the sentence.  2) Layout > Breaks > Section Breaks: Continuous.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sbreak_cont",
+            "de_bai": "At the end of the sentence “Golden Crust Bakery can print a photo or message on the top of any cake.”, insert a continuous section break."
+          },
+          "chuong": 2
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Computer",
+      "ten_en": "Project 2 – Computer",
+      "file": "C2D1_P2_Computer.docx",
+      "mo_ta": "Mở file C2D1_P2_Computer.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D1_P2_Computer.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “How Are Computers Used Today?”, đổi giãn dòng của hai đoạn văn sau tiêu đề thành Exactly 12 pt.",
+          "yeu_cau_en": "In the “How Are Computers Used Today?” section, change the line spacing of the two paragraphs after the heading to exactly 12 pt.",
+          "goi_y": "1) Chọn hai đoạn văn dưới tiêu đề.  2) Home > Paragraph dialog (mũi tên nhỏ) > Line spacing: Exactly; At: 12 pt > OK.",
+          "goi_y_en": "1) Select the two paragraphs below the heading.  2) Home > Paragraph dialog launcher > Line spacing: Exactly; At: 12 pt > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_exact",
+            "de_bai": "In the “How Are Computers Used Today?” section, change the line spacing of the two paragraphs after the heading to exactly 12 pt."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Trong mục “Computer Connections”, tô sáng (highlight) câu “TechStart Academy teaches students how to stay safe online.” màu Pink.",
+          "yeu_cau_en": "In the “Computer Connections” section, highlight the sentence “TechStart Academy teaches students how to stay safe online.” in Pink.",
+          "goi_y": "1) Chọn câu văn.  2) Home > Text Highlight Color > Pink.",
+          "goi_y_en": "1) Select the sentence.  2) Home > Text Highlight Color > Pink.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "highlight",
+            "de_bai": "In the “Computer Connections” section, highlight the sentence “TechStart Academy teaches students how to stay safe online.” in Pink."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Đổi phông chữ của tiêu đề “What Parts Are Needed for a Computer to Work?” thành Arial Black, 18 pt.",
+          "yeu_cau_en": "Change the font of the heading “What Parts Are Needed for a Computer to Work?” to Arial Black, 18 pt.",
+          "goi_y": "1) Chọn tiêu đề.  2) Home > Font: Arial Black; Font Size: 18.",
+          "goi_y_en": "1) Select the heading.  2) Home > Font: Arial Black; Font Size: 18.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "font_format",
+            "de_bai": "Change the font of the heading “What Parts Are Needed for a Computer to Work?” to Arial Black, 18 pt."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Bật tự động ngắt từ (automatic hyphenation) cho tài liệu.",
+          "yeu_cau_en": "Turn on automatic hyphenation for the document.",
+          "goi_y": "Layout > Hyphenation > Automatic.",
+          "goi_y_en": "Layout > Hyphenation > Automatic.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyphenation",
+            "de_bai": "Turn on automatic hyphenation for the document."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Dùng một tính năng của Word để thay mọi chữ “TechStart Academy” bằng “TechStart Co.”.",
+          "yeu_cau_en": "Use a Word feature to replace all instances of “TechStart Academy” with “TechStart Co.”.",
+          "goi_y": "1) Home > Replace (Ctrl+H).  2) Find what: TechStart Academy; Replace with: TechStart Co..  3) Replace All > OK.",
+          "goi_y_en": "1) Home > Replace (Ctrl+H).  2) Find what: TechStart Academy; Replace with: TechStart Co..  3) Replace All > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_all",
+            "de_bai": "Use a Word feature to replace all instances of “TechStart Academy” with “TechStart Co.”.",
+            "goc": {
+              "n": 6,
+              "n_new": 0
+            }
+          },
+          "chuong": 2
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Weekdays",
+      "ten_en": "Project 3 – Weekdays",
+      "file": "C2D1_P3_Weekdays.docx",
+      "mo_ta": "Mở file C2D1_P3_Weekdays.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D1_P3_Weekdays.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Chèn ký hiệu Registered (®) ngay sau lần xuất hiện đầu tiên của “Timekeepers Club” trong tài liệu.",
+          "yeu_cau_en": "Insert the Registered symbol (®) immediately after the first instance of “Timekeepers Club” in the document.",
+          "goi_y": "1) Đặt con trỏ ngay sau \"Timekeepers Club\" đầu tiên (không có khoảng trắng).  2) Insert > Symbol > More Symbols > tab Special Characters > Registered > Insert > Close.",
+          "goi_y_en": "1) Put the cursor right after the first \"Timekeepers Club\" (no space).  2) Insert > Symbol > More Symbols > Special Characters tab > Registered > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "special_char",
+            "de_bai": "Insert the Registered symbol (®) immediately after the first instance of “Timekeepers Club” in the document."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Tìm chữ “A survey of students showed that Friday and Saturday are the most popular days.” và áp dụng style Emphasis cho nó.",
+          "yeu_cau_en": "Locate the text “A survey of students showed that Friday and Saturday are the most popular days.” and apply the Emphasis style to it.",
+          "goi_y": "1) Dùng Ctrl+F tìm câu trên và chọn đúng câu (kể cả dấu chấm).  2) Home > Styles > Emphasis.",
+          "goi_y_en": "1) Use Ctrl+F to find the sentence and select exactly the sentence (including the period).  2) Home > Styles > Emphasis.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style",
+            "de_bai": "Locate the text “A survey of students showed that Friday and Saturday are the most popular days.” and apply the Emphasis style to it."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Đặt khoảng cách đoạn (Paragraph Spacing) cho toàn bộ tài liệu là Double.",
+          "yeu_cau_en": "Set the paragraph spacing for the entire document to Double.",
+          "goi_y": "Design > Paragraph Spacing > Double.",
+          "goi_y_en": "Design > Paragraph Spacing > Double.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_spacing_doc",
+            "de_bai": "Set the paragraph spacing for the entire document to Double.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Chèn ngắt trang (page break) trước tiêu đề “Facts about Saturday and Sunday”.",
+          "yeu_cau_en": "Insert a page break before the heading “Facts about Saturday and Sunday”.",
+          "goi_y": "1) Đặt con trỏ đầu tiêu đề.  2) Insert > Page Break (hoặc Ctrl+Enter).",
+          "goi_y_en": "1) Put the cursor at the start of the heading.  2) Insert > Page Break (or Ctrl+Enter).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_break",
+            "de_bai": "Insert a page break before the heading “Facts about Saturday and Sunday”."
+          },
+          "chuong": 2
+        }
+      ]
+    }
+  ],
+  "chuong": 2
+}

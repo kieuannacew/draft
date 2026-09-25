@@ -1,0 +1,254 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 5: Đồ họa (ảnh, hình, SmartArt, biểu đồ) – Đề 2",
+  "ten_en": "Word – Chapter 5: Insert and format graphic elements – Test 2",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_5_De_2",
+  "dau_vet": "c969e7f2293bbf8e",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Fitness",
+      "ten_en": "Project 1 – Fitness",
+      "file": "C5D2_P1_Fitness.docx",
+      "mo_ta": "Mở file C5D2_P1_Fitness.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D2_P1_Fitness.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Chuyển chú giải (legend) của biểu đồ trong mục “Classes” xuống dưới biểu đồ.",
+          "yeu_cau_en": "Move the legend of the chart in the “Classes” section to the bottom of the chart.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Legend > Bottom.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Legend > Bottom.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_legend",
+            "de_bai": "Move the legend of the chart in the “Classes” section to the bottom of the chart."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Thay ảnh trong mục “Become a Member Today!” bằng ảnh Fitness_new.png từ thư mục Files. Giữ nguyên kích thước và định dạng của ảnh cũ.",
+          "yeu_cau_en": "Replace the picture in the “Become a Member Today!” section with the Fitness_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
+          "goi_y": "1) Nhấp phải ảnh > Change Picture > From a File (hoặc Picture Format > Change Picture).  2) Chọn Fitness_new.png trong thư mục Files > Insert.",
+          "goi_y_en": "1) Right-click the picture > Change Picture > From a File (or Picture Format > Change Picture).  2) Choose Fitness_new.png in the Files folder > Insert.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_change",
+            "de_bai": "Replace the picture in the “Become a Member Today!” section with the Fitness_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
+            "goc": {
+              "n": 1,
+              "cx": 3108960,
+              "cy": 2003552,
+              "img": "fa44fa4fe1955c6a04e8436d87421093"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đổi màu (Change Colors) của sơ đồ SmartArt trong mục “Nutrition” thành Gradient Range - Accent 1.",
+          "yeu_cau_en": "Change the colors of the SmartArt graphic in the “Nutrition” section to Gradient Range - Accent 1.",
+          "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > Change Colors > Gradient Range - Accent 1.",
+          "goi_y_en": "1) Select the SmartArt.  2) SmartArt Design > Change Colors > Gradient Range - Accent 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_colors",
+            "de_bai": "Change the colors of the SmartArt graphic in the “Nutrition” section to Gradient Range - Accent 1.",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/chevron1",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đảo hàng và cột (Switch Row/Column) của biểu đồ trong mục “Classes” để các năm hiện trên trục ngang.",
+          "yeu_cau_en": "Switch the rows and columns of the chart in the “Classes” section so that the years are shown on the horizontal axis.",
+          "goi_y": "1) Chọn biểu đồ > Chart Design > Edit Data (để bảng dữ liệu mở).  2) Chart Design > Switch Row/Column.  3) Đóng cửa sổ dữ liệu.",
+          "goi_y_en": "1) Select the chart > Chart Design > Edit Data (keep the data sheet open).  2) Chart Design > Switch Row/Column.  3) Close the data window.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_switch",
+            "de_bai": "Switch the rows and columns of the chart in the “Classes” section so that the years are shown on the horizontal axis."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Nutrition”, thêm một hình sau “Dance” trong sơ đồ SmartArt. Nhập chữ “Strength training” vào hình mới.",
+          "yeu_cau_en": "In the “Nutrition” section, add a shape after “Dance” in the SmartArt graphic. Enter the text “Strength training” in the new shape.",
+          "goi_y": "1) Bấm chọn hình \"Dance\" trong SmartArt.  2) SmartArt Design > Add Shape > Add Shape After.  3) Gõ: Strength training (hoặc nhập trong Text Pane).",
+          "goi_y_en": "1) Click the \"Dance\" shape in the SmartArt.  2) SmartArt Design > Add Shape > Add Shape After.  3) Type: Strength training (or type it in the Text Pane).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_add",
+            "de_bai": "In the “Nutrition” section, add a shape after “Dance” in the SmartArt graphic. Enter the text “Strength training” in the new shape.",
+            "goc": {
+              "n": 4
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Classes”, đổi tiêu đề biểu đồ từ “Chart Title” thành “Bit by Bit Fitness Monthly price ($)”.",
+          "yeu_cau_en": "In the “Classes” section, change the chart title from “Chart Title” to “Bit by Bit Fitness Monthly price ($)”.",
+          "goi_y": "1) Bấm vào tiêu đề \"Chart Title\" của biểu đồ.  2) Chọn hết chữ trong tiêu đề và gõ: Bit by Bit Fitness Monthly price ($).",
+          "goi_y_en": "1) Click the \"Chart Title\" of the chart.  2) Select all the title text and type: Bit by Bit Fitness Monthly price ($).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_title",
+            "de_bai": "In the “Classes” section, change the chart title from “Chart Title” to “Bit by Bit Fitness Monthly price ($)”."
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Social",
+      "ten_en": "Project 2 – Social",
+      "file": "C5D2_P2_Social.docx",
+      "mo_ta": "Mở file C5D2_P2_Social.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D2_P2_Social.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Ở khoảng trống cuối trang cuối, chèn hình Speech Bubble: Rectangle chứa chữ “Contact us today!”. Đặt hình ở góc dưới bên phải trang với kiểu ngắt dòng Tight.",
+          "yeu_cau_en": "In the empty space at the bottom of the last page, insert a Speech Bubble: Rectangle shape that contains the text “Contact us today!”. Position the shape at the bottom right of the page with tight text wrapping.",
+          "goi_y": "1) Insert > Shapes > Speech Bubble: Rectangle; kéo vẽ hình ở cuối trang cuối.  2) Nhấp phải hình > Add Text > gõ \"Contact us today!\".  3) Shape Format > Position > Position in Bottom Right with Square Text Wrapping.  4) Shape Format > Wrap Text > Tight.",
+          "goi_y_en": "1) Insert > Shapes > Speech Bubble: Rectangle; drag to draw it at the bottom of the last page.  2) Right-click the shape > Add Text > type \"Contact us today!\".  3) Shape Format > Position > Position in Bottom Right with Square Text Wrapping.  4) Shape Format > Wrap Text > Tight.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "shape_insert",
+            "de_bai": "In the empty space at the bottom of the last page, insert a Speech Bubble: Rectangle shape that contains the text “Contact us today!”. Position the shape at the bottom right of the page with tight text wrapping."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Common Mistakes”, đổi kích thước ảnh thành rộng 2\" (5.08 cm). Giữ nguyên tỉ lệ.",
+          "yeu_cau_en": "In the “Common Mistakes” section, resize the picture to a width of 2\" (5.08 cm). Maintain the original aspect ratio.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Size: Shape Width = 2\" (Lock aspect ratio đang bật nên chiều còn lại tự đổi).",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Size: Shape Width = 2\" (Lock aspect ratio is on, so the height changes automatically).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_size",
+            "de_bai": "In the “Common Mistakes” section, resize the picture to a width of 2\" (5.08 cm). Maintain the original aspect ratio.",
+            "goc": {
+              "n": 1,
+              "cx": 2377440,
+              "cy": 1532128,
+              "img": "19c185be16532b74bb7b522df5204c61"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong đoạn trống ở cuối mục “Planning Content”, chèn sơ đồ SmartArt Basic Cycle gồm các mục “Increase brand awareness”, “Answer customer questions”, “Promote new products”, “Recruit employees” theo đúng thứ tự. Đổi màu thành Colorful Range - Accent Colors 2 to 3.",
+          "yeu_cau_en": "In the blank paragraph at the end of the “Planning Content” section, insert a Basic Cycle SmartArt graphic that contains the items “Increase brand awareness”, “Answer customer questions”, “Promote new products”, “Recruit employees” in that order. Change the colors to Colorful Range - Accent Colors 2 to 3.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống cuối section.  2) Insert > SmartArt > chọn Basic Cycle > OK.  3) Mở Text Pane, nhập lần lượt: Increase brand awareness; Answer customer questions; Promote new products; Recruit employees (xoá các dòng trống thừa).  4) SmartArt Design > Change Colors > Colorful Range - Accent Colors 2 to 3.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the section.  2) Insert > SmartArt > Basic Cycle > OK.  3) Open the Text Pane and type: Increase brand awareness; Answer customer questions; Promote new products; Recruit employees (delete extra empty lines).  4) SmartArt Design > Change Colors > Colorful Range - Accent Colors 2 to 3.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "smartart",
+            "de_bai": "In the blank paragraph at the end of the “Planning Content” section, insert a Basic Cycle SmartArt graphic that contains the items “Increase brand awareness”, “Answer customer questions”, “Promote new products”, “Recruit employees” in that order. Change the colors to Colorful Range - Accent Colors 2 to 3."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Tables”, ở cuối nội dung text box bắt đầu bằng “Did”, thêm một đoạn mới có chữ “Register before October 31.”.",
+          "yeu_cau_en": "In the “Tables” section, at the end of the text in the text box that starts with “Did”, add a new paragraph that contains the text “Register before October 31.”.",
+          "goi_y": "1) Bấm vào cuối nội dung trong text box, nhấn Enter.  2) Gõ: Register before October 31.",
+          "goi_y_en": "1) Click at the end of the text in the text box and press Enter.  2) Type: Register before October 31.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "callout_text",
+            "de_bai": "In the “Tables” section, at the end of the text in the text box that starts with “Did”, add a new paragraph that contains the text “Register before October 31.”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đổi hướng sơ đồ SmartArt trong mục “What Are the Business Applications of Social Media?” để chạy từ phải sang trái.",
+          "yeu_cau_en": "Change the direction of the SmartArt graphic in the “What Are the Business Applications of Social Media?” section so that it flows from right to left.",
+          "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > Right to Left.",
+          "goi_y_en": "1) Select the SmartArt.  2) SmartArt Design > Right to Left.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_rtl",
+            "de_bai": "Change the direction of the SmartArt graphic in the “What Are the Business Applications of Social Media?” section so that it flows from right to left."
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Travel",
+      "ten_en": "Project 3 – Travel",
+      "file": "C5D2_P3_Travel.docx",
+      "mo_ta": "Mở file C5D2_P3_Travel.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D2_P3_Travel.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi kích thước sơ đồ SmartArt trong mục “Venue” thành cao 2\" (5.08 cm) và rộng 6\" (15.24 cm).",
+          "yeu_cau_en": "Resize the SmartArt graphic in the “Venue” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide.",
+          "goi_y": "1) Chọn SmartArt (viền ngoài).  2) Format > Size: Height = 2\"; Width = 6\".",
+          "goi_y_en": "1) Select the SmartArt (outer border).  2) Format > Size: Height = 2\"; Width = 6\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_size",
+            "de_bai": "Resize the SmartArt graphic in the “Venue” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Contact Us”, áp dụng picture style Center Shadow Rectangle cho ảnh.",
+          "yeu_cau_en": "In the “Contact Us” section, apply the Center Shadow Rectangle picture style to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Styles > Center Shadow Rectangle.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Picture Styles > Center Shadow Rectangle.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_style",
+            "de_bai": "In the “Contact Us” section, apply the Center Shadow Rectangle picture style to the picture."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Conference Topics”, đổi biểu đồ thành loại Line with Markers.",
+          "yeu_cau_en": "In the “Conference Topics” section, change the chart to a Line with Markers chart.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Change Chart Type > All Charts > Line > Line with Markers > OK.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Change Chart Type > All Charts > Line > Line with Markers > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_type",
+            "de_bai": "In the “Conference Topics” section, change the chart to a Line with Markers chart."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đặt ảnh trong mục “Contact Us” ở vị trí Top Left của trang với kiểu ngắt dòng Square.",
+          "yeu_cau_en": "Position the picture in the “Contact Us” section in the Top Left of the page with square text wrapping.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Position > With Text Wrapping: Position in Top Left with Square Text Wrapping.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Position > With Text Wrapping: Position in Top Left with Square Text Wrapping.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_position",
+            "de_bai": "Position the picture in the “Contact Us” section in the Top Left of the page with square text wrapping."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Xóa nền (Remove Background) của ảnh trong mục “Contact Us”. Chấp nhận vùng Word tự đánh dấu để xóa.",
+          "yeu_cau_en": "Remove the background from the picture in the “Contact Us” section. Accept the default area that Word marks for removal.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Remove Background.  3) Background Removal > Keep Changes.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Remove Background.  3) Background Removal > Keep Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_remove_bg",
+            "de_bai": "Remove the background from the picture in the “Contact Us” section. Accept the default area that Word marks for removal."
+          },
+          "chuong": 5
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "Fitness_new.png"
+  ],
+  "chuong": 5
+}

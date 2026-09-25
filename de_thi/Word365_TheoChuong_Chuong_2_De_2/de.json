@@ -1,0 +1,210 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 2: Chèn và định dạng chữ, đoạn, section – Đề 2",
+  "ten_en": "Word – Chapter 2: Insert and format text, paragraphs and sections – Test 2",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_2_De_2",
+  "dau_vet": "f8767f88141fe70f",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Robotics",
+      "ten_en": "Project 1 – Robotics",
+      "file": "C2D2_P1_Robotics.docx",
+      "mo_ta": "Mở file C2D2_P1_Robotics.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D2_P1_Robotics.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Xóa mọi định dạng của đoạn văn bắt đầu bằng “Future Makers Club mentors check every …”.",
+          "yeu_cau_en": "Clear all formatting from the paragraph that starts with “Future Makers Club mentors check every …”.",
+          "goi_y": "1) Chọn toàn bộ đoạn văn đó.  2) Home > Clear All Formatting (biểu tượng chữ A có cục tẩy).",
+          "goi_y_en": "1) Select that whole paragraph.  2) Home > Clear All Formatting (the A-with-eraser icon).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "clear_format",
+            "de_bai": "Clear all formatting from the paragraph that starts with “Future Makers Club mentors check every …”."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Trong mục “Robot Requirements”, áp dụng chữ hoa thả (drop cap) kiểu Dropped cho đoạn đầu tiên, thả xuống 2 dòng.",
+          "yeu_cau_en": "In the “Robot Requirements” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 2 lines.",
+          "goi_y": "1) Đặt con trỏ trong đoạn đầu tiên của section.  2) Insert > Drop Cap > Drop Cap Options > Position: Dropped; Lines to drop: 2 > OK.",
+          "goi_y_en": "1) Put the cursor in the first paragraph of the section.  2) Insert > Drop Cap > Drop Cap Options > Position: Dropped; Lines to drop: 2 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "dropcap",
+            "de_bai": "In the “Robot Requirements” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 2 lines."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Chỉ đổi hướng trang chứa tiêu đề “Competition Overview” thành Landscape. Không đổi hướng các trang khác.",
+          "yeu_cau_en": "Change the orientation of only the page that contains the “Competition Overview” heading to Landscape. Do not change the orientation of any other page.",
+          "goi_y": "1) Chọn toàn bộ nội dung của trang có tiêu đề \"Competition Overview\" (từ dòng đầu đến dòng cuối trang đó).  2) Layout > Margins > Custom Margins (mở Page Setup).  3) Orientation: Landscape; Apply to: Selected text > OK (Word tự chèn section break trước/sau).  4) Kiểm tra: chỉ trang đó nằm ngang, các trang khác vẫn dọc.",
+          "goi_y_en": "1) Select all content of the page with the \"Competition Overview\" heading (from the first to the last line of that page).  2) Layout > Margins > Custom Margins (opens Page Setup).  3) Orientation: Landscape; Apply to: Selected text > OK (Word inserts section breaks before/after).  4) Check: only that page is landscape, the other pages stay portrait.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "orient_sec",
+            "de_bai": "Change the orientation of only the page that contains the “Competition Overview” heading to Landscape. Do not change the orientation of any other page."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Áp dụng style Intense Quote cho đoạn văn bắt đầu bằng “Referees may stop a robot that …”.",
+          "yeu_cau_en": "Apply the Intense Quote style to the paragraph that starts with “Referees may stop a robot that …”.",
+          "goi_y": "1) Đặt con trỏ trong đoạn đó.  2) Home > Styles > Intense Quote (nếu không thấy, mở Styles pane Ctrl+Alt+Shift+S).",
+          "goi_y_en": "1) Put the cursor in that paragraph.  2) Home > Styles > Intense Quote (if not visible, open the Styles pane with Ctrl+Alt+Shift+S).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_style",
+            "de_bai": "Apply the Intense Quote style to the paragraph that starts with “Referees may stop a robot that …”."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Tìm chữ “Winning teams may be invited to an international event.” và áp dụng style Subtle Emphasis cho nó.",
+          "yeu_cau_en": "Locate the text “Winning teams may be invited to an international event.” and apply the Subtle Emphasis style to it.",
+          "goi_y": "1) Dùng Ctrl+F tìm câu trên và chọn đúng câu (kể cả dấu chấm).  2) Home > Styles > Subtle Emphasis.",
+          "goi_y_en": "1) Use Ctrl+F to find the sentence and select exactly that sentence (including the period).  2) Home > Styles > Subtle Emphasis.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style",
+            "de_bai": "Locate the text “Winning teams may be invited to an international event.” and apply the Subtle Emphasis style to it."
+          },
+          "chuong": 2
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Hotel",
+      "ten_en": "Project 2 – Hotel",
+      "file": "C2D2_P2_Hotel.docx",
+      "mo_ta": "Mở file C2D2_P2_Hotel.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D2_P2_Hotel.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Tô nền (shading) Gold, Accent 4, Lighter 80% cho đoạn văn bắt đầu bằng “Children can join the Kids Club …”.",
+          "yeu_cau_en": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Children can join the Kids Club …”.",
+          "goi_y": "1) Chọn toàn bộ đoạn (bao gồm dấu ¶).  2) Home > Shading > Gold, Accent 4, Lighter 80%.",
+          "goi_y_en": "1) Select the whole paragraph (including the ¶ mark).  2) Home > Shading > Gold, Accent 4, Lighter 80%.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_shading",
+            "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Children can join the Kids Club …”."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Tìm từ “seafood” và xóa nó khỏi tài liệu.",
+          "yeu_cau_en": "Find the word “seafood” and delete it from the document.",
+          "goi_y": "1) Home > Find (Ctrl+F) > nhập \"seafood\" trong ngăn Navigation.  2) Bấm vào kết quả để chọn từ > nhấn Delete (xoá luôn khoảng trắng thừa nếu có).",
+          "goi_y_en": "1) Home > Find (Ctrl+F) > type \"seafood\" in the Navigation pane.  2) Click the result to select the word > press Delete (also delete any extra space).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "find_delete",
+            "de_bai": "Find the word “seafood” and delete it from the document.",
+            "goc": {
+              "n": 1
+            }
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Trong mục “Welcome to Pearl Bay”, sao chép định dạng của đoạn đầu tiên và áp dụng cho đoạn thứ hai.",
+          "yeu_cau_en": "In the “Welcome to Pearl Bay” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
+          "goi_y": "1) Đặt con trỏ trong đoạn thứ nhất của section.  2) Home > Format Painter (bấm 1 lần).  3) Quét chọn toàn bộ đoạn thứ hai (hoặc bấm 3 lần vào đoạn thứ hai).",
+          "goi_y_en": "1) Put the cursor in the first paragraph of the section.  2) Home > Format Painter (click once).  3) Drag over the whole second paragraph (or triple-click it).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "format_painter",
+            "de_bai": "In the “Welcome to Pearl Bay” section, copy the formatting of the first paragraph and apply it to the second paragraph."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Ở cuối tiêu đề tài liệu, chèn ký hiệu nhiệt kế. Dùng phông Webdings và mã ký tự “225”.",
+          "yeu_cau_en": "At the end of the document title, insert a thermometer symbol. Use the Webdings font and character code “225”.",
+          "goi_y": "1) Đặt con trỏ cuối tiêu đề.  2) Insert > Symbol > More Symbols > Font: Webdings; Character code: 225 > Insert > Close.",
+          "goi_y_en": "1) Put the cursor at the end of the title.  2) Insert > Symbol > More Symbols > Font: Webdings; Character code: 225 > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "symbol",
+            "de_bai": "At the end of the document title, insert a thermometer symbol. Use the Webdings font and character code “225”."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Định dạng tiêu đề “Rooms and Suites” sao cho luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề giữ liền nhau.",
+          "yeu_cau_en": "Format the heading “Rooms and Suites” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
+          "goi_y": "1) Đặt con trỏ trong tiêu đề.  2) Home > Paragraph dialog > tab Line and Page Breaks.  3) Tích Keep with next và Keep lines together > OK.",
+          "goi_y_en": "1) Put the cursor in the heading.  2) Home > Paragraph dialog > Line and Page Breaks tab.  3) Check Keep with next and Keep lines together > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "keep_next",
+            "de_bai": "Format the heading “Rooms and Suites” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together."
+          },
+          "chuong": 2
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Museum",
+      "ten_en": "Project 3 – Museum",
+      "file": "C2D2_P3_Museum.docx",
+      "mo_ta": "Mở file C2D2_P3_Museum.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C2D2_P3_Museum.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Kids Love Dinosaurs”, đặt khoảng cách trước (spacing before) của hai đoạn văn sau tiêu đề là 0 pt và khoảng cách sau là 18 pt.",
+          "yeu_cau_en": "In the “Kids Love Dinosaurs” section, set the spacing before the two paragraphs after the heading to 0 pt and the spacing after to 18 pt.",
+          "goi_y": "1) Chọn hai đoạn văn.  2) Layout > Spacing Before: 0 pt; After: 18 pt.",
+          "goi_y_en": "1) Select the two paragraphs.  2) Layout > Spacing Before: 0 pt; After: 18 pt.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_spacing",
+            "de_bai": "In the “Kids Love Dinosaurs” section, set the spacing before the two paragraphs after the heading to 0 pt and the spacing after to 18 pt."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Áp dụng style Title cho tiêu đề “Theropod Dinosaurs”.",
+          "yeu_cau_en": "Apply the Title style to the heading “Theropod Dinosaurs”.",
+          "goi_y": "1) Đặt con trỏ trong tiêu đề Theropod Dinosaurs.  2) Home > Styles > Title.",
+          "goi_y_en": "1) Put the cursor in the heading Theropod Dinosaurs.  2) Home > Styles > Title.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "heading_style",
+            "de_bai": "Apply the Title style to the heading “Theropod Dinosaurs”."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Trong mục “When and Where Dinosaurs Lived”, thụt lề trái cả hai đoạn văn sau tiêu đề 0.3\" (0.76 cm).",
+          "yeu_cau_en": "In the “When and Where Dinosaurs Lived” section, indent both paragraphs after the heading 0.3\" (0.76 cm) from the left margin.",
+          "goi_y": "1) Chọn hai đoạn.  2) Layout > Indent Left: 0.3\".",
+          "goi_y_en": "1) Select the two paragraphs.  2) Layout > Indent Left: 0.3\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "indent",
+            "de_bai": "In the “When and Where Dinosaurs Lived” section, indent both paragraphs after the heading 0.3\" (0.76 cm) from the left margin."
+          },
+          "chuong": 2
+        },
+        {
+          "yeu_cau": "Ở đầu tiêu đề “Geologic Eras”, chèn ngắt section kiểu Next Page.",
+          "yeu_cau_en": "At the beginning of the heading “Geologic Eras”, insert a Next Page section break.",
+          "goi_y": "1) Đặt con trỏ trước chữ đầu tiên của tiêu đề.  2) Layout > Breaks > Section Breaks: Next Page.",
+          "goi_y_en": "1) Put the cursor before the first letter of the heading.  2) Layout > Breaks > Section Breaks: Next Page.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sbreak_next",
+            "de_bai": "At the beginning of the heading “Geologic Eras”, insert a Next Page section break."
+          },
+          "chuong": 2
+        }
+      ]
+    }
+  ],
+  "chuong": 2
+}

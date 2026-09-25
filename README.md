@@ -84,8 +84,10 @@ Chi tiết từng luật chấm, cùng cách soạn đề bằng file `de.json` 
 Trang chủ chỉ có **3 môn: Word, Excel, PowerPoint**. Bấm vào một môn → chọn chế độ:
 - **Luyện tập** / **Thi thử**: chọn một đề trong môn đó (các đề nằm bên trong môn, không bày hết ra ngoài).
 - **Luyện theo chương** 📚: chọn một chương theo khung đề MOS (vd Word: 1 Quản lý tài liệu, 2 Chữ – đoạn – section,
-  3 Bảng & danh sách, 4 Tham chiếu, 5 Đồ họa, 6 Cộng tác, 7 Nâng cao). App gom các câu thuộc chương đó từ mọi đề
-  (tối đa 6 dự án, mỗi lần một khác), không giới hạn giờ, có gợi ý.
+  3 Bảng & danh sách, 4 Tham chiếu, 5 Đồ họa, 6 Cộng tác, 7 Nâng cao), rồi chọn **đề riêng của chương** hoặc
+  **Trộn ngẫu nhiên** (gom câu của chương từ mọi đề, tối đa 6 dự án, mỗi lần một khác). Không giới hạn giờ, có gợi ý.
+- Word có sẵn **14 đề theo chương** (211 câu, `de_thi\Word365_TheoChuong_Chuong_<c>_De_<k>`) sinh bằng bộ công cụ
+  sinh đề Mít tin học, phủ **đủ 183 dạng câu**, tất cả chấm tự động, song ngữ Việt/Anh.
 - Đề tự soạn: trong form Soạn đề, mỗi nhiệm vụ có ô **Chương** để xếp vào chương.
 
 ## Tài liệu học: slide, video ngắn, bài tương tác SCORM → thực hành ngay

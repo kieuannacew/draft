@@ -1,0 +1,255 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 3: Bảng và danh sách – Đề 3",
+  "ten_en": "Word – Chapter 3: Manage tables and lists – Test 3",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_3_De_3",
+  "dau_vet": "28e8c363a6e8e179",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – DIY",
+      "ten_en": "Project 1 – DIY",
+      "file": "C3D3_P1_DIY.docx",
+      "mo_ta": "Mở file C3D3_P1_DIY.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D3_P1_DIY.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Store Locations and Hours”, trộn (merge) các ô ở hàng đầu tiên của bảng.",
+          "yeu_cau_en": "In the “Store Locations and Hours” section, merge the cells in the first table row.",
+          "goi_y": "1) Chọn toàn bộ hàng đầu tiên của bảng.  2) Table Layout > Merge Cells.",
+          "goi_y_en": "1) Select the entire first row of the table.  2) Table Layout > Merge Cells.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "merge_cells",
+            "de_bai": "In the “Store Locations and Hours” section, merge the cells in the first table row."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “DIY Seminars”, đổi cấp danh sách của “Build shelves” thành Level 1.",
+          "yeu_cau_en": "In the “DIY Seminars” section, change the list level for “Build shelves” to Level 1.",
+          "goi_y": "1) Đặt con trỏ vào mục \"Build shelves\".  2) Home > mũi tên Bullets/Numbering > Change List Level > Level 1.",
+          "goi_y_en": "1) Put the cursor in the \"Build shelves\" item.  2) Home > Bullets/Numbering arrow > Change List Level > Level 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "list_level",
+            "de_bai": "In the “DIY Seminars” section, change the list level for “Build shelves” to Level 1."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Mascot Family Growing, Too!”, định dạng 5 đoạn văn bắt đầu từ “Paint walls” thành danh sách đánh số kiểu A..",
+          "yeu_cau_en": "In the “Mascot Family Growing, Too!” section, format the 5 paragraphs starting with “Paint walls” as a numbered list that uses the A. number format.",
+          "goi_y": "1) Chọn các đoạn từ \"Paint walls\" đến \"Plant gardens\".  2) Home > Numbering > chọn định dạng A. (nếu không có: Define New Number Format).",
+          "goi_y_en": "1) Select the paragraphs from \"Paint walls\" to \"Plant gardens\".  2) Home > Numbering > choose the A. format (if missing: Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "numbers_from_paras",
+            "de_bai": "In the “Mascot Family Growing, Too!” section, format the 5 paragraphs starting with “Paint walls” as a numbered list that uses the A. number format."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Tips of the Month”, chuyển 4 đoạn văn bắt đầu từ “Paint walls” thành danh sách dấu đầu dòng. Dùng dấu chấm tròn mặc định và căn dấu đầu dòng thẳng lề trái trang (không đổi khoảng thụt treo).",
+          "yeu_cau_en": "In the “Tips of the Month” section, convert the 4 paragraphs starting with “Paint walls” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
+          "goi_y": "1) Chọn 4 đoạn từ \"Paint walls\" đến \"Lay tiles\".  2) Home > Bullets > chọn dấu chấm tròn •.  3) Nhấp phải vào danh sách > Adjust List Indents > Bullet position: 0\" (giữ nguyên Text indent/khoảng cách treo) > OK. (Hoặc Home > Decrease Indent 1 lần.)",
+          "goi_y_en": "1) Select the 4 paragraphs from \"Paint walls\" to \"Lay tiles\".  2) Home > Bullets > choose the round bullet •.  3) Right-click the list > Adjust List Indents > Bullet position: 0\" (keep the Text indent / hanging distance) > OK. (Or Home > Decrease Indent once.)",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bullets_from_paras",
+            "de_bai": "In the “Tips of the Month” section, convert the 4 paragraphs starting with “Paint walls” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Housing",
+      "ten_en": "Project 2 – Housing",
+      "file": "C3D3_P2_Housing.docx",
+      "mo_ta": "Mở file C3D3_P2_Housing.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D3_P2_Housing.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Building with Heart”, đổi kích thước bảng để mỗi cột rộng 1.5\" (3.81 cm).",
+          "yeu_cau_en": "In the “Building with Heart” section, resize the table so that each column is 1.5\" (3.81 cm) wide.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Layout > Width (Cell Size): 1.5\" (hoặc Table Properties > Column > Preferred width).",
+          "goi_y_en": "1) Select the whole table.  2) Table Layout > Width (Cell Size): 1.5\" (or Table Properties > Column > Preferred width).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "col_width",
+            "de_bai": "In the “Building with Heart” section, resize the table so that each column is 1.5\" (3.81 cm) wide."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Ngay dưới tiêu đề “Building with Heart”, chèn bảng mới 3 cột và 4 hàng. Ở hàng trên cùng, từ trái sang phải, gõ “Location”, “Price”, “Name”. Co giãn bảng vừa với nội dung.",
+          "yeu_cau_en": "Just under the heading “Building with Heart”, insert a new table that has 3 columns and 4 rows. In the top row, from left to right, type “Location”, “Price”, “Name”. Fit the table to its contents.",
+          "goi_y": "1) Đặt con trỏ cuối dòng tiêu đề, nhấn Enter để tạo dòng mới ngay dưới tiêu đề.  2) Insert > Table > Insert Table: Number of columns 3, Number of rows 4 > OK.  3) Gõ lần lượt Location, Price, Name vào hàng đầu.  4) Table Layout > AutoFit > AutoFit Contents.",
+          "goi_y_en": "1) Put the cursor at the end of the heading and press Enter to create a new line right below it.  2) Insert > Table > Insert Table: Number of columns 3, Number of rows 4 > OK.  3) Type Location, Price, Name in the top row.  4) Table Layout > AutoFit > AutoFit Contents.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "insert_table",
+            "de_bai": "Just under the heading “Building with Heart”, insert a new table that has 3 columns and 4 rows. In the top row, from left to right, type “Location”, “Price”, “Name”. Fit the table to its contents."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Building with Heart”, thêm viền ngoài 3 pt màu Orange, Accent 2 cho bảng. Không đổi viền bên trong.",
+          "yeu_cau_en": "In the “Building with Heart” section, apply a 3 pt Orange, Accent 2 outside border to the table. Do not change the inside borders.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Design > Pen Weight: 3 pt; Pen Color: Orange, Accent 2.  3) Table Design > Borders > Outside Borders.",
+          "goi_y_en": "1) Select the whole table.  2) Table Design > Pen Weight: 3 pt; Pen Color: Orange, Accent 2.  3) Table Design > Borders > Outside Borders.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_borders",
+            "de_bai": "In the “Building with Heart” section, apply a 3 pt Orange, Accent 2 outside border to the table. Do not change the inside borders."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Đổi kích thước bảng trong mục “Building with Heart” vừa chiều rộng trang bằng tùy chọn AutoFit Window.",
+          "yeu_cau_en": "Resize the table in the “Building with Heart” section to fit the page width by using the AutoFit Window option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > AutoFit > AutoFit Window.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > AutoFit > AutoFit Window.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "autofit",
+            "de_bai": "Resize the table in the “Building with Heart” section to fit the page width by using the AutoFit Window option.",
+            "goc": {
+              "grid": [
+                3120,
+                3120,
+                3120
+              ]
+            }
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Health",
+      "ten_en": "Project 3 – Health",
+      "file": "C3D3_P3_Health.docx",
+      "mo_ta": "Mở file C3D3_P3_Health.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D3_P3_Health.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Bedroom Environment”, tách bảng để hàng bắt đầu bằng “Teenagers” trở thành hàng đầu tiên của bảng mới.",
+          "yeu_cau_en": "In the “Bedroom Environment” section, split the table so that the row that starts with “Teenagers” becomes the first row of a new table.",
+          "goi_y": "1) Đặt con trỏ trong hàng bắt đầu bằng \"Teenagers\".  2) Table Layout > Split Table.",
+          "goi_y_en": "1) Put the cursor in the row that starts with \"Teenagers\".  2) Table Layout > Split Table.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "split_table",
+            "de_bai": "In the “Bedroom Environment” section, split the table so that the row that starts with “Teenagers” becomes the first row of a new table.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Age group",
+                "Category",
+                "Hours of sleep"
+              ]
+            }
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Screens and Sleep”, chuyển đoạn văn bản cách nhau bằng tab bắt đầu bằng “Habit” thành bảng hai cột. Giữ AutoFit mặc định.",
+          "yeu_cau_en": "In the “Screens and Sleep” section, convert the tab-delimited text that starts with “Habit” to a two-column table. Accept the default AutoFit behavior.",
+          "goi_y": "1) Chọn các dòng văn bản phân cách bằng Tab (bắt đầu từ \"Habit\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; giữ AutoFit mặc định (Fixed column width: Auto) > OK.",
+          "goi_y_en": "1) Select the tab-separated lines (starting with \"Habit\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; keep the default AutoFit (Fixed column width: Auto) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_to_table",
+            "de_bai": "In the “Screens and Sleep” section, convert the tab-delimited text that starts with “Habit” to a two-column table. Accept the default AutoFit behavior."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “When to See a Doctor”, đổi dấu đầu dòng thành ký hiệu tùy chỉnh: hình thoi của phông Wingdings 2, mã ký tự “245”.",
+          "yeu_cau_en": "In the “When to See a Doctor” section, change the bullet points to custom ones. Use the diamond symbol from the Wingdings 2 font and character code “245”.",
+          "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Wingdings 2; Character code: 245 > OK > OK.",
+          "goi_y_en": "1) Select the whole bulleted list.  2) Home > Bullets arrow > Define New Bullet > Symbol.  3) Font: Wingdings 2; Character code: 245 > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_bullet",
+            "de_bai": "In the “When to See a Doctor” section, change the bullet points to custom ones. Use the diamond symbol from the Wingdings 2 font and character code “245”."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Sleep Routine”, đổi định dạng số của danh sách đánh số thành A..",
+          "yeu_cau_en": "In the “Sleep Routine” section, change the number format of the numbered list to A..",
+          "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn A. (hoặc Define New Number Format).",
+          "goi_y_en": "1) Select the list.  2) Home > Numbering arrow > choose A. (or Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "num_format",
+            "de_bai": "In the “Sleep Routine” section, change the number format of the numbered list to A.."
+          },
+          "chuong": 3
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – Energy",
+      "ten_en": "Project 4 – Energy",
+      "file": "C3D3_P4_Energy.docx",
+      "mo_ta": "Mở file C3D3_P4_Energy.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C3D3_P4_Energy.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong mục “Future Plans”, thêm một hàng mới ở cuối bảng. Nhập “Sample”, “South” và “10” vào hàng mới.",
+          "yeu_cau_en": "In the “Future Plans” section, add a new row to the bottom of the table. Enter “Sample”, “South”, and “10” in the new row.",
+          "goi_y": "1) Đặt con trỏ ở ô cuối cùng của bảng.  2) Table Layout > Insert Below (hoặc nhấn Tab ở ô cuối).  3) Nhập lần lượt: Sample | South | 10.",
+          "goi_y_en": "1) Put the cursor in the last cell of the table.  2) Table Layout > Insert Below (or press Tab in the last cell).  3) Type: Sample | South | 10.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "add_row",
+            "de_bai": "In the “Future Plans” section, add a new row to the bottom of the table. Enter “Sample”, “South”, and “10” in the new row."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Xóa mọi đường viền của bảng bắt đầu bằng “Organization” ở gần đầu tài liệu.",
+          "yeu_cau_en": "Remove all borders from the table that starts with “Organization” near the top of the document.",
+          "goi_y": "1) Chọn toàn bộ bảng bắt đầu bằng \"Organization\".  2) Table Design > Borders > No Border.",
+          "goi_y_en": "1) Select the whole table that starts with \"Organization\".  2) Table Design > Borders > No Border.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_noborder",
+            "de_bai": "Remove all borders from the table that starts with “Organization” near the top of the document."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Introduction”, tiếp tục đánh số cho danh sách thứ hai để các mục được đánh số từ 1 đến 6.",
+          "yeu_cau_en": "In the “Introduction” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
+          "goi_y": "1) Nhấp phải vào mục \"Smart meters\" (đang đánh số 1).  2) Chọn Continue Numbering.",
+          "goi_y_en": "1) Right-click the item \"Smart meters\" (currently numbered 1).  2) Choose Continue Numbering.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "continue_num",
+            "de_bai": "In the “Introduction” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
+          },
+          "chuong": 3
+        },
+        {
+          "yeu_cau": "Trong mục “Electric Vehicles”, đổi danh sách đánh số để bắt đầu từ 10.",
+          "yeu_cau_en": "In the “Electric Vehicles” section, change the numbered list so that it starts at 10.",
+          "goi_y": "1) Nhấp phải vào mục đầu tiên của danh sách > Set Numbering Value.  2) Start new list; Set value to: 10 > OK.",
+          "goi_y_en": "1) Right-click the first item of the list > Set Numbering Value.  2) Start new list; Set value to: 10 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restart_num",
+            "de_bai": "In the “Electric Vehicles” section, change the numbered list so that it starts at 10."
+          },
+          "chuong": 3
+        }
+      ]
+    }
+  ],
+  "chuong": 3
+}

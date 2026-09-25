@@ -1,0 +1,277 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 1: Quản lý tài liệu – Đề 2",
+  "ten_en": "Word – Chapter 1: Manage documents – Test 2",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_1_De_2",
+  "dau_vet": "83bae853cf481e61",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Scuba",
+      "ten_en": "Project 1 – Scuba",
+      "file": "C1D2_P1_Scuba.docx",
+      "mo_ta": "Mở file C1D2_P1_Scuba.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D2_P1_Scuba.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Hiển thị header Integral trên mọi trang của tài liệu trừ trang 1.",
+          "yeu_cau_en": "Display the Integral header on all pages of the document except page 1.",
+          "goi_y": "1) Insert > Header > Integral.  2) Trên tab Header & Footer: tích Different First Page.  3) Kiểm tra trang 1 không có header, các trang sau có. Close Header and Footer.",
+          "goi_y_en": "1) Insert > Header > Integral.  2) On the Header & Footer tab: check Different First Page.  3) Check that page 1 has no header and the other pages do. Close Header and Footer.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "header_gallery",
+            "de_bai": "Display the Integral header on all pages of the document except page 1.",
+            "goc": {
+              "old": [
+                "f2480850386b93201280ebca3c3df527"
+              ]
+            }
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Bỏ chế độ tương thích (Compatibility Mode) của tài liệu này.",
+          "yeu_cau_en": "Remove the compatibility mode of this document.",
+          "goi_y": "1) File > Info > Convert (Compatibility Mode).  2) Bấm OK trong hộp thoại xác nhận nâng cấp định dạng.",
+          "goi_y_en": "1) File > Info > Convert (Compatibility Mode).  2) Click OK in the upgrade confirmation dialog.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "compat",
+            "de_bai": "Remove the compatibility mode of this document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Đổi màu trang (page color) của tài liệu thành Green, Accent 6, Lighter 80%.",
+          "yeu_cau_en": "Change the page color of the document to Green, Accent 6, Lighter 80%.",
+          "goi_y": "Design > Page Color > chọn ô Green, Accent 6, Lighter 80% (di chuột để xem tên màu).",
+          "goi_y_en": "Design > Page Color > select Green, Accent 6, Lighter 80% (hover to see the color names).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_color",
+            "de_bai": "Change the page color of the document to Green, Accent 6, Lighter 80%."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Áp dụng theme Berlin cho tài liệu.",
+          "yeu_cau_en": "Apply the Berlin theme to the document.",
+          "goi_y": "Design > Themes > Berlin.",
+          "goi_y_en": "Design > Themes > Berlin.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "doc_theme",
+            "de_bai": "Apply the Berlin theme to the document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng Rich Text Format tên “Blue”.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Blue”.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Rich Text Format (*.rtf); File name: Blue > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Rich Text Format (*.rtf); File name: Blue > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_rtf",
+            "de_bai": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Blue”."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Museum",
+      "ten_en": "Project 2 – Museum",
+      "file": "C1D2_P2_Museum.docx",
+      "mo_ta": "Mở file C1D2_P2_Museum.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D2_P2_Museum.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Hiển thị footer Retrospect trên mọi trang của tài liệu.",
+          "yeu_cau_en": "Display the Retrospect footer on all pages of the document.",
+          "goi_y": "1) Insert > Footer > Retrospect.  2) Đảm bảo Different First Page KHÔNG được tích. Close Header and Footer.",
+          "goi_y_en": "1) Insert > Footer > Retrospect.  2) Make sure Different First Page is NOT checked. Close Header and Footer.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "footer_gallery",
+            "de_bai": "Display the Retrospect footer on all pages of the document.",
+            "goc": {
+              "old": [
+                "01a78fb44b80e850e03ca39973e366dc"
+              ]
+            }
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Thêm viền trang kiểu Box 4 ½ pt màu Blue, Accent 1, Darker 50% chỉ cho trang đầu tiên.",
+          "yeu_cau_en": "Add a 4 ½ pt Blue, Accent 1, Darker 50% Box page border to the first page only.",
+          "goi_y": "1) Design > Page Borders.  2) Setting: Box; Color: Blue, Accent 1, Darker 50%; Width: 4 ½ pt.  3) Apply to: This section - First page only > OK.",
+          "goi_y_en": "1) Design > Page Borders.  2) Setting: Box; Color: Blue, Accent 1, Darker 50%; Width: 4 ½ pt.  3) Apply to: This section - First page only > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_border",
+            "de_bai": "Add a 4 ½ pt Blue, Accent 1, Darker 50% Box page border to the first page only."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Áp dụng style set Basic (Elegant) cho tài liệu.",
+          "yeu_cau_en": "Apply the Basic (Elegant) style set to the document.",
+          "goi_y": "Design > nhóm Document Formatting > mở gallery Style Set > chọn Basic (Elegant).",
+          "goi_y_en": "Design > Document Formatting group > open the Style Set gallery > select Basic (Elegant).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "style_set",
+            "de_bai": "Apply the Basic (Elegant) style set to the document.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Tìm đoạn văn bắt đầu bằng “Every year, field teams uncover new …” và thêm bookmark tên “Review” ở đầu đoạn này.",
+          "yeu_cau_en": "Locate the paragraph that starts with “Every year, field teams uncover new …” and add a bookmark at the beginning of this paragraph named “Review”.",
+          "goi_y": "1) Đặt con trỏ ở đầu đoạn văn (trước chữ đầu tiên).  2) Insert > Bookmark > Bookmark name: Review > Add.",
+          "goi_y_en": "1) Put the cursor at the beginning of the paragraph (before the first character).  2) Insert > Bookmark > Bookmark name: Review > Add.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bookmark",
+            "de_bai": "Locate the paragraph that starts with “Every year, field teams uncover new …” and add a bookmark at the beginning of this paragraph named “Review”."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Memo”, tối ưu cho Standard (publishing online and printing). Không mở file sau khi xuất.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a PDF file named “Memo” that is optimized for standard (publishing online and printing). Do not open the file after publishing.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) File name: Memo; Save as type: PDF (*.pdf).  3) Optimize for: chọn Standard (publishing online and printing); bỏ chọn Open file after publishing > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) File name: Memo; Save as type: PDF (*.pdf).  3) Optimize for: Standard (publishing online and printing); clear Open file after publishing > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_pdf",
+            "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Memo” that is optimized for standard (publishing online and printing). Do not open the file after publishing."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Energy",
+      "ten_en": "Project 3 – Energy",
+      "file": "C1D2_P3_Energy.docx",
+      "mo_ta": "Mở file C1D2_P3_Energy.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D2_P3_Energy.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi theme colors của tài liệu thành Green Yellow và theme fonts thành Georgia.",
+          "yeu_cau_en": "Change the theme colors of the document to Green Yellow and the theme fonts to Georgia.",
+          "goi_y": "1) Design > Colors > Green Yellow.  2) Design > Fonts > Georgia.",
+          "goi_y_en": "1) Design > Colors > Green Yellow.  2) Design > Fonts > Georgia.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "theme_colors",
+            "de_bai": "Change the theme colors of the document to Green Yellow and the theme fonts to Georgia."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong mục “Future Plans”, thêm hyperlink cho chữ “Next year” liên kết tới https://www.greenvoltenergy.com.",
+          "yeu_cau_en": "In the “Future Plans” section, add a hyperlink to the text “Next year” that links to https://www.greenvoltenergy.com.",
+          "goi_y": "1) Chọn cụm từ \"Next year\" trong section Future Plans.  2) Insert > Link (Ctrl+K) > Existing File or Web Page.  3) Address: https://www.greenvoltenergy.com  4) OK.",
+          "goi_y_en": "1) Select the phrase \"Next year\" in the Future Plans section.  2) Insert > Link (Ctrl+K) > Existing File or Web Page.  3) Address: https://www.greenvoltenergy.com  4) OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_url",
+            "de_bai": "In the “Future Plans” section, add a hyperlink to the text “Next year” that links to https://www.greenvoltenergy.com."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Áp dụng lề Wide cho toàn bộ tài liệu.",
+          "yeu_cau_en": "Apply the Wide margin setting to the entire document.",
+          "goi_y": "Layout > Margins > Wide.",
+          "goi_y_en": "Layout > Margins > Wide.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "margins_preset",
+            "de_bai": "Apply the Wide margin setting to the entire document."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong thuộc tính file, thêm “Staff training” làm Subject.",
+          "yeu_cau_en": "In the file properties, add “Staff training” as a subject.",
+          "goi_y": "1) File > Info > Show All Properties.  2) Ô Subject: nhập \"Staff training\".",
+          "goi_y_en": "1) File > Info > Show All Properties.  2) Subject box: type \"Staff training\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_subject",
+            "de_bai": "In the file properties, add “Staff training” as a subject."
+          },
+          "chuong": 1
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 4 – Weekdays",
+      "ten_en": "Project 4 – Weekdays",
+      "file": "C1D2_P4_Weekdays.docx",
+      "mo_ta": "Mở file C1D2_P4_Weekdays.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C1D2_P4_Weekdays.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan tới ảnh bằng cách thêm mô tả alt text “Weekdays picture”.",
+          "yeu_cau_en": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Weekdays picture”.",
+          "goi_y": "1) Review > Check Accessibility.  2) Mục Missing alternative text: bấm mũi tên cạnh tên ảnh > Add a description.  3) Nhập \"Weekdays picture\" vào ô mô tả trong ngăn Alt Text.",
+          "goi_y_en": "1) Review > Check Accessibility.  2) Under Missing alternative text: click the arrow next to the picture name > Add a description.  3) Type \"Weekdays picture\" in the Alt Text pane.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "access_alt",
+            "de_bai": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Weekdays picture”."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Trong thuộc tính file, thêm “weekdays” làm Tag.",
+          "yeu_cau_en": "In the file properties, add “weekdays” as a tag.",
+          "goi_y": "1) File > Info > Properties (bên phải).  2) Ô Tags: nhập \"weekdays\" (Tags chính là Keywords).",
+          "goi_y_en": "1) File > Info > Properties (on the right).  2) Tags box: type \"weekdays\" (Tags are the Keywords).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_tags",
+            "de_bai": "In the file properties, add “weekdays” as a tag."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Chèn số trang theo kiểu Bottom of Page Accent Bar 2.",
+          "yeu_cau_en": "Insert page numbers by using the Bottom of Page Accent Bar 2 style.",
+          "goi_y": "Insert > Page Number > Bottom of Page > Accent Bar 2.",
+          "goi_y_en": "Insert > Page Number > Bottom of Page > Accent Bar 2.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_numbers",
+            "de_bai": "Insert page numbers by using the Bottom of Page Accent Bar 2 style."
+          },
+          "chuong": 1
+        },
+        {
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents ở định dạng tương thích Word 97-2003, tên “Weekdays_Copy”. Chấp nhận mọi cảnh báo tương thích.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “Weekdays_Copy”. Accept any compatibility warnings.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Word 97-2003 Document (*.doc); File name: Weekdays_Copy > Save.  3) Nếu xuất hiện Compatibility Checker bấm Continue.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Word 97-2003 Document (*.doc); File name: Weekdays_Copy > Save.  3) If the Compatibility Checker appears, click Continue.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_97",
+            "de_bai": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “Weekdays_Copy”. Accept any compatibility warnings."
+          },
+          "chuong": 1
+        }
+      ]
+    }
+  ],
+  "chuong": 1
+}

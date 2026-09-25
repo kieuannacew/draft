@@ -1,0 +1,183 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 4: Tham chiếu – Đề 1",
+  "ten_en": "Word – Chapter 4: Create and manage references – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_4_De_1",
+  "dau_vet": "96201afc671b1636",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Weekdays",
+      "ten_en": "Project 1 – Weekdays",
+      "file": "C4D1_P1_Weekdays.docx",
+      "mo_ta": "Mở file C4D1_P1_Weekdays.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C4D1_P1_Weekdays.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Chuyển mọi footnote thành endnote.",
+          "yeu_cau_en": "Convert all footnotes to endnotes.",
+          "goi_y": "1) References > mở hộp thoại Footnotes (mũi tên nhỏ) > Convert.  2) Chọn Convert all footnotes to endnotes > OK > Close.",
+          "goi_y_en": "1) References > open the Footnotes dialog launcher > Convert.  2) Choose Convert all footnotes to endnotes > OK > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "convert_notes",
+            "de_bai": "Convert all footnotes to endnotes."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Ở cuối đoạn thứ hai trong mục “Moaning about Mondays”, chèn trích dẫn (citation) cho một nguồn Book mới với thông tin: Author: John Lee; Title: The Days of the Week; Year: 2021; City: Hanoi; Publisher: Timekeepers Club.",
+          "yeu_cau_en": "At the end of the second paragraph in the “Moaning about Mondays” section, insert a citation for a new Book source. Use the following information: Author: John Lee; Title: The Days of the Week; Year: 2021; City: Hanoi; Publisher: Timekeepers Club.",
+          "goi_y": "1) Đặt con trỏ cuối đoạn thứ hai của section.  2) References > Insert Citation > Add New Source.  3) Type of Source: Book.  4) Author: Lee, John (hoặc gõ John Lee); Title: The Days of the Week; Year: 2021; City: Hanoi; Publisher: Timekeepers Club > OK.",
+          "goi_y_en": "1) Put the cursor at the end of the second paragraph of the section.  2) References > Insert Citation > Add New Source.  3) Type of Source: Book.  4) Author: Lee, John (or type John Lee); Title: The Days of the Week; Year: 2021; City: Hanoi; Publisher: Timekeepers Club > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "citation_source",
+            "de_bai": "At the end of the second paragraph in the “Moaning about Mondays” section, insert a citation for a new Book source. Use the following information: Author: John Lee; Title: The Days of the Week; Year: 2021; City: Hanoi; Publisher: Timekeepers Club."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Trong mục “Facts about Saturday and Sunday”, chèn chú thích cuối (endnote) ở bên phải tiêu đề. Nhập nội dung endnote “Figures are updated every year.”.",
+          "yeu_cau_en": "In the “Facts about Saturday and Sunday” section, insert a endnote to the right of the heading. Enter the endnote text “Figures are updated every year.”.",
+          "goi_y": "1) Đặt con trỏ ngay cuối tiêu đề Facts about Saturday and Sunday.  2) References > Insert Endnote.  3) Gõ: Figures are updated every year.",
+          "goi_y_en": "1) Put the cursor right at the end of the heading Facts about Saturday and Sunday.  2) References > Insert Endnote.  3) Type: Figures are updated every year.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "footnote",
+            "de_bai": "In the “Facts about Saturday and Sunday” section, insert a endnote to the right of the heading. Enter the endnote text “Figures are updated every year.”."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Sửa mục lục để chỉ hiện các tiêu đề Heading 1.",
+          "yeu_cau_en": "Change the table of contents to show only Heading 1 headings.",
+          "goi_y": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 1 > OK > Yes (thay thế mục lục hiện có).",
+          "goi_y_en": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 1 > OK > Yes (replace the existing table of contents).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_modify",
+            "de_bai": "Change the table of contents to show only Heading 1 headings."
+          },
+          "chuong": 4
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Travel",
+      "ten_en": "Project 2 – Travel",
+      "file": "C4D1_P2_Travel.docx",
+      "mo_ta": "Mở file C4D1_P2_Travel.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C4D1_P2_Travel.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Sửa mục lục để chỉ hiện các tiêu đề Heading 1.",
+          "yeu_cau_en": "Change the table of contents to show only Heading 1 headings.",
+          "goi_y": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 1 > OK > Yes (thay thế mục lục hiện có).",
+          "goi_y_en": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 1 > OK > Yes (replace the existing table of contents).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_modify",
+            "de_bai": "Change the table of contents to show only Heading 1 headings."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Trong mục “Contact Us”, chèn chú thích (caption) bên dưới bảng. Dùng nhãn Table và nội dung caption “: Travel data”.",
+          "yeu_cau_en": "In the “Contact Us” section, insert a caption below the table. Use the Table label and the caption text “: Travel data”.",
+          "goi_y": "1) Chọn bảng (hoặc đặt con trỏ trong bảng).  2) References > Insert Caption.  3) Label: Table; Position: Below selected item.  4) Caption: sau \"Table 1\" gõ thêm \": Travel data\" > OK.",
+          "goi_y_en": "1) Select the table (or put the cursor in it).  2) References > Insert Caption.  3) Label: Table; Position: Below selected item.  4) Caption: after \"Table 1\" type \": Travel data\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "caption_table",
+            "de_bai": "In the “Contact Us” section, insert a caption below the table. Use the Table label and the caption text “: Travel data”."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Trong mục “Schedule”, chèn trích dẫn giữ chỗ (placeholder citation) mới tên “Source6” ở cuối đoạn thứ hai sau tiêu đề.",
+          "yeu_cau_en": "In the “Schedule” section, insert a new placeholder citation named “Source6” at the end of the second paragraph after the heading.",
+          "goi_y": "1) Đặt con trỏ cuối đoạn (trước dấu chấm câu hoặc ngay sau – theo đề: cuối đoạn).  2) References > Insert Citation > Add New Placeholder.  3) Nhập Source6 > OK.",
+          "goi_y_en": "1) Put the cursor at the end of the paragraph (as the task says: end of the paragraph).  2) References > Insert Citation > Add New Placeholder.  3) Type Source6 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "citation",
+            "de_bai": "In the “Schedule” section, insert a new placeholder citation named “Source6” at the end of the second paragraph after the heading."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Chèn trang bìa Austin. Giữ mọi thiết lập mặc định.",
+          "yeu_cau_en": "Insert the Austin cover page. Accept all default settings.",
+          "goi_y": "Insert > Cover Page > Austin.",
+          "goi_y_en": "Insert > Cover Page > Austin.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cover_page",
+            "de_bai": "Insert the Austin cover page. Accept all default settings."
+          },
+          "chuong": 4
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Housing",
+      "ten_en": "Project 3 – Housing",
+      "file": "C4D1_P3_Housing.docx",
+      "mo_ta": "Mở file C4D1_P3_Housing.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C4D1_P3_Housing.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục. Dùng kiểu Automatic Table 1.",
+          "yeu_cau_en": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới khung tiêu đề (banner).  2) References > Table of Contents > Automatic Table 1.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph right below the title banner.  2) References > Table of Contents > Automatic Table 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_insert",
+            "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Đổi kiểu trích dẫn và danh mục tài liệu tham khảo (citation and bibliography style) của tài liệu thành IEEE.",
+          "yeu_cau_en": "Change the citation and bibliography style of the document to IEEE.",
+          "goi_y": "References > Style > IEEE.",
+          "goi_y_en": "References > Style > IEEE.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "biblio_style",
+            "de_bai": "Change the citation and bibliography style of the document to IEEE."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Trong mục “Our Mission”, thêm caption bên dưới ảnh với nội dung “Figure 1 Housing illustration”. Không đổi nhãn hay định dạng số.",
+          "yeu_cau_en": "In the “Our Mission” section, add a caption below the picture that reads “Figure 1 Housing illustration”. Do not change the label or numbering format.",
+          "goi_y": "1) Chọn ảnh > References > Insert Caption.  2) Label: Figure; Position: Below selected item.  3) Gõ thêm \" Housing illustration\" sau Figure 1 > OK.",
+          "goi_y_en": "1) Select the picture > References > Insert Caption.  2) Label: Figure; Position: Below selected item.  3) Type \" Housing illustration\" after Figure 1 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "caption_pic",
+            "de_bai": "In the “Our Mission” section, add a caption below the picture that reads “Figure 1 Housing illustration”. Do not change the label or numbering format."
+          },
+          "chuong": 4
+        },
+        {
+          "yeu_cau": "Đổi định dạng số của mọi chú thích cuối trang (footnote) trong tài liệu thành *, †, ‡, §, ….",
+          "yeu_cau_en": "Change the number format of all footnotes in the document to *, †, ‡, §, ….",
+          "goi_y": "1) References > hộp thoại Footnote and Endnote (mũi tên nhỏ).  2) Footnotes; Number format: *, †, ‡, §, …; Apply changes to: Whole document > Apply.",
+          "goi_y_en": "1) References > Footnote and Endnote dialog launcher.  2) Footnotes; Number format: *, †, ‡, §, …; Apply changes to: Whole document > Apply.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fn_format",
+            "de_bai": "Change the number format of all footnotes in the document to *, †, ‡, §, …."
+          },
+          "chuong": 4
+        }
+      ]
+    }
+  ],
+  "chuong": 4
+}

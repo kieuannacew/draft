@@ -388,7 +388,6 @@
  "Số nhiệm vụ": "Tasks",
  "Luyện theo chương": "Practice by chapter",
  "Chọn môn": "Choose a subject",
- "Chọn một nhóm kỹ năng · gom câu từ mọi đề · có gợi ý": "Pick one skill group · tasks from every test · hints",
  "Chưa làm": "Not tried",
  "Chưa có nhiệm vụ": "No tasks yet",
  "Chương này chưa có nhiệm vụ nào để luyện.": "This chapter has no tasks to practise yet.",
@@ -578,5 +577,12 @@
  "Máy chủ chưa được cài đặt: hãy chạy file may_chu/supabase_lop_hoc.sql trong Supabase.": "The server is not set up: run may_chu/supabase_lop_hoc.sql in Supabase.",
  "Cần kết nối máy chủ lớp học để đổi mật khẩu.": "You need a connection to the class server to change your password.",
  "Khóa công khai (anon hoặc publishable key)": "Public key (anon or publishable key)",
- "Supabase → Project Settings → API. Khóa này được phép để lộ; dữ liệu được bảo vệ bằng quyền truy cập trên máy chủ. KHÔNG dùng khóa service_role / secret.": "Supabase → Project Settings → API. This key may be public; data is protected by access rules on the server. Do NOT use the service_role / secret key."
+ "Supabase → Project Settings → API. Khóa này được phép để lộ; dữ liệu được bảo vệ bằng quyền truy cập trên máy chủ. KHÔNG dùng khóa service_role / secret.": "Supabase → Project Settings → API. This key may be public; data is protected by access rules on the server. Do NOT use the service_role / secret key.",
+ "Chọn một nhóm kỹ năng · đề riêng từng chương hoặc trộn ngẫu nhiên · có gợi ý": "Pick a skill group · dedicated chapter tests or a random mix · hints included",
+ "+ {k} đề theo chương": "+ {k} chapter tests",
+ "{k} đề riêng": "{k} dedicated tests",
+ "Cách luyện chương {n}": "How to practise chapter {n}",
+ "Đề riêng của chương · {p} dự án · {t} nhiệm vụ": "Chapter test · {p} projects · {t} tasks",
+ "Trộn ngẫu nhiên": "Random mix",
+ "Gom câu của chương từ mọi đề, mỗi lần một khác": "Tasks of this chapter from every test, different each time"
 }

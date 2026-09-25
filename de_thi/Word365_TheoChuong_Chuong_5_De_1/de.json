@@ -1,0 +1,250 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 5: Đồ họa (ảnh, hình, SmartArt, biểu đồ) – Đề 1",
+  "ten_en": "Word – Chapter 5: Insert and format graphic elements – Test 1",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_5_De_1",
+  "dau_vet": "7eace70c1c6794a7",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Weekdays",
+      "ten_en": "Project 1 – Weekdays",
+      "file": "C5D1_P1_Weekdays.docx",
+      "mo_ta": "Mở file C5D1_P1_Weekdays.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D1_P1_Weekdays.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Thêm mô tả alt text “Weekdays workflow” cho sơ đồ SmartArt trong mục “Facts about Saturday and Sunday”.",
+          "yeu_cau_en": "Add the alt text description “Weekdays workflow” to the SmartArt graphic in the “Facts about Saturday and Sunday” section.",
+          "goi_y": "1) Bấm vào viền ngoài SmartArt > nhấp phải > Edit Alt Text.  2) Nhập: Weekdays workflow.",
+          "goi_y_en": "1) Click the outer border of the SmartArt > right-click > Edit Alt Text.  2) Type: Weekdays workflow.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_alt",
+            "de_bai": "Add the alt text description “Weekdays workflow” to the SmartArt graphic in the “Facts about Saturday and Sunday” section."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Chuyển tiêu đề tài liệu thành WordArt kiểu Fill: Black, Text color 1; Shadow.",
+          "yeu_cau_en": "Convert the document title to WordArt by using the Fill: Black, Text color 1; Shadow style.",
+          "goi_y": "1) Chọn tiêu đề tài liệu.  2) Insert > WordArt > Fill: Black, Text color 1; Shadow.",
+          "goi_y_en": "1) Select the document title.  2) Insert > WordArt > Fill: Black, Text color 1; Shadow.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "wordart",
+            "de_bai": "Convert the document title to WordArt by using the Fill: Black, Text color 1; Shadow style.",
+            "goc": {
+              "title": "The Days of the Week"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đặt text box bắt đầu bằng “Did” ở vị trí Top Left của trang với kiểu ngắt dòng Square.",
+          "yeu_cau_en": "Position the text box that starts with “Did” in the Top Left of the page with square text wrapping.",
+          "goi_y": "1) Chọn khung text box.  2) Shape Format > Position > Position in Top Left with Square Text Wrapping.",
+          "goi_y_en": "1) Select the text box.  2) Shape Format > Position > Position in Top Left with Square Text Wrapping.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "callout_pos",
+            "de_bai": "Position the text box that starts with “Did” in the Top Left of the page with square text wrapping."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Facts about Saturday and Sunday”, áp dụng hiệu ứng hình Soft Round Bevel cho sơ đồ SmartArt (nhớ chọn toàn bộ sơ đồ SmartArt).",
+          "yeu_cau_en": "In the “Facts about Saturday and Sunday” section, apply the Soft Round Bevel shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
+          "goi_y": "1) Bấm vào viền ngoài SmartArt, sau đó Ctrl+A để chọn tất cả các hình bên trong.  2) Format > Shape Effects > Bevel > Soft Round.",
+          "goi_y_en": "1) Click the outer border of the SmartArt, then press Ctrl+A to select all shapes inside.  2) Format > Shape Effects > Bevel > Soft Round.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_effect",
+            "de_bai": "In the “Facts about Saturday and Sunday” section, apply the Soft Round Bevel shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/cycle2",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong sơ đồ SmartArt ở mục “Facts about Saturday and Sunday”, đổi chữ “Saturday” thành “Saturday (Step 2)”.",
+          "yeu_cau_en": "In the SmartArt graphic in the “Facts about Saturday and Sunday” section, change the text “Saturday” to “Saturday (Step 2)”.",
+          "goi_y": "1) Chọn SmartArt > SmartArt Design > Text Pane.  2) Sửa dòng \"Saturday\" thành \"Saturday (Step 2)\".",
+          "goi_y_en": "1) Select the SmartArt > SmartArt Design > Text Pane.  2) Change the line \"Saturday\" to \"Saturday (Step 2)\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_text",
+            "de_bai": "In the SmartArt graphic in the “Facts about Saturday and Sunday” section, change the text “Saturday” to “Saturday (Step 2)”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Moaning about Mondays”, áp dụng shape style Moderate Effect - Gold, Accent 4 cho text box bắt đầu bằng “Did”.",
+          "yeu_cau_en": "In the “Moaning about Mondays” section, apply the Moderate Effect - Gold, Accent 4 shape style to the text box that starts with “Did”.",
+          "goi_y": "1) Chọn khung text box (bấm vào viền).  2) Shape Format > Shape Styles > Moderate Effect - Gold, Accent 4.",
+          "goi_y_en": "1) Select the text box (click its border).  2) Shape Format > Shape Styles > Moderate Effect - Gold, Accent 4.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "shape_style",
+            "de_bai": "In the “Moaning about Mondays” section, apply the Moderate Effect - Gold, Accent 4 shape style to the text box that starts with “Did”."
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Pharma",
+      "ten_en": "Project 2 – Pharma",
+      "file": "C5D1_P2_Pharma.docx",
+      "mo_ta": "Mở file C5D1_P2_Pharma.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D1_P2_Pharma.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong sơ đồ SmartArt ở mục “Active Ingredients”, hạ cấp “Filling” để thành mục cấp hai dưới “Blending”.",
+          "yeu_cau_en": "In the SmartArt graphic in the “Active Ingredients” section, demote “Filling” so that it becomes a second-level item under “Blending”.",
+          "goi_y": "1) Bấm chọn hình \"Filling\" (hoặc đặt con trỏ ở dòng đó trong Text Pane).  2) SmartArt Design > Demote (hoặc nhấn Tab trong Text Pane).",
+          "goi_y_en": "1) Click the \"Filling\" shape (or put the cursor on that line in the Text Pane).  2) SmartArt Design > Demote (or press Tab in the Text Pane).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_demote",
+            "de_bai": "In the SmartArt graphic in the “Active Ingredients” section, demote “Filling” so that it becomes a second-level item under “Blending”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong sơ đồ SmartArt ở mục “Active Ingredients”, di chuyển hình “Filling” lên đứng trước “Blending”.",
+          "yeu_cau_en": "In the SmartArt graphic in the “Active Ingredients” section, move the “Filling” shape so that it appears before “Blending”.",
+          "goi_y": "1) Bấm chọn hình \"Filling\".  2) SmartArt Design > Move Up.",
+          "goi_y_en": "1) Click the \"Filling\" shape.  2) SmartArt Design > Move Up.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_move",
+            "de_bai": "In the SmartArt graphic in the “Active Ingredients” section, move the “Filling” shape so that it appears before “Blending”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Thêm mô tả alt text “Pharma image” cho ảnh trong mục “Fill Material”.",
+          "yeu_cau_en": "Add the alt text description “Pharma image” to the picture in the “Fill Material” section.",
+          "goi_y": "1) Nhấp phải ảnh > View Alt Text.  2) Nhập \"Pharma image\" vào ô mô tả.",
+          "goi_y_en": "1) Right-click the picture > View Alt Text.  2) Type \"Pharma image\" in the description box.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "alt_text",
+            "de_bai": "Add the alt text description “Pharma image” to the picture in the “Fill Material” section."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Fill Material”, áp dụng hiệu ứng 10 Point Soft Edges cho ảnh.",
+          "yeu_cau_en": "In the “Fill Material” section, apply the 10 Point Soft Edges effect to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Effects > Soft Edges > 10 Point.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Picture Effects > Soft Edges > 10 Point.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_effect",
+            "de_bai": "In the “Fill Material” section, apply the 10 Point Soft Edges effect to the picture."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Fill Material”, áp dụng hiệu ứng nghệ thuật (artistic effect) Cement cho ảnh.",
+          "yeu_cau_en": "In the “Fill Material” section, apply the Cement artistic effect to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Artistic Effects > Cement.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Artistic Effects > Cement.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "art_effect",
+            "de_bai": "In the “Fill Material” section, apply the Cement artistic effect to the picture."
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Bank",
+      "ten_en": "Project 3 – Bank",
+      "file": "C5D1_P3_Bank.docx",
+      "mo_ta": "Mở file C5D1_P3_Bank.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D1_P3_Bank.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Thêm viền 6 pt màu Blue, Accent 1 cho ảnh trong mục “Savings Account”.",
+          "yeu_cau_en": "Add a 6 pt Blue, Accent 1 border to the picture in the “Savings Account” section.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Border > Blue, Accent 1.  3) Picture Border > Weight > 6 pt.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Picture Border > Blue, Accent 1.  3) Picture Border > Weight > 6 pt.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_border",
+            "de_bai": "Add a 6 pt Blue, Accent 1 border to the picture in the “Savings Account” section."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Áp dụng SmartArt style Moderate Effect cho sơ đồ SmartArt trong mục “Banking Fees”.",
+          "yeu_cau_en": "Apply the Moderate Effect SmartArt style to the SmartArt graphic in the “Banking Fees” section.",
+          "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > SmartArt Styles > Moderate Effect.",
+          "goi_y_en": "1) Select the SmartArt.  2) SmartArt Design > SmartArt Styles > Moderate Effect.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_style",
+            "de_bai": "Apply the Moderate Effect SmartArt style to the SmartArt graphic in the “Banking Fees” section.",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/vList5",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Bỏ đường lưới chính (major gridlines) khỏi biểu đồ trong mục “Contact Us”.",
+          "yeu_cau_en": "Remove the major gridlines from the chart in the “Contact Us” section.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Gridlines > bấm Primary Major Vertical để bỏ chọn.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Gridlines > click Primary Major Vertical to clear it.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_gridlines",
+            "de_bai": "Remove the major gridlines from the chart in the “Contact Us” section."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Welcome”, tại đoạn trống, chèn ảnh Bank_photo.png từ thư mục Files.",
+          "yeu_cau_en": "In the “Welcome” section, in the blank paragraph, insert the Bank_photo.png picture from the Files folder.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống cuối section.  2) Insert > Pictures > This Device > mở thư mục Files của bộ đề > chọn Bank_photo.png > Insert.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the section.  2) Insert > Pictures > This Device > open the Files folder of the exam > choose Bank_photo.png > Insert.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_insert",
+            "de_bai": "In the “Welcome” section, in the blank paragraph, insert the Bank_photo.png picture from the Files folder.",
+            "goc": {
+              "n": 0
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Savings Account”, đổi kiểu ngắt dòng (text wrapping) của ảnh thành Through.",
+          "yeu_cau_en": "In the “Savings Account” section, change the text wrapping for the picture to Through.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Wrap Text > Through.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Wrap Text > Through.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_wrap",
+            "de_bai": "In the “Savings Account” section, change the text wrapping for the picture to Through."
+          },
+          "chuong": 5
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "Bank_photo.png"
+  ],
+  "chuong": 5
+}

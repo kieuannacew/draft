@@ -1,0 +1,254 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 5: Đồ họa (ảnh, hình, SmartArt, biểu đồ) – Đề 3",
+  "ten_en": "Word – Chapter 5: Insert and format graphic elements – Test 3",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_5_De_3",
+  "dau_vet": "2b0be7d4e3960d38",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Farm",
+      "ten_en": "Project 1 – Farm",
+      "file": "C5D3_P1_Farm.docx",
+      "mo_ta": "Mở file C5D3_P1_Farm.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D3_P1_Farm.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi bố cục (layout) của sơ đồ SmartArt trong mục “Farm Visits” thành Vertical Box List.",
+          "yeu_cau_en": "Change the layout of the SmartArt graphic in the “Farm Visits” section to Vertical Box List.",
+          "goi_y": "1) Chọn SmartArt (bấm viền ngoài).  2) SmartArt Design > Layouts > More > chọn Vertical Box List (trong nhóm Process/List) > OK.",
+          "goi_y_en": "1) Select the SmartArt (click its outer border).  2) SmartArt Design > Layouts > More > choose Vertical Box List (in the Process/List group) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_layout",
+            "de_bai": "Change the layout of the SmartArt graphic in the “Farm Visits” section to Vertical Box List.",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/hProcess9",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “About the Farm”, trong text box màu xanh lá đậm, chèn chữ “LIMITED OFFER!”.",
+          "yeu_cau_en": "In the “About the Farm” section, in the dark green text box, insert the text “LIMITED OFFER!”.",
+          "goi_y": "1) Nhấp vào bên trong text box màu dark green.  2) Gõ: LIMITED OFFER!",
+          "goi_y_en": "1) Click inside the dark green text box.  2) Type: LIMITED OFFER!",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "textbox_type",
+            "de_bai": "In the “About the Farm” section, in the dark green text box, insert the text “LIMITED OFFER!”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Thêm nhãn dữ liệu (data labels) cho biểu đồ trong mục “Customer Feedback”. Đặt nhãn ở vị trí Outside End.",
+          "yeu_cau_en": "Add data labels to the chart in the “Customer Feedback” section. Position the labels Outside End.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Data Labels > Outside End.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Data Labels > Outside End.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_labels",
+            "de_bai": "Add data labels to the chart in the “Customer Feedback” section. Position the labels Outside End."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Cắt ảnh trong mục “This Season's Harvest” theo hình Rectangle: Rounded Corners.",
+          "yeu_cau_en": "Crop the picture in the “This Season's Harvest” section to the Rectangle: Rounded Corners shape.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > mũi tên Crop > Crop to Shape > Rectangle: Rounded Corners.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Crop arrow > Crop to Shape > Rectangle: Rounded Corners.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_crop_shape",
+            "de_bai": "Crop the picture in the “This Season's Harvest” section to the Rectangle: Rounded Corners shape."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Customer Feedback”, tại đoạn trống bên dưới bảng, chèn biểu đồ Clustered Bar thể hiện giá trị “Weight (kg)” của 4 mục đầu trong bảng: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Dùng “Weight (kg)” làm tên chuỗi (series name).",
+          "yeu_cau_en": "In the “Customer Feedback” section, in the blank paragraph below the table, insert a Clustered Bar chart that shows the “Weight (kg)” values for the first 4 items of the table: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Use “Weight (kg)” as the series name.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới bảng.  2) Insert > Chart > Bar > Clustered Bar > OK (mở cửa sổ dữ liệu).  3) Ô B1: Weight (kg). Cột A từ A2: Morning glory; Sweet potato; Bok choy; Carrot. Cột B: 1.0; 2.0; 0.8; 1.5.  4) Xoá các cột/ dòng mẫu thừa (Series 2, Series 3, Category còn lại) hoặc kéo khung xanh thu hẹp vùng dữ liệu.  5) Đóng cửa sổ dữ liệu.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph right below the table.  2) Insert > Chart > Bar > Clustered Bar > OK (the data window opens).  3) Cell B1: Weight (kg). Column A from A2: Morning glory; Sweet potato; Bok choy; Carrot. Column B: 1.0; 2.0; 0.8; 1.5.  4) Delete the extra sample columns/rows (Series 2, Series 3, remaining Category) or drag the blue frame to shrink the data range.  5) Close the data window.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_insert",
+            "de_bai": "In the “Customer Feedback” section, in the blank paragraph below the table, insert a Clustered Bar chart that shows the “Weight (kg)” values for the first 4 items of the table: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Use “Weight (kg)” as the series name.",
+            "goc": {
+              "n": 1
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Áp dụng chart Style 6 cho biểu đồ trong mục “Customer Feedback”.",
+          "yeu_cau_en": "Apply chart Style 6 to the chart in the “Customer Feedback” section.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Chart Styles > chọn Style 6 (di chuột để xem tên).",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Chart Styles > choose Style 6 (hover to see the names).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_style",
+            "de_bai": "Apply chart Style 6 to the chart in the “Customer Feedback” section.",
+            "goc": {
+              "fp": "372575af7c7c132808955eb5c4afd241"
+            }
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Library",
+      "ten_en": "Project 2 – Library",
+      "file": "C5D3_P2_Library.docx",
+      "mo_ta": "Mở file C5D3_P2_Library.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D3_P2_Library.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Đổi màu biểu đồ trong mục “Digital Resources” thành Colorful Palette 3.",
+          "yeu_cau_en": "Change the colors of the chart in the “Digital Resources” section to Colorful Palette 3.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Change Colors > Colorful Palette 3.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Change Colors > Colorful Palette 3.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_colors",
+            "de_bai": "Change the colors of the chart in the “Digital Resources” section to Colorful Palette 3.",
+            "goc": {
+              "fp": "869d06bc686e279c15e7c70835ca5f55"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Study Spaces”, tại đoạn trống, dùng tính năng 3D Models để chèn mô hình Cube từ thư mục 3D Models. Đặt mô hình kiểu In Line with Text.",
+          "yeu_cau_en": "In the “Study Spaces” section, in the blank paragraph, use the 3D Models feature to insert the Cube model from the 3D Models folder. Position the model In Line with Text.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống.  2) Insert > 3D Models > This Device > mở thư mục 3D Models > chọn Cube.glb > Insert.  3) 3D Model > Wrap Text > In Line with Text.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph.  2) Insert > 3D Models > This Device > open the 3D Models folder > choose Cube.glb > Insert.  3) 3D Model > Wrap Text > In Line with Text.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "model3d",
+            "de_bai": "In the “Study Spaces” section, in the blank paragraph, use the 3D Models feature to insert the Cube model from the 3D Models folder. Position the model In Line with Text."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Thêm mô tả alt text “Loan days chart” cho biểu đồ trong mục “Digital Resources”.",
+          "yeu_cau_en": "Add the alt text description “Loan days chart” to the chart in the “Digital Resources” section.",
+          "goi_y": "1) Nhấp phải vào vùng biểu đồ (Chart Area) > Edit Alt Text (hoặc View Alt Text).  2) Nhập: Loan days chart.",
+          "goi_y_en": "1) Right-click the Chart Area > Edit Alt Text (or View Alt Text).  2) Type: Loan days chart.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_alt",
+            "de_bai": "Add the alt text description “Loan days chart” to the chart in the “Digital Resources” section."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Áp dụng Quick Layout 2 (Layout 2) cho biểu đồ trong mục “Digital Resources”.",
+          "yeu_cau_en": "Apply Quick Layout 2 (Layout 2) to the chart in the “Digital Resources” section.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Quick Layout > Layout 2.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Quick Layout > Layout 2.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_layout",
+            "de_bai": "Apply Quick Layout 2 (Layout 2) to the chart in the “Digital Resources” section.",
+            "goc": {
+              "fp": "869d06bc686e279c15e7c70835ca5f55"
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong mục “Events for Children”, áp dụng hiệu chỉnh (Corrections) Brightness: 0% (Normal) Contrast: +40% cho ảnh và đổi màu ảnh thành Saturation: 200%.",
+          "yeu_cau_en": "In the “Events for Children” section, apply the Brightness: 0% (Normal) Contrast: +40% correction to the picture and change the color of the picture to Saturation: 200%.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Corrections > Brightness: 0% (Normal) Contrast: +40%.  3) Picture Format > Color > Saturation: 200%.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Corrections > Brightness: 0% (Normal) Contrast: +40%.  3) Picture Format > Color > Saturation: 200%.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_correct",
+            "de_bai": "In the “Events for Children” section, apply the Brightness: 0% (Normal) Contrast: +40% correction to the picture and change the color of the picture to Saturation: 200%."
+          },
+          "chuong": 5
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Festival",
+      "ten_en": "Project 3 – Festival",
+      "file": "C5D3_P3_Festival.docx",
+      "mo_ta": "Mở file C5D3_P3_Festival.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open C5D3_P3_Festival.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Giá trị “2026” của “Craft market” trong biểu đồ ở mục “Visitor Tips” bị sai. Đổi giá trị thành 60.",
+          "yeu_cau_en": "The “2026” value for “Craft market” in the chart in the “Visitor Tips” section is incorrect. Change the value to 60.",
+          "goi_y": "1) Chọn biểu đồ > Chart Design > Edit Data (mở bảng dữ liệu Excel).  2) Tìm ô giao giữa dòng \"Craft market\" và cột \"2026\", nhập 60, nhấn Enter.  3) Đóng cửa sổ bảng dữ liệu.",
+          "goi_y_en": "1) Select the chart > Chart Design > Edit Data (opens the Excel data sheet).  2) Find the cell where the \"Craft market\" row meets the \"2026\" column, type 60, press Enter.  3) Close the data sheet window.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_data",
+            "de_bai": "The “2026” value for “Craft market” in the chart in the “Visitor Tips” section is incorrect. Change the value to 60.",
+            "goc": {
+              "v": 75.0
+            }
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Ở đầu mục “Festival Activities”, chèn text box dựng sẵn Banded Quote. Thay chữ mẫu trong text box bằng “Local artists demonstrate how lanterns are made from bamboo and silk.”.",
+          "yeu_cau_en": "At the beginning of the “Festival Activities” section, insert a Banded Quote text box. Replace the placeholder text in the text box with “Local artists demonstrate how lanterns are made from bamboo and silk.”.",
+          "goi_y": "1) Đặt con trỏ đầu đoạn đầu tiên của section.  2) Insert > Text Box > Banded Quote.  3) Chọn toàn bộ chữ mẫu trong text box và gõ/dán: Local artists demonstrate how lanterns are made from bamboo and silk.",
+          "goi_y_en": "1) Put the cursor at the beginning of the first paragraph of the section.  2) Insert > Text Box > Banded Quote.  3) Select all the placeholder text in the text box and type/paste: Local artists demonstrate how lanterns are made from bamboo and silk.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "textbox_builtin",
+            "de_bai": "At the beginning of the “Festival Activities” section, insert a Banded Quote text box. Replace the placeholder text in the text box with “Local artists demonstrate how lanterns are made from bamboo and silk.”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Thêm tiêu đề trục dọc chính (primary vertical axis title) cho biểu đồ trong mục “Visitor Tips”. Đổi nội dung tiêu đề trục thành “Visitors”.",
+          "yeu_cau_en": "Add a primary vertical axis title to the chart in the “Visitor Tips” section. Change the axis title text to “Visitors”.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Axis Titles > Primary Vertical.  3) Bấm vào \"Axis Title\" vừa xuất hiện, gõ: Visitors.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Axis Titles > Primary Vertical.  3) Click the new \"Axis Title\" and type: Visitors.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_axis",
+            "de_bai": "Add a primary vertical axis title to the chart in the “Visitor Tips” section. Change the axis title text to “Visitors”."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Đổi kích thước biểu đồ trong mục “Visitor Tips” thành cao 2.5\" (6.35 cm) và rộng 4.5\" (11.43 cm).",
+          "yeu_cau_en": "Resize the chart in the “Visitor Tips” section to 2.5\" (6.35 cm) high and 4.5\" (11.43 cm) wide.",
+          "goi_y": "1) Chọn biểu đồ.  2) Format > Size: Shape Height = 2.5\"; Shape Width = 4.5\".",
+          "goi_y_en": "1) Select the chart.  2) Format > Size: Shape Height = 2.5\"; Shape Width = 4.5\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_size",
+            "de_bai": "Resize the chart in the “Visitor Tips” section to 2.5\" (6.35 cm) high and 4.5\" (11.43 cm) wide."
+          },
+          "chuong": 5
+        },
+        {
+          "yeu_cau": "Trong sơ đồ SmartArt ở mục “Lantern Workshops”, hạ cấp “Watch folk games” để thành mục cấp hai dưới “Release a flower lantern”.",
+          "yeu_cau_en": "In the SmartArt graphic in the “Lantern Workshops” section, demote “Watch folk games” so that it becomes a second-level item under “Release a flower lantern”.",
+          "goi_y": "1) Bấm chọn hình \"Watch folk games\" (hoặc đặt con trỏ ở dòng đó trong Text Pane).  2) SmartArt Design > Demote (hoặc nhấn Tab trong Text Pane).",
+          "goi_y_en": "1) Click the \"Watch folk games\" shape (or put the cursor on that line in the Text Pane).  2) SmartArt Design > Demote (or press Tab in the Text Pane).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_demote",
+            "de_bai": "In the SmartArt graphic in the “Lantern Workshops” section, demote “Watch folk games” so that it becomes a second-level item under “Release a flower lantern”."
+          },
+          "chuong": 5
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "3D Models"
+  ],
+  "chuong": 5
+}

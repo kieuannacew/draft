@@ -1,0 +1,229 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Chương 7: Nâng cao (Expert) – Đề 2",
+  "ten_en": "Word – Chapter 7: Advanced (Expert) – Test 2",
+  "thoi_gian": 25,
+  "rieng": true,
+  "nguon": "Word365_TheoChuong/Chuong_7_De_2",
+  "dau_vet": "1e298bd77d0d28e2",
+  "du_an": [
+    {
+      "ten": "Dự án 1 – Library (Expert)",
+      "ten_en": "Project 1 – Library (Expert)",
+      "file": "C7D2_P1_Library_Expert.docx",
+      "mo_ta": "Mở file C7D2_P1_Library_Expert.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C7D2_P1_Library_Expert.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Giới hạn định dạng trong tài liệu ở bộ style tối thiểu được đề xuất. Không bật bảo vệ (enforce protection).",
+          "yeu_cau_en": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection.",
+          "goi_y": "1) Review > Restrict Editing.  2) Formatting restrictions: tích Limit formatting to a selection of styles > Settings.  3) Bấm Recommended Minimum > OK (chọn No nếu hỏi xoá định dạng không cho phép). Không bấm Start Enforcing Protection.",
+          "goi_y_en": "1) Review > Restrict Editing.  2) Formatting restrictions: check Limit formatting to a selection of styles > Settings.  3) Click Recommended Minimum > OK (choose No if asked to remove disallowed formatting). Do not click Start Enforcing Protection.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restrict_format",
+            "de_bai": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Khóa theo dõi thay đổi (Lock Tracking) bằng mật khẩu “Track1”.",
+          "yeu_cau_en": "Lock change tracking by using the password “Track1”.",
+          "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập Track1 hai lần > OK.",
+          "goi_y_en": "1) Review > Track Changes arrow > Lock Tracking.  2) Enter Track1 twice > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "lock_tracking",
+            "de_bai": "Lock change tracking by using the password “Track1”."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Tìm mọi đoạn chữ có màu Dark Red và đổi sang màu Purple.",
+          "yeu_cau_en": "Find all text that is formatted with the Dark Red font color and change the font color to Purple.",
+          "goi_y": "1) Home > Replace > More >> > Find what: để trống > Format > Font > Font color: Dark Red (Standard Colors) > OK.  2) Replace with: để trống > Format > Font > Font color: Purple > OK > Replace All.",
+          "goi_y_en": "1) Home > Replace > More >> > Find what: leave empty > Format > Font > Font color: Dark Red (Standard Colors) > OK.  2) Replace with: leave empty > Format > Font > Font color: Purple > OK > Replace All.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_color",
+            "de_bai": "Find all text that is formatted with the Dark Red font color and change the font color to Purple.",
+            "goc": {
+              "n": 3
+            }
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Lưu tiêu đề và các đoạn văn của mục “Rules and Contact” thành Quick Part tên “Library Intro” trong Quick Part gallery. Chấp nhận các thiết lập mặc định khác.",
+          "yeu_cau_en": "Save the heading and paragraphs of the “Rules and Contact” section as a Quick Part named “Library Intro” in the Quick Part gallery. Accept all other default settings.",
+          "goi_y": "1) Chọn tiêu đề và hai đoạn văn của section.  2) Insert > Quick Parts > Save Selection to Quick Part Gallery.  3) Name: Library Intro; Gallery: Quick Parts > OK.",
+          "goi_y_en": "1) Select the heading and the two paragraphs of the section.  2) Insert > Quick Parts > Save Selection to Quick Part Gallery.  3) Name: Library Intro; Gallery: Quick Parts > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "quickpart",
+            "de_bai": "Save the heading and paragraphs of the “Rules and Contact” section as a Quick Part named “Library Intro” in the Quick Part gallery. Accept all other default settings."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Ghi macro tên “FormatTitle” lưu chỉ trong tài liệu này, macro áp dụng style Heading 2 cho đoạn văn đang chọn. Lưu tài liệu dạng Word Macro-Enabled Document vào thư mục Documents, giữ nguyên tên file.",
+          "yeu_cau_en": "Record a macro named “FormatTitle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name.",
+          "goi_y": "1) View > Macros > Record Macro.  2) Macro name: FormatTitle; Store macro in: tên tài liệu hiện tại (không chọn All Documents) > OK.  3) Home > Styles > Heading 2.  4) View > Macros > Stop Recording.  5) File > Save As > Documents > Save as type: Word Macro-Enabled Document (*.docm) > Save.",
+          "goi_y_en": "1) View > Macros > Record Macro.  2) Macro name: FormatTitle; Store macro in: the current document name (not All Documents) > OK.  3) Home > Styles > Heading 2.  4) View > Macros > Stop Recording.  5) File > Save As > Documents > Save as type: Word Macro-Enabled Document (*.docm) > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "macro",
+            "de_bai": "Record a macro named “FormatTitle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name."
+          },
+          "chuong": 7
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 2 – Robotics (Expert)",
+      "ten_en": "Project 2 – Robotics (Expert)",
+      "file": "C7D2_P2_Robotics_Expert.docx",
+      "mo_ta": "Mở file C7D2_P2_Robotics_Expert.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C7D2_P2_Robotics_Expert.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Lưu style set hiện tại thành style set mới tên “RoboticsStyleSet” ở vị trí mặc định.",
+          "yeu_cau_en": "Save the current style set as a new style set named “RoboticsStyleSet” in the default location.",
+          "goi_y": "1) Design > mở gallery Style Set > Save as a New Style Set.  2) File name: RoboticsStyleSet > Save (giữ thư mục QuickStyles mặc định).",
+          "goi_y_en": "1) Design > open the Style Set gallery > Save as a New Style Set.  2) File name: RoboticsStyleSet > Save (keep the default QuickStyles folder).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_styleset",
+            "de_bai": "Save the current style set as a new style set named “RoboticsStyleSet” in the default location.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Tạo bộ theme color tùy chỉnh tên “Robotics Colors” dùng Orange (Standard Colors) làm màu Accent 1.",
+          "yeu_cau_en": "Create a custom theme color set named “Robotics Colors” that uses Orange (Standard Colors) as the Accent 1 color.",
+          "goi_y": "1) Design > Colors > Customize Colors.  2) Accent 1: chọn Orange trong Standard Colors.  3) Name: Robotics Colors > Save.",
+          "goi_y_en": "1) Design > Colors > Customize Colors.  2) Accent 1: choose Orange under Standard Colors.  3) Name: Robotics Colors > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_colors",
+            "de_bai": "Create a custom theme color set named “Robotics Colors” that uses Orange (Standard Colors) as the Accent 1 color."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Dùng ký tự đại diện (wildcards) để tìm mọi “Ms. Anna Lee” và “Miss Anna Lee” rồi thay bằng “Anna Lee”.",
+          "yeu_cau_en": "Use wildcards to find all instances of “Ms. Anna Lee” and “Miss Anna Lee” and replace them with “Anna Lee”.",
+          "goi_y": "1) Home > Replace > More >> > tích Use wildcards.  2) Find what: <M[! ]@ (Anna Lee)   (M + một hay nhiều ký tự khác khoảng trắng, rồi tên người)  3) Replace with: \\1 > Replace All > OK.  4) Kiểm tra: mọi chỗ \"Ms. Anna Lee\" và \"Miss Anna Lee\" chỉ còn \"Anna Lee\".",
+          "goi_y_en": "1) Home > Replace > More >> > check Use wildcards.  2) Find what: <M[! ]@ (Anna Lee)   (M + one or more non-space characters, then the name)  3) Replace with: \\1 > Replace All > OK.  4) Check: every \"Ms. Anna Lee\" and \"Miss Anna Lee\" is now just \"Anna Lee\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "wildcard_replace",
+            "de_bai": "Use wildcards to find all instances of “Ms. Anna Lee” and “Miss Anna Lee” and replace them with “Anna Lee”.",
+            "goc": {
+              "n": 3,
+              "n_new": 3
+            }
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Giới hạn chỉnh sửa để người dùng chỉ được chèn comment. Bật bảo vệ (Start Enforcing Protection) không đặt mật khẩu.",
+          "yeu_cau_en": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password.",
+          "goi_y": "1) Review > Restrict Editing.  2) Editing restrictions: tích Allow only this type of editing in the document > chọn Comments.  3) Yes, Start Enforcing Protection > để trống hai ô mật khẩu > OK.",
+          "goi_y_en": "1) Review > Restrict Editing.  2) Editing restrictions: check Allow only this type of editing in the document > choose Comments.  3) Yes, Start Enforcing Protection > leave both password boxes empty > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restrict_comments",
+            "de_bai": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Mã hóa tài liệu bằng mật khẩu “Secure365”.",
+          "yeu_cau_en": "Encrypt the document by using the password “Secure365”.",
+          "goi_y": "1) File > Info > Protect Document > Encrypt with Password.  2) Nhập Secure365 > OK > nhập lại Secure365 > OK.",
+          "goi_y_en": "1) File > Info > Protect Document > Encrypt with Password.  2) Type Secure365 > OK > type Secure365 again > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "encrypt",
+            "de_bai": "Encrypt the document by using the password “Secure365”."
+          },
+          "chuong": 7
+        }
+      ]
+    },
+    {
+      "ten": "Dự án 3 – Festival (Expert)",
+      "ten_en": "Project 3 – Festival (Expert)",
+      "file": "C7D2_P3_Festival_Expert.docx",
+      "mo_ta": "Mở file C7D2_P3_Festival_Expert.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open C7D2_P3_Festival_Expert.docx and complete the tasks below in order.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Trong đoạn trống sau tiêu đề \"List of Tables\", chèn danh mục bảng biểu (table of figures) dựa trên các chú thích Table. Dùng định dạng Formal.",
+          "yeu_cau_en": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống dưới \"List of Tables\".  2) References > Insert Table of Figures.  3) Caption label: Table; Formats: Formal > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph under \"List of Tables\".  2) References > Insert Table of Figures.  3) Caption label: Table; Formats: Formal > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_of_figures",
+            "de_bai": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Trong mục “About the Festival”, bên trong dấu ngoặc sau chữ “see”, chèn tham chiếu chéo (cross-reference) tới Table 1. Chỉ hiển thị nhãn và số.",
+          "yeu_cau_en": "In the “About the Festival” section, inside the parentheses after the text “see”, insert a cross-reference to Table 1. Display only the label and number.",
+          "goi_y": "1) Đặt con trỏ sau chữ \"see \" trong ngoặc.  2) References > Cross-reference.  3) Reference type: Table; Insert reference to: Only label and number; chọn Table 1 > Insert > Close.",
+          "goi_y_en": "1) Put the cursor after \"see \" inside the parentheses.  2) References > Cross-reference.  3) Reference type: Table; Insert reference to: Only label and number; choose Table 1 > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cross_ref",
+            "de_bai": "In the “About the Festival” section, inside the parentheses after the text “see”, insert a cross-reference to Table 1. Display only the label and number."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Liên kết text box trong mục “Lantern Workshops” với text box trống trong mục “Food Stalls” để phần chữ tràn chảy sang text box thứ hai.",
+          "yeu_cau_en": "Link the text box in the “Lantern Workshops” section to the empty text box in the “Food Stalls” section so that the overflow text flows into the second text box.",
+          "goi_y": "1) Chọn text box thứ nhất.  2) Shape Format > Create Link (con trỏ đổi thành bình).  3) Bấm vào text box trống thứ hai.",
+          "goi_y_en": "1) Select the first text box.  2) Shape Format > Create Link (the cursor becomes a pitcher).  3) Click the empty second text box.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "link_textbox",
+            "de_bai": "Link the text box in the “Lantern Workshops” section to the empty text box in the “Food Stalls” section so that the overflow text flows into the second text box."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Ở cuối đoạn “Name:” (cuối tài liệu), chèn content control kiểu Plain Text. Đặt Title của control là “Name”.",
+          "yeu_cau_en": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”.",
+          "goi_y": "1) File > Options > Customize Ribbon > tích Developer (nếu chưa có tab Developer).  2) Đặt con trỏ sau \"Name: \" ở cuối tài liệu.  3) Developer > Plain Text Content Control > Properties > Title: Name > OK.",
+          "goi_y_en": "1) File > Options > Customize Ribbon > check Developer (if the Developer tab is missing).  2) Put the cursor after \"Name: \" at the end of the document.  3) Developer > Plain Text Content Control > Properties > Title: Name > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "content_control",
+            "de_bai": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”."
+          },
+          "chuong": 7
+        },
+        {
+          "yeu_cau": "Đánh dấu tài liệu là bản cuối (Mark as Final).",
+          "yeu_cau_en": "Mark the document as final.",
+          "goi_y": "File > Info > Protect Document > Mark as Final > OK > OK.",
+          "goi_y_en": "File > Info > Protect Document > Mark as Final > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "mark_final",
+            "de_bai": "Mark the document as final."
+          },
+          "chuong": 7
+        }
+      ]
+    }
+  ],
+  "chuong": 7
+}
