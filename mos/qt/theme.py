@@ -5,7 +5,7 @@ Bảng màu (theme-factory · Forest Canopy):
     Sage         #7d8471 – chữ phụ, đường nét dịu
     Olive        #a4ac86 – điểm nhấn sáng (mục đang chọn, huy hiệu)
     Ivory        #faf9f6 – nền
-Chữ hiện đại, không chân cho cả tiêu đề và nội dung (Segoe UI trên Windows; tiêu đề dùng bản Semibold/Display).
+Chữ: Be Vietnam Pro (đóng gói kèm app trong mos/qt/fonts, thiết kế cho tiếng Việt, giấy phép OFL).
 """
 from __future__ import annotations
 
@@ -62,16 +62,25 @@ def _first_family(candidates) -> str | None:
     return next((f for f in candidates if f in families), None)
 
 
+FONT_FAMILY = "Be Vietnam Pro"
+
+
+def load_fonts() -> None:
+    """Nạp font đóng gói kèm app (mos/qt/fonts/*.ttf) để máy nào cũng hiển thị giống nhau."""
+    from pathlib import Path
+    for f in sorted((Path(__file__).parent / "fonts").glob("*.ttf")):
+        QFontDatabase.addApplicationFont(str(f))
+
+
 def pick_font_family() -> str:
-    """Font nội dung: chữ không chân, hiện đại."""
-    return _first_family(("Segoe UI Variable Text", "Segoe UI", "Inter", "Noto Sans", "Arial", "Helvetica",
-                          "FreeSans", "DejaVu Sans")) or QApplication.font().family()
+    """Font nội dung (ưu tiên font đóng gói kèm)."""
+    return _first_family((FONT_FAMILY, "Segoe UI", "Arial", "Noto Sans", "DejaVu Sans")) or \
+        QApplication.font().family()
 
 
 def pick_heading_family() -> str:
-    """Font tiêu đề: cùng họ chữ không chân, bản đậm/hiển thị nếu có."""
-    return _first_family(("Segoe UI Variable Display", "Segoe UI Semibold", "Segoe UI", "Inter", "Noto Sans",
-                          "Arial", "Helvetica", "FreeSans", "DejaVu Sans")) or pick_font_family()
+    """Font tiêu đề: cùng họ chữ, in đậm qua QSS."""
+    return pick_font_family()
 
 
 def _assets() -> dict[str, str]:

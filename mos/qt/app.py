@@ -1162,6 +1162,7 @@ def main() -> None:
     app = QApplication.instance() or QApplication(sys.argv)
     app.setApplicationName("Luyện thi MOS")
     app.setStyle("Fusion")
+    T.load_fonts()
     family = T.pick_font_family()
     app.setFont(QFont(family, 10))
     app.setStyleSheet(T.stylesheet(family, T.pick_heading_family()))

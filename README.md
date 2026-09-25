@@ -38,7 +38,7 @@ Mục **Kết quả học viên** hiện mọi lượt làm bài. Có thể lọ
 
 ## Giao diện, song ngữ Việt / Anh và "vui học"
 
-- Giao diện theo chủ đề màu **Forest Canopy** (xanh rừng, xanh ô liu, nền ngà; chữ hiện đại không chân – Segoe UI).
+- Giao diện theo chủ đề màu **Forest Canopy** (xanh rừng, xanh ô liu, nền ngà; font Be Vietnam Pro đóng gói kèm app, hiển thị tiếng Việt chuẩn).
 - Nút **VI | EN** ở màn đăng nhập, thanh bên và thanh làm bài: đổi toàn bộ giao diện **và cả đề, gợi ý / đáp án**
   sang tiếng Anh hoặc tiếng Việt (đang làm bài cũng đổi được – tiện đối chiếu với đề tiếng Anh như thi thật).
   App nhớ ngôn ngữ đã chọn cho lần mở sau.
