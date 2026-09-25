@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_07",
-  "dau_vet": "3ecb53062d93be2e",
+  "dau_vet": "a579a557e5e75d6a",
   "du_an": [
     {
       "ten": "Dự án 1 – League",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "track_on",
             "de_bai": "Turn on Track Changes. Then, replace the word “programs” with “PROGRAMS”. Leave Track Changes turned on."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Equipment”, đặt giãn dòng của hai đoạn văn sau tiêu đề là chính xác (Exactly) 18 pt.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_exact",
             "de_bai": "In the “Equipment” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Code of Conduct”, tách bảng để hàng bắt đầu bằng “Dragons” trở thành hàng đầu của một bảng mới.",
@@ -53,7 +55,8 @@
                 "Practice day"
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Đổi kích thước sơ đồ SmartArt trong mục “Equipment” thành cao 2\" (5.08 cm) và rộng 6\" (15.24 cm).",
@@ -64,7 +67,8 @@
             "luat": "word_mau_de",
             "dang": "sa_size",
             "de_bai": "Resize the SmartArt graphic in the “Equipment” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Tô nền (shading) màu Gold, Accent 4, Lighter 80% cho đoạn văn bắt đầu bằng “Parents should check the league website …”.",
@@ -75,7 +79,8 @@
             "luat": "word_mau_de",
             "dang": "para_shading",
             "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Parents should check the league website …”."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -100,7 +105,8 @@
                 "f2480850386b93201280ebca3c3df527"
               ]
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, thêm “scuba” làm Tag.",
@@ -111,7 +117,8 @@
             "luat": "word_mau_de",
             "dang": "prop_tags",
             "de_bai": "In the file properties, add “scuba” as a tag."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Join Us”, thụt lề trái cả hai đoạn văn sau tiêu đề 0.5\" (1.27 cm).",
@@ -122,7 +129,8 @@
             "luat": "word_mau_de",
             "dang": "indent",
             "de_bai": "In the “Join Us” section, indent both paragraphs after the heading 0.5\" (1.27 cm) from the left margin."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Safety First”, áp dụng picture style Center Shadow Rectangle cho ảnh.",
@@ -133,7 +141,8 @@
             "luat": "word_mau_de",
             "dang": "pic_style",
             "de_bai": "In the “Safety First” section, apply the Center Shadow Rectangle picture style to the picture."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Open Water Dives”, chuyển đoạn văn phân tách bằng tab bắt đầu bằng “Program” thành bảng 2 cột. Giữ kiểu AutoFit mặc định.",
@@ -144,7 +153,8 @@
             "luat": "word_mau_de",
             "dang": "text_to_table",
             "de_bai": "In the “Open Water Dives” section, convert the tab-delimited text that starts with “Program” to a two-column table. Accept the default AutoFit behavior."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Pool Training”, đổi màu nền hàng tiêu đề của bảng thành Gold, Accent 4.",
@@ -155,7 +165,8 @@
             "luat": "word_mau_de",
             "dang": "table_shading",
             "de_bai": "In the “Pool Training” section, change the shading of the header row of the table to Gold, Accent 4."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -175,7 +186,8 @@
             "luat": "word_mau_de",
             "dang": "sbreak_next",
             "de_bai": "At the beginning of the heading “DIY Seminars”, insert a Next Page section break."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, đổi thuộc tính Title thành “Handy Home Stores Handbook”.",
@@ -186,7 +198,8 @@
             "luat": "word_mau_de",
             "dang": "prop_title",
             "de_bai": "In the file properties, change the Title property to “Handy Home Stores Handbook”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Thêm mô tả alt text “DIY photo” cho ảnh trong mục “DIY Seminars”.",
@@ -197,7 +210,8 @@
             "luat": "word_mau_de",
             "dang": "alt_text",
             "de_bai": "Add the alt text description “DIY photo” to the picture in the “DIY Seminars” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Tìm đoạn chữ “Our friendly mascot, Handy Hammer, now has a little sister named Paint Brush.” và áp dụng style Subtle Emphasis cho nó.",
@@ -208,7 +222,8 @@
             "luat": "word_mau_de",
             "dang": "char_style",
             "de_bai": "Locate the text “Our friendly mascot, Handy Hammer, now has a little sister named Paint Brush.” and apply the Subtle Emphasis style to it."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Customer Rewards”, chèn footnote ngay bên phải tiêu đề. Nội dung footnote là “Information provided by Handy Home Stores.”.",
@@ -219,7 +234,8 @@
             "luat": "word_mau_de",
             "dang": "footnote",
             "de_bai": "In the “Customer Rewards” section, insert a footnote to the right of the heading. Enter the footnote text “Information provided by Handy Home Stores.”."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents ở định dạng tương thích Word 97-2003, đặt tên “DIY2026”. Chấp nhận mọi cảnh báo tương thích.",
@@ -230,7 +246,8 @@
             "luat": "word_mau_de",
             "dang": "save_97",
             "de_bai": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “DIY2026”. Accept any compatibility warnings."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -250,7 +267,8 @@
             "luat": "word_mau_de",
             "dang": "paper",
             "de_bai": "Change the paper size of the document to A4."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chèn ký hiệu Registered (®) ngay sau lần xuất hiện đầu tiên của “Delta Organic Farm” trong tài liệu.",
@@ -261,7 +279,8 @@
             "luat": "word_mau_de",
             "dang": "special_char",
             "de_bai": "Insert the Registered symbol (®) immediately after the first instance of “Delta Organic Farm” in the document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Áp dụng table style List Table 1 Light - Accent 6 cho bảng bắt đầu bằng “Organization”. Bỏ chọn tùy chọn Header Row của table style.",
@@ -272,7 +291,8 @@
             "luat": "word_mau_de",
             "dang": "info_style",
             "de_bai": "Apply the List Table 1 Light - Accent 6 table style to the table that starts with “Organization”. Clear the Header Row table style option."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “About the Farm”, đổi cấp danh sách của “Basil” thành Level 3.",
@@ -283,7 +303,8 @@
             "luat": "word_mau_de",
             "dang": "list_level",
             "de_bai": "In the “About the Farm” section, change the list level for “Basil” to Level 3."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong sơ đồ SmartArt ở mục “This Season's Harvest”, hạ cấp (demote) “Carrots” để nó thành mục cấp 2 nằm dưới “Sweet potatoes”.",
@@ -294,7 +315,8 @@
             "luat": "word_mau_de",
             "dang": "sa_demote",
             "de_bai": "In the SmartArt graphic in the “This Season's Harvest” section, demote “Carrots” so that it becomes a second-level item under “Sweet potatoes”."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Thay ảnh trong mục “Farm Visits” bằng ảnh Farm_new.png trong thư mục Files. Giữ nguyên kích thước và định dạng của ảnh cũ.",
@@ -311,7 +333,8 @@
               "cy": 2003552,
               "img": "bda64e552cb566d6dd215106abffc48e"
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -331,7 +354,8 @@
             "luat": "word_mau_de",
             "dang": "watermark",
             "de_bai": "Add the CONFIDENTIAL 1 watermark to the document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “The Examples Highlight”, đổi tiêu đề biểu đồ từ “Chart Title” thành “Minutes Overview”.",
@@ -342,7 +366,8 @@
             "luat": "word_mau_de",
             "dang": "chart_title",
             "de_bai": "In the “The Examples Highlight” section, change the chart title from “Chart Title” to “Minutes Overview”."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Xóa mọi đường viền của bảng bắt đầu bằng “Organization” ở gần đầu tài liệu.",
@@ -353,7 +378,8 @@
             "luat": "word_mau_de",
             "dang": "info_noborder",
             "de_bai": "Remove all borders from the table that starts with “Organization” near the top of the document."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “The Examples Highlight”, áp dụng table style List Table 3 - Accent 5 cho bảng. Bỏ định dạng cột đầu tiên (First Column).",
@@ -364,7 +390,8 @@
             "luat": "word_mau_de",
             "dang": "table_style",
             "de_bai": "In the “The Examples Highlight” section, apply the List Table 3 - Accent 5 table style to the table. Remove the formatting from the first column."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Tìm từ “communication” và xóa nó khỏi tài liệu.",
@@ -378,7 +405,8 @@
             "goc": {
               "n": 1
             }
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -398,7 +426,8 @@
             "luat": "word_mau_de",
             "dang": "compat",
             "de_bai": "Remove the compatibility mode of this document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chấp nhận mọi phần chèn và xóa đang được theo dõi (tracked). Từ chối mọi thay đổi định dạng.",
@@ -418,7 +447,8 @@
               ],
               "fmt": 1
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Chèn trang bìa Ion (Dark). Giữ mọi thiết lập mặc định.",
@@ -429,7 +459,8 @@
             "luat": "word_mau_de",
             "dang": "cover_page",
             "de_bai": "Insert the Ion (Dark) cover page. Accept all default settings."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Bỏ đường lưới chính (major gridlines) của biểu đồ trong mục “Building with Heart”.",
@@ -440,7 +471,8 @@
             "luat": "word_mau_de",
             "dang": "chart_gridlines",
             "de_bai": "Remove the major gridlines from the chart in the “Building with Heart” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Building with Heart”, chèn chú thích (caption) phía trên bảng. Dùng nhãn Table và nội dung chú thích “: Housing data”.",
@@ -451,7 +483,8 @@
             "luat": "word_mau_de",
             "dang": "caption_table",
             "de_bai": "In the “Building with Heart” section, insert a caption above the table. Use the Table label and the caption text “: Housing data”."
-          }
+          },
+          "chuong": 4
         }
       ]
     },
@@ -471,7 +504,8 @@
             "luat": "word_mau_de",
             "dang": "lock_tracking",
             "de_bai": "Lock change tracking by using the password “Review365”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Bắt đầu trộn thư (mail merge) kiểu Letters. Dùng workbook Recipients_Bakery.xlsx trong thư mục Files làm danh sách người nhận. Trong đoạn bắt đầu bằng “Dear”, chèn trường trộn First_Name giữa chữ “Dear” và dấu phẩy.",
@@ -482,7 +516,8 @@
             "luat": "word_mau_de",
             "dang": "mailmerge",
             "de_bai": "Start a Letters mail merge. Use the Recipients_Bakery.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tìm mọi đoạn chữ có màu Dark Red và đổi sang màu Blue.",
@@ -496,7 +531,8 @@
             "goc": {
               "n": 3
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Ở cuối đoạn “Name:” (cuối tài liệu), chèn content control kiểu Plain Text. Đặt Title của control là “Name”.",
@@ -507,7 +543,8 @@
             "luat": "word_mau_de",
             "dang": "content_control",
             "de_bai": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Ghi macro tên “FormatTitle” lưu chỉ trong tài liệu này, macro áp dụng style Heading 2 cho đoạn văn đang chọn. Lưu tài liệu dạng Word Macro-Enabled Document vào thư mục Documents, giữ nguyên tên file.",
@@ -518,7 +555,8 @@
             "luat": "word_mau_de",
             "dang": "macro",
             "de_bai": "Record a macro named “FormatTitle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_04",
-  "dau_vet": "c0be797faabf4211",
+  "dau_vet": "ff8a973e866b6346",
   "du_an": [
     {
       "ten": "Dự án 1 – Computer",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "info_noborder",
             "de_bai": "Remove all borders from the table that starts with “Department” near the top of the document."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Careers in Technology”, thêm một hình sau “Monitor” trong sơ đồ SmartArt. Gõ chữ “Keyboard” vào hình mới.",
@@ -37,7 +38,8 @@
             "goc": {
               "n": 4
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “How Are Computers Used Today?”, thêm chú thích dưới ảnh với nội dung “Figure 1 Computer illustration”. Không đổi nhãn hay định dạng đánh số.",
@@ -48,7 +50,8 @@
             "luat": "word_mau_de",
             "dang": "caption_pic",
             "de_bai": "In the “How Are Computers Used Today?” section, add a caption below the picture that reads “Figure 1 Computer illustration”. Do not change the label or numbering format."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Computer Connections”, thêm siêu liên kết cho chữ “internet through cables” trỏ tới tiêu đề “How Are Computers Used Today?” trong tài liệu này.",
@@ -59,7 +62,8 @@
             "luat": "word_mau_de",
             "dang": "hyperlink_place",
             "de_bai": "In the “Computer Connections” section, add a hyperlink to the text “internet through cables” that links to the “How Are Computers Used Today?” heading in this document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Thêm viền 3 pt màu White, Background 1 cho ảnh trong mục “How Are Computers Used Today?”.",
@@ -70,7 +74,8 @@
             "luat": "word_mau_de",
             "dang": "pic_border",
             "de_bai": "Add a 3 pt White, Background 1 border to the picture in the “How Are Computers Used Today?” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “What Parts Are Needed for a Computer to Work?”, đổi kích thước bảng để mỗi cột rộng 2.2\" (5.59 cm).",
@@ -81,7 +86,8 @@
             "luat": "word_mau_de",
             "dang": "col_width",
             "de_bai": "In the “What Parts Are Needed for a Computer to Work?” section, resize the table so that each column is 2.2\" (5.59 cm) wide."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -101,7 +107,8 @@
             "luat": "word_mau_de",
             "dang": "text_effect",
             "de_bai": "Apply the Fill: Blue, Accent color 1; Shadow text effect to the document title."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Bỏ chế độ tương thích (Compatibility Mode) của tài liệu này.",
@@ -112,7 +119,8 @@
             "luat": "word_mau_de",
             "dang": "compat",
             "de_bai": "Remove the compatibility mode of this document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Bật tự động ngắt từ (automatic hyphenation) cho tài liệu.",
@@ -123,7 +131,8 @@
             "luat": "word_mau_de",
             "dang": "hyphenation",
             "de_bai": "Turn on automatic hyphenation for the document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Chuyển bảng bắt đầu bằng “Date” ở gần đầu tài liệu thành văn bản. Phân tách bằng tab.",
@@ -154,7 +163,8 @@
                 ]
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Visitor Tips”, đổi ký hiệu đầu dòng thành ký hiệu tùy chỉnh. Dùng ký hiệu dấu tích của font Wingdings, mã ký tự “252”.",
@@ -165,7 +175,8 @@
             "luat": "word_mau_de",
             "dang": "custom_bullet",
             "de_bai": "In the “Visitor Tips” section, change the bullet points to custom ones. Use the check mark symbol from the Wingdings font and character code “252”."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng Rich Text Format tên “Festival”.",
@@ -176,7 +187,8 @@
             "luat": "word_mau_de",
             "dang": "save_rtf",
             "de_bai": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Festival”."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -196,7 +208,8 @@
             "luat": "word_mau_de",
             "dang": "page_numbers",
             "de_bai": "Insert page numbers by using the Page Margins Circle, Right style. Format the page numbers to start at 10."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đổi kiểu chữ hoa/thường của tiêu đề “Green Tea” thành Capitalize Each Word.",
@@ -207,7 +220,8 @@
             "luat": "word_mau_de",
             "dang": "change_case",
             "de_bai": "Change the case of the heading “Green Tea” to Capitalize Each Word."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “About Us”, chèn footnote ngay bên phải tiêu đề. Nội dung footnote là “Visit our website for more information.”.",
@@ -218,7 +232,8 @@
             "luat": "word_mau_de",
             "dang": "footnote",
             "de_bai": "In the “About Us” section, insert a footnote to the right of the heading. Enter the footnote text “Visit our website for more information.”."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Hoán đổi hàng và cột của biểu đồ trong mục “Wholesale Orders” để các năm hiện trên trục ngang.",
@@ -229,7 +244,8 @@
             "luat": "word_mau_de",
             "dang": "chart_switch",
             "de_bai": "Switch the rows and columns of the chart in the “Wholesale Orders” section so that the years are shown on the horizontal axis."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Wholesale Orders”, tách ô tiêu đề “Price per kg ($)” thành hai cột và một hàng.",
@@ -243,7 +259,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Áp dụng SmartArt style Cartoon cho sơ đồ SmartArt trong mục “Brewing Guide”.",
@@ -259,7 +276,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -279,7 +297,8 @@
             "luat": "word_mau_de",
             "dang": "prop_subject",
             "de_bai": "In the file properties, add “Customer information” as a subject."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Banking Fees”, đánh dấu comment là đã giải quyết (Resolve).",
@@ -294,7 +313,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Kiểm tra tài liệu (Inspect Document) và xóa mọi header, footer và watermark tìm thấy. Không xóa thông tin nào khác.",
@@ -305,7 +325,8 @@
             "luat": "word_mau_de",
             "dang": "inspect_hf",
             "de_bai": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chỉ đổi hướng trang chứa tiêu đề “Welcome” sang Landscape (ngang). Không đổi hướng các trang khác.",
@@ -316,7 +337,8 @@
             "luat": "word_mau_de",
             "dang": "orient_sec",
             "de_bai": "Change the orientation of only the page that contains the “Welcome” heading to Landscape. Do not change the orientation of any other page."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Memo”, tối ưu cho Minimum size (publishing online). Không mở file sau khi xuất.",
@@ -327,7 +349,8 @@
             "luat": "word_mau_de",
             "dang": "save_pdf",
             "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Memo” that is optimized for minimum size (publishing online). Do not open the file after publishing."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -347,7 +370,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_doc",
             "de_bai": "Set the line spacing to 1.2 lines for the entire document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Bật Track Changes. Sau đó thay từ “supports” bằng “SUPPORTS”. Để nguyên Track Changes ở trạng thái bật.",
@@ -358,7 +382,8 @@
             "luat": "word_mau_de",
             "dang": "track_on",
             "de_bai": "Turn on Track Changes. Then, replace the word “supports” with “SUPPORTS”. Leave Track Changes turned on."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Áp dụng chart Style 7 cho biểu đồ trong mục “When to See a Doctor”.",
@@ -372,7 +397,8 @@
             "goc": {
               "fp": "5ec13af2fdde63d3e09f318f437a519a"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “When to See a Doctor”, ở ô cuối của hàng “Total” trong bảng, chèn công thức tính tổng các giá trị “Hours of sleep” phía trên. Dùng định dạng số #,##0.00.",
@@ -383,7 +409,8 @@
             "luat": "word_mau_de",
             "dang": "table_formula",
             "de_bai": "In the “When to See a Doctor” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Hours of sleep” values above it. Use the #,##0.00 number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Food and Drink”, trong text box màu cam, chèn chữ “Discover Health!”.",
@@ -394,7 +421,8 @@
             "luat": "word_mau_de",
             "dang": "textbox_type",
             "de_bai": "In the “Food and Drink” section, in the orange text box, insert the text “Discover Health!”."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -414,7 +442,8 @@
             "luat": "word_mau_de",
             "dang": "citation",
             "de_bai": "In the “Digital Resources” section, insert a new placeholder citation named “Library1” at the end of the first paragraph after the heading."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Digital Resources”, gộp các ô ở hàng đầu tiên của bảng.",
@@ -425,7 +454,8 @@
             "luat": "word_mau_de",
             "dang": "merge_cells",
             "de_bai": "In the “Digital Resources” section, merge the cells in the first table row."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Đổi font của tiêu đề “Rules and Contact” thành Century Gothic, cỡ 24 pt.",
@@ -436,7 +466,8 @@
             "luat": "word_mau_de",
             "dang": "font_format",
             "de_bai": "Change the font of the heading “Rules and Contact” to Century Gothic, 24 pt."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Xóa nền của ảnh trong mục “Borrowing Books”. Giữ vùng xóa mặc định mà Word đánh dấu.",
@@ -447,7 +478,8 @@
             "luat": "word_mau_de",
             "dang": "pic_remove_bg",
             "de_bai": "Remove the background from the picture in the “Borrowing Books” section. Accept the default area that Word marks for removal."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Events for Children”, đặt khoảng cách trước hai đoạn văn sau tiêu đề là 6 pt và khoảng cách sau là 12 pt.",
@@ -458,7 +490,8 @@
             "luat": "word_mau_de",
             "dang": "para_spacing",
             "de_bai": "In the “Events for Children” section, set the spacing before the two paragraphs after the heading to 6 pt and the spacing after to 12 pt."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -478,7 +511,8 @@
             "luat": "word_mau_de",
             "dang": "cross_ref",
             "de_bai": "In the “Solar Projects” section, inside the parentheses after the text “see”, insert a cross-reference to Table 1. Display only the label and number."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Bắt đầu trộn thư (mail merge) kiểu Letters. Dùng workbook Recipients_Energy.xlsx trong thư mục Files làm danh sách người nhận. Trong đoạn bắt đầu bằng “Dear”, chèn trường trộn First_Name giữa chữ “Dear” và dấu phẩy.",
@@ -489,7 +523,8 @@
             "luat": "word_mau_de",
             "dang": "mailmerge",
             "de_bai": "Start a Letters mail merge. Use the Recipients_Energy.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Thêm số dòng (line numbers) cho tài liệu, đánh lại từ đầu ở mỗi trang.",
@@ -500,7 +535,8 @@
             "luat": "word_mau_de",
             "dang": "line_numbers",
             "de_bai": "Add line numbers to the document that restart on each page."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tìm mọi đoạn chữ có màu Dark Red và đổi sang màu Purple.",
@@ -514,7 +550,8 @@
             "goc": {
               "n": 3
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Ghi macro tên “QuickStyle” lưu chỉ trong tài liệu này, macro áp dụng style Heading 2 cho đoạn văn đang chọn. Lưu tài liệu dạng Word Macro-Enabled Document vào thư mục Documents, giữ nguyên tên file.",
@@ -525,7 +562,8 @@
             "luat": "word_mau_de",
             "dang": "macro",
             "de_bai": "Record a macro named “QuickStyle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

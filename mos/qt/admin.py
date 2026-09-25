@@ -11,11 +11,11 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QFil
                                QHBoxLayout, QLabel, QLineEdit, QListWidget, QPlainTextEdit, QScrollArea,
                                QSplitter, QVBoxLayout, QWidget)
 
-from .. import core, custom, nhap_de, rules
+from .. import chuong, core, custom, nhap_de, rules
 from ..i18n import is_en, pick, role_name, tr
 from ..accounts import ROLE_NAMES, STUDENT, AccountError
 from . import theme as T
-from .app import _banner, page_body
+from .app import _banner, mode_name, page_body
 from .theme import (DANGER, DANGER_SOFT, MUTED, SUCCESS, SUCCESS_SOFT, WARN, WARN_SOFT, Card, button, chip,
                     label)
 
@@ -445,7 +445,7 @@ class ResultsPage(_Page):
         for h in reversed(core.load_history(self.who.currentData())):
             acc = self.store.get(h["user"]) if h.get("user") else None
             rows.append([h["time"], h.get("user") or "—", acc.ho_ten if acc else "—", pick(h["exam"], h.get("exam_en")),
-                         tr("Luyện tập") if h["mode"] == "training" else tr("Thi thử"), T.fmt_time(h.get("duration")),
+                         mode_name(h["mode"]), T.fmt_time(h.get("duration")),
                          h["score"], tr("Đạt") if h["passed"] else tr("Chưa đạt")])
         return rows
 
@@ -598,6 +598,12 @@ class ExamEditor(QDialog):
         self.t_yc_en.setFixedHeight(48)
         self.t_yc_en.textChanged.connect(self._commit_task)
         c3.lay.addWidget(self.t_yc_en)
+        ch_row = QHBoxLayout()
+        ch_row.addWidget(label(tr("Chương"), "caption"))
+        self.t_ch = QComboBox()
+        self.t_ch.currentIndexChanged.connect(lambda *_: self._commit_task())
+        ch_row.addWidget(self.t_ch, 1)
+        c3.lay.addLayout(ch_row)
         c3.lay.addWidget(label(tr("Gợi ý cách làm"), "caption"))
         self.t_gy = QPlainTextEdit()
         self.t_gy.setPlaceholderText("vd: View > Freeze Panes > Freeze Top Row")
@@ -778,6 +784,11 @@ class ExamEditor(QDialog):
         self.t_yc.setPlainText(t.get("yeu_cau", "") if t else "")
         self.t_gy.setPlainText(t.get("goi_y", "") if t else "")
         self.t_yc_en.setPlainText(t.get("yeu_cau_en", "") if t else "")
+        self.t_ch.clear()
+        self.t_ch.addItem(tr("(chưa xếp chương)"), None)
+        for ch in chuong.chapters(self._mon()):
+            self.t_ch.addItem(f"{ch.number}. {pick(ch.name_vi, ch.name_en)}", ch.number)
+        self.t_ch.setCurrentIndex(max(0, self.t_ch.findData(t.get("chuong") if t else None)))
         self.t_gy_en.setPlainText(t.get("goi_y_en", "") if t else "")
         self._loading = False
         self.c3.setEnabled(t is not None)
@@ -790,6 +801,10 @@ class ExamEditor(QDialog):
             return
         t["yeu_cau"] = self.t_yc.toPlainText().strip()
         t["goi_y"] = self.t_gy.toPlainText().strip()
+        if self.t_ch.currentData():
+            t["chuong"] = self.t_ch.currentData()
+        else:
+            t.pop("chuong", None)
         for key, box in (("yeu_cau_en", self.t_yc_en), ("goi_y_en", self.t_gy_en)):
             text = box.toPlainText().strip()
             if text:

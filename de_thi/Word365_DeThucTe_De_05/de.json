@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_05",
-  "dau_vet": "3b6243c5b20d7321",
+  "dau_vet": "c23d198e56a305b3",
   "du_an": [
     {
       "ten": "Dự án 1 – Space",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "sbreak_cont",
             "de_bai": "At the end of the sentence “Shows start every hour and last thirty minutes.”, insert a continuous section break."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, thêm “Training” làm Category.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "prop_category",
             "de_bai": "In the file properties, add “Training” as a category."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “The Inner Planets”, ở đoạn trống, chèn ảnh Space_photo.png từ thư mục Files.",
@@ -48,7 +50,8 @@
             "goc": {
               "n": 0
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Co giãn bảng trong mục “Space Missions” vừa chiều rộng trang bằng tùy chọn AutoFit Window.",
@@ -66,7 +69,8 @@
                 3120
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Space Missions”, áp dụng table style Grid Table 5 Dark - Accent 2 cho bảng. Bỏ định dạng cột đầu tiên (First Column).",
@@ -77,7 +81,8 @@
             "luat": "word_mau_de",
             "dang": "table_style",
             "de_bai": "In the “Space Missions” section, apply the Grid Table 5 Dark - Accent 2 table style to the table. Remove the formatting from the first column."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -101,7 +106,8 @@
               "n": 4,
               "n_new": 0
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Thêm watermark dạng chữ tùy chỉnh hiển thị “DO NOT SHARE”. Giữ nguyên mọi thiết lập mặc định khác.",
@@ -112,7 +118,8 @@
             "luat": "word_mau_de",
             "dang": "watermark",
             "de_bai": "Add a custom text watermark that displays “DO NOT SHARE”. Accept all other default settings."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Áp dụng lề Mirrored cho toàn bộ tài liệu.",
@@ -123,7 +130,8 @@
             "luat": "word_mau_de",
             "dang": "margins_preset",
             "de_bai": "Apply the Mirrored margin setting to the entire document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đặt ảnh trong mục “Ornithischian Dinosaurs” ở vị trí Top Left của trang, ngắt dòng kiểu Square.",
@@ -134,7 +142,8 @@
             "luat": "word_mau_de",
             "dang": "pic_position",
             "de_bai": "Position the picture in the “Ornithischian Dinosaurs” section in the Top Left of the page with square text wrapping."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong sơ đồ SmartArt ở mục “Theropod Dinosaurs”, hạ cấp (demote) “Lived in large herds” để nó thành mục cấp 2 nằm dưới “Developed a narrow eyebrow”.",
@@ -145,7 +154,8 @@
             "luat": "word_mau_de",
             "dang": "sa_demote",
             "de_bai": "In the SmartArt graphic in the “Theropod Dinosaurs” section, demote “Lived in large herds” so that it becomes a second-level item under “Developed a narrow eyebrow”."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Fossil Discoveries”, cho danh sách thứ hai đánh số tiếp theo danh sách đầu để các mục được đánh số từ 1 đến 6.",
@@ -156,7 +166,8 @@
             "luat": "word_mau_de",
             "dang": "continue_num",
             "de_bai": "In the “Fossil Discoveries” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -180,7 +191,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Đổi font của tiêu đề “Nutrition” thành Century Gothic, cỡ 20 pt.",
@@ -191,7 +203,8 @@
             "luat": "word_mau_de",
             "dang": "font_format",
             "de_bai": "Change the font of the heading “Nutrition” to Century Gothic, 20 pt."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Personal Training”, gộp các ô ở hàng đầu tiên của bảng.",
@@ -202,7 +215,8 @@
             "luat": "word_mau_de",
             "dang": "merge_cells",
             "de_bai": "In the “Personal Training” section, merge the cells in the first table row."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Đổi màu biểu đồ trong mục “Personal Training” thành Monochromatic Palette 1.",
@@ -216,7 +230,8 @@
             "goc": {
               "fp": "df411e4e48d8693ac83df4dd10ac0185"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Bỏ đường lưới chính (major gridlines) của biểu đồ trong mục “Personal Training”.",
@@ -227,7 +242,8 @@
             "luat": "word_mau_de",
             "dang": "chart_gridlines",
             "de_bai": "Remove the major gridlines from the chart in the “Personal Training” section."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -247,7 +263,8 @@
             "luat": "word_mau_de",
             "dang": "toc_modify",
             "de_bai": "Change the table of contents so that it shows only Heading 1 and Heading 2 headings."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Đổi theme colors của tài liệu thành Median và theme fonts thành Century Gothic.",
@@ -258,7 +275,8 @@
             "luat": "word_mau_de",
             "dang": "theme_colors",
             "de_bai": "Change the theme colors of the document to Median and the theme fonts to Century Gothic."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Marketing Assistant”, áp dụng picture style Soft Edge Rectangle cho ảnh.",
@@ -269,7 +287,8 @@
             "luat": "word_mau_de",
             "dang": "pic_style",
             "de_bai": "In the “Marketing Assistant” section, apply the Soft Edge Rectangle picture style to the picture."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Định dạng tiêu đề “Education” để luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề được giữ liền nhau.",
@@ -280,7 +299,8 @@
             "luat": "word_mau_de",
             "dang": "keep_next",
             "de_bai": "Format the heading “Education” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Objective”, chèn trích dẫn giữ chỗ (placeholder citation) mới tên “Source9” ở cuối đoạn văn thứ hai sau tiêu đề.",
@@ -291,7 +311,8 @@
             "luat": "word_mau_de",
             "dang": "citation",
             "de_bai": "In the “Objective” section, insert a new placeholder citation named “Source9” at the end of the second paragraph after the heading."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Skills”, chuyển bảng thành văn bản. Phân tách bằng dấu phẩy.",
@@ -310,7 +331,8 @@
                 "Years"
               ]
             }
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -330,7 +352,8 @@
             "luat": "word_mau_de",
             "dang": "insert_table",
             "de_bai": "Just under the heading “Oolong Tea”, insert a new table that has 3 columns and 3 rows. In the top row, from left to right, type “Time”, “Notes”, “Date”. Fit the table to its contents."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Black Tea”, chia hai đoạn văn sau tiêu đề thành 2 cột, khoảng cách giữa các cột 0.4\" (1.02 cm).",
@@ -341,7 +364,8 @@
             "luat": "word_mau_de",
             "dang": "columns",
             "de_bai": "In the “Black Tea” section, format the two paragraphs after the heading into 2 columns with column spacing of 0.4\" (1.02 cm)."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Tìm từ “several” và xóa nó khỏi tài liệu.",
@@ -355,7 +379,8 @@
             "goc": {
               "n": 1
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Oolong Tea”, áp dụng viền ngoài (outside border) 2 ¼ pt màu Black, Text 1 cho bảng. Không đổi viền bên trong.",
@@ -366,7 +391,8 @@
             "luat": "word_mau_de",
             "dang": "table_borders",
             "de_bai": "In the “Oolong Tea” section, apply a 2 ¼ pt Black, Text 1 outside border to the table. Do not change the inside borders."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng Rich Text Format tên “Tea”.",
@@ -377,7 +403,8 @@
             "luat": "word_mau_de",
             "dang": "save_rtf",
             "de_bai": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Tea”."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -397,7 +424,8 @@
             "luat": "word_mau_de",
             "dang": "comment_delete_all",
             "de_bai": "Delete all comments in the document."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Hiển thị header Banded trên mọi trang của tài liệu trừ trang 1.",
@@ -413,7 +441,8 @@
                 "5ff2e57ce79a508ad7e24a63e2e12b98"
               ]
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Bật tự động ngắt từ (automatic hyphenation) cho tài liệu.",
@@ -424,7 +453,8 @@
             "luat": "word_mau_de",
             "dang": "hyphenation",
             "de_bai": "Turn on automatic hyphenation for the document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi bố cục (layout) sơ đồ SmartArt trong mục “Fill Material” thành Basic Block List.",
@@ -440,7 +470,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Đổi kiểu trích dẫn và danh mục tài liệu tham khảo (citation & bibliography style) của tài liệu thành APA.",
@@ -451,7 +482,8 @@
             "luat": "word_mau_de",
             "dang": "biblio_style",
             "de_bai": "Change the citation and bibliography style of the document to APA."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Pharma2026”, tối ưu cho Minimum size (publishing online). Không mở file sau khi xuất.",
@@ -462,7 +494,8 @@
             "luat": "word_mau_de",
             "dang": "save_pdf",
             "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Pharma2026” that is optimized for minimum size (publishing online). Do not open the file after publishing."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -485,7 +518,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục tùy chỉnh hiện 3 cấp tiêu đề và gồm cả các mục dùng style Subtitle ở TOC level 4.",
@@ -496,7 +530,8 @@
             "luat": "word_mau_de",
             "dang": "custom_toc",
             "de_bai": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong mục “What Cannot Be Recycled?”, tắt Widow/Orphan control cho hai đoạn văn sau tiêu đề và giữ các dòng của mỗi đoạn liền nhau (Keep lines together).",
@@ -507,7 +542,8 @@
             "luat": "word_mau_de",
             "dang": "widow",
             "de_bai": "In the “What Cannot Be Recycled?” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo bộ theme colors tùy chỉnh tên “Recycle Colors”, dùng màu Orange (Standard Colors) làm màu Accent 1.",
@@ -518,7 +554,8 @@
             "luat": "word_mau_de",
             "dang": "custom_colors",
             "de_bai": "Create a custom theme color set named “Recycle Colors” that uses Orange (Standard Colors) as the Accent 1 color."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Đánh dấu tài liệu là bản cuối (Mark as Final).",
@@ -529,7 +566,8 @@
             "luat": "word_mau_de",
             "dang": "mark_final",
             "de_bai": "Mark the document as final."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

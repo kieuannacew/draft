@@ -1,0 +1,35 @@
+{
+  "id": "word_chuong_1_quan_ly_tai_lieu-3326a0171a",
+  "ten": "Word – Chương 1: Quản lý tài liệu",
+  "ten_en": "Word – Chapter 1: Manage documents",
+  "mon": "WORD",
+  "chuong": 1,
+  "mo_ta": "Bài giảng mẫu: điều hướng, định dạng trang, thuộc tính, kiểm tra và lưu tài liệu.",
+  "nguon": "Word_Chuong1_QuanLyTaiLieu.pptx",
+  "slides": [
+    {
+      "text": "WORD · MO-110 · CHƯƠNG 1\nQuản lý tài liệu\nĐiều hướng · Định dạng trang · Thuộc tính · In và lưu tài liệu",
+      "notes": "Chương 1 chiếm khoảng 20% số câu trong đề MO-110. Các câu thường ngắn, làm nhanh để dành thời gian cho câu khó."
+    },
+    {
+      "text": "Điều hướng trong tài liệu\nBa công cụ giúp đi nhanh tới đúng chỗ cần sửa\n1\nTìm kiếm\nHome > Find (Ctrl + F) mở ngăn Navigation. Gõ từ cần tìm, bấm vào kết quả để nhảy tới.\n2\nSiêu liên kết\nChọn chữ > Insert > Link (Ctrl + K). Web: Existing File or Web Page. Tiêu đề trong bài: Place in This Document.\n3\nBookmark\nĐặt con trỏ > Insert > Bookmark > gõ tên (không dấu cách) > Add. Dùng để liên kết hoặc tham chiếu.",
+      "notes": "Đề hay hỏi: thêm hyperlink tới một tiêu đề trong tài liệu, và thêm bookmark ở đầu đoạn văn."
+    },
+    {
+      "text": "Định dạng tài liệu\nTab Layout và Design là nơi làm phần lớn câu của nhóm này\nLayout > Page Setup\nMargins · Orientation · Size (A4, A5…). Chọn Custom Margins để nhập số đo cụ thể.\nDesign > Themes\nThemes · Colors · Fonts · Style Set · Paragraph Spacing áp dụng cho cả tài liệu.\nInsert > Header & Footer\nHeader, Footer, Page Number. Tích Different First Page để bỏ trang 1.\nDesign > Page Background\nWatermark · Page Color · Page Borders (chọn Apply to: This section – First page only nếu đề yêu cầu).",
+      "notes": "Mẹo: di chuột lên ô màu để xem tên màu, ví dụ Blue, Accent 1, Lighter 80%."
+    },
+    {
+      "text": "Thuộc tính tài liệu\nFile > Info > Properties (bên phải màn hình)\n1\nTitle, Subject, Tags, Categories: gõ thẳng vào ô ở cột Properties.\n2\nCompany, Manager: bấm Show All Properties ở cuối cột.\n3\nKhông thấy ô cần sửa: Properties > Advanced Properties > Summary.\nTags\n= Keywords\nĐề ghi \"add … as a tag\" thì gõ vào ô Tags. Nhiều tag cách nhau bằng dấu chấm phẩy.",
+      "notes": "Nhấn ra ngoài ô hoặc Enter để lưu giá trị, sau đó Ctrl + S."
+    },
+    {
+      "text": "Kiểm tra và lưu tài liệu\nFile > Info > Check for Issues, rồi File > Save a Copy\n1\nInspect Document\nXóa Properties, Header/Footer… đúng mục đề nêu\n›\n2\nCheck Accessibility\nThêm Alt Text, hàng tiêu đề bảng\n›\n3\nCheck Compatibility\nConvert để bỏ Compatibility Mode\n›\n4\nSave a Copy\nPDF · RTF · Word 97-2003 · Template (.dotx)\nLưu bản sao vào thư mục Documents khi đề ghi \"in your Documents folder\".",
+      "notes": "Inspect Document: chỉ bấm Remove All ở đúng mục đề yêu cầu, không xóa mục khác."
+    },
+    {
+      "text": "Mẹo làm bài chương 1\n1\nĐọc kỹ phạm vi: \"entire document\" hay \"first page only\".\n2\nGiữ nguyên thiết lập mặc định khi đề ghi \"Accept all default settings\".\n3\nLàm xong mỗi dự án nhấn Ctrl + S.\nLuyện ngay: Trang chủ > Luyện theo chương > Word > Chương 1",
+      "notes": "Sau bài này, luyện 10–15 câu chương 1 để nhớ vị trí các lệnh."
+    }
+  ]
+}

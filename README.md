@@ -79,6 +79,33 @@ Vào mục **Đề thi** ở thanh menu bên trái, bấm **Soạn đề mới**
 Chi tiết từng luật chấm, cùng cách soạn đề bằng file `de.json` cho người muốn làm tay:
 [HUONG_DAN_SOAN_DE.md](HUONG_DAN_SOAN_DE.md).
 
+## Chọn bài thi, luyện theo chương
+
+Trang chủ chỉ có **3 môn: Word, Excel, PowerPoint**. Bấm vào một môn → chọn chế độ:
+- **Luyện tập** / **Thi thử**: chọn một đề trong môn đó (các đề nằm bên trong môn, không bày hết ra ngoài).
+- **Luyện theo chương** 📚: chọn một chương theo khung đề MOS (vd Word: 1 Quản lý tài liệu, 2 Chữ – đoạn – section,
+  3 Bảng & danh sách, 4 Tham chiếu, 5 Đồ họa, 6 Cộng tác, 7 Nâng cao). App gom các câu thuộc chương đó từ mọi đề
+  (tối đa 6 dự án, mỗi lần một khác), không giới hạn giờ, có gợi ý.
+- Đề tự soạn: trong form Soạn đề, mỗi nhiệm vụ có ô **Chương** để xếp vào chương.
+
+## Tài liệu học (bài giảng PowerPoint, xem trong app, không tải về)
+
+- Mục **📖 Tài liệu học** ở thanh bên: danh sách bài giảng theo môn / chương, có tiến độ đã xem.
+  Trình xem có ảnh thu nhỏ, phím ← →, ghi chú của giáo viên.
+- Quản trị nhập bài bằng nút **Nhập bài giảng PPTX…** (chọn môn, chương). Trên máy có PowerPoint, từng slide được
+  xuất thành ảnh y như bản gốc; không có PowerPoint thì app tự dựng ảnh đơn giản hơn.
+- File `.pptx` gốc **không** được chép vào app; ảnh slide được đóng gói, mã hóa trong `slides.mosl`, chỉ giải mã khi
+  xem. Không có nút lưu / xuất. (Không chặn được chụp màn hình – phần mềm nào cũng vậy.)
+- Bài giảng đi kèm app nằm trong thư mục `tai_lieu\`; bài quản trị nhập thêm nằm trong thư mục dữ liệu chung.
+- **Video**: nên để giáo viên tự quay/xuất video bằng PowerPoint (*File → Export → Create a Video*) – nhanh, đẹp và
+  không tốn gì; app có thể thêm trình phát video sau.
+
+## Tra từ khóa
+
+Mục **🔎 Tra từ khóa**: gõ tên lệnh tiếng Anh hoặc tiếng Việt (không cần dấu, vd `hinh mo`, `freeze panes`) → xem
+**thuật ngữ** (giải thích + đường dẫn menu), **slide bài giảng** có từ đó và **câu luyện trong đề** kèm cách làm;
+bấm **▶ Luyện câu này** để làm riêng câu đó.
+
 ## Cách làm bài
 
 1. Đăng nhập, chọn bài thi và chế độ:
@@ -98,12 +125,18 @@ mos/
   rules.py           ← 46 luật chấm + thông tin để dựng form soạn đề
   custom.py          ← đọc / lưu đề tự soạn (de_thi/), gộp vào bài thi, kiểm tra đề
   ooxml.py           ← đọc XML bên trong file Office (.docx/.xlsx/.pptx là file ZIP)
+  chuong.py          ← chương theo khung MOS, tạo bài luyện theo chương
+  tai_lieu.py        ← bài giảng PPTX: nhập, đóng gói ảnh slide, tiến độ học
+  tu_khoa.py         ← thuật ngữ MOS và tìm kiếm (thuật ngữ, câu trong đề, slide)
   qt/                ← giao diện (Qt / PySide6)
     theme.py         ← hệ thống thiết kế: màu, font, stylesheet, thẻ, nút, bảng, vòng điểm
     app.py           ← đăng nhập, khung ứng dụng (thanh bên), trang chủ, lịch sử, thanh làm bài, kết quả
     admin.py         ← Quản trị: tài khoản, đề thi + form soạn đề, kết quả học viên
+    hoc.py           ← Tài liệu học: danh sách bài giảng, trình xem slide, nhập PPTX
+    tra_cuu.py       ← trang Tra từ khóa
   exams/             ← đề có sẵn (word.py, excel.py, powerpoint.py)
 de_thi/              ← đề mẫu tự soạn (de.json + file gốc + dap_an/)
+tai_lieu/            ← bài giảng đi kèm app (bai.json + slides.mosl)
 kiem_tra_de.py       ← kiểm tra đề bằng dòng lệnh
 tests/               ← kiểm tra tự động (python -m pytest -q)
 ```

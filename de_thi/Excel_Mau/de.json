@@ -19,7 +19,8 @@
           "cham": {
             "luat": "excel_ten_sheet",
             "ten": "BangDiem"
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Ô F2:F9 dùng hàm AVERAGE tính điểm trung bình 3 môn.",
@@ -33,7 +34,8 @@
               "AVERAGE(",
               "C{hang}:E{hang}"
             ]
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Định dạng F2:F9 hiển thị 1 chữ số thập phân.",
@@ -44,7 +46,8 @@
             "luat": "excel_dinh_dang_so",
             "o": "F2:F9",
             "chua": "0.0"
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "In đậm hàng tiêu đề A1:F1.",
@@ -55,7 +58,8 @@
             "luat": "excel_font",
             "o": "A1:F1",
             "dam": true
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Cố định hàng tiêu đề và vẽ biểu đồ cột điểm trung bình theo Họ tên.",
@@ -71,7 +75,8 @@
               "luat": "excel_bieu_do",
               "loai": "cot"
             }
-          ]
+          ],
+          "chuong": 5
         }
       ]
     }

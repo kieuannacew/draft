@@ -60,6 +60,7 @@ class Task:
     check: Callable[[Path], bool | None]   # Hàm chấm: True nếu đúng; None = không chấm tự động được
     title_en: str = ""              # bản tiếng Anh (để trống = dùng bản tiếng Việt)
     hint_en: str = ""
+    chapter: int | None = None      # chương / nhóm kỹ năng (mos/chuong.py)
 
 
 @dataclass
@@ -99,7 +100,7 @@ class TaskResult:
 class Session:
     """Một lượt làm bài: thư mục làm việc + trạng thái đánh dấu."""
     exam: Exam
-    mode: str                       # "training" hoặc "testing"
+    mode: str                       # "training", "chapter" (luyện theo chương) hoặc "testing"
     workdir: Path
     marked: set = field(default_factory=set)   # {(project_idx, task_idx)}
     done: set = field(default_factory=set)

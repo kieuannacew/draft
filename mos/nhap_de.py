@@ -171,6 +171,8 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
             hint = _hint(t.get("steps"))
             tasks.append({"yeu_cau": memory["de_bai"].get(text, text), "yeu_cau_en": text,
                           "goi_y": hint, "goi_y_en": memory["goi_y"].get(hint, ""), "cham": spec})
+            if isinstance(t.get("domain"), int):
+                tasks[-1]["chuong"] = t["domain"]
         theme = str(e.get("theme") or Path(src).stem)
         expert = "Expert" in src.stem or e.get("expert")
         no = e.get("no", len(projects) + 1)

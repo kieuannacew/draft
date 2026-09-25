@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_02",
-  "dau_vet": "dc53fe3190484993",
+  "dau_vet": "c5e5c303b0fc1e89",
   "du_an": [
     {
       "ten": "Dự án 1 – Garden",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "sbreak_next",
             "de_bai": "At the beginning of the heading “Workshops”, insert a Next Page section break."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục. Dùng kiểu Automatic Table 1.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "toc_insert",
             "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Áp dụng theme Ion cho tài liệu.",
@@ -45,7 +47,8 @@
             "luat": "word_mau_de",
             "dang": "doc_theme",
             "de_bai": "Apply the Ion theme to the document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đổi hướng sơ đồ SmartArt trong mục “Choosing Containers” để chạy từ phải sang trái.",
@@ -56,7 +59,8 @@
             "luat": "word_mau_de",
             "dang": "sa_rtl",
             "de_bai": "Change the direction of the SmartArt graphic in the “Choosing Containers” section so that it flows from right to left."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Watering”, tách ô tiêu đề “Days to harvest” thành hai cột và một hàng.",
@@ -70,7 +74,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Easy Plants for Beginners”, thêm siêu liên kết cho chữ “grow quickly” trỏ tới https://www.greenthumbgardencenter.com.",
@@ -81,7 +86,8 @@
             "luat": "word_mau_de",
             "dang": "hyperlink_url",
             "de_bai": "In the “Easy Plants for Beginners” section, add a hyperlink to the text “grow quickly” that links to https://www.greenthumbgardencenter.com."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -101,7 +107,8 @@
             "luat": "word_mau_de",
             "dang": "track_on",
             "de_bai": "Turn on Track Changes. Then, replace the word “program” with “PROGRAM”. Leave Track Changes turned on."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Chèn ngắt trang ngay trước tiêu đề “Tips of the Month”.",
@@ -112,7 +119,8 @@
             "luat": "word_mau_de",
             "dang": "page_break",
             "de_bai": "Insert a page break before the heading “Tips of the Month”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Áp dụng hiệu ứng chữ Fill: Black, Text color 1; Shadow cho tiêu đề “New Stores Opening”.",
@@ -123,7 +131,8 @@
             "luat": "word_mau_de",
             "dang": "text_effect",
             "de_bai": "Apply the Fill: Black, Text color 1; Shadow text effect to the heading “New Stores Opening”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Mascot Family Growing, Too!”, tách bảng để hàng bắt đầu bằng “Tiling Basics” trở thành hàng đầu của một bảng mới.",
@@ -142,7 +151,8 @@
                 "Duration (min)"
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Tìm đoạn chữ “Holiday opening hours are posted on our website.” và áp dụng style Subtle Emphasis cho nó.",
@@ -153,7 +163,8 @@
             "luat": "word_mau_de",
             "dang": "char_style",
             "de_bai": "Locate the text “Holiday opening hours are posted on our website.” and apply the Subtle Emphasis style to it."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -173,7 +184,8 @@
             "luat": "word_mau_de",
             "dang": "margins",
             "de_bai": "Change the margins of the entire document by setting the top and bottom margins to 0.5\" (1.27 cm) and the left and right margins to 0.25\" (0.64 cm)."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Thêm viền trang kiểu Box, dày 3 pt, màu Automatic chỉ cho trang đầu tiên.",
@@ -184,7 +196,8 @@
             "luat": "word_mau_de",
             "dang": "page_border",
             "de_bai": "Add a 3 pt Automatic Box page border to the first page only."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Introduction”, định dạng 5 đoạn văn bắt đầu từ “Choose your products” thành danh sách đánh số kiểu A.",
@@ -195,7 +208,8 @@
             "luat": "word_mau_de",
             "dang": "numbers_from_paras",
             "de_bai": "In the “Introduction” section, format the 5 paragraphs starting with “Choose your products” as a numbered list that uses the A. number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Xóa toàn bộ định dạng của đoạn văn bắt đầu bằng “Pastry platters include croissants, egg tarts, …”.",
@@ -206,7 +220,8 @@
             "luat": "word_mau_de",
             "dang": "clear_format",
             "de_bai": "Clear all formatting from the paragraph that starts with “Pastry platters include croissants, egg tarts, …”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents ở định dạng tương thích Word 97-2003, đặt tên “Golden”. Chấp nhận mọi cảnh báo tương thích.",
@@ -217,7 +232,8 @@
             "luat": "word_mau_de",
             "dang": "save_97",
             "de_bai": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “Golden”. Accept any compatibility warnings."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -237,7 +253,8 @@
             "luat": "word_mau_de",
             "dang": "inspect_props",
             "de_bai": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Rooms and Suites”, sắp xếp dữ liệu bảng theo “Category” (tăng dần) rồi theo “Activity” (giảm dần).",
@@ -248,7 +265,8 @@
             "luat": "word_mau_de",
             "dang": "sort_table",
             "de_bai": "In the “Rooms and Suites” section, sort the table data by “Category” (Ascending) and then by “Activity” (Descending)."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Dining”, áp dụng hiệu ứng nghệ thuật Cement cho ảnh.",
@@ -259,7 +277,8 @@
             "luat": "word_mau_de",
             "dang": "art_effect",
             "de_bai": "In the “Dining” section, apply the Cement artistic effect to the picture."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Đặt text box bắt đầu bằng “Remember:” ở vị trí Bottom Left của trang, ngắt dòng kiểu Square.",
@@ -270,7 +289,8 @@
             "luat": "word_mau_de",
             "dang": "callout_pos",
             "de_bai": "Position the text box that starts with “Remember:” in the Bottom Left of the page with square text wrapping."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Spa and Wellness”, thêm comment cho chữ “discount on spa” với nội dung “Add a photo here.”.",
@@ -285,7 +305,8 @@
               "n": 0,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Activities”, áp dụng hiệu ứng hình Glow: 5 point; Blue, Accent color 1 cho sơ đồ SmartArt (nhớ chọn toàn bộ sơ đồ SmartArt).",
@@ -301,7 +322,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -321,7 +343,8 @@
             "luat": "word_mau_de",
             "dang": "toc_modify",
             "de_bai": "Change the table of contents to show only Heading 1 headings."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến ảnh bằng cách thêm mô tả alt text “Fitness picture”.",
@@ -332,7 +355,8 @@
             "luat": "word_mau_de",
             "dang": "access_alt",
             "de_bai": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Fitness picture”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Why Choose Us?”, đổi kiểu ngắt dòng quanh ảnh (text wrapping) thành Through.",
@@ -343,7 +367,8 @@
             "luat": "word_mau_de",
             "dang": "pic_wrap",
             "de_bai": "In the “Why Choose Us?” section, change the text wrapping for the picture to Through."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Personal Training”, đổi màu nền hàng tiêu đề của bảng thành Green, Accent 6.",
@@ -354,7 +379,8 @@
             "luat": "word_mau_de",
             "dang": "table_shading",
             "de_bai": "In the “Personal Training” section, change the shading of the header row of the table to Green, Accent 6."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Become a Member Today!”, đổi định dạng số của danh sách đánh số thành (1).",
@@ -365,7 +391,8 @@
             "luat": "word_mau_de",
             "dang": "num_format",
             "de_bai": "In the “Become a Member Today!” section, change the number format of the numbered list to (1)."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -385,7 +412,8 @@
             "luat": "word_mau_de",
             "dang": "fn_format",
             "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “How the Subscription Works”, ở đoạn trống dưới bảng, chèn biểu đồ Clustered Bar thể hiện giá trị “Weight (kg)” của 4 mục đầu trong bảng: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Dùng “Weight (kg)” làm tên chuỗi dữ liệu (series).",
@@ -399,7 +427,8 @@
             "goc": {
               "n": 1
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Farm Visits”, sửa danh sách đánh số để bắt đầu từ 5.",
@@ -410,7 +439,8 @@
             "luat": "word_mau_de",
             "dang": "restart_num",
             "de_bai": "In the “Farm Visits” section, change the numbered list so that it starts at 5."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “About the Farm”, áp dụng drop cap kiểu Dropped cho đoạn văn đầu tiên, rơi xuống 3 dòng.",
@@ -421,7 +451,8 @@
             "luat": "word_mau_de",
             "dang": "dropcap",
             "de_bai": "In the “About the Farm” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 3 lines."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Thêm mô tả alt text “Weight (kg) chart” cho biểu đồ trong mục “How the Subscription Works”.",
@@ -432,7 +463,8 @@
             "luat": "word_mau_de",
             "dang": "chart_alt",
             "de_bai": "Add the alt text description “Weight (kg) chart” to the chart in the “How the Subscription Works” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Customer Feedback”, sao chép định dạng của đoạn văn đầu tiên và áp dụng cho đoạn văn thứ hai.",
@@ -443,7 +475,8 @@
             "luat": "word_mau_de",
             "dang": "format_painter",
             "de_bai": "In the “Customer Feedback” section, copy the formatting of the first paragraph and apply it to the second paragraph."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -463,7 +496,8 @@
             "luat": "word_mau_de",
             "dang": "link_textbox",
             "de_bai": "Link the text box in the “A Typical Day” section to the empty text box in the “Working with Families” section so that the overflow text flows into the second text box."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống ở cuối tài liệu, chèn trường (field) NumWords.",
@@ -474,7 +508,8 @@
             "luat": "word_mau_de",
             "dang": "fields",
             "de_bai": "In the blank paragraph at the end of the document, insert the NumWords field."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo character style tên “Key Term” gồm chữ đậm, màu Dark Blue. Áp dụng style này cho đoạn chữ “Teachers meet every two weeks to share ideas and review student work together.”.",
@@ -485,7 +520,8 @@
             "luat": "word_mau_de",
             "dang": "char_style_new",
             "de_bai": "Create a character style named “Key Term” that uses bold, Dark Blue font color. Apply the style to the text “Teachers meet every two weeks to share ideas and review student work together.”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Dùng ký tự đại diện (wildcards) để tìm mọi chỗ có “Ms. Linh Tran” và “Miss Linh Tran” rồi thay bằng “Linh Tran”.",
@@ -500,7 +536,8 @@
               "n": 3,
               "n_new": 3
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Lưu tiêu đề và các đoạn văn của mục “Assessment” thành Quick Part tên “School Summary” trong thư viện Quick Part. Giữ mọi thiết lập mặc định khác.",
@@ -511,7 +548,8 @@
             "luat": "word_mau_de",
             "dang": "quickpart",
             "de_bai": "Save the heading and paragraphs of the “Assessment” section as a Quick Part named “School Summary” in the Quick Part gallery. Accept all other default settings."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

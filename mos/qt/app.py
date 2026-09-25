@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (QApplication, QButtonGroup, QDialog, QFrame, QGri
                                QLineEdit, QMainWindow, QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
                                QVBoxLayout, QWidget)
 
-from .. import core, gamify, i18n, nhap_de
+from .. import chuong, core, gamify, i18n, nhap_de
 from ..accounts import ROLE_NAMES, AccountError, AccountStore
 from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
@@ -34,7 +34,7 @@ from .theme import (DANGER, DANGER_SOFT, GOLD_SOFT, PRIMARY, PRIMARY_SOFT, SUCCE
                     WARN_SOFT, Card, ClickableCard, button, chip, label)
 
 def mode_name(mode: str) -> str:
-    return tr("Luyện tập") if mode == "training" else tr("Thi thử")
+    return {"training": tr("Luyện tập"), "chapter": tr("Luyện theo chương")}.get(mode, tr("Thi thử"))
 
 
 def exam_name(exam) -> str:
@@ -239,7 +239,7 @@ class Shell(QWidget):
         self.content = QStackedWidget()
         lay.addWidget(self.content, 1)
         self.current = None
-        self.go(page if page in ("home", "history", "accounts", "exams", "results") else "home")
+        self.go(page if page in ("home", "history", "lessons", "search", "accounts", "exams", "results") else "home")
 
     # ------------------------------------------------------------ thanh bên
     def _sidebar(self) -> QWidget:
@@ -283,6 +283,8 @@ class Shell(QWidget):
         lay.addWidget(label(tr("HỌC TẬP"), "overline"))
         lay.addSpacing(4)
         nav("home", "🏠", tr("Trang chủ"))
+        nav("lessons", "📖", tr("Tài liệu học"))
+        nav("search", "🔎", tr("Tra từ khóa"))
         nav("history", "📈", tr("Lịch sử của tôi"))
         if self.account.is_admin:
             lay.addSpacing(18)
@@ -325,8 +327,11 @@ class Shell(QWidget):
 
     # ------------------------------------------------------------ điều hướng
     def go(self, key: str, **kw) -> None:
-        from . import admin
+        from . import admin, hoc, tra_cuu
         factories = {
+            "lessons": lambda: hoc.LessonsPage(self, **kw),
+            "lesson": lambda: hoc.LessonViewer(self, **kw),
+            "search": lambda: tra_cuu.SearchPage(self, **kw),
             "home": lambda: HomePage(self),
             "history": lambda: HistoryPage(self),
             "result": lambda: ResultPage(self, **kw),
@@ -342,7 +347,7 @@ class Shell(QWidget):
             self.content.removeWidget(old)
             old.deleteLater()
         self.current = key
-        btn = self.nav_buttons.get(key)
+        btn = self.nav_buttons.get("lessons" if key == "lesson" else key)
         if btn:
             btn.setChecked(True)
         else:
@@ -473,7 +478,6 @@ class HomePage(QScrollArea):
         custom, errors = load_custom_exams()
         self.exams = merge_exams(ALL_EXAMS, custom)
         history = core.load_history(acc.username)
-        self.exam_idx, self.mode = 0, "training"
 
         body, lay = page_body()
         lay.addWidget(self._hero(acc, history))
@@ -512,19 +516,22 @@ class HomePage(QScrollArea):
             grid.setColumnStretch(c, 1)
         lay.addLayout(grid)
 
-        # --- chọn bài thi
-        lay.addWidget(label(tr("Chọn bài thi"), "h2"))
-        grid = QGridLayout()
-        grid.setSpacing(16)
-        self.exam_cards = []
-        for i, exam in enumerate(self.exams):
-            card = self._exam_card(exam, history)
-            card.clicked.connect(lambda i=i: self.select_exam(i))
-            grid.addWidget(card, i // 3, i % 3)
-            self.exam_cards.append((card, exam))
-        for c in range(3):
-            grid.setColumnStretch(c, 1)
-        lay.addLayout(grid)
+        # --- chọn môn
+        self.history = history
+        self.by_code = {code: [e for e in self.exams if e.code == code] for code in T.BRAND}
+        self.code = next((c for c in T.BRAND if self.by_code[c]), "WORD")
+        self.exam_idx = {code: 0 for code in T.BRAND}
+        self.chapter_no = {code: None for code in T.BRAND}
+        lay.addWidget(label(tr("Chọn môn"), "h2"))
+        subjects = QHBoxLayout()
+        subjects.setSpacing(16)
+        self.subject_cards = {}
+        for code in T.BRAND:
+            card = self._subject_card(code)
+            card.clicked.connect(lambda c=code: self.select_subject(c))
+            subjects.addWidget(card)
+            self.subject_cards[code] = card
+        lay.addLayout(subjects)
 
         # --- chế độ
         lay.addWidget(label(tr("Chế độ"), "h2"))
@@ -533,6 +540,7 @@ class HomePage(QScrollArea):
         self.mode_cards = {}
         for key, icon, title, desc in (
                 ("training", "🌱", tr("Luyện tập"), tr("Không giới hạn giờ · có gợi ý · kiểm tra từng dự án")),
+                ("chapter", "📚", tr("Luyện theo chương"), tr("Chọn một nhóm kỹ năng · gom câu từ mọi đề · có gợi ý")),
                 ("testing", "⏳", tr("Thi thử"), tr("Tính giờ như thi thật · không gợi ý · chấm khi nộp bài · "
                                                    "XP ×1.2"))):
             card = ClickableCard(padding=18, spacing=14, horizontal=True)
@@ -545,12 +553,20 @@ class HomePage(QScrollArea):
             col = QVBoxLayout()
             col.setSpacing(2)
             col.addWidget(label(title, "h3"))
-            col.addWidget(label(desc, "caption"))
+            col.addWidget(label(desc, "caption", wrap=True))
             card.lay.addLayout(col, 1)
             card.clicked.connect(lambda k=key: self.select_mode(k))
             modes.addWidget(card)
             self.mode_cards[key] = (card, dot)
         lay.addLayout(modes)
+
+        # --- chọn đề / chọn chương (đổi theo môn và chế độ)
+        self.picker_title = label("", "h2")
+        lay.addWidget(self.picker_title)
+        self.picker = QWidget()
+        self.picker_lay = QVBoxLayout(self.picker)
+        self.picker_lay.setContentsMargins(0, 0, 0, 0)
+        lay.addWidget(self.picker)
 
         foot = QHBoxLayout()
         if history:
@@ -565,8 +581,9 @@ class HomePage(QScrollArea):
         lay.addStretch()
 
         _clear_page(self, body)
-        self.select_exam(0)
+        self.mode = "training"
         self.select_mode("training")
+        self.select_subject(self.code)
 
     # ------------------------------------------------------------ khối chào
     def _hero(self, acc, history) -> QFrame:
@@ -613,41 +630,130 @@ class HomePage(QScrollArea):
         hero.lay.addWidget(tip)
         return hero
 
-    def _exam_card(self, exam, history) -> ClickableCard:
-        letter, color, tint, short = T.brand(exam.code)
+    def _best(self, exam) -> int | None:
+        return max((h["score"] for h in self.history if h["exam"] == exam.name), default=None)
+
+    def _subject_card(self, code) -> ClickableCard:
+        _, color, tint, short = T.brand(code)
+        exams = self.by_code[code]
         card = ClickableCard(padding=20, spacing=6)
         top = QHBoxLayout()
-        top.addWidget(T.badge(exam.code, 46))
+        top.addWidget(T.badge(code, 50))
         top.addStretch()
-        best = max((h["score"] for h in history if h["exam"] == exam.name), default=None)
-        top.addWidget(T.stars(gamify.stars(best)), 0, Qt.AlignTop)
+        card.check = chip("✓ " + tr("Đã chọn"), T.FOREST, PRIMARY_SOFT)
+        top.addWidget(card.check, 0, Qt.AlignTop)
         card.lay.addLayout(top)
         card.lay.addSpacing(6)
-        name, _, code = exam_name(exam).replace("Microsoft ", "").partition(" (")
-        card.lay.addWidget(label(name, "h2"))
-        card.lay.addWidget(label(code.rstrip(")") or tr("Đề tự soạn"), "caption"))
-        n_tasks = sum(len(p.tasks) for p in exam.projects)
-        card.lay.addWidget(label(tr("{p} dự án · {t} nhiệm vụ · {m} phút").format(
-            p=len(exam.projects), t=n_tasks, m=exam.minutes), "muted"))
-        card.lay.addSpacing(8)
-        card.lay.addWidget(T.progress(best or 0, tone=None if (best or 0) >= core.PASS_SCORE else "warn"))
-        foot = QHBoxLayout()
-        foot.addWidget(label(tr("Điểm cao nhất: {s}/1000").format(s=best) if best is not None
-                             else tr("Chưa làm bài này"), "caption"))
-        foot.addStretch()
-        card.check = chip("✓ " + tr("Đã chọn"), T.FOREST, PRIMARY_SOFT)
-        foot.addWidget(card.check)
-        card.lay.addLayout(foot)
-        card.brand_color, card.tint = color, tint
+        card.lay.addWidget(label(short, "h2"))
+        exam_code = {"WORD": "MO-100 / MO-110", "EXCEL": "MO-200", "POWERPOINT": "MO-300"}[code]
+        card.lay.addWidget(label(exam_code, "caption"))
+        n_tasks = sum(len(p.tasks) for e in exams for p in e.projects)
+        card.lay.addWidget(label(tr("{n} đề · {t} nhiệm vụ").format(n=len(exams), t=n_tasks), "muted"))
+        bests = [b for b in (self._best(e) for e in exams) if b is not None]
+        done = sum(1 for b in bests if b >= core.PASS_SCORE)
+        card.lay.addSpacing(6)
+        card.lay.addWidget(T.progress(done, max(len(exams), 1), None))
+        card.lay.addWidget(label(tr("Đã đạt {n}/{total} đề").format(n=done, total=len(exams)), "caption"))
         return card
 
-    def select_exam(self, idx):
-        self.exam_idx = idx
-        for i, (card, _) in enumerate(self.exam_cards):
-            on = i == idx
+    def _exam_row(self, exam, on) -> ClickableCard:
+        card = ClickableCard(padding=14, spacing=12, horizontal=True)
+        dot = QLabel()
+        dot.setFixedSize(18, 18)
+        dot.setStyleSheet(f"border-radius: 9px; border: {'5px' if on else '2px'} solid "
+                          f"{PRIMARY if on else '#D5D2C4'}; background: white;")
+        card.lay.addWidget(dot)
+        col = QVBoxLayout()
+        col.setSpacing(1)
+        name, _, sub = exam_name(exam).replace("Microsoft ", "").partition(" (")
+        col.addWidget(label(name, "h3"))
+        n_tasks = sum(len(p.tasks) for p in exam.projects)
+        col.addWidget(label(f"{sub.rstrip(')') or tr('Đề tự soạn')} · " + tr("{p} dự án · {t} nhiệm vụ · {m} phút")
+                            .format(p=len(exam.projects), t=n_tasks, m=exam.minutes), "caption"))
+        card.lay.addLayout(col, 1)
+        best = self._best(exam)
+        right = QVBoxLayout()
+        right.setSpacing(0)
+        right.addWidget(T.stars(gamify.stars(best), 12), 0, Qt.AlignRight)
+        right.addWidget(label(f"{best}/1000" if best is not None else tr("Chưa làm"), "caption"), 0, Qt.AlignRight)
+        card.lay.addLayout(right)
+        if on:
+            card.setStyleSheet(f"QFrame#Card {{ background: {PRIMARY_SOFT}; border: 2px solid {PRIMARY}; "
+                               "border-radius: 16px; }")
+        return card
+
+    def _chapter_card(self, ch, count, on) -> ClickableCard:
+        card = ClickableCard(padding=16, spacing=4)
+        top = QHBoxLayout()
+        ic = QLabel(ch.icon)
+        ic.setStyleSheet(f"font-size: 16pt; background: transparent; color: {T.FOREST};")
+        top.addWidget(ic)
+        top.addStretch()
+        top.addWidget(chip(tr("Chương {n}").format(n=ch.number), T.FOREST, PRIMARY_SOFT))
+        card.lay.addLayout(top)
+        card.lay.addWidget(label(pick(ch.name_vi, ch.name_en), "h3", wrap=True))
+        card.lay.addWidget(label(tr("{n} nhiệm vụ để luyện").format(n=count), "caption"))
+        if on:
+            card.setStyleSheet(f"QFrame#Card {{ background: {PRIMARY_SOFT}; border: 2px solid {PRIMARY}; "
+                               "border-radius: 16px; }")
+        elif not count:
+            card.setEnabled(False)
+        return card
+
+    def _refresh_picker(self):
+        while self.picker_lay.count():
+            item = self.picker_lay.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+            elif item.layout():
+                QWidget().setLayout(item.layout())
+        grid = QGridLayout()
+        grid.setSpacing(12)
+        short = T.brand(self.code)[3]
+        if self.mode == "chapter":
+            self.picker_title.setText(tr("Chọn chương – {subject}").format(subject=short))
+            counts = chuong.count_tasks(self.exams, self.code)
+            chs = chuong.chapters(self.code)
+            if self.chapter_no[self.code] is None:
+                self.chapter_no[self.code] = next((c.number for c in chs if counts.get(c.number)), None)
+            for i, ch in enumerate(chs):
+                card = self._chapter_card(ch, counts.get(ch.number, 0), ch.number == self.chapter_no[self.code])
+                card.clicked.connect(lambda n=ch.number: self.select_chapter(n))
+                grid.addWidget(card, i // 3, i % 3)
+            cols = 3
+            ready = bool(counts.get(self.chapter_no[self.code] or 0))
+        else:
+            self.picker_title.setText(tr("Chọn đề – {subject}").format(subject=short))
+            exams = self.by_code[self.code]
+            for i, exam in enumerate(exams):
+                card = self._exam_row(exam, i == self.exam_idx[self.code])
+                card.clicked.connect(lambda i=i: self.select_exam(i))
+                grid.addWidget(card, i // 2, i % 2)
+            cols = 2
+            ready = bool(exams)
+            if not exams:
+                self.picker_lay.addWidget(T.empty_state(tr("Môn này chưa có đề nào.")))
+        for c in range(cols):
+            grid.setColumnStretch(c, 1)
+        self.picker_lay.addLayout(grid)
+        self.start_btn.setEnabled(ready)
+
+    def select_subject(self, code):
+        self.code = code
+        for c, card in self.subject_cards.items():
+            on = c == code
             card.setStyleSheet(f"QFrame#Card {{ background: white; border: 2px solid {T.FOREST}; "
                                "border-radius: 16px; }" if on else "")
             card.check.setVisible(on)
+        self._refresh_picker()
+
+    def select_exam(self, idx):
+        self.exam_idx[self.code] = idx
+        self._refresh_picker()
+
+    def select_chapter(self, number):
+        self.chapter_no[self.code] = number
+        self._refresh_picker()
 
     def select_mode(self, key):
         self.mode = key
@@ -657,9 +763,20 @@ class HomePage(QScrollArea):
                                "border-radius: 16px; }" if on else "")
             dot.setStyleSheet(f"border-radius: 10px; border: {'6px' if on else '2px'} solid "
                               f"{PRIMARY if on else '#D5D2C4'}; background: white;")
+        if hasattr(self, "subject_cards"):
+            self._refresh_picker()
 
     def start(self):
-        self.shell.start_exam(self.exams[self.exam_idx], self.mode)
+        if self.mode == "chapter":
+            exam = chuong.practice_exam(self.exams, self.code, self.chapter_no[self.code] or 0)
+            if exam is None:
+                T.info(self, tr("Chưa có nhiệm vụ"), tr("Chương này chưa có nhiệm vụ nào để luyện."))
+                return
+            self.shell.start_exam(exam, "chapter")
+        else:
+            exams = self.by_code[self.code]
+            if exams:
+                self.shell.start_exam(exams[self.exam_idx[self.code]], self.mode)
 
 
 # ====================================================================== lịch sử
@@ -895,7 +1012,7 @@ class ExamBar(QWidget):
     def __init__(self, session: core.Session, on_finish, on_quit):
         super().__init__(None, Qt.Window | Qt.WindowStaysOnTopHint)
         self.s, self.on_finish, self.on_quit = session, on_finish, on_quit
-        self.training = session.mode == "training"
+        self.training = session.mode in ("training", "chapter")
         self.idx = 0
         self.started = time.time()
         self.seconds = 0 if self.training else session.exam.minutes * 60
@@ -942,7 +1059,8 @@ class ExamBar(QWidget):
         name = label(exam_name(session.exam).replace("Microsoft ", ""))
         name.setStyleSheet(f"font-family: '{T.pick_heading_family()}'; font-weight: 800; font-size: 12pt;")
         hl.addWidget(name)
-        hl.addWidget(chip(tr("LUYỆN TẬP") if self.training else tr("THI THỬ"), T.TEXT,
+        mode_chip = {"training": tr("LUYỆN TẬP"), "chapter": tr("THEO CHƯƠNG")}.get(session.mode, tr("THI THỬ"))
+        hl.addWidget(chip(mode_chip, T.TEXT,
                           T.OLIVE if self.training else "#E3C66B"))
         hl.addSpacing(14)
         self.tabs = QButtonGroup(self)

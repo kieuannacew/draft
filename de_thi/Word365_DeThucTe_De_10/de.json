@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_10",
-  "dau_vet": "bb8615d72e1b614d",
+  "dau_vet": "5cb6a7bc91d91aeb",
   "du_an": [
     {
       "ten": "Dự án 1 – Recycle",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "symbol",
             "de_bai": "At the end of the document title, insert a open book symbol. Use the Wingdings font and character code “38”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, thêm “Training” làm Category.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "prop_category",
             "de_bai": "In the file properties, add “Training” as a category."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Get Involved”, thêm siêu liên kết cho chữ “clean-up day” trỏ tới tiêu đề “Composting at Home” trong tài liệu này.",
@@ -45,7 +47,8 @@
             "luat": "word_mau_de",
             "dang": "hyperlink_place",
             "de_bai": "In the “Get Involved” section, add a hyperlink to the text “clean-up day” that links to the “Composting at Home” heading in this document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “What Cannot Be Recycled?”, áp dụng hiệu ứng 10 Point Soft Edges cho ảnh.",
@@ -56,7 +59,8 @@
             "luat": "word_mau_de",
             "dang": "pic_effect",
             "de_bai": "In the “What Cannot Be Recycled?” section, apply the 10 Point Soft Edges effect to the picture."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “What Can Be Recycled?”, thêm comment cho chữ “many plastic containers” với nội dung “Add a photo here.”.",
@@ -71,7 +75,8 @@
               "n": 0,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Get Involved”, ở đoạn trống dưới bảng, chèn biểu đồ Clustered Column thể hiện giá trị “Recycling rate (%)” của 4 mục đầu trong bảng: Paper (68), Glass (45), Plastic (30), Metal (55). Dùng “Recycling rate (%)” làm tên chuỗi dữ liệu (series).",
@@ -85,7 +90,8 @@
             "goc": {
               "n": 1
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -105,7 +111,8 @@
             "luat": "word_mau_de",
             "dang": "fn_format",
             "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Bedroom Environment”, đặt giãn dòng của hai đoạn văn sau tiêu đề là chính xác (Exactly) 14 pt.",
@@ -116,7 +123,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_exact",
             "de_bai": "In the “Bedroom Environment” section, change the line spacing of the two paragraphs after the heading to exactly 14 pt."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi thuộc tính Company của tài liệu thành Fabrikam.",
@@ -127,7 +135,8 @@
             "luat": "word_mau_de",
             "dang": "prop_company",
             "de_bai": "Change the Company property of the document to Fabrikam."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Bật Track Changes và khóa theo dõi để người khác không tắt được. Dùng mật khẩu “MOS”.",
@@ -138,7 +147,8 @@
             "luat": "word_mau_de",
             "dang": "track_lock",
             "de_bai": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “MOS” as the password."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Screens and Sleep”, sắp xếp dữ liệu bảng theo “Category” (tăng dần) rồi theo “Age group” (giảm dần).",
@@ -149,7 +159,8 @@
             "luat": "word_mau_de",
             "dang": "sort_table",
             "de_bai": "In the “Screens and Sleep” section, sort the table data by “Category” (Ascending) and then by “Age group” (Descending)."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -169,7 +180,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_doc",
             "de_bai": "Set the line spacing to 1.6 lines for the entire document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Chuyển tiêu đề chính của tài liệu thành WordArt với kiểu Fill: Blue, Accent color 1; Shadow.",
@@ -183,7 +195,8 @@
             "goc": {
               "title": "Robotics Competition Handbook"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, thêm “robotics” làm Tag.",
@@ -194,7 +207,8 @@
             "luat": "word_mau_de",
             "dang": "prop_tags",
             "de_bai": "In the file properties, add “robotics” as a tag."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đặt khoảng cách đoạn (Paragraph Spacing) cho toàn bộ tài liệu là Double.",
@@ -208,7 +222,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Competition Overview”, thêm siêu liên kết cho chữ “Future Makers Club” trỏ tới https://www.futuremakersclub.com.",
@@ -219,7 +234,8 @@
             "luat": "word_mau_de",
             "dang": "hyperlink_url",
             "de_bai": "In the “Competition Overview” section, add a hyperlink to the text “Future Makers Club” that links to https://www.futuremakersclub.com."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -239,7 +255,8 @@
             "luat": "word_mau_de",
             "dang": "shape_insert",
             "de_bai": "In the empty space at the bottom of the last page, insert a Ribbon: Tilted Up shape that contains the text “Contact us today!”. Position the shape at the bottom left of the page with tight text wrapping."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Fossil Discoveries”, chèn cột mới bên phải cột “Geologic period” của bảng. Gõ “Rating” vào ô đầu tiên của cột mới.",
@@ -253,7 +270,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Áp dụng style Quote cho đoạn văn bắt đầu bằng “Dinosaurs lived on every continent for …”.",
@@ -264,7 +282,8 @@
             "luat": "word_mau_de",
             "dang": "para_style",
             "de_bai": "Apply the Quote style to the paragraph that starts with “Dinosaurs lived on every continent for …”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Ở cuối đoạn văn thứ hai trong mục “Fossil Discoveries”, chèn trích dẫn (citation) cho một nguồn Book mới với thông tin: Author: John Smith; Title: Dinosaurs Through Time; Year: 2024; City: Hanoi; Publisher: Lotus Museum.",
@@ -275,7 +294,8 @@
             "luat": "word_mau_de",
             "dang": "citation_source",
             "de_bai": "At the end of the second paragraph in the “Fossil Discoveries” section, insert a citation for a new Book source. Use the following information: Author: John Smith; Title: Dinosaurs Through Time; Year: 2024; City: Hanoi; Publisher: Lotus Museum."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Kids Love Dinosaurs”, đổi ký hiệu đầu dòng thành ký hiệu tùy chỉnh. Dùng ký hiệu ô đánh dấu (check box) của font Webdings, mã ký tự “97”.",
@@ -286,7 +306,8 @@
             "luat": "word_mau_de",
             "dang": "custom_bullet",
             "de_bai": "In the “Kids Love Dinosaurs” section, change the bullet points to custom ones. Use the check box symbol from the Webdings font and character code “97”."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Lotus”, tối ưu cho Standard (publishing online and printing). Không mở file sau khi xuất.",
@@ -297,7 +318,8 @@
             "luat": "word_mau_de",
             "dang": "save_pdf",
             "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Lotus” that is optimized for standard (publishing online and printing). Do not open the file after publishing."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -317,7 +339,8 @@
             "luat": "word_mau_de",
             "dang": "orient_all",
             "de_bai": "Change the orientation of the entire document to Landscape."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục. Dùng kiểu Automatic Table 1.",
@@ -328,7 +351,8 @@
             "luat": "word_mau_de",
             "dang": "toc_insert",
             "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Áp dụng table style List Table 2 - Accent 1 cho bảng bắt đầu bằng “Organization”. Bỏ chọn tùy chọn Header Row của table style.",
@@ -339,7 +363,8 @@
             "luat": "word_mau_de",
             "dang": "info_style",
             "de_bai": "Apply the List Table 2 - Accent 1 table style to the table that starts with “Organization”. Clear the Header Row table style option."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Charging Network”, thêm một hình sau “Smart meters” trong sơ đồ SmartArt. Gõ chữ “Energy audits” vào hình mới.",
@@ -353,7 +378,8 @@
             "goc": {
               "n": 4
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Solar Projects”, cho danh sách thứ hai đánh số tiếp theo danh sách đầu để các mục được đánh số từ 1 đến 6.",
@@ -364,7 +390,8 @@
             "luat": "word_mau_de",
             "dang": "continue_num",
             "de_bai": "In the “Solar Projects” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Thêm mô tả alt text “Energy workflow” cho sơ đồ SmartArt trong mục “Charging Network”.",
@@ -375,7 +402,8 @@
             "luat": "word_mau_de",
             "dang": "sa_alt",
             "de_bai": "Add the alt text description “Energy workflow” to the SmartArt graphic in the “Charging Network” section."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -403,7 +431,8 @@
                 "Price ($)"
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Rooms and Suites”, đổi cấp danh sách của “Kayaking” thành Level 3.",
@@ -414,7 +443,8 @@
             "luat": "word_mau_de",
             "dang": "list_level",
             "de_bai": "In the “Rooms and Suites” section, change the list level for “Kayaking” to Level 3."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Check-out Information”, chia hai đoạn văn sau tiêu đề thành 3 cột, khoảng cách giữa các cột 0.3\" (0.76 cm).",
@@ -425,7 +455,8 @@
             "luat": "word_mau_de",
             "dang": "columns",
             "de_bai": "In the “Check-out Information” section, format the two paragraphs after the heading into 3 columns with column spacing of 0.3\" (0.76 cm)."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi kiểu chữ hoa/thường của tiêu đề “Activities” thành UPPERCASE.",
@@ -436,7 +467,8 @@
             "luat": "word_mau_de",
             "dang": "change_case",
             "de_bai": "Change the case of the heading “Activities” to UPPERCASE."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Thêm mô tả alt text “Price ($) chart” cho biểu đồ trong mục “Dining”.",
@@ -447,7 +479,8 @@
             "luat": "word_mau_de",
             "dang": "chart_alt",
             "de_bai": "Add the alt text description “Price ($) chart” to the chart in the “Dining” section."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -467,7 +500,8 @@
             "luat": "word_mau_de",
             "dang": "quickpart",
             "de_bai": "Save the heading and paragraphs of the “How Are Computers Used Today?” section as a Quick Part named “Computer Intro” in the Quick Part gallery. Accept all other default settings."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Dùng ký tự đại diện (wildcards) để tìm mọi chỗ có “Ms. Kim Akers” và “Miss Kim Akers” rồi thay bằng “Kim Akers”.",
@@ -482,7 +516,8 @@
               "n": 3,
               "n_new": 3
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Giới hạn định dạng trong tài liệu ở bộ style tối thiểu được đề xuất. Không bật bảo vệ (enforce protection).",
@@ -493,7 +528,8 @@
             "luat": "word_mau_de",
             "dang": "restrict_format",
             "de_bai": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Thay mọi chỗ dùng style Heading 3 trong tài liệu bằng style Heading 2.",
@@ -507,7 +543,8 @@
             "goc": {
               "n": 3
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Đánh dấu tài liệu là bản cuối (Mark as Final).",
@@ -518,7 +555,8 @@
             "luat": "word_mau_de",
             "dang": "mark_final",
             "de_bai": "Mark the document as final."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

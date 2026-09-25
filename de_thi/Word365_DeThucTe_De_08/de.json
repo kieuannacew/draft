@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_08",
-  "dau_vet": "bec809626a720c90",
+  "dau_vet": "2bba31eab3dc8670",
   "du_an": [
     {
       "ten": "Dự án 1 – Energy",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "symbol",
             "de_bai": "At the end of the document title, insert a heart symbol. Use the Webdings font and character code “89”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Partners”, đặt khoảng cách giữa các ô của bảng là 0.05\" (0.13 cm).",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "cell_spacing",
             "de_bai": "In the “Partners” section, set the spacing between the cells of the table to 0.05\" (0.13 cm)."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Future Plans”, đổi kích thước ảnh để cao 3\" (7.62 cm). Giữ nguyên tỉ lệ ảnh.",
@@ -51,7 +53,8 @@
               "cy": 1532128,
               "img": "4e58ad7e5b3525040a505d57bd7867c1"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Đổi hướng sơ đồ SmartArt trong mục “Electric Vehicles” để chạy từ phải sang trái.",
@@ -62,7 +65,8 @@
             "luat": "word_mau_de",
             "dang": "sa_rtl",
             "de_bai": "Change the direction of the SmartArt graphic in the “Electric Vehicles” section so that it flows from right to left."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Solar Projects”, tô sáng (highlight) câu “We installed solar panels on more than two hundred factory roofs last year.” màu Bright Green.",
@@ -73,7 +77,8 @@
             "luat": "word_mau_de",
             "dang": "highlight",
             "de_bai": "In the “Solar Projects” section, highlight the sentence “We installed solar panels on more than two hundred factory roofs last year.” in Bright Green."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Electric Vehicles”, áp dụng hiệu ứng hình Soft Round Bevel cho sơ đồ SmartArt (nhớ chọn toàn bộ sơ đồ SmartArt).",
@@ -89,7 +94,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -109,7 +115,8 @@
             "luat": "word_mau_de",
             "dang": "prop_category",
             "de_bai": "In the file properties, add “Hoi” as a category."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chuyển tiêu đề chính của tài liệu thành WordArt với kiểu Fill: Blue, Accent color 1; Shadow.",
@@ -123,7 +130,8 @@
             "goc": {
               "title": "Hoi An Lantern Festival"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Food Stalls”, chèn cột mới bên phải cột “Location” của bảng. Gõ “Status” vào ô đầu tiên của cột mới.",
@@ -137,7 +145,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Định dạng tiêu đề “Getting There” để luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề được giữ liền nhau.",
@@ -148,7 +157,8 @@
             "luat": "word_mau_de",
             "dang": "keep_next",
             "de_bai": "Format the heading “Getting There” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Food Stalls”, đổi tiêu đề biểu đồ từ “Chart Title” thành “Participants Overview”.",
@@ -159,7 +169,8 @@
             "luat": "word_mau_de",
             "dang": "chart_title",
             "de_bai": "In the “Food Stalls” section, change the chart title from “Chart Title” to “Participants Overview”."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -179,7 +190,8 @@
             "luat": "word_mau_de",
             "dang": "inspect_props",
             "de_bai": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Hiển thị footer Banded trên mọi trang của tài liệu.",
@@ -195,7 +207,8 @@
                 "f30abe4d2c653e1edd554ceaf02c262e"
               ]
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến bảng trong kết quả kiểm tra bằng hành động được đề xuất đầu tiên.",
@@ -206,7 +219,8 @@
             "luat": "word_mau_de",
             "dang": "access_table",
             "de_bai": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Áp dụng style set Black & White (Classic) cho tài liệu.",
@@ -220,7 +234,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Digital Resources”, sửa danh sách đánh số để bắt đầu từ 5.",
@@ -231,7 +246,8 @@
             "luat": "word_mau_de",
             "dang": "restart_num",
             "de_bai": "In the “Digital Resources” section, change the numbered list so that it starts at 5."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -251,7 +267,8 @@
             "luat": "word_mau_de",
             "dang": "text_effect",
             "de_bai": "Apply the Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1 text effect to the heading “Planning Content”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Chèn ngắt trang ngay trước tiêu đề “What Are the Business Applications of Social Media?”.",
@@ -262,7 +279,8 @@
             "luat": "word_mau_de",
             "dang": "page_break",
             "de_bai": "Insert a page break before the heading “What Are the Business Applications of Social Media?”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “What Is Social Media?”, xóa comment gắn với chữ “online platforms”.",
@@ -277,7 +295,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Đổi định dạng số của mọi footnote trong tài liệu thành i, ii, iii, ….",
@@ -288,7 +307,8 @@
             "luat": "word_mau_de",
             "dang": "fn_format",
             "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Common Mistakes”, đổi cấp danh sách của “Answer customer questions” thành Level 3.",
@@ -299,7 +319,8 @@
             "luat": "word_mau_de",
             "dang": "list_level",
             "de_bai": "In the “Common Mistakes” section, change the list level for “Answer customer questions” to Level 3."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Common Mistakes”, thụt lề trái cả hai đoạn văn sau tiêu đề 0.75\" (1.91 cm).",
@@ -310,7 +331,8 @@
             "luat": "word_mau_de",
             "dang": "indent",
             "de_bai": "In the “Common Mistakes” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -330,7 +352,8 @@
             "luat": "word_mau_de",
             "dang": "cover_page",
             "de_bai": "Insert the Grid cover page. Accept all default settings."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Spa and Wellness”, định dạng 5 đoạn văn bắt đầu từ “Snorkeling” thành danh sách đánh số kiểu a).",
@@ -341,7 +364,8 @@
             "luat": "word_mau_de",
             "dang": "numbers_from_paras",
             "de_bai": "In the “Spa and Wellness” section, format the 5 paragraphs starting with “Snorkeling” as a numbered list that uses the a) number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Co giãn bảng trong mục “Rooms and Suites” vừa chiều rộng trang bằng tùy chọn AutoFit Window.",
@@ -359,7 +383,8 @@
                 3120
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Tìm đoạn văn bắt đầu bằng “The resort has three restaurants serving …” và thêm bookmark tên “KeyHotel” ở đầu đoạn đó.",
@@ -370,7 +395,8 @@
             "luat": "word_mau_de",
             "dang": "bookmark",
             "de_bai": "Locate the paragraph that starts with “The resort has three restaurants serving …” and add a bookmark at the beginning of this paragraph named “KeyHotel”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Activities”, ở cuối nội dung text box bắt đầu bằng “Tip:”, thêm một đoạn mới chứa chữ “Visit our website for more details.”.",
@@ -381,7 +407,8 @@
             "luat": "word_mau_de",
             "dang": "callout_text",
             "de_bai": "In the “Activities” section, at the end of the text in the text box that starts with “Tip:”, add a new paragraph that contains the text “Visit our website for more details.”."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Welcome to Pearl Bay”, đổi ký hiệu đầu dòng thành ký hiệu tùy chỉnh. Dùng ký hiệu hình thoi của font Wingdings 2, mã ký tự “245”.",
@@ -392,7 +419,8 @@
             "luat": "word_mau_de",
             "dang": "custom_bullet",
             "de_bai": "In the “Welcome to Pearl Bay” section, change the bullet points to custom ones. Use the diamond symbol from the Wingdings 2 font and character code “245”."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -412,7 +440,8 @@
             "luat": "word_mau_de",
             "dang": "comment_delete_all",
             "de_bai": "Delete all comments in the document."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Chèn số trang theo kiểu Bottom of Page Accent Bar 2.",
@@ -423,7 +452,8 @@
             "luat": "word_mau_de",
             "dang": "page_numbers",
             "de_bai": "Insert page numbers by using the Bottom of Page Accent Bar 2 style."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chuyển mọi footnote thành endnote.",
@@ -434,7 +464,8 @@
             "luat": "word_mau_de",
             "dang": "convert_notes",
             "de_bai": "Convert all footnotes to endnotes."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Mixing the Batter”, đổi biểu đồ thành kiểu Clustered Bar.",
@@ -445,7 +476,8 @@
             "luat": "word_mau_de",
             "dang": "chart_type",
             "de_bai": "In the “Mixing the Batter” section, change the chart to a Clustered Bar chart."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Depanning”, sao chép định dạng của đoạn văn đầu tiên và áp dụng cho đoạn văn thứ hai.",
@@ -456,7 +488,8 @@
             "luat": "word_mau_de",
             "dang": "format_painter",
             "de_bai": "In the “Depanning” section, copy the formatting of the first paragraph and apply it to the second paragraph."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -476,7 +509,8 @@
             "luat": "word_mau_de",
             "dang": "para_style_new",
             "de_bai": "Create a new paragraph style named “Info Box” that uses the Century Gothic font, 12 pt, italic, with 12 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “For more information, email the Mekong …”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong mục “Schedule”, tắt Widow/Orphan control cho hai đoạn văn sau tiêu đề và giữ các dòng của mỗi đoạn liền nhau (Keep lines together).",
@@ -487,7 +521,8 @@
             "luat": "word_mau_de",
             "dang": "widow",
             "de_bai": "In the “Schedule” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Sửa style Heading 1 thành 18 pt, đậm, màu chữ Dark Blue, Text 2. Chỉ áp dụng thay đổi cho tài liệu này.",
@@ -498,7 +533,8 @@
             "luat": "word_mau_de",
             "dang": "modify_style",
             "de_bai": "Modify the Heading 1 style so that it uses 18 pt, bold, Dark Blue, Text 2 font color. Apply the changes to this document only."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống ở cuối tài liệu, chèn trường (field) SaveDate. Dùng định dạng ngày hiển thị dd/MM/yyyy.",
@@ -509,7 +545,8 @@
             "luat": "word_mau_de",
             "dang": "fields",
             "de_bai": "In the blank paragraph at the end of the document, insert the SaveDate field. Use the date format that displays the date as dd/MM/yyyy."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Liên kết text box trong mục “Mission” với text box trống trong mục “Conference Topics” để phần chữ tràn chảy sang text box thứ hai.",
@@ -520,7 +557,8 @@
             "luat": "word_mau_de",
             "dang": "link_textbox",
             "de_bai": "Link the text box in the “Mission” section to the empty text box in the “Conference Topics” section so that the overflow text flows into the second text box."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

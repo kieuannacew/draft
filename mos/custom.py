@@ -9,6 +9,7 @@ Khóa tùy chọn trong de.json:
     "rieng": true    – đề đứng riêng trên Trang chủ (không gộp vào bài thi có sẵn)
     "file_phu": [..] – file / thư mục phụ (ảnh, dữ liệu trộn thư…) chép cùng file làm bài
     "ten_en", "mo_ta_en", "yeu_cau_en", "goi_y_en" – bản tiếng Anh của tên đề / dự án / nhiệm vụ
+    "chuong": số      – (trong nhiệm vụ) chương / nhóm kỹ năng, xem mos/chuong.py
 """
 from __future__ import annotations
 
@@ -39,6 +40,13 @@ def _copier(src: Path, extras: tuple[Path, ...] = ()):
             elif extra.is_file() and not target.exists():
                 shutil.copyfile(extra, target)
     return build
+
+
+def _chapter(value) -> int | None:
+    try:
+        return int(value) if value not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
 
 
 def load_exam(folder: Path) -> tuple[Exam | None, list[str]]:
@@ -76,7 +84,7 @@ def load_exam(folder: Path) -> tuple[Exam | None, list[str]]:
                 errors.extend(f"{where} › nhiệm vụ {t_i}: {e}" for e in bad)
                 continue
             tasks.append(Task(t["yeu_cau"], t.get("goi_y", "(Không có gợi ý)"), rules.make_check(specs),
-                              t.get("yeu_cau_en", ""), t.get("goi_y_en", "")))
+                              t.get("yeu_cau_en", ""), t.get("goi_y_en", ""), _chapter(t.get("chuong"))))
         projects.append(Project(name=p.get("ten", f"Dự án {p_i}"), filename=src.name,
                                 intro=p.get("mo_ta", ""), build=_copier(src, extras), tasks=tasks,
                                 name_en=p.get("ten_en", ""), intro_en=p.get("mo_ta_en", "")))

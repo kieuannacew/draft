@@ -25,16 +25,23 @@ mos/i18n.py             song ngữ: tr("chữ Việt") tra mos/i18n_en.json; pic
                         trong ~/MOS_Practice/cai_dat.json
 mos/dich_de.json        bộ nhớ dịch cho bộ đề nhập (đề bài Anh→Việt, gợi ý Việt→Anh)
 mos/gamify.py           XP, cấp độ, chuỗi ngày, huy hiệu, sao, mẹo mỗi ngày (tính từ history)
+mos/chuong.py           chương theo khung MOS (CHAPTERS), count_tasks, practice_exam (chế độ "chapter")
+mos/tai_lieu.py         bài giảng PPTX: import_pptx (PowerPoint COM → PNG, không có thì render_basic bằng Qt),
+                        ảnh slide mã hóa trong slides.mosl + bai.json; tiến độ học tien_do_hoc.json
+mos/tu_khoa.py          thuật ngữ MOS song ngữ (_GLOSSARY), fold() bỏ dấu, search_terms/search_tasks/search_slides
 mos/ooxml.py            đọc XML trong file .docx/.xlsx/.pptx (ZIP)
 mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(path) -> bool
 mos/qt/theme.py         hệ thống thiết kế Forest Canopy: màu, QSS, Card, chip, badge, table(), ScoreRing,
                         LevelBadge, stars, badge_tile, lang_switch, Confetti, hộp thoại
 mos/qt/app.py           đăng nhập, Shell (sidebar + trang), Home, History, Result, ExamBar (thanh làm bài)
 mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ExamEditor, RuleDialog, CheckReportDialog
+mos/qt/hoc.py           LessonsPage (Tài liệu học), LessonViewer (xem slide, không lưu/xuất), ImportLessonDialog
+mos/qt/tra_cuu.py       SearchPage (Tra từ khóa)
 kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
 nhap_de.py / .bat       nhập bộ đề bằng dòng lệnh / kéo thả
 de_thi/Excel_Mau/       đề mẫu (de.json + file gốc + dap_an/)
 de_thi/Word365_DeThucTe_De_01..10/  bộ đề Word 365 đã nhập (luật word_mau_de)
+tai_lieu/<bài>/          bài giảng đi kèm app (bai.json + slides.mosl); bài nhập thêm ở DATA_DIR/tai_lieu
 tests/                  pytest
 ```
 Dữ liệu người dùng (không nằm trong repo): `~/MOS_Practice/` → `tai_khoan.json`, `history.json`, `de_thi/`, `work/`.
@@ -67,4 +74,7 @@ Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcomm
 - **Dạng câu Word mới cho bộ đề nhập**: `@grader("ma_dang")` trong `word_auto.py` (đọc thông số từ đề bài; cần
   thông tin file gốc thì thêm `@snap`), lời giải mô phỏng trong `tests/word_solutions.py`. `tests/test_word_auto.py`
   chạy MỌI câu của de_thi/Word365_*: file gốc phải SAI (trừ `ALREADY_DONE`), lời giải phải ĐÚNG.
+- Nhiệm vụ có chương: `Task(..., chapter=N)` (đề có sẵn) hoặc `"chuong": N` trong de.json; bộ đề nhập lấy chương
+  từ domain. Chương mới / đổi tên chương sửa trong `mos/chuong.py`.
+- Thuật ngữ tra cứu mới: thêm dòng vào `_GLOSSARY` trong `mos/tu_khoa.py` (Việt + Anh + đường dẫn menu).
 - Hàm chấm trả `None` = không chấm tự động (hiện "Tự kiểm tra", không tính điểm).

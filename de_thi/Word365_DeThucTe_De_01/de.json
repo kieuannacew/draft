@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_01",
-  "dau_vet": "8e89fa088b67bed4",
+  "dau_vet": "87b0c61fb5ed25f2",
   "du_an": [
     {
       "ten": "Dự án 1 – Space",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "paper",
             "de_bai": "Change the paper size of the document to A5."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “School Visits”, áp dụng hiệu ứng Tight Reflection: Touching Reflection cho ảnh.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "pic_effect",
             "de_bai": "In the “School Visits” section, apply the Tight Reflection: Touching Reflection effect to the picture."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Tìm đoạn văn bắt đầu bằng “Saturn's rings are made of billions …” và thêm bookmark tên “Space” ở đầu đoạn đó.",
@@ -45,7 +47,8 @@
             "luat": "word_mau_de",
             "dang": "bookmark",
             "de_bai": "Locate the paragraph that starts with “Saturn's rings are made of billions …” and add a bookmark at the beginning of this paragraph named “Space”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Planetarium Shows”, căn hàng tiêu đề của bảng theo kiểu Align Top Center.",
@@ -56,7 +59,8 @@
             "luat": "word_mau_de",
             "dang": "cell_align",
             "de_bai": "In the “Planetarium Shows” section, set the alignment of the header row of the table to Align Top Center."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Ở cuối đoạn văn thứ hai trong mục “Exhibition Overview”, chèn trích dẫn (citation) cho một nguồn Book mới với thông tin: Author: Minh Nguyen; Title: Journey to the Planets; Year: 2022; City: Hanoi; Publisher: Starlight Science Center.",
@@ -67,7 +71,8 @@
             "luat": "word_mau_de",
             "dang": "citation_source",
             "de_bai": "At the end of the second paragraph in the “Exhibition Overview” section, insert a citation for a new Book source. Use the following information: Author: Minh Nguyen; Title: Journey to the Planets; Year: 2022; City: Hanoi; Publisher: Starlight Science Center."
-          }
+          },
+          "chuong": 4
         }
       ]
     },
@@ -96,7 +101,8 @@
               ],
               "fmt": 1
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến bảng trong kết quả kiểm tra bằng hành động được đề xuất đầu tiên.",
@@ -107,7 +113,8 @@
             "luat": "word_mau_de",
             "dang": "access_table",
             "de_bai": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Climbing Basics”, tô sáng (highlight) câu “Beginners start on short walls with top-rope protection.” màu Bright Green.",
@@ -118,7 +125,8 @@
             "luat": "word_mau_de",
             "dang": "highlight",
             "de_bai": "In the “Climbing Basics” section, highlight the sentence “Beginners start on short walls with top-rope protection.” in Bright Green."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Thêm tiêu đề trục dọc chính (primary vertical axis title) cho biểu đồ trong mục “Base Camp”. Đổi nội dung tiêu đề trục thành “Length (km)”.",
@@ -129,7 +137,8 @@
             "luat": "word_mau_de",
             "dang": "chart_axis",
             "de_bai": "Add a primary vertical axis title to the chart in the “Base Camp” section. Change the axis title text to “Length (km)”."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Áp dụng SmartArt style Moderate Effect cho sơ đồ SmartArt trong mục “Mountain Locations Price”.",
@@ -145,7 +154,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng văn bản thuần (Plain Text) tên “Memo”. Giữ mọi thiết lập mặc định.",
@@ -156,7 +166,8 @@
             "luat": "word_mau_de",
             "dang": "save_txt",
             "de_bai": "Save a copy of the document in your Documents folder as a plain-text file named “Memo”. Accept all default settings."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -176,7 +187,8 @@
             "luat": "word_mau_de",
             "dang": "convert_notes",
             "de_bai": "Convert all footnotes to endnotes."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Đổi bố cục (layout) sơ đồ SmartArt trong mục “Tables” thành Basic Block List.",
@@ -192,7 +204,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Tô nền (shading) màu Gold, Accent 4, Lighter 80% cho đoạn văn bắt đầu bằng “Common mistakes include posting too rarely, …”.",
@@ -203,7 +216,8 @@
             "luat": "word_mau_de",
             "dang": "para_shading",
             "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Common mistakes include posting too rarely, …”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Measuring Results”, cho danh sách thứ hai đánh số tiếp theo danh sách đầu để các mục được đánh số từ 1 đến 6.",
@@ -214,7 +228,8 @@
             "luat": "word_mau_de",
             "dang": "continue_num",
             "de_bai": "In the “Measuring Results” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “What Are the Business Applications of Social Media?”, đổi định dạng số của danh sách đánh số thành i.",
@@ -225,7 +240,8 @@
             "luat": "word_mau_de",
             "dang": "num_format",
             "de_bai": "In the “What Are the Business Applications of Social Media?” section, change the number format of the numbered list to i.."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -245,7 +261,8 @@
             "luat": "word_mau_de",
             "dang": "symbol",
             "de_bai": "In the “Registration” section, insert a open book symbol before the phrase “Groups of five”. Use the Wingdings font and character code “38”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Cắt ảnh trong mục “Venue” theo hình Oval.",
@@ -256,7 +273,8 @@
             "luat": "word_mau_de",
             "dang": "pic_crop_shape",
             "de_bai": "Crop the picture in the “Venue” section to the Oval shape."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Tìm từ “primary” và xóa nó khỏi tài liệu.",
@@ -270,7 +288,8 @@
             "goc": {
               "n": 1
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong đoạn trống ở cuối mục “Contact Us”, chèn sơ đồ SmartArt Continuous Block Process gồm các mục “Applying Psychological Theories to Classroom Instruction”, “Designing Project-Based Learning Activities”, “Using Technology to Support Reading”, “Building Positive Classroom Communities” theo đúng thứ tự. Áp dụng SmartArt style Powder.",
@@ -281,7 +300,8 @@
             "luat": "word_mau_de",
             "dang": "smartart",
             "de_bai": "In the blank paragraph at the end of the “Contact Us” section, insert a Continuous Block Process SmartArt graphic that contains the items “Applying Psychological Theories to Classroom Instruction”, “Designing Project-Based Learning Activities”, “Using Technology to Support Reading”, “Building Positive Classroom Communities” in that order. Apply the Powder SmartArt style."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Conference Topics”, xóa cột “Room” khỏi bảng.",
@@ -295,7 +315,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Áp dụng table style Plain Table 2 cho bảng bắt đầu bằng “Date”. Bỏ chọn tùy chọn Header Row của table style.",
@@ -306,7 +327,8 @@
             "luat": "word_mau_de",
             "dang": "info_style",
             "de_bai": "Apply the Plain Table 2 table style to the table that starts with “Date”. Clear the Header Row table style option."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -326,7 +348,8 @@
             "luat": "word_mau_de",
             "dang": "margins_preset",
             "de_bai": "Apply the Wide margin setting to the entire document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Áp dụng Quick Layout 3 (Layout 3) cho biểu đồ trong mục “Mixing the Batter”.",
@@ -340,7 +363,8 @@
             "goc": {
               "fp": "8786d2b621c55f19a2e444d17abd6281"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Chuyển bảng bắt đầu bằng “Department” ở gần đầu tài liệu thành văn bản. Phân tách bằng tab.",
@@ -367,7 +391,8 @@
                 ]
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Depanning”, thụt lề trái cả hai đoạn văn sau tiêu đề 0.75\" (1.91 cm).",
@@ -378,7 +403,8 @@
             "luat": "word_mau_de",
             "dang": "indent",
             "de_bai": "In the “Depanning” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Áp dụng style Title cho tiêu đề “Baking”.",
@@ -389,7 +415,8 @@
             "luat": "word_mau_de",
             "dang": "heading_style",
             "de_bai": "Apply the Title style to the heading “Baking”."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -409,7 +436,8 @@
             "luat": "word_mau_de",
             "dang": "sbreak_cont",
             "de_bai": "At the end of the sentence “Riverside Youth League offers soccer programs for boys and girls between the ages of six and fourteen.”, insert a continuous section break."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi thuộc tính Company của tài liệu thành TOMO.",
@@ -420,7 +448,8 @@
             "luat": "word_mau_de",
             "dang": "prop_company",
             "de_bai": "Change the Company property of the document to TOMO."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Bật Track Changes và khóa theo dõi để người khác không tắt được. Dùng mật khẩu “Word365”.",
@@ -431,7 +460,8 @@
             "luat": "word_mau_de",
             "dang": "track_lock",
             "de_bai": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “Word365” as the password."
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Equipment”, chuyển bảng thành văn bản. Phân tách bằng dấu phẩy.",
@@ -450,7 +480,8 @@
                 "Practice day"
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Volunteer Opportunities”, thêm siêu liên kết cho chữ “Volunteers receive free” trỏ tới tiêu đề “Places to Play” trong tài liệu này.",
@@ -461,7 +492,8 @@
             "luat": "word_mau_de",
             "dang": "hyperlink_place",
             "de_bai": "In the “Volunteer Opportunities” section, add a hyperlink to the text “Volunteers receive free” that links to the “Places to Play” heading in this document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Volunteer Opportunities”, thêm chú thích dưới ảnh với nội dung “Figure 1 League illustration”. Không đổi nhãn hay định dạng đánh số.",
@@ -472,7 +504,8 @@
             "luat": "word_mau_de",
             "dang": "caption_pic",
             "de_bai": "In the “Volunteer Opportunities” section, add a caption below the picture that reads “Figure 1 League illustration”. Do not change the label or numbering format."
-          }
+          },
+          "chuong": 4
         }
       ]
     },
@@ -492,7 +525,8 @@
             "luat": "word_mau_de",
             "dang": "restrict_format",
             "de_bai": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Đặt ngôn ngữ kiểm tra chính tả (proofing language) cho toàn bộ tài liệu là English (United Kingdom).",
@@ -503,7 +537,8 @@
             "luat": "word_mau_de",
             "dang": "language",
             "de_bai": "Set the proofing language for the entire document to English (United Kingdom)."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo bộ theme fonts tùy chỉnh tên “Weekdays Fonts”, dùng Georgia cho tiêu đề và Verdana cho nội dung.",
@@ -514,7 +549,8 @@
             "luat": "word_mau_de",
             "dang": "custom_fonts",
             "de_bai": "Create a custom theme font set named “Weekdays Fonts” that uses Georgia as the heading font and Verdana as the body font."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo paragraph style mới tên “Info Box” dùng font Georgia, 12 pt, nghiêng, khoảng cách sau đoạn 6 pt. Áp dụng style này cho đoạn văn bắt đầu bằng “Some researchers believe that a relaxing …”.",
@@ -525,7 +561,8 @@
             "luat": "word_mau_de",
             "dang": "para_style_new",
             "de_bai": "Create a new paragraph style named “Info Box” that uses the Georgia font, 12 pt, italic, with 6 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “Some researchers believe that a relaxing …”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Thay mọi chỗ dùng style Heading 3 trong tài liệu bằng style Heading 2.",
@@ -539,7 +576,8 @@
             "goc": {
               "n": 3
             }
-          }
+          },
+          "chuong": 7
         }
       ]
     }

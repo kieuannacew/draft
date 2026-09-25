@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_03",
-  "dau_vet": "1116f080c52ef62f",
+  "dau_vet": "fb35c628f95dbe97",
   "du_an": [
     {
       "ten": "Dự án 1 – Resume",
@@ -27,7 +27,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Marketing Specialist”, đổi kích thước ảnh để rộng 3\" (7.62 cm). Giữ nguyên tỉ lệ ảnh.",
@@ -44,7 +45,8 @@
               "cy": 1767840,
               "img": "d0827bca1802cd900548ae0e3bc270fb"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Thêm mô tả alt text “Resume steps” cho sơ đồ SmartArt trong mục “Marketing Assistant”.",
@@ -55,7 +57,8 @@
             "luat": "word_mau_de",
             "dang": "sa_alt",
             "de_bai": "Add the alt text description “Resume steps” to the SmartArt graphic in the “Marketing Assistant” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Education”, đổi biểu đồ thành kiểu Line with Markers.",
@@ -66,7 +69,8 @@
             "luat": "word_mau_de",
             "dang": "chart_type",
             "de_bai": "In the “Education” section, change the chart to a Line with Markers chart."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Skills”, chèn endnote ngay bên phải tiêu đề. Nội dung endnote là “Includes digital and printed files.”.",
@@ -77,7 +81,8 @@
             "luat": "word_mau_de",
             "dang": "footnote",
             "de_bai": "In the “Skills” section, insert a endnote to the right of the heading. Enter the endnote text “Includes digital and printed files.”."
-          }
+          },
+          "chuong": 4
         }
       ]
     },
@@ -101,7 +106,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Active Ingredients”, chèn cột mới bên phải cột “Function” của bảng. Gõ “Rating” vào ô đầu tiên của cột mới.",
@@ -115,7 +121,8 @@
             "goc": {
               "cols": 3
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Fill Material”, chuyển đoạn văn phân tách bằng tab bắt đầu bằng “Phase” thành bảng 2 cột. Giữ kiểu AutoFit mặc định.",
@@ -126,7 +133,8 @@
             "luat": "word_mau_de",
             "dang": "text_to_table",
             "de_bai": "In the “Fill Material” section, convert the tab-delimited text that starts with “Phase” to a two-column table. Accept the default AutoFit behavior."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Đổi kích thước biểu đồ trong mục “Active Ingredients” thành cao 2.5\" (6.35 cm) và rộng 4.5\" (11.43 cm).",
@@ -137,7 +145,8 @@
             "luat": "word_mau_de",
             "dang": "chart_size",
             "de_bai": "Resize the chart in the “Active Ingredients” section to 2.5\" (6.35 cm) high and 4.5\" (11.43 cm) wide."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Manufacturing Process”, áp dụng shape style Colored Outline - Blue, Accent 5 cho text box bắt đầu bằng “Did”.",
@@ -148,7 +157,8 @@
             "luat": "word_mau_de",
             "dang": "shape_style",
             "de_bai": "In the “Manufacturing Process” section, apply the Colored Outline - Blue, Accent 5 shape style to the text box that starts with “Did”."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -168,7 +178,8 @@
             "luat": "word_mau_de",
             "dang": "inspect_hf",
             "de_bai": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Safety”, đặt giãn dòng của hai đoạn văn sau tiêu đề là chính xác (Exactly) 18 pt.",
@@ -179,7 +190,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_exact",
             "de_bai": "In the “Safety” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Game Rules”, thêm một hàng mới ở cuối bảng. Nhập “Sample”, “North” và “10” vào hàng mới.",
@@ -190,7 +202,8 @@
             "luat": "word_mau_de",
             "dang": "add_row",
             "de_bai": "In the “Game Rules” section, add a new row to the bottom of the table. Enter “Sample”, “North”, and “10” in the new row."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Định dạng tiêu đề “Competition Overview” để luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề được giữ liền nhau.",
@@ -201,7 +214,8 @@
             "luat": "word_mau_de",
             "dang": "keep_next",
             "de_bai": "Format the heading “Competition Overview” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Robot Requirements”, đổi ký hiệu đầu dòng thành ký hiệu tùy chỉnh. Dùng ký hiệu bốn hình thoi của font Wingdings, mã ký tự “118”.",
@@ -212,7 +226,8 @@
             "luat": "word_mau_de",
             "dang": "custom_bullet",
             "de_bai": "In the “Robot Requirements” section, change the bullet points to custom ones. Use the four-diamond symbol from the Wingdings font and character code “118”."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong sơ đồ SmartArt ở mục “Safety”, đổi chữ “Program” thành “Program and Review”.",
@@ -223,7 +238,8 @@
             "luat": "word_mau_de",
             "dang": "sa_text",
             "de_bai": "In the SmartArt graphic in the “Safety” section, change the text “Program” to “Program and Review”."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -246,7 +262,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Dùng một tính năng của Word để thay mọi chỗ có “Habitat Homes Vietnam” bằng “HHV Group”.",
@@ -261,7 +278,8 @@
               "n": 4,
               "n_new": 0
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi định dạng số của mọi footnote trong tài liệu thành i, ii, iii, ….",
@@ -272,7 +290,8 @@
             "luat": "word_mau_de",
             "dang": "fn_format",
             "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “How to Volunteer”, chèn chú thích (caption) phía dưới bảng. Dùng nhãn Table và nội dung chú thích “: Housing data”.",
@@ -283,7 +302,8 @@
             "luat": "word_mau_de",
             "dang": "caption_table",
             "de_bai": "In the “How to Volunteer” section, insert a caption below the table. Use the Table label and the caption text “: Housing data”."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Stories from Families”, đặt khoảng cách trước hai đoạn văn sau tiêu đề là 12 pt và khoảng cách sau là 12 pt.",
@@ -294,7 +314,8 @@
             "luat": "word_mau_de",
             "dang": "para_spacing",
             "de_bai": "In the “Stories from Families” section, set the spacing before the two paragraphs after the heading to 12 pt and the spacing after to 12 pt."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -317,7 +338,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, đổi thuộc tính Title thành “Clean City Initiative Overview”.",
@@ -328,7 +350,8 @@
             "luat": "word_mau_de",
             "dang": "prop_title",
             "de_bai": "In the file properties, change the Title property to “Clean City Initiative Overview”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Áp dụng style Intense Quote cho đoạn văn bắt đầu bằng “Clean City Initiative gives free compost …”.",
@@ -339,7 +362,8 @@
             "luat": "word_mau_de",
             "dang": "para_style",
             "de_bai": "Apply the Intense Quote style to the paragraph that starts with “Clean City Initiative gives free compost …”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Collection Schedule”, đặt chiều cao mọi hàng của bảng là 0.4\" (1.02 cm) và căn giữa theo chiều dọc chữ trong mọi ô.",
@@ -350,7 +374,8 @@
             "luat": "word_mau_de",
             "dang": "table_rowheight",
             "de_bai": "In the “Collection Schedule” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Get Involved”, ở đoạn trống, dùng tính năng 3D Models để chèn mô hình Cube từ thư mục 3D Models. Đặt mô hình kiểu In Line with Text.",
@@ -361,7 +386,8 @@
             "luat": "word_mau_de",
             "dang": "model3d",
             "de_bai": "In the “Get Involved” section, in the blank paragraph, use the 3D Models feature to insert the Cube model from the 3D Models folder. Position the model In Line with Text."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu dạng Word template tên “Clean” không hỗ trợ macro. Lưu template vào thư mục Documents.",
@@ -372,7 +398,8 @@
             "luat": "word_mau_de",
             "dang": "save_template",
             "de_bai": "Save a copy of the document as a Word template named “Clean” that does not support macros. Save the template in the Documents folder."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -392,7 +419,8 @@
             "luat": "word_mau_de",
             "dang": "theme_colors",
             "de_bai": "Change the theme colors of the document to Green Yellow and the theme fonts to Century Gothic."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đổi màu trang (page color) của tài liệu thành Blue, Accent 1, Lighter 80%.",
@@ -403,7 +431,8 @@
             "luat": "word_mau_de",
             "dang": "page_color",
             "de_bai": "Change the page color of the document to Blue, Accent 1, Lighter 80%."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong thuộc tính tệp, thêm “lotus” làm Tag.",
@@ -414,7 +443,8 @@
             "luat": "word_mau_de",
             "dang": "prop_tags",
             "de_bai": "In the file properties, add “lotus” as a tag."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Theropod Dinosaurs”, chuyển 5 đoạn văn bắt đầu từ “Walked on two legs” thành danh sách gạch đầu dòng. Dùng dấu tròn mặc định và căn dấu đầu dòng theo lề trái trang (không đổi khoảng thụt treo).",
@@ -425,7 +455,8 @@
             "luat": "word_mau_de",
             "dang": "bullets_from_paras",
             "de_bai": "In the “Theropod Dinosaurs” section, convert the 5 paragraphs starting with “Walked on two legs” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Kids Love Dinosaurs”, áp dụng viền ngoài (outside border) 1 ½ pt màu Blue, Accent 1 cho bảng. Không đổi viền bên trong.",
@@ -436,7 +467,8 @@
             "luat": "word_mau_de",
             "dang": "table_borders",
             "de_bai": "In the “Kids Love Dinosaurs” section, apply a 1 ½ pt Blue, Accent 1 outside border to the table. Do not change the inside borders."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Geologic Eras”, chia hai đoạn văn sau tiêu đề thành 2 cột, có đường kẻ giữa các cột.",
@@ -447,7 +479,8 @@
             "luat": "word_mau_de",
             "dang": "columns",
             "de_bai": "In the “Geologic Eras” section, format the two paragraphs after the heading into 2 columns with a line between the columns."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -467,7 +500,8 @@
             "luat": "word_mau_de",
             "dang": "restrict_comments",
             "de_bai": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Thêm tiêu đề alt text “Scuba table” cho bảng trong mục “Marine Life”.",
@@ -478,7 +512,8 @@
             "luat": "word_mau_de",
             "dang": "alt_table",
             "de_bai": "Add the alt text title “Scuba table” to the table in the “Marine Life” section."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống sau tiêu đề \"List of Tables\", chèn danh mục bảng biểu (table of figures) dựa trên các chú thích Table. Dùng định dạng Formal.",
@@ -489,7 +524,8 @@
             "luat": "word_mau_de",
             "dang": "table_of_figures",
             "de_bai": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Sửa style Heading 1 thành 18 pt, đậm, màu chữ Orange, Accent 2, Darker 25%. Chỉ áp dụng thay đổi cho tài liệu này.",
@@ -500,7 +536,8 @@
             "luat": "word_mau_de",
             "dang": "modify_style",
             "de_bai": "Modify the Heading 1 style so that it uses 18 pt, bold, Orange, Accent 2, Darker 25% font color. Apply the changes to this document only."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Mã hóa tài liệu bằng mật khẩu “MOSexpert”.",
@@ -511,7 +548,8 @@
             "luat": "word_mau_de",
             "dang": "encrypt",
             "de_bai": "Encrypt the document by using the password “MOSexpert”."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

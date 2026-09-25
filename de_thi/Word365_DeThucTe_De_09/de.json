@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_09",
-  "dau_vet": "ec66a78bfc9aa4eb",
+  "dau_vet": "c70ecc9406d3ebad",
   "du_an": [
     {
       "ten": "Dự án 1 – Travel",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "shape_insert",
             "de_bai": "In the empty space at the bottom of the last page, insert a Cloud shape that contains the text “Contact us today!”. Position the shape at the bottom left of the page with tight text wrapping."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục. Dùng kiểu Automatic Table 1.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "toc_insert",
             "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Dùng một tính năng của Word để thay mọi chỗ có “Mekong Travel” bằng “Mekong Co.”.",
@@ -49,7 +51,8 @@
               "n": 6,
               "n_new": 0
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Chấp nhận mọi phần chèn và xóa đang được theo dõi (tracked). Từ chối mọi thay đổi định dạng.",
@@ -69,7 +72,8 @@
               ],
               "fmt": 1
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Venue”, thêm một hình sau “Assessing Learning Through Portfolios” trong sơ đồ SmartArt. Gõ chữ “Supporting Students with Diverse Needs” vào hình mới.",
@@ -83,7 +87,8 @@
             "goc": {
               "n": 5
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Contact Us”, đổi kích thước bảng để mỗi cột rộng 2\" (5.08 cm).",
@@ -94,7 +99,8 @@
             "luat": "word_mau_de",
             "dang": "col_width",
             "de_bai": "In the “Contact Us” section, resize the table so that each column is 2\" (5.08 cm) wide."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -114,7 +120,8 @@
             "luat": "word_mau_de",
             "dang": "margins",
             "de_bai": "Change the margins of the entire document by setting the top and bottom margins to 1\" (2.54 cm) and the left and right margins to 0.5\" (1.27 cm)."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Hiển thị footer Banded trên mọi trang của tài liệu.",
@@ -130,7 +137,8 @@
                 "f06662b7c7c2ccadb6248e02f29c1a03"
               ]
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Ở cuối câu “Drip irrigation saves water during the dry season.”, chèn ngắt section kiểu Continuous.",
@@ -141,7 +149,8 @@
             "luat": "word_mau_de",
             "dang": "sbreak_cont",
             "de_bai": "At the end of the sentence “Drip irrigation saves water during the dry season.”, insert a continuous section break."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “How the Subscription Works”, ở ô cuối của hàng “Total” trong bảng, chèn công thức tính tổng các giá trị “Weight (kg)” phía trên. Dùng định dạng số #,##0.00.",
@@ -152,7 +161,8 @@
             "luat": "word_mau_de",
             "dang": "table_formula",
             "de_bai": "In the “How the Subscription Works” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Weight (kg)” values above it. Use the #,##0.00 number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Bỏ đường lưới chính (major gridlines) của biểu đồ trong mục “How the Subscription Works”.",
@@ -163,7 +173,8 @@
             "luat": "word_mau_de",
             "dang": "chart_gridlines",
             "de_bai": "Remove the major gridlines from the chart in the “How the Subscription Works” section."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -187,7 +198,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Thiết lập bảng trong mục “Base Camp” để hàng tiêu đề lặp lại ở đầu mỗi trang.",
@@ -198,7 +210,8 @@
             "luat": "word_mau_de",
             "dang": "repeat_header",
             "de_bai": "Configure the table in the “Base Camp” section so that the header row repeats at the top of each page."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Mountain Locations Price”, định dạng 4 đoạn văn bắt đầu từ “Helmet” thành danh sách đánh số kiểu A.",
@@ -209,7 +222,8 @@
             "luat": "word_mau_de",
             "dang": "numbers_from_paras",
             "de_bai": "In the “Mountain Locations Price” section, format the 4 paragraphs starting with “Helmet” as a numbered list that uses the A. number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Chèn ký hiệu Copyright (©) ngay sau lần xuất hiện đầu tiên của “Highland Adventures” trong tài liệu.",
@@ -220,7 +234,8 @@
             "luat": "word_mau_de",
             "dang": "special_char",
             "de_bai": "Insert the Copyright symbol (©) immediately after the first instance of “Highland Adventures” in the document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Rock Crawling”, chèn footnote ngay bên phải tiêu đề. Nội dung footnote là “Includes digital and printed files.”.",
@@ -231,7 +246,8 @@
             "luat": "word_mau_de",
             "dang": "footnote",
             "de_bai": "In the “Rock Crawling” section, insert a footnote to the right of the heading. Enter the footnote text “Includes digital and printed files.”."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Base Camp”, căn hàng tiêu đề của bảng theo kiểu Align Center Right.",
@@ -242,7 +258,8 @@
             "luat": "word_mau_de",
             "dang": "cell_align",
             "de_bai": "In the “Base Camp” section, set the alignment of the header row of the table to Align Center Right."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -262,7 +279,8 @@
             "luat": "word_mau_de",
             "dang": "page_border",
             "de_bai": "Add a 2 ¼ pt Gold, Accent 4, Darker 25% Box page border to the whole document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đặt khoảng cách đoạn (Paragraph Spacing) cho toàn bộ tài liệu là Tight.",
@@ -276,7 +294,8 @@
             "goc": {
               "fp": "fcc82c677d599115971be0c244a3ecc0"
             }
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Áp dụng style Heading 2 cho tiêu đề “Oolong Tea”.",
@@ -287,7 +306,8 @@
             "luat": "word_mau_de",
             "dang": "heading_style",
             "de_bai": "Apply the Heading 2 style to the heading “Oolong Tea”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Wholesale Orders”, ở đoạn trống, chèn ảnh Tea_photo.png từ thư mục Files.",
@@ -301,7 +321,8 @@
             "goc": {
               "n": 0
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng Rich Text Format tên “Tea_Copy”.",
@@ -312,7 +333,8 @@
             "luat": "word_mau_de",
             "dang": "save_rtf",
             "de_bai": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Tea_Copy”."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -332,7 +354,8 @@
             "luat": "word_mau_de",
             "dang": "cover_page",
             "de_bai": "Insert the Austin cover page. Accept all default settings."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Tìm đoạn văn bắt đầu bằng “Creative marketing specialist with six years …” và thêm bookmark tên “Resume” ở đầu đoạn đó.",
@@ -343,7 +366,8 @@
             "luat": "word_mau_de",
             "dang": "bookmark",
             "de_bai": "Locate the paragraph that starts with “Creative marketing specialist with six years …” and add a bookmark at the beginning of this paragraph named “Resume”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Thêm nhãn dữ liệu (data labels) cho biểu đồ trong mục “Contact”. Đặt nhãn ở vị trí Outside End.",
@@ -354,7 +378,8 @@
             "luat": "word_mau_de",
             "dang": "chart_labels",
             "de_bai": "Add data labels to the chart in the “Contact” section. Position the labels Outside End."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Co giãn bảng trong mục “Contact” vừa với nội dung (AutoFit Contents).",
@@ -372,7 +397,8 @@
                 3120
               ]
             }
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Tô nền (shading) màu Gold, Accent 4, Lighter 80% cho đoạn văn bắt đầu bằng “Contoso Media, 2018 - 2021. Wrote …”.",
@@ -383,7 +409,8 @@
             "luat": "word_mau_de",
             "dang": "para_shading",
             "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Contoso Media, 2018 - 2021. Wrote …”."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -403,7 +430,8 @@
             "luat": "word_mau_de",
             "dang": "page_break",
             "de_bai": "Insert a page break before the heading “Tables”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Đổi theme colors của tài liệu thành Blue Green và theme fonts thành Century Gothic.",
@@ -414,7 +442,8 @@
             "luat": "word_mau_de",
             "dang": "theme_colors",
             "de_bai": "Change the theme colors of the document to Blue Green and the theme fonts to Century Gothic."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Kiểm tra tài liệu (Inspect Document) và xóa mọi header, footer và watermark tìm thấy. Không xóa thông tin nào khác.",
@@ -425,7 +454,8 @@
             "luat": "word_mau_de",
             "dang": "inspect_hf",
             "de_bai": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đổi kích thước sơ đồ SmartArt trong mục “What Are the Business Applications of Social Media?” thành cao 2\" (5.08 cm) và rộng 6\" (15.24 cm).",
@@ -436,7 +466,8 @@
             "luat": "word_mau_de",
             "dang": "sa_size",
             "de_bai": "Resize the SmartArt graphic in the “What Are the Business Applications of Social Media?” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Planning Content”, chuyển đoạn văn phân tách bằng tab bắt đầu bằng “Platform” thành bảng 2 cột. Giữ kiểu AutoFit mặc định.",
@@ -447,7 +478,8 @@
             "luat": "word_mau_de",
             "dang": "text_to_table",
             "de_bai": "In the “Planning Content” section, convert the tab-delimited text that starts with “Platform” to a two-column table. Accept the default AutoFit behavior."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Planning Content”, áp dụng hiệu ứng nghệ thuật Paint Brush cho ảnh.",
@@ -458,7 +490,8 @@
             "luat": "word_mau_de",
             "dang": "art_effect",
             "de_bai": "In the “Planning Content” section, apply the Paint Brush artistic effect to the picture."
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -478,7 +511,8 @@
             "luat": "word_mau_de",
             "dang": "cross_ref",
             "de_bai": "In the “Borrowing Books” section, inside the parentheses after the text “see”, insert a cross-reference to Table 1. Display only the label and number."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Giới hạn chỉnh sửa để người dùng chỉ được chèn comment. Bật bảo vệ (Start Enforcing Protection) không đặt mật khẩu.",
@@ -489,7 +523,8 @@
             "luat": "word_mau_de",
             "dang": "restrict_comments",
             "de_bai": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống sau tiêu đề \"List of Tables\", chèn danh mục bảng biểu (table of figures) dựa trên các chú thích Table. Dùng định dạng Formal.",
@@ -500,7 +535,8 @@
             "luat": "word_mau_de",
             "dang": "table_of_figures",
             "de_bai": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo character style tên “Brand Name” gồm chữ đậm, màu Green. Áp dụng style này cho đoạn chữ “Story time takes place every Saturday morning.”.",
@@ -511,7 +547,8 @@
             "luat": "word_mau_de",
             "dang": "char_style_new",
             "de_bai": "Create a character style named “Brand Name” that uses bold, Green font color. Apply the style to the text “Story time takes place every Saturday morning.”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo bộ theme fonts tùy chỉnh tên “Library Fonts”, dùng Cambria cho tiêu đề và Calibri cho nội dung.",
@@ -522,7 +559,8 @@
             "luat": "word_mau_de",
             "dang": "custom_fonts",
             "de_bai": "Create a custom theme font set named “Library Fonts” that uses Cambria as the heading font and Calibri as the body font."
-          }
+          },
+          "chuong": 7
         }
       ]
     }

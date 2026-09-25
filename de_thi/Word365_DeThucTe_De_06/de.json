@@ -5,7 +5,7 @@
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_06",
-  "dau_vet": "382158c2bd6858cb",
+  "dau_vet": "1773a76ea11e736e",
   "du_an": [
     {
       "ten": "Dự án 1 – Computer",
@@ -23,7 +23,8 @@
             "luat": "word_mau_de",
             "dang": "page_border",
             "de_bai": "Add a 3 pt Blue, Accent 5, Darker 25% Box page border to the first page only."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “How Are Computers Used Today?”, áp dụng drop cap kiểu Dropped cho đoạn văn đầu tiên, rơi xuống 2 dòng.",
@@ -34,7 +35,8 @@
             "luat": "word_mau_de",
             "dang": "dropcap",
             "de_bai": "In the “How Are Computers Used Today?” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 2 lines."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Cắt ảnh trong mục “How Are Computers Used Today?” theo hình Flowchart: Alternate Process.",
@@ -45,7 +47,8 @@
             "luat": "word_mau_de",
             "dang": "pic_crop_shape",
             "de_bai": "Crop the picture in the “How Are Computers Used Today?” section to the Flowchart: Alternate Process shape."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “History of the Computer”, tô sáng (highlight) câu “The first electronic computers were built in the 1940s and filled entire rooms.” màu Bright Green.",
@@ -56,7 +59,8 @@
             "luat": "word_mau_de",
             "dang": "highlight",
             "de_bai": "In the “History of the Computer” section, highlight the sentence “The first electronic computers were built in the 1940s and filled entire rooms.” in Bright Green."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Computer Connections”, đặt chiều cao mọi hàng của bảng là 0.4\" (1.02 cm) và căn giữa theo chiều dọc chữ trong mọi ô.",
@@ -67,7 +71,8 @@
             "luat": "word_mau_de",
             "dang": "table_rowheight",
             "de_bai": "In the “Computer Connections” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell."
-          }
+          },
+          "chuong": 3
         }
       ]
     },
@@ -87,7 +92,8 @@
             "luat": "word_mau_de",
             "dang": "smartart",
             "de_bai": "In the blank paragraph at the end of the “Checking Account” section, insert a Basic Block List SmartArt graphic that contains the items “Free debit card”, “Mobile banking”, “Daily interest” in that order. Apply the Subtle Effect SmartArt style."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Ngay dưới tiêu đề “Fast and Convenient”, chèn bảng mới 4 cột và 3 hàng. Ở hàng trên cùng, từ trái sang phải, gõ “Country”, “Notes”, “Contact”, “Time”. Co giãn bảng vừa với nội dung.",
@@ -98,7 +104,8 @@
             "luat": "word_mau_de",
             "dang": "insert_table",
             "de_bai": "Just under the heading “Fast and Convenient”, insert a new table that has 4 columns and 3 rows. In the top row, from left to right, type “Country”, “Notes”, “Contact”, “Time”. Fit the table to its contents."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Thêm mô tả alt text “Bank steps” cho sơ đồ SmartArt trong mục “Contact Us”.",
@@ -109,7 +116,8 @@
             "luat": "word_mau_de",
             "dang": "sa_alt",
             "de_bai": "Add the alt text description “Bank steps” to the SmartArt graphic in the “Contact Us” section."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Trong mục “Banking Fees”, đổi định dạng số của danh sách đánh số thành (1).",
@@ -120,7 +128,8 @@
             "luat": "word_mau_de",
             "dang": "num_format",
             "de_bai": "In the “Banking Fees” section, change the number format of the numbered list to (1)."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Áp dụng style Title cho tiêu đề “Welcome”.",
@@ -131,7 +140,8 @@
             "luat": "word_mau_de",
             "dang": "heading_style",
             "de_bai": "Apply the Title style to the heading “Welcome”."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Giá trị “2026” của “Overdraft” trong biểu đồ ở mục “Fast and Convenient” bị sai. Đổi giá trị thành 22.5.",
@@ -145,7 +155,8 @@
             "goc": {
               "v": 15.0
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -170,7 +181,8 @@
                 "7e065b7029cb7e3eae7a4c3482b10c42"
               ]
             }
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến ảnh bằng cách thêm mô tả alt text “Garden picture”.",
@@ -181,7 +193,8 @@
             "luat": "word_mau_de",
             "dang": "access_alt",
             "de_bai": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Garden picture”."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Trong mục “Easy Plants for Beginners”, sao chép định dạng của đoạn văn đầu tiên và áp dụng cho đoạn văn thứ hai.",
@@ -192,7 +205,8 @@
             "luat": "word_mau_de",
             "dang": "format_painter",
             "de_bai": "In the “Easy Plants for Beginners” section, copy the formatting of the first paragraph and apply it to the second paragraph."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Soil and Compost”, chuyển 5 đoạn văn bắt đầu từ “Basil” thành danh sách gạch đầu dòng. Dùng dấu tròn mặc định và căn dấu đầu dòng theo lề trái trang (không đổi khoảng thụt treo).",
@@ -203,7 +217,8 @@
             "luat": "word_mau_de",
             "dang": "bullets_from_paras",
             "de_bai": "In the “Soil and Compost” section, convert the 5 paragraphs starting with “Basil” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Trong mục “Choosing Containers”, ở ô cuối của hàng “Total” trong bảng, chèn công thức tính tổng các giá trị “Days to harvest” phía trên. Dùng định dạng số #,##0.00.",
@@ -214,7 +229,8 @@
             "luat": "word_mau_de",
             "dang": "table_formula",
             "de_bai": "In the “Choosing Containers” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Days to harvest” values above it. Use the #,##0.00 number format."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Chèn ký hiệu Copyright (©) ngay sau lần xuất hiện đầu tiên của “Green Thumb Garden Center” trong tài liệu.",
@@ -225,7 +241,8 @@
             "luat": "word_mau_de",
             "dang": "special_char",
             "de_bai": "Insert the Copyright symbol (©) immediately after the first instance of “Green Thumb Garden Center” in the document."
-          }
+          },
+          "chuong": 2
         }
       ]
     },
@@ -245,7 +262,8 @@
             "luat": "word_mau_de",
             "dang": "convert_notes",
             "de_bai": "Convert all endnotes to footnotes."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Đổi màu trang (page color) của tài liệu thành Gold, Accent 4, Lighter 80%.",
@@ -256,7 +274,8 @@
             "luat": "word_mau_de",
             "dang": "page_color",
             "de_bai": "Change the page color of the document to Gold, Accent 4, Lighter 80%."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Áp dụng theme Banded cho tài liệu.",
@@ -267,7 +286,8 @@
             "luat": "word_mau_de",
             "dang": "doc_theme",
             "de_bai": "Apply the Banded theme to the document."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Chỉ đổi hướng trang chứa tiêu đề “Climbing Basics” sang Landscape (ngang). Không đổi hướng các trang khác.",
@@ -278,7 +298,8 @@
             "luat": "word_mau_de",
             "dang": "orient_sec",
             "de_bai": "Change the orientation of only the page that contains the “Climbing Basics” heading to Landscape. Do not change the orientation of any other page."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Base Camp”, sắp xếp dữ liệu bảng theo “Length (km)” tăng dần.",
@@ -289,7 +310,8 @@
             "luat": "word_mau_de",
             "dang": "sort_table",
             "de_bai": "In the “Base Camp” section, sort the table data by “Length (km)” in ascending order."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Thay ảnh trong mục “Mountain Locations Price” bằng ảnh Rock_new.png trong thư mục Files. Giữ nguyên kích thước và định dạng của ảnh cũ.",
@@ -306,7 +328,8 @@
               "cy": 2003552,
               "img": "fecee745320f0ec60a19d785d8159bdc"
             }
-          }
+          },
+          "chuong": 5
         }
       ]
     },
@@ -335,7 +358,8 @@
               ],
               "fmt": 1
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Trong mục “Which Day of the Week Is the Favourite?”, thêm một hàng mới ở cuối bảng. Nhập “Sample”, “Moon” và “10” vào hàng mới.",
@@ -346,7 +370,8 @@
             "luat": "word_mau_de",
             "dang": "add_row",
             "de_bai": "In the “Which Day of the Week Is the Favourite?” section, add a new row to the bottom of the table. Enter “Sample”, “Moon”, and “10” in the new row."
-          }
+          },
+          "chuong": 3
         },
         {
           "yeu_cau": "Biểu đồ trong mục “Which Day of the Week Is the Favourite?” chỉ có một chuỗi dữ liệu. Xóa chú giải (legend) khỏi biểu đồ.",
@@ -357,7 +382,8 @@
             "luat": "word_mau_de",
             "dang": "chart_legend",
             "de_bai": "The chart in the “Which Day of the Week Is the Favourite?” section contains only one data series. Remove the legend from the chart."
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Đổi màu sơ đồ SmartArt trong mục “Facts about Saturday and Sunday” thành Colored Fill - Accent 2.",
@@ -373,7 +399,8 @@
               "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
               "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
             }
-          }
+          },
+          "chuong": 5
         },
         {
           "yeu_cau": "Lưu một bản sao tài liệu dạng Word template tên “Weekdays_Copy” không hỗ trợ macro. Lưu template vào thư mục Documents.",
@@ -384,7 +411,8 @@
             "luat": "word_mau_de",
             "dang": "save_template",
             "de_bai": "Save a copy of the document as a Word template named “Weekdays_Copy” that does not support macros. Save the template in the Documents folder."
-          }
+          },
+          "chuong": 1
         }
       ]
     },
@@ -408,7 +436,8 @@
               "n": 1,
               "done": 0
             }
-          }
+          },
+          "chuong": 6
         },
         {
           "yeu_cau": "Đổi hướng toàn bộ tài liệu sang Landscape (ngang).",
@@ -419,7 +448,8 @@
             "luat": "word_mau_de",
             "dang": "orient_all",
             "de_bai": "Change the orientation of the entire document to Landscape."
-          }
+          },
+          "chuong": 1
         },
         {
           "yeu_cau": "Đặt giãn dòng 1.3 lines cho toàn bộ tài liệu.",
@@ -430,7 +460,8 @@
             "luat": "word_mau_de",
             "dang": "line_spacing_doc",
             "de_bai": "Set the line spacing to 1.3 lines for the entire document."
-          }
+          },
+          "chuong": 2
         },
         {
           "yeu_cau": "Trong mục “Game Rules”, chèn chú thích (caption) phía trên bảng. Dùng nhãn Table và nội dung chú thích “: Robotics data”.",
@@ -441,7 +472,8 @@
             "luat": "word_mau_de",
             "dang": "caption_table",
             "de_bai": "In the “Game Rules” section, insert a caption above the table. Use the Table label and the caption text “: Robotics data”."
-          }
+          },
+          "chuong": 4
         },
         {
           "yeu_cau": "Trong mục “Important Dates”, thêm chú thích dưới ảnh với nội dung “Figure 1 Robotics illustration”. Không đổi nhãn hay định dạng đánh số.",
@@ -452,7 +484,8 @@
             "luat": "word_mau_de",
             "dang": "caption_pic",
             "de_bai": "In the “Important Dates” section, add a caption below the picture that reads “Figure 1 Robotics illustration”. Do not change the label or numbering format."
-          }
+          },
+          "chuong": 4
         }
       ]
     },
@@ -472,7 +505,8 @@
             "luat": "word_mau_de",
             "dang": "lock_tracking",
             "de_bai": "Lock change tracking by using the password “Track1”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Đánh dấu mọi lần xuất hiện của chữ “Wellness Clinic” làm mục chỉ mục (index entry). Sau đó, trong đoạn trống ở cuối tài liệu, chèn chỉ mục (index) dùng định dạng Modern và hai cột.",
@@ -486,7 +520,8 @@
             "goc": {
               "n": 4
             }
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Ở cuối đoạn “Name:” (cuối tài liệu), chèn content control kiểu Plain Text. Đặt Title của control là “Name”.",
@@ -497,7 +532,8 @@
             "luat": "word_mau_de",
             "dang": "content_control",
             "de_bai": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Tạo bộ theme colors tùy chỉnh tên “Health Colors”, dùng màu Purple (Standard Colors) làm màu Accent 1.",
@@ -508,7 +544,8 @@
             "luat": "word_mau_de",
             "dang": "custom_colors",
             "de_bai": "Create a custom theme color set named “Health Colors” that uses Purple (Standard Colors) as the Accent 1 color."
-          }
+          },
+          "chuong": 7
         },
         {
           "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục tùy chỉnh hiện 3 cấp tiêu đề và gồm cả các mục dùng style Subtitle ở TOC level 4.",
@@ -519,7 +556,8 @@
             "luat": "word_mau_de",
             "dang": "custom_toc",
             "de_bai": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4."
-          }
+          },
+          "chuong": 7
         }
       ]
     }
