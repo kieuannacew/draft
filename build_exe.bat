@@ -4,7 +4,7 @@ cd /d "%~dp0"
 set PY=py
 where py >nul 2>nul || set PY=python
 %PY% -m pip install -q -r requirements.txt pyinstaller
-%PY% -m PyInstaller --noconfirm --onefile --windowed --name LuyenThiMOS main.py
+%PY% -m PyInstaller --noconfirm --onefile --windowed --name LuyenThiMOS --add-data "mos\i18n_en.json;mos" --add-data "mos\dich_de.json;mos" main.py
 rem Chep kem thu muc de thi (de mau + bo de da nhap) canh file .exe
 xcopy /e /i /y /q de_thi dist\de_thi >nul
 echo.

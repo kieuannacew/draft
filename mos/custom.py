@@ -8,6 +8,7 @@ Mỗi đề là một thư mục con gồm:
 Khóa tùy chọn trong de.json:
     "rieng": true    – đề đứng riêng trên Trang chủ (không gộp vào bài thi có sẵn)
     "file_phu": [..] – file / thư mục phụ (ảnh, dữ liệu trộn thư…) chép cùng file làm bài
+    "ten_en", "mo_ta_en", "yeu_cau_en", "goi_y_en" – bản tiếng Anh của tên đề / dự án / nhiệm vụ
 """
 from __future__ import annotations
 
@@ -74,15 +75,18 @@ def load_exam(folder: Path) -> tuple[Exam | None, list[str]]:
             if bad:
                 errors.extend(f"{where} › nhiệm vụ {t_i}: {e}" for e in bad)
                 continue
-            tasks.append(Task(t["yeu_cau"], t.get("goi_y", "(Không có gợi ý)"), rules.make_check(specs)))
+            tasks.append(Task(t["yeu_cau"], t.get("goi_y", "(Không có gợi ý)"), rules.make_check(specs),
+                              t.get("yeu_cau_en", ""), t.get("goi_y_en", "")))
         projects.append(Project(name=p.get("ten", f"Dự án {p_i}"), filename=src.name,
-                                intro=p.get("mo_ta", ""), build=_copier(src, extras), tasks=tasks))
+                                intro=p.get("mo_ta", ""), build=_copier(src, extras), tasks=tasks,
+                                name_en=p.get("ten_en", ""), intro_en=p.get("mo_ta_en", "")))
     if not projects:
         errors.append(f"{folder.name}: chưa có dự án nào trong \"du_an\"")
     if errors:
         return None, errors
     return Exam(code=mon, name=data.get("ten", folder.name), projects=projects,
-                minutes=int(data.get("thoi_gian", 50)), standalone=bool(data.get("rieng"))), []
+                minutes=int(data.get("thoi_gian", 50)), standalone=bool(data.get("rieng")),
+                name_en=data.get("ten_en", "")), []
 
 
 def load_custom_exams() -> tuple[list[Exam], list[str]]:
@@ -113,13 +117,15 @@ def merge_exams(builtin: list[Exam], custom: list[Exam]) -> list[Exam]:
         renamed = []
         for i, p in enumerate(projects, start=1):
             short = re.sub(r"^Dự án\s*\d+\s*[–-]\s*", "", p.name).strip() or p.name
+            short_en = re.sub(r"^Project\s*\d+\s*[–-]\s*", "", p.name_en).strip() or short
             stem, dot, ext = p.filename.rpartition(".")
             filename, n = p.filename, 1
             while filename.casefold() in used:
                 n += 1
                 filename = f"{stem}_{n}{dot}{ext}"
             used.add(filename.casefold())
-            renamed.append(replace(p, name=f"Dự án {i} – {short}", filename=filename))
+            renamed.append(replace(p, name=f"Dự án {i} – {short}", name_en=f"Project {i} – {short_en}",
+                                   filename=filename))
         merged.append(replace(exam, projects=renamed))
     return merged + sorted((c for c in custom if c.standalone), key=lambda e: e.name)
 

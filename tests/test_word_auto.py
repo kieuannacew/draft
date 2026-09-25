@@ -109,7 +109,7 @@ def _fake_set(root: Path) -> Path:
     for i, p in enumerate(data["du_an"][:2], start=1):
         shutil.copyfile(src / p["file"], files / p["file"])
         entries.append({"no": i, "file": p["file"], "theme": "Chu de", "tasks": [
-            {"id": t["cham"].get("dang", "x"), "text": t["yeu_cau"], "steps": ["Bước 1", "Bước 2"]}
+            {"id": t["cham"].get("dang", "x"), "text": t["yeu_cau_en"], "steps": ["Bước 1", "Bước 2"]}
             for t in p["nhiem_vu"]] + [{"id": "dang_moi_la", "text": "Làm gì đó", "steps": ["…"]}]})
     for extra in data.get("file_phu", []):
         if (src / extra).is_file():

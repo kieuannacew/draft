@@ -21,9 +21,14 @@ mos/custom.py           đề tự soạn de_thi/<tên>/de.json; merge_exams g�
                         "file_phu": file phụ chép cùng file làm bài); check_exam
 mos/nhap_de.py          nhập bộ đề ngoài (De_xx/de_xx.json + Files/, thư mục hoặc .zip) → de_thi/<tên>/de.json
 mos/word_auto.py        chấm tự động ~180 dạng câu Word của bộ đề nhập (GRADERS theo mã dạng, SNAPS lưu info file gốc)
+mos/i18n.py             song ngữ: tr("chữ Việt") tra mos/i18n_en.json; pick(vi, en) cho nội dung đề; lưu ngôn ngữ
+                        trong ~/MOS_Practice/cai_dat.json
+mos/dich_de.json        bộ nhớ dịch cho bộ đề nhập (đề bài Anh→Việt, gợi ý Việt→Anh)
+mos/gamify.py           XP, cấp độ, chuỗi ngày, huy hiệu, sao, mẹo mỗi ngày (tính từ history)
 mos/ooxml.py            đọc XML trong file .docx/.xlsx/.pptx (ZIP)
 mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(path) -> bool
-mos/qt/theme.py         hệ thống thiết kế: màu, QSS, Card, chip, badge, table(), ScoreRing, hộp thoại
+mos/qt/theme.py         hệ thống thiết kế Forest Canopy: màu, QSS, Card, chip, badge, table(), ScoreRing,
+                        LevelBadge, stars, badge_tile, lang_switch, Confetti, hộp thoại
 mos/qt/app.py           đăng nhập, Shell (sidebar + trang), Home, History, Result, ExamBar (thanh làm bài)
 mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ExamEditor, RuleDialog, CheckReportDialog
 kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
@@ -45,6 +50,11 @@ Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcomm
 
 ## Quy ước
 - Chữ trên giao diện, docstring, thông báo lỗi: **tiếng Việt**. Tên biến/hàm theo code hiện có.
+- **Song ngữ**: mọi chữ hiện trên giao diện bọc `tr("…")` (có biến: `tr("Đã làm {n}").format(n=…)`, không dùng
+  f-string bên trong tr) và thêm bản Anh vào `mos/i18n_en.json` (test_i18n_gamify kiểm tra đủ khóa). Nội dung đề có
+  cặp trường `yeu_cau`/`yeu_cau_en`, `goi_y`/`goi_y_en`, `ten`/`ten_en`, `mo_ta`/`mo_ta_en`; đề có sẵn dùng
+  `Task(title, hint, check, title_en, hint_en)`. Chữ trong ngoặc “…” (nội dung file Office) giữ nguyên khi dịch.
+- Màu chỉ lấy từ hằng số trong theme.py (FOREST, SAGE, OLIVE, IVORY, GOLD…); không tự đặt mã màu mới rải rác.
 - Giao diện chỉ dùng thành phần trong `mos/qt/theme.py` (button(kind=primary|ghost|danger), Card, chip, table,
   info/warn/error/confirm). Không dùng Tkinter.
 - Qt: ký tự `&` trong chữ của nút phải viết `&&`.

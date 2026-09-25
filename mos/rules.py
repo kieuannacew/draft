@@ -633,7 +633,8 @@ RULE_TITLES = {
 
 def rule_title(name: str) -> str:
     """Tên ngắn tiếng Việt của luật (hiện trong form soạn đề)."""
-    return RULE_TITLES.get(name, name)
+    from .i18n import tr
+    return tr(RULE_TITLES.get(name, name))
 
 
 def rules_for(mon: str) -> list[str]:
@@ -649,7 +650,8 @@ def rule_params(name: str) -> list[dict]:
             continue
         label, kind, *rest = PARAM_UI_RULE.get((name, p.name)) or PARAM_UI.get(p.name, (p.name, "auto"))
         required = p.default is inspect.Parameter.empty
-        out.append({"name": p.name, "label": label, "kind": kind, "choices": rest[0] if rest else None,
+        from .i18n import tr
+        out.append({"name": p.name, "label": tr(label), "kind": kind, "choices": rest[0] if rest else None,
                     "required": required, "default": None if required else p.default})
     return out
 

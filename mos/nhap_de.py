@@ -97,6 +97,15 @@ def _signature(folder: Path) -> str:
     return hashlib.md5("|".join(items).encode("utf-8")).hexdigest()[:16] if items else ""
 
 
+def translation_memory() -> dict:
+    """Bộ nhớ dịch (mos/dich_de.json): đề bài Anh → Việt, gợi ý Việt → Anh."""
+    try:
+        data = json.loads((Path(__file__).with_name("dich_de.json")).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        data = {}
+    return {"de_bai": data.get("de_bai", {}), "goi_y": data.get("goi_y", {})}
+
+
 def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list[str]]:
     """Chuyển một đề (De_xx) sang định dạng của app. Trả về (thư mục đề mới, cảnh báo)."""
     folder = Path(folder)
@@ -116,6 +125,7 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
     m = re.search(r"(\d+)", folder.name)
     number = f"Đề {int(m.group(1)):02d}" if m else folder.name
     title = f"{MON_LABEL[mon]} – {number}" + (f" ({collection})" if collection else "")
+    title_en = title.replace("Đề ", "Test ")
     source_id = f"{collection}/{folder.name}"
 
     base = Path(dest_base) if dest_base else editable_dir()
@@ -134,6 +144,7 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
             shutil.rmtree(dest)
     dest.mkdir(parents=True)
 
+    memory = translation_memory()
     projects, main_files = [], set()
     for e in entries:
         src = files / str(e.get("file", ""))
@@ -157,13 +168,18 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
                 spec = {"luat": "tu_kiem_tra", "ghi_chu": dang}
                 warnings.append(f"{folder.name} › {src.name}: câu dạng “{dang}” chưa chấm tự động được "
                                 "(học viên tự kiểm tra)")
-            tasks.append({"yeu_cau": text, "goi_y": _hint(t.get("steps")), "cham": spec})
+            hint = _hint(t.get("steps"))
+            tasks.append({"yeu_cau": memory["de_bai"].get(text, text), "yeu_cau_en": text,
+                          "goi_y": hint, "goi_y_en": memory["goi_y"].get(hint, ""), "cham": spec})
         theme = str(e.get("theme") or Path(src).stem)
         expert = "Expert" in src.stem or e.get("expert")
+        no = e.get("no", len(projects) + 1)
         projects.append({
-            "ten": f"Project {e.get('no', len(projects) + 1)} – {theme}" + (" (Expert)" if expert else ""),
+            "ten": f"Dự án {no} – {theme}" + (" (Expert)" if expert else ""),
+            "ten_en": f"Project {no} – {theme}" + (" (Expert)" if expert else ""),
             "file": src.name,
-            "mo_ta": f"Mở file {src.name} và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+            "mo_ta": f"Mở file {src.name} và làm lần lượt các yêu cầu bên dưới.",
+            "mo_ta_en": f"Open {src.name} and complete the tasks below in order.",
             "nhiem_vu": tasks,
         })
 
@@ -172,7 +188,7 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
         if f.is_file() and f.name not in main_files and not f.name.startswith(("~$", ".")):
             shutil.copyfile(f, dest / f.name)
             extras.append(f.name)
-    all_text = " ".join(t["yeu_cau"] for p in projects for t in p["nhiem_vu"])
+    all_text = " ".join(t["yeu_cau_en"] for p in projects for t in p["nhiem_vu"])
     models = folder.parent / "3D Models"
     if "3D Models" in all_text and models.is_dir():
         shutil.copytree(models, dest / "3D Models")
@@ -180,8 +196,9 @@ def convert_set(folder: Path, dest_base: Path | None = None) -> tuple[Path, list
     if extras:
         for p in projects:
             p["mo_ta"] += " File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm."
+            p["mo_ta_en"] += " Extra files (pictures, data, 3D Models) are in the same work folder."
 
-    data = {"mon": mon, "ten": title, "thoi_gian": 50, "rieng": True, "nguon": source_id,
+    data = {"mon": mon, "ten": title, "ten_en": title_en, "thoi_gian": 50, "rieng": True, "nguon": source_id,
             "dau_vet": _signature(folder), "du_an": projects}
     if extras:
         data["file_phu"] = extras

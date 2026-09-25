@@ -19,6 +19,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from .core import DATA_DIR
+from .i18n import tr
 
 ADMIN, STUDENT = "quan_tri", "hoc_vien"
 ROLE_NAMES = {ADMIN: "Quản trị", STUDENT: "Học viên"}
@@ -93,7 +94,7 @@ class AccountStore:
         if not USERNAME_RE.fullmatch(username):
             raise AccountError("Tên đăng nhập 3–32 ký tự, chỉ gồm chữ thường không dấu, số, dấu _ hoặc .")
         if username in self.accounts:
-            raise AccountError(f"Tài khoản '{username}' đã tồn tại.")
+            raise AccountError(tr("Tài khoản '{user}' đã tồn tại.").format(user=username))
         if vai_tro not in ROLE_NAMES:
             raise AccountError("Vai trò không hợp lệ.")
         acc = Account(username, ho_ten.strip() or username, vai_tro,
@@ -141,14 +142,14 @@ class AccountStore:
         if acc.khoa:
             raise AccountError("Tài khoản đã bị khóa. Liên hệ giáo viên.")
         if acc.expired():
-            raise AccountError(f"Tài khoản đã hết hạn ngày {acc.han_dung}. Liên hệ giáo viên.")
+            raise AccountError(tr("Tài khoản đã hết hạn ngày {date}. Liên hệ giáo viên.").format(date=acc.han_dung))
         return acc
 
     # ------------------------------------------------------------ nội bộ
     def _require(self, username: str) -> Account:
         acc = self.get(username)
         if acc is None:
-            raise AccountError(f"Không có tài khoản '{username}'.")
+            raise AccountError(tr("Không có tài khoản '{user}'.").format(user=username))
         return acc
 
     def _admins(self) -> int:
@@ -157,7 +158,7 @@ class AccountStore:
     @staticmethod
     def _set_pw(acc: Account, password: str) -> None:
         if len(password) < MIN_PASSWORD:
-            raise AccountError(f"Mật khẩu phải có ít nhất {MIN_PASSWORD} ký tự.")
+            raise AccountError(tr("Mật khẩu phải có ít nhất {n} ký tự.").format(n=MIN_PASSWORD))
         salt = os.urandom(16)
         acc.salt, acc.hash = salt.hex(), _hash(password, salt)
 

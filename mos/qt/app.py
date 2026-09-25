@@ -2,32 +2,51 @@
 
 Cấu trúc màn hình:
   MainWindow
-   ├─ LoginPage                 đăng nhập
+   ├─ LoginPage                 đăng nhập (có nút chuyển VI | EN)
    └─ Shell                     thanh bên (menu) + trang nội dung
-        ├─ HomePage             chọn bài thi / chế độ → Bắt đầu
+        ├─ HomePage             cấp độ / XP / chuỗi ngày, huy hiệu, chọn bài thi + chế độ → Bắt đầu
         ├─ HistoryPage          lịch sử của tôi
-        ├─ ResultPage           kết quả sau khi nộp bài
+        ├─ ResultPage           kết quả sau khi nộp bài (pháo giấy khi đạt, XP nhận được, huy hiệu mới)
         └─ (quản trị) AccountsPage / ExamsPage / ResultsPage   – xem admin.py
   ExamBar                       cửa sổ làm bài nằm ở cạnh dưới màn hình, luôn nổi trên Office
+
+Mọi chữ trên giao diện bọc bằng tr(...) (mos/i18n.py); nội dung đề chọn bằng pick(vi, en).
 """
 from __future__ import annotations
 
+import html
 import sys
 import time
 
 from PySide6.QtCore import Qt, QTimer
-from PySide6.QtGui import QFont, QGuiApplication, QIcon, QPixmap, QPainter, QColor
+from PySide6.QtGui import QColor, QFont, QGuiApplication, QIcon, QPainter, QPixmap
 from PySide6.QtWidgets import (QApplication, QButtonGroup, QDialog, QFrame, QGridLayout, QHBoxLayout, QLabel,
                                QLineEdit, QMainWindow, QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
                                QVBoxLayout, QWidget)
 
-from .. import core, nhap_de
+from .. import core, gamify, i18n, nhap_de
 from ..accounts import ROLE_NAMES, AccountError, AccountStore
 from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
+from ..i18n import pick, tr
 from . import theme as T
-from .theme import (DANGER, DANGER_SOFT, PRIMARY, PRIMARY_SOFT, SUCCESS, SUCCESS_SOFT, WARN,
+from .theme import (DANGER, DANGER_SOFT, GOLD_SOFT, PRIMARY, PRIMARY_SOFT, SUCCESS, SUCCESS_SOFT, WARN,
                     WARN_SOFT, Card, ClickableCard, button, chip, label)
+
+def mode_name(mode: str) -> str:
+    return tr("Luyện tập") if mode == "training" else tr("Thi thử")
+
+
+def exam_name(exam) -> str:
+    return pick(exam.name, exam.name_en)
+
+
+def history_exam_name(entry: dict) -> str:
+    return pick(entry.get("exam", ""), entry.get("exam_en"))
+
+
+def esc(text: str) -> str:
+    return html.escape(text or "", quote=False)
 
 
 # ====================================================================== khung trang
@@ -61,10 +80,16 @@ class LoginPage(QWidget):
         self.setObjectName("Login")
         self.setAttribute(Qt.WA_StyledBackground, True)
         outer = QVBoxLayout(self)
-        outer.setAlignment(Qt.AlignCenter)
+        outer.setContentsMargins(24, 18, 24, 24)
 
-        card = Card(padding=36, spacing=0, raised=True)
-        card.setFixedWidth(420)
+        top = QHBoxLayout()
+        top.addStretch()
+        top.addWidget(T.lang_switch(i18n.get_lang(), main.change_language, dark=True))
+        outer.addLayout(top)
+        outer.addStretch(1)
+
+        card = Card(padding=38, spacing=0, raised=True)
+        card.setFixedWidth(440)
         outer.addWidget(card, 0, Qt.AlignCenter)
         lay = card.lay
 
@@ -73,20 +98,24 @@ class LoginPage(QWidget):
         for code in ("WORD", "EXCEL", "POWERPOINT"):
             badges.addWidget(T.badge(code, 36))
         badges.addStretch()
+        leaf = QLabel("🌿")
+        leaf.setStyleSheet("font-size: 20pt; background: transparent;")
+        badges.addWidget(leaf)
         lay.addLayout(badges)
-        lay.addSpacing(20)
-        lay.addWidget(label("Luyện thi MOS", "h1"))
-        lay.addWidget(label("Đăng nhập bằng tài khoản giáo viên cấp cho bạn.", "muted", wrap=True))
+        lay.addSpacing(22)
+        lay.addWidget(label(tr("Luyện thi MOS"), "h1"))
+        lay.addSpacing(4)
+        lay.addWidget(label(tr("Mỗi ngày một chút – vững vàng bước vào phòng thi."), "muted", wrap=True))
         lay.addSpacing(24)
 
-        lay.addWidget(label("Tên đăng nhập", "h3"))
+        lay.addWidget(label(tr("Tên đăng nhập"), "h3"))
         lay.addSpacing(6)
         self.user = QLineEdit()
         self.user.setProperty("size", "lg")
-        self.user.setPlaceholderText("vd: nguyenvana")
+        self.user.setPlaceholderText(tr("vd: nguyenvana"))
         lay.addWidget(self.user)
         lay.addSpacing(14)
-        lay.addWidget(label("Mật khẩu", "h3"))
+        lay.addWidget(label(tr("Mật khẩu"), "h3"))
         lay.addSpacing(6)
         self.pw = QLineEdit()
         self.pw.setProperty("size", "lg")
@@ -99,7 +128,7 @@ class LoginPage(QWidget):
         self.err.hide()
         lay.addWidget(self.err)
         lay.addSpacing(14)
-        lay.addWidget(button("Đăng nhập", self.login, "primary", "lg"))
+        lay.addWidget(button(tr("Đăng nhập"), self.login, "primary", "lg"))
 
         store = main.store
         admin = store.get("admin")
@@ -109,14 +138,15 @@ class LoginPage(QWidget):
             tip.setObjectName("Banner")
             tl = QVBoxLayout(tip)
             tl.setContentsMargins(14, 10, 14, 10)
-            tl.addWidget(label("<b>Lần đầu sử dụng?</b><br>Đăng nhập <b>admin</b> / <b>admin</b> "
-                               "rồi đặt mật khẩu mới.", wrap=True))
+            tl.addWidget(label(tr("<b>Lần đầu sử dụng?</b><br>Đăng nhập <b>admin</b> / <b>admin</b> "
+                                  "rồi đặt mật khẩu mới."), wrap=True))
             lay.addWidget(tip)
 
-        foot = label("Chấm điểm tự động • Word • Excel • PowerPoint", "caption")
-        foot.setStyleSheet("color: rgba(255,255,255,0.6);")
         outer.addSpacing(18)
+        foot = label(tr("Chấm điểm tự động • Word • Excel • PowerPoint"), "caption")
+        foot.setStyleSheet("color: rgba(255,255,255,0.7);")
         outer.addWidget(foot, 0, Qt.AlignCenter)
+        outer.addStretch(1)
 
         self.user.returnPressed.connect(self.pw.setFocus)
         self.pw.returnPressed.connect(self.login)
@@ -129,7 +159,7 @@ class LoginPage(QWidget):
         try:
             acc = self.main.store.authenticate(self.user.text(), self.pw.text())
         except AccountError as exc:
-            self.err.setText(str(exc))
+            self.err.setText(tr(str(exc)))
             self.err.show()
             return
         self.err.hide()
@@ -141,27 +171,27 @@ class ChangePasswordDialog(QDialog):
     def __init__(self, parent, store: AccountStore, acc, forced=False):
         super().__init__(parent)
         self.store, self.acc, self.forced = store, acc, forced
-        self.setWindowTitle("Đổi mật khẩu")
+        self.setWindowTitle(tr("Đổi mật khẩu"))
         self.setMinimumWidth(420)
         lay = QVBoxLayout(self)
         lay.setContentsMargins(28, 24, 28, 24)
         lay.setSpacing(8)
-        lay.addWidget(label("Đổi mật khẩu", "h2"))
+        lay.addWidget(label(tr("Đổi mật khẩu"), "h2"))
         if forced:
-            lay.addWidget(label("Đây là lần đăng nhập đầu tiên — hãy đặt mật khẩu mới cho tài khoản "
-                                f"<b>{acc.username}</b>.", "muted", wrap=True))
+            lay.addWidget(label(tr("Đây là lần đăng nhập đầu tiên — hãy đặt mật khẩu mới cho tài khoản "
+                                   "<b>{user}</b>.").format(user=esc(acc.username)), "muted", wrap=True))
         lay.addSpacing(8)
-        self.old = self._field(lay, "Mật khẩu hiện tại") if not forced else None
-        self.new = self._field(lay, "Mật khẩu mới")
-        self.again = self._field(lay, "Nhập lại mật khẩu mới")
+        self.old = self._field(lay, tr("Mật khẩu hiện tại")) if not forced else None
+        self.new = self._field(lay, tr("Mật khẩu mới"))
+        self.again = self._field(lay, tr("Nhập lại mật khẩu mới"))
         self.err = label("", wrap=True)
         self.err.setStyleSheet(f"color:{DANGER};")
         lay.addWidget(self.err)
         row = QHBoxLayout()
         row.addStretch()
         if not forced:
-            row.addWidget(button("Hủy", self.reject))
-        row.addWidget(button("Lưu mật khẩu", self.save, "primary"))
+            row.addWidget(button(tr("Hủy"), self.reject))
+        row.addWidget(button(tr("Lưu mật khẩu"), self.save, "primary"))
         lay.addLayout(row)
         self.again.returnPressed.connect(self.save)
 
@@ -188,7 +218,7 @@ class ChangePasswordDialog(QDialog):
                 raise AccountError("Hãy chọn mật khẩu khác mật khẩu mặc định.")
             self.store.set_password(self.acc.username, self.new.text())
         except AccountError as exc:
-            self.err.setText(str(exc))
+            self.err.setText(tr(str(exc)))
             return
         self.accept()
 
@@ -199,7 +229,7 @@ class ChangePasswordDialog(QDialog):
 class Shell(QWidget):
     """Thanh bên + vùng nội dung."""
 
-    def __init__(self, main: "MainWindow", account):
+    def __init__(self, main: "MainWindow", account, page: str = "home"):
         super().__init__()
         self.main, self.account = main, account
         lay = QHBoxLayout(self)
@@ -209,14 +239,14 @@ class Shell(QWidget):
         self.content = QStackedWidget()
         lay.addWidget(self.content, 1)
         self.current = None
-        self.go("home")
+        self.go(page if page in ("home", "history", "accounts", "exams", "results") else "home")
 
     # ------------------------------------------------------------ thanh bên
     def _sidebar(self) -> QWidget:
         side = QWidget()
         side.setObjectName("Sidebar")
         side.setAttribute(Qt.WA_StyledBackground, True)
-        side.setFixedWidth(248)
+        side.setFixedWidth(252)
         lay = QVBoxLayout(side)
         lay.setContentsMargins(16, 22, 16, 18)
         lay.setSpacing(4)
@@ -224,12 +254,12 @@ class Shell(QWidget):
         brand_row = QHBoxLayout()
         brand_row.setSpacing(10)
         logo = QLabel()
-        logo.setPixmap(app_icon().pixmap(34, 34))
+        logo.setPixmap(app_icon().pixmap(36, 36))
         brand_row.addWidget(logo)
         names = QVBoxLayout()
         names.setSpacing(0)
-        title = label("Luyện thi MOS")
-        title.setStyleSheet("font-size: 12pt; font-weight: 800;")
+        title = label(tr("Luyện thi MOS"))
+        title.setStyleSheet(f"font-family: '{T.pick_heading_family()}'; font-size: 14pt; font-weight: 800;")
         names.addWidget(title)
         names.addWidget(label("Word · Excel · PowerPoint", "caption"))
         brand_row.addLayout(names, 1)
@@ -240,8 +270,8 @@ class Shell(QWidget):
         self.nav.setExclusive(True)
         self.nav_buttons = {}
 
-        def nav(key, text):
-            b = QPushButton(text)
+        def nav(key, icon, text):
+            b = QPushButton(f"{icon}   {text}")
             b.setProperty("nav", True)
             b.setCheckable(True)
             b.setCursor(Qt.PointingHandCursor)
@@ -250,36 +280,45 @@ class Shell(QWidget):
             self.nav_buttons[key] = b
             lay.addWidget(b)
 
-        lay.addWidget(label("HỌC TẬP", "overline"))
+        lay.addWidget(label(tr("HỌC TẬP"), "overline"))
         lay.addSpacing(4)
-        nav("home", "Trang chủ")
-        nav("history", "Lịch sử của tôi")
+        nav("home", "🏠", tr("Trang chủ"))
+        nav("history", "📈", tr("Lịch sử của tôi"))
         if self.account.is_admin:
             lay.addSpacing(18)
-            lay.addWidget(label("QUẢN TRỊ", "overline"))
+            lay.addWidget(label(tr("QUẢN TRỊ"), "overline"))
             lay.addSpacing(4)
-            nav("accounts", "Tài khoản")
-            nav("exams", "Đề thi")
-            nav("results", "Kết quả học viên")
+            nav("accounts", "👥", tr("Tài khoản"))
+            nav("exams", "📝", tr("Đề thi"))
+            nav("results", "📊", tr("Kết quả học viên"))
         lay.addStretch()
 
+        lang_row = QHBoxLayout()
+        lang_row.addWidget(label(tr("Ngôn ngữ"), "caption"))
+        lang_row.addStretch()
+        lang_row.addWidget(T.lang_switch(i18n.get_lang(), self.main.change_language, dark=True))
+        lay.addLayout(lang_row)
+        lay.addSpacing(10)
+
         me = QFrame()
-        me.setStyleSheet(f"QFrame {{ background: {T.SIDEBAR_2}; border-radius: 12px; }}")
+        me.setObjectName("Me")
+        me.setStyleSheet("QFrame#Me { background: rgba(255,255,255,0.07); border-radius: 14px; }")
         ml = QVBoxLayout(me)
         ml.setContentsMargins(12, 12, 12, 12)
         top = QHBoxLayout()
-        top.addWidget(T.avatar(self.account.ho_ten, 36, PRIMARY if self.account.is_admin else "#475467"))
+        top.addWidget(T.avatar(self.account.ho_ten, 36, T.OLIVE if self.account.is_admin else T.SAGE))
         names = QVBoxLayout()
         names.setSpacing(0)
         n = label(self.account.ho_ten)
         n.setStyleSheet("font-weight: 700;")
         names.addWidget(n)
-        names.addWidget(label(f"{self.account.username} · {ROLE_NAMES[self.account.vai_tro]}", "caption"))
+        names.addWidget(label(f"{self.account.username} · {i18n.role_name(ROLE_NAMES[self.account.vai_tro])}",
+                              "caption"))
         top.addLayout(names, 1)
         ml.addLayout(top)
         row = QHBoxLayout()
-        row.addWidget(button("Mật khẩu", self.change_password, "side"))
-        row.addWidget(button("Đăng xuất", self.main.logout, "side"))
+        row.addWidget(button(tr("Mật khẩu"), self.change_password, "side"))
+        row.addWidget(button(tr("Đăng xuất"), self.main.logout, "side"))
         ml.addLayout(row)
         lay.addWidget(me)
         return side
@@ -320,7 +359,7 @@ class Shell(QWidget):
         try:
             session = core.new_session(exam, mode, user=self.account.username)
         except Exception:
-            T.error(self, "Lỗi", "Không tạo được file bài thi:\n" + core.format_exception())
+            T.error(self, tr("Lỗi"), tr("Không tạo được file bài thi:") + "\n" + core.format_exception())
             return
         self.main.hide()
         self.bar = ExamBar(session, on_finish=self.show_result, on_quit=self.main.show)
@@ -337,9 +376,10 @@ class MainWindow(QMainWindow):
     def __init__(self, store: AccountStore):
         super().__init__()
         self.store = store
-        self.setWindowTitle("Luyện thi MOS")
+        self.account = None
+        self.setWindowTitle(tr("Luyện thi MOS"))
         self.setWindowIcon(app_icon())
-        self.resize(1240, 800)
+        self.resize(1280, 820)
         self.setMinimumSize(1080, 700)
         self.stack = QStackedWidget()
         self.setCentralWidget(self.stack)
@@ -354,14 +394,26 @@ class MainWindow(QMainWindow):
             old.deleteLater()
 
     def logout(self):
+        self.account = None
         self._set(LoginPage(self))
 
-    def enter(self, acc):
+    def enter(self, acc, page: str = "home"):
         if acc.doi_mat_khau:
             if ChangePasswordDialog(self, self.store, acc, forced=True).exec() != QDialog.Accepted:
                 return
-        acc = self.store.get(acc.username)
-        self._set(Shell(self, acc))
+        self.account = self.store.get(acc.username)
+        self._set(Shell(self, self.account, page))
+
+    def change_language(self, code: str) -> None:
+        """Đổi ngôn ngữ và dựng lại màn hình đang xem."""
+        i18n.set_lang(code)
+        self.setWindowTitle(tr("Luyện thi MOS"))
+        current = self.stack.currentWidget()
+        if self.account is None:
+            self._set(LoginPage(self))
+        else:
+            page = current.current if isinstance(current, Shell) else "home"
+            self._set(Shell(self, self.account, page))
 
 
 def app_icon() -> QIcon:
@@ -369,17 +421,40 @@ def app_icon() -> QIcon:
     pix.fill(Qt.transparent)
     p = QPainter(pix)
     p.setRenderHint(QPainter.Antialiasing)
-    p.setBrush(QColor(PRIMARY))
+    p.setBrush(QColor(T.OLIVE))
     p.setPen(Qt.NoPen)
-    p.drawRoundedRect(0, 0, 64, 64, 14, 14)
-    p.setPen(QColor("white"))
-    f = QFont()
+    p.drawRoundedRect(0, 0, 64, 64, 16, 16)
+    p.setBrush(QColor(T.FOREST))
+    p.drawRoundedRect(4, 4, 56, 56, 13, 13)
+    p.setPen(QColor("#F4F6EE"))
+    f = QFont(T.pick_heading_family())
     f.setBold(True)
-    f.setPixelSize(21)
+    f.setPixelSize(20)
     p.setFont(f)
     p.drawText(pix.rect(), Qt.AlignCenter, "MOS")
     p.end()
     return QIcon(pix)
+
+
+def _banner(text, tone="info") -> QFrame:
+    f = QFrame()
+    f.setObjectName("Note")
+    colors = {"info": (T.FOREST, PRIMARY_SOFT, T.PRIMARY_LINE), "warn": (WARN, WARN_SOFT, "#E8C98A"),
+              "bad": (DANGER, DANGER_SOFT, "#E2B5AA"), "ok": (SUCCESS, SUCCESS_SOFT, "#A9CFA0"),
+              "gold": ("#7A5A12", GOLD_SOFT, "#EAD9A6")}[tone]
+    f.setStyleSheet(f"QFrame#Note {{ background:{colors[1]}; border:1px solid {colors[2]}; border-radius:12px; }}"
+                    f"QFrame#Note QLabel {{ color:{colors[0]}; background: transparent; border: none; }}")
+    lay = QHBoxLayout(f)
+    lay.setContentsMargins(16, 12, 16, 12)
+    lay.addWidget(label(text, wrap=True), 1)
+    return f
+
+
+def _clear_page(area: QScrollArea, body: QWidget) -> None:
+    area.setObjectName("Page")
+    area.setWidgetResizable(True)
+    area.setFrameShape(QFrame.NoFrame)
+    area.setWidget(body)
 
 
 # ====================================================================== trang chủ
@@ -401,27 +476,44 @@ class HomePage(QScrollArea):
         self.exam_idx, self.mode = 0, "training"
 
         body, lay = page_body()
-        first = acc.ho_ten.split()[-1] if acc.ho_ten.split() else acc.username
-        lay.addWidget(T.page_header(f"Xin chào, {first}!",
-                                    "Chọn bài thi và chế độ rồi bấm Bắt đầu. Phần mềm sẽ mở Word / Excel / "
-                                    "PowerPoint để bạn làm bài trực tiếp."))
+        lay.addWidget(self._hero(acc, history))
         if errors and acc.is_admin:
-            lay.addWidget(_banner("Có đề tự soạn bị lỗi nên chưa được nạp: " + errors[0] +
-                                  (f" (và {len(errors) - 1} lỗi khác)" if len(errors) > 1 else "") +
-                                  ". Vào Đề thi để sửa.", tone="warn"))
+            lay.addWidget(_banner(tr("Có đề tự soạn bị lỗi nên chưa được nạp: {err}{more}. Vào Đề thi để sửa.")
+                                  .format(err=errors[0], more=tr(" (và {n} lỗi khác)").format(n=len(errors) - 1)
+                                          if len(errors) > 1 else ""), tone="warn"))
 
+        # --- số liệu
         stats = QHBoxLayout()
         stats.setSpacing(16)
         passed = sum(h["passed"] for h in history)
         best = max((h["score"] for h in history), default=None)
-        stats.addWidget(T.stat_card("Số lần làm bài", str(len(history)), "tính cả luyện tập và thi thử"))
-        stats.addWidget(T.stat_card("Điểm cao nhất", f"{best}" if best is not None else "—", "thang điểm 1000",
-                                    SUCCESS))
-        stats.addWidget(T.stat_card("Tỉ lệ đạt", f"{round(100 * passed / len(history))}%" if history else "—",
-                                    "điểm đạt từ 700", WARN))
+        stats.addWidget(T.stat_card(tr("Số lần làm bài"), str(len(history)), tr("tính cả luyện tập và thi thử"),
+                                    icon="📝"))
+        stats.addWidget(T.stat_card(tr("Điểm cao nhất"), f"{best}" if best is not None else "—",
+                                    tr("thang điểm 1000"), icon="🏔"))
+        stats.addWidget(T.stat_card(tr("Tỉ lệ đạt"), f"{round(100 * passed / len(history))}%" if history else "—",
+                                    tr("điểm đạt từ 700"), icon="🎯"))
         lay.addLayout(stats)
 
-        lay.addWidget(label("Chọn bài thi", "h2"))
+        # --- huy hiệu
+        head = QHBoxLayout()
+        head.addWidget(label(tr("Huy hiệu"), "h2"))
+        all_badges = gamify.badges(history)
+        head.addWidget(label(tr("{n}/{total} đã mở khóa").format(n=sum(b.earned for b in all_badges),
+                                                                 total=len(all_badges)), "muted"), 0, Qt.AlignBottom)
+        head.addStretch()
+        lay.addLayout(head)
+        grid = QGridLayout()
+        grid.setSpacing(10)
+        for i, b in enumerate(all_badges):
+            grid.addWidget(T.badge_tile(b.icon, pick(b.name_vi, b.name_en), pick(b.desc_vi, b.desc_en), b.earned),
+                           i // 5, i % 5)
+        for c in range(5):
+            grid.setColumnStretch(c, 1)
+        lay.addLayout(grid)
+
+        # --- chọn bài thi
+        lay.addWidget(label(tr("Chọn bài thi"), "h2"))
         grid = QGridLayout()
         grid.setSpacing(16)
         self.exam_cards = []
@@ -434,16 +526,22 @@ class HomePage(QScrollArea):
             grid.setColumnStretch(c, 1)
         lay.addLayout(grid)
 
-        lay.addWidget(label("Chế độ", "h2"))
+        # --- chế độ
+        lay.addWidget(label(tr("Chế độ"), "h2"))
         modes = QHBoxLayout()
         modes.setSpacing(16)
         self.mode_cards = {}
-        for key, title, desc in (("training", "Luyện tập", "Không giới hạn giờ · có gợi ý · kiểm tra từng dự án"),
-                                 ("testing", "Thi thử", "Tính giờ như thi thật · không gợi ý · chấm khi nộp bài")):
+        for key, icon, title, desc in (
+                ("training", "🌱", tr("Luyện tập"), tr("Không giới hạn giờ · có gợi ý · kiểm tra từng dự án")),
+                ("testing", "⏳", tr("Thi thử"), tr("Tính giờ như thi thật · không gợi ý · chấm khi nộp bài · "
+                                                   "XP ×1.2"))):
             card = ClickableCard(padding=18, spacing=14, horizontal=True)
             dot = QLabel()
             dot.setFixedSize(20, 20)
             card.lay.addWidget(dot)
+            ic = QLabel(icon)
+            ic.setStyleSheet("font-size: 18pt; background: transparent;")
+            card.lay.addWidget(ic)
             col = QVBoxLayout()
             col.setSpacing(2)
             col.addWidget(label(title, "h3"))
@@ -457,22 +555,63 @@ class HomePage(QScrollArea):
         foot = QHBoxLayout()
         if history:
             h = history[-1]
-            foot.addWidget(label(f"Lần gần nhất: {h['exam']} — {h['score']}/1000 "
-                                 f"({'Đạt' if h['passed'] else 'Chưa đạt'}) · {h['time']}", "muted"))
-        else:
-            foot.addWidget(label("Mẹo: làm xong mỗi dự án nhớ bấm Ctrl + S để lưu file.", "muted"))
+            foot.addWidget(label(tr("Lần gần nhất: {exam} — {score}/1000 ({verdict}) · {time}").format(
+                exam=history_exam_name(h), score=h["score"], verdict=tr("Đạt") if h["passed"] else tr("Chưa đạt"),
+                time=h["time"]), "muted"))
         foot.addStretch()
-        self.start_btn = button("Bắt đầu làm bài  →", self.start, "primary", "lg")
+        self.start_btn = button(tr("Bắt đầu làm bài  →"), self.start, "primary", "lg")
         foot.addWidget(self.start_btn)
         lay.addLayout(foot)
         lay.addStretch()
 
-        self.setObjectName("Page")
-        self.setWidgetResizable(True)
-        self.setFrameShape(QFrame.NoFrame)
-        self.setWidget(body)
+        _clear_page(self, body)
         self.select_exam(0)
         self.select_mode("training")
+
+    # ------------------------------------------------------------ khối chào
+    def _hero(self, acc, history) -> QFrame:
+        hero = Card(padding=28, spacing=26, horizontal=True, name="Hero")
+        T.shadow(hero, blur=36, y=10, alpha=40)
+        xp = gamify.total_xp(history)
+        lv = gamify.level(xp)
+        hero.lay.addWidget(T.LevelBadge(lv.number, lv.ratio, 104), 0, Qt.AlignVCenter)
+
+        col = QVBoxLayout()
+        col.setSpacing(6)
+        first = acc.ho_ten.split()[-1] if acc.ho_ten.split() else acc.username
+        col.addWidget(label(tr("Xin chào, {name}!").format(name=first), "display"))
+        col.addWidget(label(tr("Cấp {n} · {title} — còn {xp} XP nữa để lên cấp").format(
+            n=lv.number, title=pick(lv.name_vi, lv.name_en), xp=lv.xp_for_next - lv.xp_in_level), "caption"))
+        col.addWidget(T.progress(lv.xp_in_level, lv.xp_for_next, "xp"))
+        col.addSpacing(6)
+        chips = QHBoxLayout()
+        chips.setSpacing(10)
+        days = gamify.streak(history)
+        for icon, text in (("✨", tr("{xp} XP").format(xp=xp)),
+                           ("🔥", tr("Chuỗi {n} ngày").format(n=days) if days else tr("Bắt đầu chuỗi hôm nay")),
+                           ("🏅", tr("{n} lần đạt").format(n=sum(h["passed"] for h in history)))):
+            f = QFrame()
+            f.setObjectName("HeroChip")
+            fl = QHBoxLayout(f)
+            fl.setContentsMargins(12, 6, 12, 6)
+            fl.addWidget(label(f"{icon}  {text}"))
+            chips.addWidget(f)
+        chips.addStretch()
+        col.addLayout(chips)
+        hero.lay.addLayout(col, 1)
+
+        tip_vi, tip_en = gamify.tip_of_day()
+        tip = QFrame()
+        tip.setObjectName("HeroChip")
+        tip.setFixedWidth(300)
+        tl = QVBoxLayout(tip)
+        tl.setContentsMargins(16, 14, 16, 14)
+        tl.setSpacing(6)
+        tl.addWidget(label("💡  " + tr("MẸO HÔM NAY"), "caption"))
+        tl.addWidget(label(pick(tip_vi, tip_en), wrap=True))
+        tl.addStretch()
+        hero.lay.addWidget(tip)
+        return hero
 
     def _exam_card(self, exam, history) -> ClickableCard:
         letter, color, tint, short = T.brand(exam.code)
@@ -480,20 +619,25 @@ class HomePage(QScrollArea):
         top = QHBoxLayout()
         top.addWidget(T.badge(exam.code, 46))
         top.addStretch()
-        card.check = chip("✓ Đã chọn", color, tint)
-        top.addWidget(card.check, 0, Qt.AlignTop)
+        best = max((h["score"] for h in history if h["exam"] == exam.name), default=None)
+        top.addWidget(T.stars(gamify.stars(best)), 0, Qt.AlignTop)
         card.lay.addLayout(top)
         card.lay.addSpacing(6)
-        name, _, code = exam.name.replace("Microsoft ", "").partition(" (")
+        name, _, code = exam_name(exam).replace("Microsoft ", "").partition(" (")
         card.lay.addWidget(label(name, "h2"))
-        card.lay.addWidget(label(code.rstrip(")") or "Đề tự soạn", "caption"))
+        card.lay.addWidget(label(code.rstrip(")") or tr("Đề tự soạn"), "caption"))
         n_tasks = sum(len(p.tasks) for p in exam.projects)
-        card.lay.addWidget(label(f"{len(exam.projects)} dự án · {n_tasks} nhiệm vụ · {exam.minutes} phút", "muted"))
+        card.lay.addWidget(label(tr("{p} dự án · {t} nhiệm vụ · {m} phút").format(
+            p=len(exam.projects), t=n_tasks, m=exam.minutes), "muted"))
         card.lay.addSpacing(8)
-        best = max((h["score"] for h in history if h["exam"] == exam.name), default=None)
         card.lay.addWidget(T.progress(best or 0, tone=None if (best or 0) >= core.PASS_SCORE else "warn"))
-        card.lay.addWidget(label(f"Điểm cao nhất: {best}/1000" if best is not None else "Chưa làm bài này",
-                                 "caption"))
+        foot = QHBoxLayout()
+        foot.addWidget(label(tr("Điểm cao nhất: {s}/1000").format(s=best) if best is not None
+                             else tr("Chưa làm bài này"), "caption"))
+        foot.addStretch()
+        card.check = chip("✓ " + tr("Đã chọn"), T.FOREST, PRIMARY_SOFT)
+        foot.addWidget(card.check)
+        card.lay.addLayout(foot)
         card.brand_color, card.tint = color, tint
         return card
 
@@ -501,8 +645,8 @@ class HomePage(QScrollArea):
         self.exam_idx = idx
         for i, (card, _) in enumerate(self.exam_cards):
             on = i == idx
-            card.setStyleSheet(f"QFrame#Card {{ background: white; border: 2px solid {card.brand_color}; "
-                               "border-radius: 14px; }" if on else "")
+            card.setStyleSheet(f"QFrame#Card {{ background: white; border: 2px solid {T.FOREST}; "
+                               "border-radius: 16px; }" if on else "")
             card.check.setVisible(on)
 
     def select_mode(self, key):
@@ -510,24 +654,12 @@ class HomePage(QScrollArea):
         for k, (card, dot) in self.mode_cards.items():
             on = k == key
             card.setStyleSheet(f"QFrame#Card {{ background: {PRIMARY_SOFT}; border: 2px solid {PRIMARY}; "
-                               "border-radius: 14px; }" if on else "")
+                               "border-radius: 16px; }" if on else "")
             dot.setStyleSheet(f"border-radius: 10px; border: {'6px' if on else '2px'} solid "
-                              f"{PRIMARY if on else '#D0D5DD'}; background: white;")
+                              f"{PRIMARY if on else '#D5D2C4'}; background: white;")
 
     def start(self):
         self.shell.start_exam(self.exams[self.exam_idx], self.mode)
-
-
-def _banner(text, tone="info") -> QFrame:
-    f = QFrame()
-    colors = {"info": ("#1E3A8A", PRIMARY_SOFT, "#D1E0FF"), "warn": (WARN, WARN_SOFT, "#FEDF89"),
-              "bad": (DANGER, DANGER_SOFT, "#FECDCA"), "ok": (SUCCESS, SUCCESS_SOFT, "#ABEFC6")}[tone]
-    f.setStyleSheet(f"QFrame {{ background:{colors[1]}; border:1px solid {colors[2]}; border-radius:10px; }}"
-                    f"QLabel {{ color:{colors[0]}; background: transparent; }}")
-    lay = QHBoxLayout(f)
-    lay.setContentsMargins(14, 10, 14, 10)
-    lay.addWidget(label(text, wrap=True), 1)
-    return f
 
 
 # ====================================================================== lịch sử
@@ -538,35 +670,33 @@ class HistoryPage(QScrollArea):
         super().__init__()
         history = core.load_history(shell.account.username)
         body, lay = page_body()
-        lay.addWidget(T.page_header("Lịch sử của tôi", "Tất cả các lần bạn đã nộp bài."))
+        lay.addWidget(T.page_header(tr("Lịch sử của tôi"), tr("Tất cả các lần bạn đã nộp bài.")))
         stats = QHBoxLayout()
         stats.setSpacing(16)
         passed = sum(h["passed"] for h in history)
-        stats.addWidget(T.stat_card("Số lần làm bài", str(len(history))))
-        stats.addWidget(T.stat_card("Điểm cao nhất", str(max((h["score"] for h in history), default="—")),
-                                    accent=SUCCESS))
-        stats.addWidget(T.stat_card("Điểm trung bình",
+        stats.addWidget(T.stat_card(tr("Số lần làm bài"), str(len(history)), icon="📝"))
+        stats.addWidget(T.stat_card(tr("Điểm cao nhất"), str(max((h["score"] for h in history), default="—")),
+                                    icon="🏔"))
+        stats.addWidget(T.stat_card(tr("Điểm trung bình"),
                                     str(round(sum(h["score"] for h in history) / len(history))) if history else "—",
-                                    accent="#7A5AF8"))
-        stats.addWidget(T.stat_card("Tỉ lệ đạt", f"{round(100 * passed / len(history))}%" if history else "—",
-                                    accent=WARN))
+                                    icon="📊"))
+        stats.addWidget(T.stat_card(tr("Tổng XP"), str(gamify.total_xp(history)), icon="✨"))
+        stats.addWidget(T.stat_card(tr("Tỉ lệ đạt"), f"{round(100 * passed / len(history))}%" if history else "—",
+                                    icon="🎯"))
         lay.addLayout(stats)
         if history:
-            t = T.table([("Thời gian", 150), ("Bài thi", None), ("Chế độ", 110), ("Làm trong", 100),
-                         ("Điểm", 90), ("Kết quả", 110)])
-            rows = [[h["time"], h["exam"], "Luyện tập" if h["mode"] == "training" else "Thi thử",
-                     T.fmt_time(h.get("duration")), f'{h["score"]}', "Đạt" if h["passed"] else "Chưa đạt"]
+            t = T.table([(tr("Thời gian"), 150), (tr("Bài thi"), None), (tr("Chế độ"), 110), (tr("Làm trong"), 100),
+                         (tr("Điểm"), 80), ("XP", 70), (tr("Kết quả"), 110)])
+            rows = [[h["time"], history_exam_name(h), mode_name(h["mode"]), T.fmt_time(h.get("duration")),
+                     f'{h["score"]}', f"+{gamify.attempt_xp(h)}", tr("Đạt") if h["passed"] else tr("Chưa đạt")]
                     for h in reversed(history)]
             T.set_rows(t, rows, ["ok" if h["passed"] else "bad" for h in reversed(history)])
             t.setMinimumHeight(360)
             lay.addWidget(t, 1)
         else:
-            lay.addWidget(T.empty_state("Bạn chưa nộp bài lần nào. Vào Trang chủ để bắt đầu."))
+            lay.addWidget(T.empty_state(tr("Bạn chưa nộp bài lần nào. Vào Trang chủ để bắt đầu."), "🌱"))
             lay.addStretch()
-        self.setObjectName("Page")
-        self.setWidgetResizable(True)
-        self.setFrameShape(QFrame.NoFrame)
-        self.setWidget(body)
+        _clear_page(self, body)
 
 
 # ====================================================================== kết quả
@@ -584,19 +714,28 @@ class ResultPage(QScrollArea):
         head.lay.addWidget(T.ScoreRing(report["score"], passed))
         info = QVBoxLayout()
         info.setSpacing(6)
-        info.addWidget(chip("ĐẠT" if passed else "CHƯA ĐẠT", SUCCESS if passed else DANGER,
-                            SUCCESS_SOFT if passed else DANGER_SOFT), 0, Qt.AlignLeft)
-        info.addWidget(label(session.exam.name, "h1"))
-        info.addWidget(label("Chúc mừng! Bạn đã vượt qua điểm đạt." if passed else
-                             f"Cần thêm {core.PASS_SCORE - report['score']} điểm để đạt. "
-                             "Xem lại các nhiệm vụ sai bên dưới.", "muted", wrap=True))
+        chips = QHBoxLayout()
+        chips.addWidget(chip(tr("ĐẠT") if passed else tr("CHƯA ĐẠT"), SUCCESS if passed else DANGER,
+                             SUCCESS_SOFT if passed else DANGER_SOFT))
+        if report.get("xp") is not None:
+            chips.addWidget(chip(f"✨ +{report['xp']} XP", "#7A5A12", GOLD_SOFT))
+        chips.addStretch()
+        info.addLayout(chips)
+        info.addWidget(label(exam_name(session.exam), "h1"))
+        if passed:
+            msg = tr("Tuyệt vời! Bạn đã vượt qua điểm đạt. 🎉") if report["score"] < 1000 else \
+                tr("Hoàn hảo! 1000/1000 – không sai câu nào. 🏆")
+        else:
+            msg = tr("Cần thêm {n} điểm để đạt. Xem lại các nhiệm vụ sai bên dưới – lần sau chắc chắn tốt hơn! 💪")\
+                .format(n=core.PASS_SCORE - report["score"])
+        info.addWidget(label(msg, "muted", wrap=True))
         info.addSpacing(8)
         boxes = QHBoxLayout()
         boxes.setSpacing(10)
-        for title, value in (("Đúng", f'{report["correct"]}/{report["total"]}'),
-                             ("Thời gian", T.fmt_time(report.get("duration", 0))),
-                             ("Điểm đạt", str(core.PASS_SCORE)),
-                             ("Chế độ", "Luyện tập" if session.mode == "training" else "Thi thử")):
+        for title, value in ((tr("Đúng"), f'{report["correct"]}/{report["total"]}'),
+                             (tr("Thời gian"), T.fmt_time(report.get("duration", 0))),
+                             (tr("Điểm đạt"), str(core.PASS_SCORE)),
+                             (tr("Chế độ"), mode_name(session.mode))):
             b = QFrame()
             b.setObjectName("Soft")
             bl = QVBoxLayout(b)
@@ -604,7 +743,7 @@ class ResultPage(QScrollArea):
             bl.setSpacing(0)
             bl.addWidget(label(title, "caption"))
             v = label(value)
-            v.setStyleSheet("font-size: 13pt; font-weight: 700; background: transparent;")
+            v.setStyleSheet(f"font-size: 13pt; font-weight: 700; color: {T.FOREST};")
             bl.addWidget(v)
             boxes.addWidget(b)
         boxes.addStretch()
@@ -612,55 +751,61 @@ class ResultPage(QScrollArea):
         head.lay.addLayout(info, 1)
         lay.addWidget(head)
 
+        for key in report.get("new_badges", []):
+            b = next((x for x in gamify.badges([]) if x.key == key), None)
+            if b:
+                lay.addWidget(_banner(tr("{icon}  Huy hiệu mới: <b>{name}</b> — {desc}").format(
+                    icon=b.icon, name=pick(b.name_vi, b.name_en), desc=pick(b.desc_vi, b.desc_en)), "gold"))
+
         # --- theo dự án
-        per = QHBoxLayout()
+        per = QGridLayout()
         per.setSpacing(16)
-        for project in session.exam.projects:
+        for i, project in enumerate(session.exam.projects):
             rs = [r for r in self.results if r.project == project.name and r.correct is not None]
             ok = sum(r.correct is True for r in rs)
             c = Card(padding=16, spacing=8)
             row = QHBoxLayout()
-            row.addWidget(label(project.name, "h3"), 1)
+            row.addWidget(label(pick(project.name, project.name_en), "h3"), 1)
             row.addWidget(label(f"{ok}/{len(rs)}", "muted"))
             c.lay.addLayout(row)
             ratio = ok / len(rs) if rs else 0
             c.lay.addWidget(T.progress(int(ratio * 100), 100, None if ratio >= 0.7 else "warn"))
-            per.addWidget(c)
+            per.addWidget(c, i // 4, i % 4)
         lay.addLayout(per)
 
         # --- chi tiết
-        lay.addWidget(label("Chi tiết từng nhiệm vụ", "h2"))
-        self.table = T.table([("Kết quả", 110), ("Dự án", 220), ("Nhiệm vụ", None)])
-        verdict = {True: "✓  Đúng", False: "✗  Sai", None: "–  Tự kiểm tra"}
-        rows = [[verdict[r.correct], r.project.split("–")[-1].strip(), r.task] for r in self.results]
+        lay.addWidget(label(tr("Chi tiết từng nhiệm vụ"), "h2"))
+        self.table = T.table([(tr("Kết quả"), 130), (tr("Dự án"), 200), (tr("Nhiệm vụ"), None)])
+        verdict = {True: "✓  " + tr("Đúng"), False: "✗  " + tr("Sai"), None: "–  " + tr("Tự kiểm tra")}
+        rows = [[verdict[r.correct], pick(r.project, r.project_en).split("–")[-1].strip(), pick(r.task, r.task_en)]
+                for r in self.results]
         tones = [{True: "ok", False: "bad", None: "muted"}[r.correct] for r in self.results]
         T.set_rows(self.table, rows, tones, tone_cols={0})
-        self.table.setMinimumHeight(min(60 + 42 * len(rows), 420))
+        self.table.setMinimumHeight(min(60 + 42 * len(rows), 440))
         self.table.itemSelectionChanged.connect(self.on_select)
         lay.addWidget(self.table)
-        self.hint = _banner("Bấm vào một nhiệm vụ ở bảng trên để xem cách làm.", "warn")
+        self.hint = _banner(tr("Bấm vào một nhiệm vụ ở bảng trên để xem cách làm."), "warn")
         self.hint_label = self.hint.findChild(QLabel)
         lay.addWidget(self.hint)
 
         btns = QHBoxLayout()
-        btns.addWidget(button("Mở thư mục bài làm", lambda: core.open_in_office(session.workdir)))
+        btns.addWidget(button(tr("Mở thư mục bài làm"), lambda: core.open_in_office(session.workdir)))
         btns.addStretch()
-        btns.addWidget(button("Làm lại đề này", lambda: shell.start_exam(session.exam, session.mode)))
-        btns.addWidget(button("Về trang chủ", lambda: shell.go("home"), "primary"))
+        btns.addWidget(button(tr("Làm lại đề này"), lambda: shell.start_exam(session.exam, session.mode)))
+        btns.addWidget(button(tr("Về trang chủ"), lambda: shell.go("home"), "primary"))
         lay.addLayout(btns)
 
-        self.setObjectName("Page")
-        self.setWidgetResizable(True)
-        self.setFrameShape(QFrame.NoFrame)
-        self.setWidget(body)
+        _clear_page(self, body)
+        if passed:
+            QTimer.singleShot(250, lambda: T.Confetti(self.viewport()))
 
     def on_select(self):
         rows = self.table.selectionModel().selectedRows()
         if rows:
             r = self.results[rows[0].row()]
-            text = f"<b>Cách làm:</b> {r.hint}"
+            text = f"<b>{tr('Cách làm:')}</b> {esc(pick(r.hint, r.hint_en))}"
             if r.error:
-                text += f"<br><i>(Lỗi khi đọc file: {r.error})</i>"
+                text += "<br><i>" + tr("(Lỗi khi đọc file: {err})").format(err=esc(r.error)) + "</i>"
             self.hint_label.setText(text)
 
 
@@ -681,29 +826,30 @@ class TaskCard(QFrame):
         self.num.setFixedSize(28, 28)
         self.num.setAlignment(Qt.AlignCenter)
         row.addWidget(self.num, 0, Qt.AlignVCenter)
-        text = label(task.title, wrap=True)
+        text = label(pick(task.title, task.title_en), wrap=True)
         text.setStyleSheet("font-size: 10.5pt;")
         text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        text.setTextInteractionFlags(Qt.TextSelectableByMouse)
         row.addWidget(text, 1)
         self.status = chip("", SUCCESS, SUCCESS_SOFT)
         self.status.hide()
         row.addWidget(self.status, 0, Qt.AlignVCenter)
         if bar.training:
-            self.hint_btn = button("Gợi ý", self.toggle_hint, "ghost", "sm")
+            self.hint_btn = button("💡 " + tr("Gợi ý"), self.toggle_hint, "ghost", "sm")
             row.addWidget(self.hint_btn, 0, Qt.AlignVCenter)
-        self.mark = button("⚑ Đánh dấu", None, None, "sm")
+        self.mark = button("⚑ " + tr("Đánh dấu"), None, None, "sm")
         self.mark.setCheckable(True)
         self.mark.setProperty("toggle", "mark")
         self.mark.toggled.connect(self._on_mark)
         row.addWidget(self.mark, 0, Qt.AlignVCenter)
-        self.done = button("✓ Đã làm", None, None, "sm")
+        self.done = button("✓ " + tr("Đã làm"), None, None, "sm")
         self.done.setCheckable(True)
         self.done.setProperty("toggle", "done")
         self.done.toggled.connect(self._on_done)
         row.addWidget(self.done, 0, Qt.AlignVCenter)
         outer.addLayout(row)
-        self.hint = label(f"<b>Cách làm:</b> {task.hint}", wrap=True)
-        self.hint.setStyleSheet(f"background:{WARN_SOFT}; color:#7A2E0E; border-radius:8px; padding:8px 12px;")
+        self.hint = label(f"<b>{tr('Cách làm:')}</b> {esc(pick(task.hint, task.hint_en))}", wrap=True)
+        self.hint.setStyleSheet(f"background:{GOLD_SOFT}; color:#5C4410; border-radius:10px; padding:8px 12px;")
         self.hint.hide()
         outer.addWidget(self.hint)
         self.mark.setChecked(key in bar.s.marked)
@@ -711,6 +857,8 @@ class TaskCard(QFrame):
         self._paint_num()
         if key in bar.checked:
             self.set_status(bar.checked[key])
+        if key in bar.hints_open and bar.training:
+            self.toggle_hint()
 
     def _paint_num(self):
         c = self.bar.color
@@ -729,19 +877,20 @@ class TaskCard(QFrame):
 
     def toggle_hint(self):
         self.hint.setVisible(not self.hint.isVisible())
-        self.hint_btn.setText("Ẩn gợi ý" if self.hint.isVisible() else "Gợi ý")
+        (self.bar.hints_open.add if self.hint.isVisible() else self.bar.hints_open.discard)(self.key)
+        self.hint_btn.setText(("🙈 " + tr("Ẩn gợi ý")) if self.hint.isVisible() else ("💡 " + tr("Gợi ý")))
 
     def set_status(self, ok: bool | None):
         if ok is None:
-            T.set_chip(self.status, "Tự kiểm tra", WARN, WARN_SOFT)
+            T.set_chip(self.status, tr("Tự kiểm tra"), WARN, WARN_SOFT)
         else:
-            T.set_chip(self.status, "✓ Đúng" if ok else "✗ Sai", SUCCESS if ok else DANGER,
+            T.set_chip(self.status, "✓ " + tr("Đúng") if ok else "✗ " + tr("Sai"), SUCCESS if ok else DANGER,
                        SUCCESS_SOFT if ok else DANGER_SOFT)
         self.status.show()
 
 
 class ExamBar(QWidget):
-    HEIGHT = 380
+    HEIGHT = 390
 
     def __init__(self, session: core.Session, on_finish, on_quit):
         super().__init__(None, Qt.Window | Qt.WindowStaysOnTopHint)
@@ -752,19 +901,37 @@ class ExamBar(QWidget):
         self.seconds = 0 if self.training else session.exam.minutes * 60
         self.finished = False
         self.checked: dict = {}
+        self.hints_open: set = set()
         _, self.color, self.tint, _ = T.brand(session.exam.code)
-        self.setWindowTitle(f"MOS – {session.exam.name}")
         self.setWindowIcon(app_icon())
         self.setObjectName("Page")
         self.setAttribute(Qt.WA_StyledBackground, True)
         geo = QGuiApplication.primaryScreen().availableGeometry()
         self.setGeometry(geo.x(), geo.y() + geo.height() - self.HEIGHT - 30, geo.width(), self.HEIGHT)
+        outer = QVBoxLayout(self)
+        outer.setContentsMargins(0, 0, 0, 0)
+        self.root = None
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.tick)
+        self.timer.start(1000)
+        self._build()
+        QTimer.singleShot(0, self.open_file)
 
-        lay = QVBoxLayout(self)
+    def _build(self):
+        """Dựng (lại) toàn bộ nội dung thanh – gọi lại khi đổi ngôn ngữ."""
+        if self.root is not None:
+            self.layout().removeWidget(self.root)
+            self.root.deleteLater()
+        self.root = QWidget()
+        self.root.setObjectName("Page")
+        self.layout().addWidget(self.root)
+        session = self.s
+        self.setWindowTitle(f"MOS – {exam_name(session.exam)}")
+        lay = QVBoxLayout(self.root)
         lay.setContentsMargins(0, 0, 0, 0)
         lay.setSpacing(0)
 
-        # --- đầu: môn, chế độ, tab dự án, đồng hồ
+        # --- đầu: môn, chế độ, tab dự án, ngôn ngữ, đồng hồ
         head = QWidget()
         head.setObjectName("BarHeader")
         head.setAttribute(Qt.WA_StyledBackground, True)
@@ -772,15 +939,15 @@ class ExamBar(QWidget):
         hl.setContentsMargins(16, 10, 16, 10)
         hl.setSpacing(12)
         hl.addWidget(T.badge(session.exam.code, 30))
-        name = label(session.exam.name)
-        name.setStyleSheet("font-weight: 800; font-size: 11pt;")
+        name = label(exam_name(session.exam).replace("Microsoft ", ""))
+        name.setStyleSheet(f"font-family: '{T.pick_heading_family()}'; font-weight: 800; font-size: 12pt;")
         hl.addWidget(name)
-        hl.addWidget(chip("LUYỆN TẬP" if self.training else "THI THỬ", "white",
-                          PRIMARY if self.training else "#7A5AF8"))
-        hl.addSpacing(18)
+        hl.addWidget(chip(tr("LUYỆN TẬP") if self.training else tr("THI THỬ"), T.TEXT,
+                          T.OLIVE if self.training else "#E3C66B"))
+        hl.addSpacing(14)
         self.tabs = QButtonGroup(self)
         for i, p in enumerate(session.exam.projects):
-            short = p.name.split("–")[-1].strip()
+            short = pick(p.name, p.name_en).split("–")[-1].strip()
             if len(session.exam.projects) > 4 and len(short) > 14:
                 short = short[:13] + "…"
             t = QPushButton(f"{i + 1}  {short}")
@@ -791,6 +958,7 @@ class ExamBar(QWidget):
             self.tabs.addButton(t, i)
             hl.addWidget(t)
         hl.addStretch()
+        hl.addWidget(T.lang_switch(i18n.get_lang(), self.change_language, dark=True))
         self.timer_lbl = QLabel()
         hl.addWidget(self.timer_lbl)
         lay.addWidget(head)
@@ -798,7 +966,7 @@ class ExamBar(QWidget):
         # --- mô tả dự án
         intro = QWidget()
         intro.setAttribute(Qt.WA_StyledBackground, True)
-        intro.setStyleSheet(f"background: {self.tint};")
+        intro.setStyleSheet(f"background: {PRIMARY_SOFT};")
         il = QHBoxLayout(intro)
         il.setContentsMargins(18, 8, 18, 8)
         self.intro = label("", wrap=True)
@@ -823,35 +991,37 @@ class ExamBar(QWidget):
         fl = QHBoxLayout(foot)
         fl.setContentsMargins(16, 10, 16, 10)
         fl.setSpacing(8)
-        fl.addWidget(button("Mở file", self.open_file))
-        fl.addWidget(button("Làm lại dự án", self.reset_project))
+        fl.addWidget(button("📂 " + tr("Mở file"), self.open_file))
+        fl.addWidget(button("↺ " + tr("Làm lại dự án"), self.reset_project))
         if self.training:
-            fl.addWidget(button("✓ Kiểm tra dự án", self.check_current, "ghost"))
+            fl.addWidget(button("✓ " + tr("Kiểm tra dự án"), self.check_current, "accent"))
         fl.addSpacing(12)
         self.progress_lbl = label("", "muted")
         fl.addWidget(self.progress_lbl)
         fl.addStretch()
-        self.prev_btn = button("‹  Dự án trước", lambda: self.go(self.idx - 1))
-        self.next_btn = button("Dự án sau  ›", lambda: self.go(self.idx + 1))
+        self.prev_btn = button("‹  " + tr("Dự án trước"), lambda: self.go(self.idx - 1))
+        self.next_btn = button(tr("Dự án sau") + "  ›", lambda: self.go(self.idx + 1))
         fl.addWidget(self.prev_btn)
         fl.addWidget(self.next_btn)
         fl.addSpacing(8)
-        fl.addWidget(button("Nộp bài", self.submit, "primary"))
+        fl.addWidget(button(tr("Nộp bài"), self.submit, "primary"))
         lay.addWidget(foot)
 
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.tick)
-        self.timer.start(1000)
         self._render_timer()
         self.show_project()
-        QTimer.singleShot(0, self.open_file)
+
+    def change_language(self, code: str):
+        i18n.set_lang(code)
+        self._build()
 
     # ------------------------------------------------------------ hiển thị
     def show_project(self):
         project = self.s.exam.projects[self.idx]
         n = len(self.s.exam.projects)
         self.tabs.button(self.idx).setChecked(True)
-        self.intro.setText(f"<b>{project.name}</b> — {project.intro}  <i>Làm xong nhớ lưu file (Ctrl + S).</i>")
+        self.intro.setText(f"<b>{esc(pick(project.name, project.name_en))}</b> — "
+                           f"{esc(pick(project.intro, project.intro_en))}  "
+                           f"<i>{tr('Làm xong nhớ lưu file (Ctrl + S).')}</i>")
         self.file_lbl.setText(project.filename)
         self.prev_btn.setEnabled(self.idx > 0)
         self.next_btn.setEnabled(self.idx < n - 1)
@@ -872,9 +1042,9 @@ class ExamBar(QWidget):
 
     def update_progress(self):
         total = sum(len(p.tasks) for p in self.s.exam.projects)
-        text = f"Đã làm {len(self.s.done)}/{total}"
+        text = tr("Đã làm {n}/{total}").format(n=len(self.s.done), total=total)
         if self.s.marked:
-            text += f"  ·  Đánh dấu {len(self.s.marked)}"
+            text += "  ·  " + tr("Đánh dấu {n}").format(n=len(self.s.marked))
         self.progress_lbl.setText(text)
 
     def _render_timer(self):
@@ -891,8 +1061,8 @@ class ExamBar(QWidget):
         self._render_timer()
         if not self.training and self.seconds <= 0:
             self.timer.stop()
-            T.warn(self, "Hết giờ", "Đã hết thời gian. Bài sẽ được nộp tự động.\n"
-                                    "(Các thay đổi chưa lưu sẽ không được tính.)")
+            T.warn(self, tr("Hết giờ"), tr("Đã hết thời gian. Bài sẽ được nộp tự động.\n"
+                                           "(Các thay đổi chưa lưu sẽ không được tính.)"))
             self.finish()
 
     # ------------------------------------------------------------ thao tác
@@ -901,7 +1071,7 @@ class ExamBar(QWidget):
         try:
             core.open_in_office(path)
         except OSError as exc:
-            T.error(self, "Không mở được file", f"{exc}\n\nHãy tự mở file:\n{path}")
+            T.error(self, tr("Không mở được file"), f"{exc}\n\n" + tr("Hãy tự mở file:") + f"\n{path}")
 
     def go(self, idx):
         if 0 <= idx < len(self.s.exam.projects) and idx != self.idx:
@@ -914,9 +1084,10 @@ class ExamBar(QWidget):
     def reset_project(self):
         path = self.s.file_of(self.idx)
         if core.file_is_open(path):
-            T.warn(self, "File đang mở", "Hãy ĐÓNG file trong Office trước khi làm lại dự án.")
+            T.warn(self, tr("File đang mở"), tr("Hãy ĐÓNG file trong Office trước khi làm lại dự án."))
             return
-        if T.confirm(self, "Làm lại dự án", "Tạo lại file gốc cho dự án này?\n(Bài cũ được lưu với tên *_cu)"):
+        if T.confirm(self, tr("Làm lại dự án"), tr("Tạo lại file gốc cho dự án này?\n"
+                                                   "(Bài cũ được lưu với tên *_cu)")):
             core.reset_project(self.s, self.idx)
             for t in range(len(self.s.exam.projects[self.idx].tasks)):
                 self.checked.pop((self.idx, t), None)
@@ -925,8 +1096,9 @@ class ExamBar(QWidget):
 
     def _confirm_saved(self, path) -> bool:
         if core.file_is_open(path):
-            return T.confirm(self, "File đang mở", "File vẫn đang mở trong Office. Chỉ những gì đã LƯU mới "
-                                                    "được chấm.\n\nBạn đã bấm Ctrl + S chưa? Chọn Đồng ý để chấm.")
+            return T.confirm(self, tr("File đang mở"), tr("File vẫn đang mở trong Office. Chỉ những gì đã LƯU mới "
+                                                          "được chấm.\n\nBạn đã bấm Ctrl + S chưa? Chọn Đồng ý để "
+                                                          "chấm."))
         return True
 
     def check_current(self):
@@ -938,16 +1110,19 @@ class ExamBar(QWidget):
             card.set_status(r.correct)
         errs = [r.error for r in results if r.error]
         if errs:
-            T.warn(self, "Không đọc được file", f"Lỗi: {errs[0]}\n\nHãy lưu lại file rồi thử lại.")
+            T.warn(self, tr("Không đọc được file"), tr("Lỗi: {err}\n\nHãy lưu lại file rồi thử lại.")
+                   .format(err=errs[0]))
+        elif results and all(r.correct is not False for r in results):
+            T.Confetti(self.area.viewport(), count=80, seconds=2.5)
 
     def submit(self):
         opened = [i for i in range(len(self.s.exam.projects)) if core.file_is_open(self.s.file_of(i))]
-        msg = "Nộp bài và chấm điểm?"
+        msg = tr("Nộp bài và chấm điểm?")
         if opened:
-            msg = "Vẫn còn file đang mở trong Office. Chỉ phần đã LƯU mới được chấm.\n\n" + msg
+            msg = tr("Vẫn còn file đang mở trong Office. Chỉ phần đã LƯU mới được chấm.") + "\n\n" + msg
         if self.s.marked:
-            msg = f"Bạn còn {len(self.s.marked)} nhiệm vụ đánh dấu xem lại.\n" + msg
-        if T.confirm(self, "Nộp bài", msg):
+            msg = tr("Bạn còn {n} nhiệm vụ đánh dấu xem lại.").format(n=len(self.s.marked)) + "\n" + msg
+        if T.confirm(self, tr("Nộp bài"), msg):
             self.finish()
 
     def finish(self):
@@ -955,17 +1130,21 @@ class ExamBar(QWidget):
         self.timer.stop()
         report = core.grade(self.s)
         report["duration"] = int(time.time() - self.started)
+        before = core.load_history(self.s.user)
         try:
             core.save_history(report)
         except OSError:
             pass
+        entry = {k: v for k, v in report.items() if k != "results"}
+        report["xp"] = gamify.attempt_xp(entry)
+        report["new_badges"] = [b.key for b in gamify.new_badges(before, before + [entry])]
         self.close()
         self.on_finish(self.s, report)
 
     def closeEvent(self, e):
         if self.finished:
             return super().closeEvent(e)
-        if T.confirm(self, "Thoát bài thi", "Thoát bài thi? Kết quả sẽ không được chấm."):
+        if T.confirm(self, tr("Thoát bài thi"), tr("Thoát bài thi? Kết quả sẽ không được chấm.")):
             self.finished = True
             self.timer.stop()
             super().closeEvent(e)
@@ -985,7 +1164,7 @@ def main() -> None:
     app.setStyle("Fusion")
     family = T.pick_font_family()
     app.setFont(QFont(family, 10))
-    app.setStyleSheet(T.stylesheet(family))
+    app.setStyleSheet(T.stylesheet(family, T.pick_heading_family()))
     win = MainWindow(AccountStore())
     win.show()
     sys.exit(app.exec())

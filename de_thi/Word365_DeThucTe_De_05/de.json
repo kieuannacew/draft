@@ -1,19 +1,24 @@
 {
   "mon": "WORD",
   "ten": "Word – Đề 05 (Word365_DeThucTe)",
+  "ten_en": "Word – Test 05 (Word365_DeThucTe)",
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_05",
-  "dau_vet": "107065a630996b95",
+  "dau_vet": "3b6243c5b20d7321",
   "du_an": [
     {
-      "ten": "Project 1 – Space",
+      "ten": "Dự án 1 – Space",
+      "ten_en": "Project 1 – Space",
       "file": "De05_P1_Space.docx",
-      "mo_ta": "Mở file De05_P1_Space.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P1_Space.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P1_Space.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "At the end of the sentence “Shows start every hour and last thirty minutes.”, insert a continuous section break.",
+          "yeu_cau": "Ở cuối câu “Shows start every hour and last thirty minutes.”, chèn ngắt section kiểu Continuous.",
+          "yeu_cau_en": "At the end of the sentence “Shows start every hour and last thirty minutes.”, insert a continuous section break.",
           "goi_y": "1) Đặt con trỏ ngay sau dấu chấm cuối câu.  2) Layout > Breaks > Section Breaks: Continuous.",
+          "goi_y_en": "1) Put the cursor right after the period at the end of the sentence.  2) Layout > Breaks > Section Breaks: Continuous.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sbreak_cont",
@@ -21,8 +26,10 @@
           }
         },
         {
-          "yeu_cau": "In the file properties, add “Training” as a category.",
+          "yeu_cau": "Trong thuộc tính tệp, thêm “Training” làm Category.",
+          "yeu_cau_en": "In the file properties, add “Training” as a category.",
           "goi_y": "1) File > Info > Properties > Show All Properties (hoặc Advanced Properties > Summary).  2) Ô Categories: nhập \"Training\". Nhấn ra ngoài/OK để lưu.",
+          "goi_y_en": "1) File > Info > Properties > Show All Properties (or Advanced Properties > Summary).  2) Categories box: enter \"Training\". Click outside / OK to save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "prop_category",
@@ -30,8 +37,10 @@
           }
         },
         {
-          "yeu_cau": "In the “The Inner Planets” section, in the blank paragraph, insert the Space_photo.png picture from the Files folder.",
+          "yeu_cau": "Trong mục “The Inner Planets”, ở đoạn trống, chèn ảnh Space_photo.png từ thư mục Files.",
+          "yeu_cau_en": "In the “The Inner Planets” section, in the blank paragraph, insert the Space_photo.png picture from the Files folder.",
           "goi_y": "1) Đặt con trỏ vào đoạn trống cuối section.  2) Insert > Pictures > This Device > mở thư mục Files của bộ đề > chọn Space_photo.png > Insert.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the section.  2) Insert > Pictures > This Device > open the Files folder of the exam > choose Space_photo.png > Insert.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_insert",
@@ -42,17 +51,28 @@
           }
         },
         {
-          "yeu_cau": "Resize the table in the “Space Missions” section to fit the page width by using the AutoFit Window option.",
+          "yeu_cau": "Co giãn bảng trong mục “Space Missions” vừa chiều rộng trang bằng tùy chọn AutoFit Window.",
+          "yeu_cau_en": "Resize the table in the “Space Missions” section to fit the page width by using the AutoFit Window option.",
           "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > AutoFit > AutoFit Window.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > AutoFit > AutoFit Window.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "autofit",
-            "de_bai": "Resize the table in the “Space Missions” section to fit the page width by using the AutoFit Window option."
+            "de_bai": "Resize the table in the “Space Missions” section to fit the page width by using the AutoFit Window option.",
+            "goc": {
+              "grid": [
+                3120,
+                3120,
+                3120
+              ]
+            }
           }
         },
         {
-          "yeu_cau": "In the “Space Missions” section, apply the Grid Table 5 Dark - Accent 2 table style to the table. Remove the formatting from the first column.",
+          "yeu_cau": "Trong mục “Space Missions”, áp dụng table style Grid Table 5 Dark - Accent 2 cho bảng. Bỏ định dạng cột đầu tiên (First Column).",
+          "yeu_cau_en": "In the “Space Missions” section, apply the Grid Table 5 Dark - Accent 2 table style to the table. Remove the formatting from the first column.",
           "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > Grid Table 5 Dark - Accent 2.  3) Table Style Options: bỏ tích First Column.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Design > Table Styles > Grid Table 5 Dark - Accent 2.  3) Table Style Options: clear First Column.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_style",
@@ -62,13 +82,17 @@
       ]
     },
     {
-      "ten": "Project 2 – Museum",
+      "ten": "Dự án 2 – Museum",
+      "ten_en": "Project 2 – Museum",
       "file": "De05_P2_Museum.docx",
-      "mo_ta": "Mở file De05_P2_Museum.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P2_Museum.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P2_Museum.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Use a Word feature to replace all instances of “Lotus Museum” with “LM”.",
+          "yeu_cau": "Dùng một tính năng của Word để thay mọi chỗ có “Lotus Museum” bằng “LM”.",
+          "yeu_cau_en": "Use a Word feature to replace all instances of “Lotus Museum” with “LM”.",
           "goi_y": "1) Home > Replace (Ctrl+H).  2) Find what: Lotus Museum; Replace with: LM.  3) Replace All > OK.",
+          "goi_y_en": "1) Home > Replace (Ctrl+H).  2) Find what: Lotus Museum; Replace with: LM.  3) Replace All > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "replace_all",
@@ -80,8 +104,10 @@
           }
         },
         {
-          "yeu_cau": "Add a custom text watermark that displays “DO NOT SHARE”. Accept all other default settings.",
+          "yeu_cau": "Thêm watermark dạng chữ tùy chỉnh hiển thị “DO NOT SHARE”. Giữ nguyên mọi thiết lập mặc định khác.",
+          "yeu_cau_en": "Add a custom text watermark that displays “DO NOT SHARE”. Accept all other default settings.",
           "goi_y": "1) Design > Watermark > Custom Watermark.  2) Chọn Text watermark; Text: DO NOT SHARE > OK.",
+          "goi_y_en": "1) Design > Watermark > Custom Watermark.  2) Choose Text watermark; Text: DO NOT SHARE > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "watermark",
@@ -89,8 +115,10 @@
           }
         },
         {
-          "yeu_cau": "Apply the Mirrored margin setting to the entire document.",
+          "yeu_cau": "Áp dụng lề Mirrored cho toàn bộ tài liệu.",
+          "yeu_cau_en": "Apply the Mirrored margin setting to the entire document.",
           "goi_y": "Layout > Margins > Mirrored.",
+          "goi_y_en": "Layout > Margins > Mirrored.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "margins_preset",
@@ -98,8 +126,10 @@
           }
         },
         {
-          "yeu_cau": "Position the picture in the “Ornithischian Dinosaurs” section in the Top Left of the page with square text wrapping.",
+          "yeu_cau": "Đặt ảnh trong mục “Ornithischian Dinosaurs” ở vị trí Top Left của trang, ngắt dòng kiểu Square.",
+          "yeu_cau_en": "Position the picture in the “Ornithischian Dinosaurs” section in the Top Left of the page with square text wrapping.",
           "goi_y": "1) Chọn ảnh.  2) Picture Format > Position > With Text Wrapping: Position in Top Left with Square Text Wrapping.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Position > With Text Wrapping: Position in Top Left with Square Text Wrapping.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_position",
@@ -107,8 +137,10 @@
           }
         },
         {
-          "yeu_cau": "In the SmartArt graphic in the “Theropod Dinosaurs” section, demote “Lived in large herds” so that it becomes a second-level item under “Developed a narrow eyebrow”.",
+          "yeu_cau": "Trong sơ đồ SmartArt ở mục “Theropod Dinosaurs”, hạ cấp (demote) “Lived in large herds” để nó thành mục cấp 2 nằm dưới “Developed a narrow eyebrow”.",
+          "yeu_cau_en": "In the SmartArt graphic in the “Theropod Dinosaurs” section, demote “Lived in large herds” so that it becomes a second-level item under “Developed a narrow eyebrow”.",
           "goi_y": "1) Bấm chọn hình \"Lived in large herds\" (hoặc đặt con trỏ ở dòng đó trong Text Pane).  2) SmartArt Design > Demote (hoặc nhấn Tab trong Text Pane).",
+          "goi_y_en": "1) Select the \"Lived in large herds\" shape (or put the cursor on that line in the Text Pane).  2) SmartArt Design > Demote (or press Tab in the Text Pane).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_demote",
@@ -116,8 +148,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Fossil Discoveries” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
+          "yeu_cau": "Trong mục “Fossil Discoveries”, cho danh sách thứ hai đánh số tiếp theo danh sách đầu để các mục được đánh số từ 1 đến 6.",
+          "yeu_cau_en": "In the “Fossil Discoveries” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
           "goi_y": "1) Nhấp phải vào mục \"Lived in large herds\" (đang đánh số 1).  2) Chọn Continue Numbering.",
+          "goi_y_en": "1) Right-click the item \"Lived in large herds\" (currently numbered 1).  2) Choose Continue Numbering.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "continue_num",
@@ -127,13 +161,17 @@
       ]
     },
     {
-      "ten": "Project 3 – Fitness",
+      "ten": "Dự án 3 – Fitness",
+      "ten_en": "Project 3 – Fitness",
       "file": "De05_P3_Fitness.docx",
-      "mo_ta": "Mở file De05_P3_Fitness.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P3_Fitness.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P3_Fitness.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "In the “Become a Member Today!” section, resolve the comment.",
+          "yeu_cau": "Trong mục “Become a Member Today!”, đánh dấu comment là đã giải quyết (Resolve).",
+          "yeu_cau_en": "In the “Become a Member Today!” section, resolve the comment.",
           "goi_y": "1) Bấm vào comment.  2) Bấm … (More thread actions) > Resolve thread.",
+          "goi_y_en": "1) Click the comment.  2) Click … (More thread actions) > Resolve thread.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "comment_resolve",
@@ -145,8 +183,10 @@
           }
         },
         {
-          "yeu_cau": "Change the font of the heading “Nutrition” to Century Gothic, 20 pt.",
+          "yeu_cau": "Đổi font của tiêu đề “Nutrition” thành Century Gothic, cỡ 20 pt.",
+          "yeu_cau_en": "Change the font of the heading “Nutrition” to Century Gothic, 20 pt.",
           "goi_y": "1) Chọn tiêu đề.  2) Home > Font: Century Gothic; Font Size: 20.",
+          "goi_y_en": "1) Select the heading.  2) Home > Font: Century Gothic; Font Size: 20.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "font_format",
@@ -154,8 +194,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Personal Training” section, merge the cells in the first table row.",
+          "yeu_cau": "Trong mục “Personal Training”, gộp các ô ở hàng đầu tiên của bảng.",
+          "yeu_cau_en": "In the “Personal Training” section, merge the cells in the first table row.",
           "goi_y": "1) Chọn toàn bộ hàng đầu tiên của bảng.  2) Table Layout > Merge Cells.",
+          "goi_y_en": "1) Select the entire first row of the table.  2) Table Layout > Merge Cells.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "merge_cells",
@@ -163,8 +205,10 @@
           }
         },
         {
-          "yeu_cau": "Change the colors of the chart in the “Personal Training” section to Monochromatic Palette 1.",
+          "yeu_cau": "Đổi màu biểu đồ trong mục “Personal Training” thành Monochromatic Palette 1.",
+          "yeu_cau_en": "Change the colors of the chart in the “Personal Training” section to Monochromatic Palette 1.",
           "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Change Colors > Monochromatic Palette 1.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Change Colors > Monochromatic Palette 1.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_colors",
@@ -175,8 +219,10 @@
           }
         },
         {
-          "yeu_cau": "Remove the major gridlines from the chart in the “Personal Training” section.",
+          "yeu_cau": "Bỏ đường lưới chính (major gridlines) của biểu đồ trong mục “Personal Training”.",
+          "yeu_cau_en": "Remove the major gridlines from the chart in the “Personal Training” section.",
           "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Gridlines > bấm Primary Major Vertical để bỏ chọn.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Gridlines > click Primary Major Vertical to clear it.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_gridlines",
@@ -186,13 +232,17 @@
       ]
     },
     {
-      "ten": "Project 4 – Resume",
+      "ten": "Dự án 4 – Resume",
+      "ten_en": "Project 4 – Resume",
       "file": "De05_P4_Resume.docx",
-      "mo_ta": "Mở file De05_P4_Resume.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P4_Resume.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P4_Resume.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Change the table of contents so that it shows only Heading 1 and Heading 2 headings.",
+          "yeu_cau": "Sửa mục lục để chỉ hiện các tiêu đề Heading 1 và Heading 2.",
+          "yeu_cau_en": "Change the table of contents so that it shows only Heading 1 and Heading 2 headings.",
           "goi_y": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 2 > OK > Yes.",
+          "goi_y_en": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 2 > OK > Yes.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "toc_modify",
@@ -200,8 +250,10 @@
           }
         },
         {
-          "yeu_cau": "Change the theme colors of the document to Median and the theme fonts to Century Gothic.",
+          "yeu_cau": "Đổi theme colors của tài liệu thành Median và theme fonts thành Century Gothic.",
+          "yeu_cau_en": "Change the theme colors of the document to Median and the theme fonts to Century Gothic.",
           "goi_y": "1) Design > Colors > Median.  2) Design > Fonts > Century Gothic.",
+          "goi_y_en": "1) Design > Colors > Median.  2) Design > Fonts > Century Gothic.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "theme_colors",
@@ -209,8 +261,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Marketing Assistant” section, apply the Soft Edge Rectangle picture style to the picture.",
+          "yeu_cau": "Trong mục “Marketing Assistant”, áp dụng picture style Soft Edge Rectangle cho ảnh.",
+          "yeu_cau_en": "In the “Marketing Assistant” section, apply the Soft Edge Rectangle picture style to the picture.",
           "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Styles > Soft Edge Rectangle.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Picture Styles > Soft Edge Rectangle.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_style",
@@ -218,8 +272,10 @@
           }
         },
         {
-          "yeu_cau": "Format the heading “Education” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
+          "yeu_cau": "Định dạng tiêu đề “Education” để luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề được giữ liền nhau.",
+          "yeu_cau_en": "Format the heading “Education” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
           "goi_y": "1) Đặt con trỏ trong tiêu đề.  2) Home > Paragraph dialog > tab Line and Page Breaks.  3) Tích Keep with next và Keep lines together > OK.",
+          "goi_y_en": "1) Put the cursor in the heading.  2) Home > Paragraph dialog > Line and Page Breaks tab.  3) Check Keep with next and Keep lines together > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "keep_next",
@@ -227,8 +283,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Objective” section, insert a new placeholder citation named “Source9” at the end of the second paragraph after the heading.",
+          "yeu_cau": "Trong mục “Objective”, chèn trích dẫn giữ chỗ (placeholder citation) mới tên “Source9” ở cuối đoạn văn thứ hai sau tiêu đề.",
+          "yeu_cau_en": "In the “Objective” section, insert a new placeholder citation named “Source9” at the end of the second paragraph after the heading.",
           "goi_y": "1) Đặt con trỏ cuối đoạn (trước dấu chấm câu hoặc ngay sau – theo đề: cuối đoạn).  2) References > Insert Citation > Add New Placeholder.  3) Nhập Source9 > OK.",
+          "goi_y_en": "1) Put the cursor at the end of the paragraph (before or right after the final period – the task says end of paragraph).  2) References > Insert Citation > Add New Placeholder.  3) Enter Source9 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "citation",
@@ -236,8 +294,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Skills” section, convert the table to text. Separate the text with commas.",
+          "yeu_cau": "Trong mục “Skills”, chuyển bảng thành văn bản. Phân tách bằng dấu phẩy.",
+          "yeu_cau_en": "In the “Skills” section, convert the table to text. Separate the text with commas.",
           "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Separate text with: Commas > OK.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > Convert to Text > Separate text with: Commas > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_to_text",
@@ -255,13 +315,17 @@
       ]
     },
     {
-      "ten": "Project 5 – Tea",
+      "ten": "Dự án 5 – Tea",
+      "ten_en": "Project 5 – Tea",
       "file": "De05_P5_Tea.docx",
-      "mo_ta": "Mở file De05_P5_Tea.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P5_Tea.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P5_Tea.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Just under the heading “Oolong Tea”, insert a new table that has 3 columns and 3 rows. In the top row, from left to right, type “Time”, “Notes”, “Date”. Fit the table to its contents.",
+          "yeu_cau": "Ngay dưới tiêu đề “Oolong Tea”, chèn bảng mới 3 cột và 3 hàng. Ở hàng trên cùng, từ trái sang phải, gõ “Time”, “Notes”, “Date”. Co giãn bảng vừa với nội dung.",
+          "yeu_cau_en": "Just under the heading “Oolong Tea”, insert a new table that has 3 columns and 3 rows. In the top row, from left to right, type “Time”, “Notes”, “Date”. Fit the table to its contents.",
           "goi_y": "1) Đặt con trỏ cuối dòng tiêu đề, nhấn Enter để tạo dòng mới ngay dưới tiêu đề.  2) Insert > Table > Insert Table: Number of columns 3, Number of rows 3 > OK.  3) Gõ lần lượt Time, Notes, Date vào hàng đầu.  4) Table Layout > AutoFit > AutoFit Contents.",
+          "goi_y_en": "1) Put the cursor at the end of the heading line and press Enter to make a new line just below it.  2) Insert > Table > Insert Table: Number of columns 3, Number of rows 3 > OK.  3) Type Time, Notes, Date in the top row.  4) Table Layout > AutoFit > AutoFit Contents.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "insert_table",
@@ -269,8 +333,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Black Tea” section, format the two paragraphs after the heading into 2 columns with column spacing of 0.4\" (1.02 cm).",
+          "yeu_cau": "Trong mục “Black Tea”, chia hai đoạn văn sau tiêu đề thành 2 cột, khoảng cách giữa các cột 0.4\" (1.02 cm).",
+          "yeu_cau_en": "In the “Black Tea” section, format the two paragraphs after the heading into 2 columns with column spacing of 0.4\" (1.02 cm).",
           "goi_y": "1) Chọn hai đoạn văn (không chọn tiêu đề).  2) Layout > Columns > More Columns > Presets: Two; Spacing: 0.4\" > Apply to: Selected text > OK.",
+          "goi_y_en": "1) Select the two paragraphs (not the heading).  2) Layout > Columns > More Columns > Presets: Two; Spacing: 0.4\" > Apply to: Selected text > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "columns",
@@ -278,8 +344,10 @@
           }
         },
         {
-          "yeu_cau": "Find the word “several” and delete it from the document.",
+          "yeu_cau": "Tìm từ “several” và xóa nó khỏi tài liệu.",
+          "yeu_cau_en": "Find the word “several” and delete it from the document.",
           "goi_y": "1) Home > Find (Ctrl+F) > nhập \"several\" trong ngăn Navigation.  2) Bấm vào kết quả để chọn từ > nhấn Delete (xoá luôn khoảng trắng thừa nếu có).",
+          "goi_y_en": "1) Home > Find (Ctrl+F) > type \"several\" in the Navigation pane.  2) Click the result to select the word > press Delete (also remove the extra space if any).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "find_delete",
@@ -290,8 +358,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Oolong Tea” section, apply a 2 ¼ pt Black, Text 1 outside border to the table. Do not change the inside borders.",
+          "yeu_cau": "Trong mục “Oolong Tea”, áp dụng viền ngoài (outside border) 2 ¼ pt màu Black, Text 1 cho bảng. Không đổi viền bên trong.",
+          "yeu_cau_en": "In the “Oolong Tea” section, apply a 2 ¼ pt Black, Text 1 outside border to the table. Do not change the inside borders.",
           "goi_y": "1) Chọn toàn bộ bảng.  2) Table Design > Pen Weight: 2 ¼ pt; Pen Color: Black, Text 1.  3) Table Design > Borders > Outside Borders.",
+          "goi_y_en": "1) Select the whole table.  2) Table Design > Pen Weight: 2 ¼ pt; Pen Color: Black, Text 1.  3) Table Design > Borders > Outside Borders.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_borders",
@@ -299,8 +369,10 @@
           }
         },
         {
-          "yeu_cau": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Tea”.",
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng Rich Text Format tên “Tea”.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a Rich Text Format file named “Tea”.",
           "goi_y": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Rich Text Format (*.rtf); File name: Tea > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Rich Text Format (*.rtf); File name: Tea > Save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "save_rtf",
@@ -310,13 +382,17 @@
       ]
     },
     {
-      "ten": "Project 6 – Pharma",
+      "ten": "Dự án 6 – Pharma",
+      "ten_en": "Project 6 – Pharma",
       "file": "De05_P6_Pharma.docx",
-      "mo_ta": "Mở file De05_P6_Pharma.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P6_Pharma.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P6_Pharma.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Delete all comments in the document.",
+          "yeu_cau": "Xóa mọi comment trong tài liệu.",
+          "yeu_cau_en": "Delete all comments in the document.",
           "goi_y": "Review > mũi tên Delete > Delete All Comments in Document.",
+          "goi_y_en": "Review > Delete arrow > Delete All Comments in Document.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "comment_delete_all",
@@ -324,8 +400,10 @@
           }
         },
         {
-          "yeu_cau": "Display the Banded header on all pages of the document except page 1.",
+          "yeu_cau": "Hiển thị header Banded trên mọi trang của tài liệu trừ trang 1.",
+          "yeu_cau_en": "Display the Banded header on all pages of the document except page 1.",
           "goi_y": "1) Insert > Header > Banded.  2) Trên tab Header & Footer: tích Different First Page.  3) Kiểm tra trang 1 không có header, các trang sau có. Close Header and Footer.",
+          "goi_y_en": "1) Insert > Header > Banded.  2) On the Header & Footer tab: check Different First Page.  3) Check that page 1 has no header and later pages do. Close Header and Footer.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "header_gallery",
@@ -338,8 +416,10 @@
           }
         },
         {
-          "yeu_cau": "Turn on automatic hyphenation for the document.",
+          "yeu_cau": "Bật tự động ngắt từ (automatic hyphenation) cho tài liệu.",
+          "yeu_cau_en": "Turn on automatic hyphenation for the document.",
           "goi_y": "Layout > Hyphenation > Automatic.",
+          "goi_y_en": "Layout > Hyphenation > Automatic.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "hyphenation",
@@ -347,8 +427,10 @@
           }
         },
         {
-          "yeu_cau": "Change the layout of the SmartArt graphic in the “Fill Material” section to Basic Block List.",
+          "yeu_cau": "Đổi bố cục (layout) sơ đồ SmartArt trong mục “Fill Material” thành Basic Block List.",
+          "yeu_cau_en": "Change the layout of the SmartArt graphic in the “Fill Material” section to Basic Block List.",
           "goi_y": "1) Chọn SmartArt (bấm viền ngoài).  2) SmartArt Design > Layouts > More > chọn Basic Block List (trong nhóm Process/List) > OK.",
+          "goi_y_en": "1) Select the SmartArt (click its outer border).  2) SmartArt Design > Layouts > More > choose Basic Block List (in the Process/List group) > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_layout",
@@ -361,8 +443,10 @@
           }
         },
         {
-          "yeu_cau": "Change the citation and bibliography style of the document to APA.",
+          "yeu_cau": "Đổi kiểu trích dẫn và danh mục tài liệu tham khảo (citation & bibliography style) của tài liệu thành APA.",
+          "yeu_cau_en": "Change the citation and bibliography style of the document to APA.",
           "goi_y": "References > Style > APA.",
+          "goi_y_en": "References > Style > APA.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "biblio_style",
@@ -370,8 +454,10 @@
           }
         },
         {
-          "yeu_cau": "Save a copy of the document in your Documents folder as a PDF file named “Pharma2026” that is optimized for minimum size (publishing online). Do not open the file after publishing.",
+          "yeu_cau": "Lưu một bản sao tài liệu vào thư mục Documents dạng PDF tên “Pharma2026”, tối ưu cho Minimum size (publishing online). Không mở file sau khi xuất.",
+          "yeu_cau_en": "Save a copy of the document in your Documents folder as a PDF file named “Pharma2026” that is optimized for minimum size (publishing online). Do not open the file after publishing.",
           "goi_y": "1) File > Save a Copy > Browse > Documents.  2) File name: Pharma2026; Save as type: PDF (*.pdf).  3) Optimize for: chọn Minimum size (publishing online); bỏ chọn Open file after publishing > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse > Documents.  2) File name: Pharma2026; Save as type: PDF (*.pdf).  3) Optimize for: Minimum size (publishing online); clear Open file after publishing > Save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "save_pdf",
@@ -381,13 +467,17 @@
       ]
     },
     {
-      "ten": "Project 7 – Recycle (Expert)",
+      "ten": "Dự án 7 – Recycle (Expert)",
+      "ten_en": "Project 7 – Recycle (Expert)",
       "file": "De05_P7_Recycle_Expert.docx",
-      "mo_ta": "Mở file De05_P7_Recycle_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De05_P7_Recycle_Expert.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De05_P7_Recycle_Expert.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Save the current style set as a new style set named “RecycleStyleSet” in the default location.",
+          "yeu_cau": "Lưu style set hiện tại thành style set mới tên “RecycleStyleSet” ở vị trí mặc định.",
+          "yeu_cau_en": "Save the current style set as a new style set named “RecycleStyleSet” in the default location.",
           "goi_y": "1) Design > mở gallery Style Set > Save as a New Style Set.  2) File name: RecycleStyleSet > Save (giữ thư mục QuickStyles mặc định).",
+          "goi_y_en": "1) Design > open the Style Set gallery > Save as a New Style Set.  2) File name: RecycleStyleSet > Save (keep the default QuickStyles folder).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_styleset",
@@ -398,8 +488,10 @@
           }
         },
         {
-          "yeu_cau": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4.",
+          "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục tùy chỉnh hiện 3 cấp tiêu đề và gồm cả các mục dùng style Subtitle ở TOC level 4.",
+          "yeu_cau_en": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4.",
           "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới banner tiêu đề.  2) References > Table of Contents > Custom Table of Contents > Show levels: 3.  3) Options… > tìm Subtitle, nhập 4 vào ô TOC level > OK > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph right below the title banner.  2) References > Table of Contents > Custom Table of Contents > Show levels: 3.  3) Options… > find Subtitle, type 4 in its TOC level box > OK > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_toc",
@@ -407,8 +499,10 @@
           }
         },
         {
-          "yeu_cau": "In the “What Cannot Be Recycled?” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together.",
+          "yeu_cau": "Trong mục “What Cannot Be Recycled?”, tắt Widow/Orphan control cho hai đoạn văn sau tiêu đề và giữ các dòng của mỗi đoạn liền nhau (Keep lines together).",
+          "yeu_cau_en": "In the “What Cannot Be Recycled?” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together.",
           "goi_y": "1) Chọn hai đoạn.  2) Home > Paragraph dialog > Line and Page Breaks: bỏ Widow/Orphan control; tích Keep lines together > OK.",
+          "goi_y_en": "1) Select the two paragraphs.  2) Home > Paragraph dialog > Line and Page Breaks: clear Widow/Orphan control; check Keep lines together > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "widow",
@@ -416,8 +510,10 @@
           }
         },
         {
-          "yeu_cau": "Create a custom theme color set named “Recycle Colors” that uses Orange (Standard Colors) as the Accent 1 color.",
+          "yeu_cau": "Tạo bộ theme colors tùy chỉnh tên “Recycle Colors”, dùng màu Orange (Standard Colors) làm màu Accent 1.",
+          "yeu_cau_en": "Create a custom theme color set named “Recycle Colors” that uses Orange (Standard Colors) as the Accent 1 color.",
           "goi_y": "1) Design > Colors > Customize Colors.  2) Accent 1: chọn Orange trong Standard Colors.  3) Name: Recycle Colors > Save.",
+          "goi_y_en": "1) Design > Colors > Customize Colors.  2) Accent 1: choose Orange under Standard Colors.  3) Name: Recycle Colors > Save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_colors",
@@ -425,8 +521,10 @@
           }
         },
         {
-          "yeu_cau": "Mark the document as final.",
+          "yeu_cau": "Đánh dấu tài liệu là bản cuối (Mark as Final).",
+          "yeu_cau_en": "Mark the document as final.",
           "goi_y": "File > Info > Protect Document > Mark as Final > OK > OK.",
+          "goi_y_en": "File > Info > Protect Document > Mark as Final > OK > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "mark_final",

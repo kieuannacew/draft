@@ -1,19 +1,24 @@
 {
   "mon": "WORD",
   "ten": "Word – Đề 08 (Word365_DeThucTe)",
+  "ten_en": "Word – Test 08 (Word365_DeThucTe)",
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_08",
-  "dau_vet": "d8f0ffbeb081dbee",
+  "dau_vet": "bec809626a720c90",
   "du_an": [
     {
-      "ten": "Project 1 – Energy",
+      "ten": "Dự án 1 – Energy",
+      "ten_en": "Project 1 – Energy",
       "file": "De08_P1_Energy.docx",
-      "mo_ta": "Mở file De08_P1_Energy.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P1_Energy.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P1_Energy.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "At the end of the document title, insert a heart symbol. Use the Webdings font and character code “89”.",
+          "yeu_cau": "Ở cuối tiêu đề chính của tài liệu, chèn ký hiệu trái tim. Dùng font Webdings và mã ký tự “89”.",
+          "yeu_cau_en": "At the end of the document title, insert a heart symbol. Use the Webdings font and character code “89”.",
           "goi_y": "1) Đặt con trỏ cuối tiêu đề.  2) Insert > Symbol > More Symbols > Font: Webdings; Character code: 89 > Insert > Close.",
+          "goi_y_en": "1) Put the cursor at the end of the title.  2) Insert > Symbol > More Symbols > Font: Webdings; Character code: 89 > Insert > Close.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "symbol",
@@ -21,8 +26,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Partners” section, set the spacing between the cells of the table to 0.05\" (0.13 cm).",
+          "yeu_cau": "Trong mục “Partners”, đặt khoảng cách giữa các ô của bảng là 0.05\" (0.13 cm).",
+          "yeu_cau_en": "In the “Partners” section, set the spacing between the cells of the table to 0.05\" (0.13 cm).",
           "goi_y": "1) Đặt con trỏ trong bảng > Table Layout > Cell Margins.  2) Tích Allow spacing between cells: 0.05\" > OK.",
+          "goi_y_en": "1) Put the cursor in the table > Table Layout > Cell Margins.  2) Check Allow spacing between cells: 0.05\" > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "cell_spacing",
@@ -30,8 +37,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Future Plans” section, resize the picture to a height of 3\" (7.62 cm). Maintain the original aspect ratio.",
+          "yeu_cau": "Trong mục “Future Plans”, đổi kích thước ảnh để cao 3\" (7.62 cm). Giữ nguyên tỉ lệ ảnh.",
+          "yeu_cau_en": "In the “Future Plans” section, resize the picture to a height of 3\" (7.62 cm). Maintain the original aspect ratio.",
           "goi_y": "1) Chọn ảnh.  2) Picture Format > Size: Shape Height = 3\" (Lock aspect ratio đang bật nên chiều còn lại tự đổi).",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Size: Shape Height = 3\" (Lock aspect ratio is on, so the other side changes automatically).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_size",
@@ -45,8 +54,10 @@
           }
         },
         {
-          "yeu_cau": "Change the direction of the SmartArt graphic in the “Electric Vehicles” section so that it flows from right to left.",
+          "yeu_cau": "Đổi hướng sơ đồ SmartArt trong mục “Electric Vehicles” để chạy từ phải sang trái.",
+          "yeu_cau_en": "Change the direction of the SmartArt graphic in the “Electric Vehicles” section so that it flows from right to left.",
           "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > Right to Left.",
+          "goi_y_en": "1) Select the SmartArt.  2) SmartArt Design > Right to Left.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_rtl",
@@ -54,8 +65,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Solar Projects” section, highlight the sentence “We installed solar panels on more than two hundred factory roofs last year.” in Bright Green.",
+          "yeu_cau": "Trong mục “Solar Projects”, tô sáng (highlight) câu “We installed solar panels on more than two hundred factory roofs last year.” màu Bright Green.",
+          "yeu_cau_en": "In the “Solar Projects” section, highlight the sentence “We installed solar panels on more than two hundred factory roofs last year.” in Bright Green.",
           "goi_y": "1) Chọn câu văn.  2) Home > Text Highlight Color > Bright Green.",
+          "goi_y_en": "1) Select the sentence.  2) Home > Text Highlight Color > Bright Green.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "highlight",
@@ -63,8 +76,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Electric Vehicles” section, apply the Soft Round Bevel shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
+          "yeu_cau": "Trong mục “Electric Vehicles”, áp dụng hiệu ứng hình Soft Round Bevel cho sơ đồ SmartArt (nhớ chọn toàn bộ sơ đồ SmartArt).",
+          "yeu_cau_en": "In the “Electric Vehicles” section, apply the Soft Round Bevel shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
           "goi_y": "1) Bấm vào viền ngoài SmartArt, sau đó Ctrl+A để chọn tất cả các hình bên trong.  2) Format > Shape Effects > Bevel > Soft Round.",
+          "goi_y_en": "1) Click the outer border of the SmartArt, then press Ctrl+A to select all shapes inside.  2) Format > Shape Effects > Bevel > Soft Round.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_effect",
@@ -79,13 +94,17 @@
       ]
     },
     {
-      "ten": "Project 2 – Festival",
+      "ten": "Dự án 2 – Festival",
+      "ten_en": "Project 2 – Festival",
       "file": "De08_P2_Festival.docx",
-      "mo_ta": "Mở file De08_P2_Festival.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P2_Festival.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P2_Festival.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "In the file properties, add “Hoi” as a category.",
+          "yeu_cau": "Trong thuộc tính tệp, thêm “Hoi” làm Category.",
+          "yeu_cau_en": "In the file properties, add “Hoi” as a category.",
           "goi_y": "1) File > Info > Properties > Show All Properties (hoặc Advanced Properties > Summary).  2) Ô Categories: nhập \"Hoi\". Nhấn ra ngoài/OK để lưu.",
+          "goi_y_en": "1) File > Info > Properties > Show All Properties (or Advanced Properties > Summary).  2) Categories box: enter \"Hoi\". Click outside / OK to save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "prop_category",
@@ -93,8 +112,10 @@
           }
         },
         {
-          "yeu_cau": "Convert the document title to WordArt by using the Fill: Blue, Accent color 1; Shadow style.",
+          "yeu_cau": "Chuyển tiêu đề chính của tài liệu thành WordArt với kiểu Fill: Blue, Accent color 1; Shadow.",
+          "yeu_cau_en": "Convert the document title to WordArt by using the Fill: Blue, Accent color 1; Shadow style.",
           "goi_y": "1) Chọn tiêu đề tài liệu.  2) Insert > WordArt > Fill: Blue, Accent color 1; Shadow.",
+          "goi_y_en": "1) Select the document title.  2) Insert > WordArt > Fill: Blue, Accent color 1; Shadow.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "wordart",
@@ -105,8 +126,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Food Stalls” section, insert a new column to the right of the “Location” column of the table. Type “Status” in the first cell of the new column.",
+          "yeu_cau": "Trong mục “Food Stalls”, chèn cột mới bên phải cột “Location” của bảng. Gõ “Status” vào ô đầu tiên của cột mới.",
+          "yeu_cau_en": "In the “Food Stalls” section, insert a new column to the right of the “Location” column of the table. Type “Status” in the first cell of the new column.",
           "goi_y": "1) Đặt con trỏ trong cột \"Location\".  2) Table Layout > Insert Right.  3) Gõ \"Status\" vào ô đầu tiên của cột mới.",
+          "goi_y_en": "1) Put the cursor in the \"Location\" column.  2) Table Layout > Insert Right.  3) Type \"Status\" in the first cell of the new column.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_insert_col",
@@ -117,8 +140,10 @@
           }
         },
         {
-          "yeu_cau": "Format the heading “Getting There” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
+          "yeu_cau": "Định dạng tiêu đề “Getting There” để luôn nằm cùng trang với đoạn văn ngay sau nó và mọi dòng của tiêu đề được giữ liền nhau.",
+          "yeu_cau_en": "Format the heading “Getting There” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
           "goi_y": "1) Đặt con trỏ trong tiêu đề.  2) Home > Paragraph dialog > tab Line and Page Breaks.  3) Tích Keep with next và Keep lines together > OK.",
+          "goi_y_en": "1) Put the cursor in the heading.  2) Home > Paragraph dialog > Line and Page Breaks tab.  3) Check Keep with next and Keep lines together > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "keep_next",
@@ -126,8 +151,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Food Stalls” section, change the chart title from “Chart Title” to “Participants Overview”.",
+          "yeu_cau": "Trong mục “Food Stalls”, đổi tiêu đề biểu đồ từ “Chart Title” thành “Participants Overview”.",
+          "yeu_cau_en": "In the “Food Stalls” section, change the chart title from “Chart Title” to “Participants Overview”.",
           "goi_y": "1) Bấm vào tiêu đề \"Chart Title\" của biểu đồ.  2) Chọn hết chữ trong tiêu đề và gõ: Participants Overview.",
+          "goi_y_en": "1) Click the chart's \"Chart Title\".  2) Select all the title text and type: Participants Overview.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_title",
@@ -137,13 +164,17 @@
       ]
     },
     {
-      "ten": "Project 3 – Library",
+      "ten": "Dự án 3 – Library",
+      "ten_en": "Project 3 – Library",
       "file": "De08_P3_Library.docx",
-      "mo_ta": "Mở file De08_P3_Library.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P3_Library.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P3_Library.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information.",
+          "yeu_cau": "Kiểm tra tài liệu (Inspect Document) và xóa mọi Document Properties and Personal Information. Không xóa thông tin nào khác.",
+          "yeu_cau_en": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information.",
           "goi_y": "1) File > Info > Check for Issues > Inspect Document (chọn Yes nếu được hỏi lưu).  2) Bấm Inspect.  3) Tại dòng Document Properties and Personal Information bấm Remove All.  4) Không bấm Remove All ở các mục khác. Close.",
+          "goi_y_en": "1) File > Info > Check for Issues > Inspect Document (choose Yes if asked to save).  2) Click Inspect.  3) On the Document Properties and Personal Information row click Remove All.  4) Do not click Remove All for other items. Close.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "inspect_props",
@@ -151,8 +182,10 @@
           }
         },
         {
-          "yeu_cau": "Display the Banded footer on all pages of the document.",
+          "yeu_cau": "Hiển thị footer Banded trên mọi trang của tài liệu.",
+          "yeu_cau_en": "Display the Banded footer on all pages of the document.",
           "goi_y": "1) Insert > Footer > Banded.  2) Đảm bảo Different First Page KHÔNG được tích. Close Header and Footer.",
+          "goi_y_en": "1) Insert > Footer > Banded.  2) Make sure Different First Page is NOT checked. Close Header and Footer.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "footer_gallery",
@@ -165,8 +198,10 @@
           }
         },
         {
-          "yeu_cau": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action.",
+          "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến bảng trong kết quả kiểm tra bằng hành động được đề xuất đầu tiên.",
+          "yeu_cau_en": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action.",
           "goi_y": "1) Review > Check Accessibility.  2) Trong ngăn Accessibility, mở mục lỗi liên quan đến bảng (Missing table header / No header row).  3) Bấm mũi tên cạnh tên bảng > chọn hành động đầu tiên trong Recommended Actions (Use First Row as Header).",
+          "goi_y_en": "1) Review > Check Accessibility.  2) In the Accessibility pane, open the table-related issue (Missing table header / No header row).  3) Click the arrow next to the table name > choose the first Recommended Action (Use First Row as Header).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "access_table",
@@ -174,8 +209,10 @@
           }
         },
         {
-          "yeu_cau": "Apply the Black & White (Classic) style set to the document.",
+          "yeu_cau": "Áp dụng style set Black & White (Classic) cho tài liệu.",
+          "yeu_cau_en": "Apply the Black & White (Classic) style set to the document.",
           "goi_y": "Design > nhóm Document Formatting > mở gallery Style Set > chọn Black & White (Classic).",
+          "goi_y_en": "Design > Document Formatting group > open the Style Set gallery > choose Black & White (Classic).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "style_set",
@@ -186,8 +223,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Digital Resources” section, change the numbered list so that it starts at 5.",
+          "yeu_cau": "Trong mục “Digital Resources”, sửa danh sách đánh số để bắt đầu từ 5.",
+          "yeu_cau_en": "In the “Digital Resources” section, change the numbered list so that it starts at 5.",
           "goi_y": "1) Nhấp phải vào mục đầu tiên của danh sách > Set Numbering Value.  2) Start new list; Set value to: 5 > OK.",
+          "goi_y_en": "1) Right-click the first item of the list > Set Numbering Value.  2) Start new list; Set value to: 5 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "restart_num",
@@ -197,13 +236,17 @@
       ]
     },
     {
-      "ten": "Project 4 – Social",
+      "ten": "Dự án 4 – Social",
+      "ten_en": "Project 4 – Social",
       "file": "De08_P4_Social.docx",
-      "mo_ta": "Mở file De08_P4_Social.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P4_Social.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P4_Social.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Apply the Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1 text effect to the heading “Planning Content”.",
+          "yeu_cau": "Áp dụng hiệu ứng chữ Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1 cho tiêu đề “Planning Content”.",
+          "yeu_cau_en": "Apply the Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1 text effect to the heading “Planning Content”.",
           "goi_y": "1) Chọn tiêu đề \"Planning Content\".  2) Home > Text Effects and Typography > Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1.",
+          "goi_y_en": "1) Select the heading \"Planning Content\".  2) Home > Text Effects and Typography > Fill: White; Outline: Blue, Accent color 1; Glow: Blue, Accent color 1.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "text_effect",
@@ -211,8 +254,10 @@
           }
         },
         {
-          "yeu_cau": "Insert a page break before the heading “What Are the Business Applications of Social Media?”.",
+          "yeu_cau": "Chèn ngắt trang ngay trước tiêu đề “What Are the Business Applications of Social Media?”.",
+          "yeu_cau_en": "Insert a page break before the heading “What Are the Business Applications of Social Media?”.",
           "goi_y": "1) Đặt con trỏ đầu tiêu đề.  2) Insert > Page Break (hoặc Ctrl+Enter).",
+          "goi_y_en": "1) Put the cursor at the start of the heading.  2) Insert > Page Break (or Ctrl+Enter).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "page_break",
@@ -220,8 +265,10 @@
           }
         },
         {
-          "yeu_cau": "In the “What Is Social Media?” section, delete the comment that is attached to the text “online platforms”.",
+          "yeu_cau": "Trong mục “What Is Social Media?”, xóa comment gắn với chữ “online platforms”.",
+          "yeu_cau_en": "In the “What Is Social Media?” section, delete the comment that is attached to the text “online platforms”.",
           "goi_y": "1) Bấm vào comment đó.  2) Review > Delete (hoặc … > Delete thread).",
+          "goi_y_en": "1) Click that comment.  2) Review > Delete (or … > Delete thread).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "comment_delete",
@@ -233,8 +280,10 @@
           }
         },
         {
-          "yeu_cau": "Change the number format of all footnotes in the document to i, ii, iii, ….",
+          "yeu_cau": "Đổi định dạng số của mọi footnote trong tài liệu thành i, ii, iii, ….",
+          "yeu_cau_en": "Change the number format of all footnotes in the document to i, ii, iii, ….",
           "goi_y": "1) References > hộp thoại Footnote and Endnote (mũi tên nhỏ).  2) Footnotes; Number format: i, ii, iii, …; Apply changes to: Whole document > Apply.",
+          "goi_y_en": "1) References > Footnote and Endnote dialog launcher.  2) Footnotes; Number format: i, ii, iii, …; Apply changes to: Whole document > Apply.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "fn_format",
@@ -242,8 +291,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Common Mistakes” section, change the list level for “Answer customer questions” to Level 3.",
+          "yeu_cau": "Trong mục “Common Mistakes”, đổi cấp danh sách của “Answer customer questions” thành Level 3.",
+          "yeu_cau_en": "In the “Common Mistakes” section, change the list level for “Answer customer questions” to Level 3.",
           "goi_y": "1) Đặt con trỏ vào mục \"Answer customer questions\".  2) Home > mũi tên Bullets/Numbering > Change List Level > Level 3.",
+          "goi_y_en": "1) Put the cursor in the item \"Answer customer questions\".  2) Home > Bullets/Numbering arrow > Change List Level > Level 3.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "list_level",
@@ -251,8 +302,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Common Mistakes” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin.",
+          "yeu_cau": "Trong mục “Common Mistakes”, thụt lề trái cả hai đoạn văn sau tiêu đề 0.75\" (1.91 cm).",
+          "yeu_cau_en": "In the “Common Mistakes” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin.",
           "goi_y": "1) Chọn hai đoạn.  2) Layout > Indent Left: 0.75\".",
+          "goi_y_en": "1) Select the two paragraphs.  2) Layout > Indent Left: 0.75\".",
           "cham": {
             "luat": "word_mau_de",
             "dang": "indent",
@@ -262,13 +315,17 @@
       ]
     },
     {
-      "ten": "Project 5 – Hotel",
+      "ten": "Dự án 5 – Hotel",
+      "ten_en": "Project 5 – Hotel",
       "file": "De08_P5_Hotel.docx",
-      "mo_ta": "Mở file De08_P5_Hotel.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P5_Hotel.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P5_Hotel.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Insert the Grid cover page. Accept all default settings.",
+          "yeu_cau": "Chèn trang bìa Grid. Giữ mọi thiết lập mặc định.",
+          "yeu_cau_en": "Insert the Grid cover page. Accept all default settings.",
           "goi_y": "Insert > Cover Page > Grid.",
+          "goi_y_en": "Insert > Cover Page > Grid.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "cover_page",
@@ -276,8 +333,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Spa and Wellness” section, format the 5 paragraphs starting with “Snorkeling” as a numbered list that uses the a) number format.",
+          "yeu_cau": "Trong mục “Spa and Wellness”, định dạng 5 đoạn văn bắt đầu từ “Snorkeling” thành danh sách đánh số kiểu a).",
+          "yeu_cau_en": "In the “Spa and Wellness” section, format the 5 paragraphs starting with “Snorkeling” as a numbered list that uses the a) number format.",
           "goi_y": "1) Chọn các đoạn từ \"Snorkeling\" đến \"Yoga\".  2) Home > Numbering > chọn định dạng a) (nếu không có: Define New Number Format).",
+          "goi_y_en": "1) Select the paragraphs from \"Snorkeling\" to \"Yoga\".  2) Home > Numbering > choose the a) format (if missing: Define New Number Format).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "numbers_from_paras",
@@ -285,17 +344,28 @@
           }
         },
         {
-          "yeu_cau": "Resize the table in the “Rooms and Suites” section to fit the page width by using the AutoFit Window option.",
+          "yeu_cau": "Co giãn bảng trong mục “Rooms and Suites” vừa chiều rộng trang bằng tùy chọn AutoFit Window.",
+          "yeu_cau_en": "Resize the table in the “Rooms and Suites” section to fit the page width by using the AutoFit Window option.",
           "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > AutoFit > AutoFit Window.",
+          "goi_y_en": "1) Put the cursor in the table.  2) Table Layout > AutoFit > AutoFit Window.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "autofit",
-            "de_bai": "Resize the table in the “Rooms and Suites” section to fit the page width by using the AutoFit Window option."
+            "de_bai": "Resize the table in the “Rooms and Suites” section to fit the page width by using the AutoFit Window option.",
+            "goc": {
+              "grid": [
+                3120,
+                3120,
+                3120
+              ]
+            }
           }
         },
         {
-          "yeu_cau": "Locate the paragraph that starts with “The resort has three restaurants serving …” and add a bookmark at the beginning of this paragraph named “KeyHotel”.",
+          "yeu_cau": "Tìm đoạn văn bắt đầu bằng “The resort has three restaurants serving …” và thêm bookmark tên “KeyHotel” ở đầu đoạn đó.",
+          "yeu_cau_en": "Locate the paragraph that starts with “The resort has three restaurants serving …” and add a bookmark at the beginning of this paragraph named “KeyHotel”.",
           "goi_y": "1) Đặt con trỏ ở đầu đoạn văn (trước chữ đầu tiên).  2) Insert > Bookmark > Bookmark name: KeyHotel > Add.",
+          "goi_y_en": "1) Put the cursor at the start of the paragraph (before the first letter).  2) Insert > Bookmark > Bookmark name: KeyHotel > Add.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "bookmark",
@@ -303,8 +373,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Activities” section, at the end of the text in the text box that starts with “Tip:”, add a new paragraph that contains the text “Visit our website for more details.”.",
+          "yeu_cau": "Trong mục “Activities”, ở cuối nội dung text box bắt đầu bằng “Tip:”, thêm một đoạn mới chứa chữ “Visit our website for more details.”.",
+          "yeu_cau_en": "In the “Activities” section, at the end of the text in the text box that starts with “Tip:”, add a new paragraph that contains the text “Visit our website for more details.”.",
           "goi_y": "1) Bấm vào cuối nội dung trong text box, nhấn Enter.  2) Gõ: Visit our website for more details.",
+          "goi_y_en": "1) Click at the end of the text in the text box and press Enter.  2) Type: Visit our website for more details.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "callout_text",
@@ -312,8 +384,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Welcome to Pearl Bay” section, change the bullet points to custom ones. Use the diamond symbol from the Wingdings 2 font and character code “245”.",
+          "yeu_cau": "Trong mục “Welcome to Pearl Bay”, đổi ký hiệu đầu dòng thành ký hiệu tùy chỉnh. Dùng ký hiệu hình thoi của font Wingdings 2, mã ký tự “245”.",
+          "yeu_cau_en": "In the “Welcome to Pearl Bay” section, change the bullet points to custom ones. Use the diamond symbol from the Wingdings 2 font and character code “245”.",
           "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Wingdings 2; Character code: 245 > OK > OK.",
+          "goi_y_en": "1) Select the whole bulleted list.  2) Home > Bullets arrow > Define New Bullet > Symbol.  3) Font: Wingdings 2; Character code: 245 > OK > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_bullet",
@@ -323,13 +397,17 @@
       ]
     },
     {
-      "ten": "Project 6 – Coffee",
+      "ten": "Dự án 6 – Coffee",
+      "ten_en": "Project 6 – Coffee",
       "file": "De08_P6_Coffee.docx",
-      "mo_ta": "Mở file De08_P6_Coffee.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P6_Coffee.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P6_Coffee.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Delete all comments in the document.",
+          "yeu_cau": "Xóa mọi comment trong tài liệu.",
+          "yeu_cau_en": "Delete all comments in the document.",
           "goi_y": "Review > mũi tên Delete > Delete All Comments in Document.",
+          "goi_y_en": "Review > Delete arrow > Delete All Comments in Document.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "comment_delete_all",
@@ -337,8 +415,10 @@
           }
         },
         {
-          "yeu_cau": "Insert page numbers by using the Bottom of Page Accent Bar 2 style.",
+          "yeu_cau": "Chèn số trang theo kiểu Bottom of Page Accent Bar 2.",
+          "yeu_cau_en": "Insert page numbers by using the Bottom of Page Accent Bar 2 style.",
           "goi_y": "Insert > Page Number > Bottom of Page > Accent Bar 2.",
+          "goi_y_en": "Insert > Page Number > Bottom of Page > Accent Bar 2.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "page_numbers",
@@ -346,8 +426,10 @@
           }
         },
         {
-          "yeu_cau": "Convert all footnotes to endnotes.",
+          "yeu_cau": "Chuyển mọi footnote thành endnote.",
+          "yeu_cau_en": "Convert all footnotes to endnotes.",
           "goi_y": "1) References > mở hộp thoại Footnotes (mũi tên nhỏ) > Convert.  2) Chọn Convert all footnotes to endnotes > OK > Close.",
+          "goi_y_en": "1) References > open the Footnotes dialog launcher > Convert.  2) Choose Convert all footnotes to endnotes > OK > Close.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "convert_notes",
@@ -355,8 +437,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Mixing the Batter” section, change the chart to a Clustered Bar chart.",
+          "yeu_cau": "Trong mục “Mixing the Batter”, đổi biểu đồ thành kiểu Clustered Bar.",
+          "yeu_cau_en": "In the “Mixing the Batter” section, change the chart to a Clustered Bar chart.",
           "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Change Chart Type > All Charts > Bar > Clustered Bar > OK.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Change Chart Type > All Charts > Bar > Clustered Bar > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_type",
@@ -364,8 +448,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Depanning” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
+          "yeu_cau": "Trong mục “Depanning”, sao chép định dạng của đoạn văn đầu tiên và áp dụng cho đoạn văn thứ hai.",
+          "yeu_cau_en": "In the “Depanning” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
           "goi_y": "1) Đặt con trỏ trong đoạn thứ nhất của section.  2) Home > Format Painter (bấm 1 lần).  3) Quét chọn toàn bộ đoạn thứ hai (hoặc bấm 3 lần vào đoạn thứ hai).",
+          "goi_y_en": "1) Put the cursor in the first paragraph of the section.  2) Home > Format Painter (click once).  3) Drag over the whole second paragraph (or triple-click it).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "format_painter",
@@ -375,13 +461,17 @@
       ]
     },
     {
-      "ten": "Project 7 – Travel (Expert)",
+      "ten": "Dự án 7 – Travel (Expert)",
+      "ten_en": "Project 7 – Travel (Expert)",
       "file": "De08_P7_Travel_Expert.docx",
-      "mo_ta": "Mở file De08_P7_Travel_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "mo_ta": "Mở file De08_P7_Travel_Expert.docx và làm lần lượt các yêu cầu bên dưới.",
+      "mo_ta_en": "Open De08_P7_Travel_Expert.docx and complete the tasks below in order.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Create a new paragraph style named “Info Box” that uses the Century Gothic font, 12 pt, italic, with 12 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “For more information, email the Mekong …”.",
+          "yeu_cau": "Tạo paragraph style mới tên “Info Box” dùng font Century Gothic, 12 pt, nghiêng, khoảng cách sau đoạn 12 pt. Áp dụng style này cho đoạn văn bắt đầu bằng “For more information, email the Mekong …”.",
+          "yeu_cau_en": "Create a new paragraph style named “Info Box” that uses the Century Gothic font, 12 pt, italic, with 12 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “For more information, email the Mekong …”.",
           "goi_y": "1) Đặt con trỏ trong đoạn cần áp dụng.  2) Home > Styles pane (Ctrl+Alt+Shift+S) > New Style.  3) Name: Info Box; Style type: Paragraph; Font: Century Gothic, 12, Italic.  4) Format > Paragraph > Spacing After: 12 pt > OK > OK (style được áp dụng vào đoạn hiện tại).",
+          "goi_y_en": "1) Put the cursor in the target paragraph.  2) Home > Styles pane (Ctrl+Alt+Shift+S) > New Style.  3) Name: Info Box; Style type: Paragraph; Font: Century Gothic, 12, Italic.  4) Format > Paragraph > Spacing After: 12 pt > OK > OK (the style is applied to the current paragraph).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "para_style_new",
@@ -389,8 +479,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Schedule” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together.",
+          "yeu_cau": "Trong mục “Schedule”, tắt Widow/Orphan control cho hai đoạn văn sau tiêu đề và giữ các dòng của mỗi đoạn liền nhau (Keep lines together).",
+          "yeu_cau_en": "In the “Schedule” section, turn off widow/orphan control for the two paragraphs after the heading and keep the lines of each paragraph together.",
           "goi_y": "1) Chọn hai đoạn.  2) Home > Paragraph dialog > Line and Page Breaks: bỏ Widow/Orphan control; tích Keep lines together > OK.",
+          "goi_y_en": "1) Select the two paragraphs.  2) Home > Paragraph dialog > Line and Page Breaks: clear Widow/Orphan control; check Keep lines together > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "widow",
@@ -398,8 +490,10 @@
           }
         },
         {
-          "yeu_cau": "Modify the Heading 1 style so that it uses 18 pt, bold, Dark Blue, Text 2 font color. Apply the changes to this document only.",
+          "yeu_cau": "Sửa style Heading 1 thành 18 pt, đậm, màu chữ Dark Blue, Text 2. Chỉ áp dụng thay đổi cho tài liệu này.",
+          "yeu_cau_en": "Modify the Heading 1 style so that it uses 18 pt, bold, Dark Blue, Text 2 font color. Apply the changes to this document only.",
           "goi_y": "1) Home > Styles > nhấp phải Heading 1 > Modify.  2) Size: 18; Bold; Color: Dark Blue, Text 2.  3) Chọn Only in this document > OK.",
+          "goi_y_en": "1) Home > Styles > right-click Heading 1 > Modify.  2) Size: 18; Bold; Color: Dark Blue, Text 2.  3) Choose Only in this document > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "modify_style",
@@ -407,8 +501,10 @@
           }
         },
         {
-          "yeu_cau": "In the blank paragraph at the end of the document, insert the SaveDate field. Use the date format that displays the date as dd/MM/yyyy.",
+          "yeu_cau": "Trong đoạn trống ở cuối tài liệu, chèn trường (field) SaveDate. Dùng định dạng ngày hiển thị dd/MM/yyyy.",
+          "yeu_cau_en": "In the blank paragraph at the end of the document, insert the SaveDate field. Use the date format that displays the date as dd/MM/yyyy.",
           "goi_y": "1) Đặt con trỏ vào đoạn trống cuối tài liệu.  2) Insert > Quick Parts > Field > Field names: SaveDate.  3) Date formats: nhập dd/MM/yyyy > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the document.  2) Insert > Quick Parts > Field > Field names: SaveDate.  3) Date formats: type dd/MM/yyyy > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "fields",
@@ -416,8 +512,10 @@
           }
         },
         {
-          "yeu_cau": "Link the text box in the “Mission” section to the empty text box in the “Conference Topics” section so that the overflow text flows into the second text box.",
+          "yeu_cau": "Liên kết text box trong mục “Mission” với text box trống trong mục “Conference Topics” để phần chữ tràn chảy sang text box thứ hai.",
+          "yeu_cau_en": "Link the text box in the “Mission” section to the empty text box in the “Conference Topics” section so that the overflow text flows into the second text box.",
           "goi_y": "1) Chọn text box thứ nhất.  2) Shape Format > Create Link (con trỏ đổi thành bình).  3) Bấm vào text box trống thứ hai.",
+          "goi_y_en": "1) Select the first text box.  2) Shape Format > Create Link (the cursor becomes a pitcher).  3) Click the empty second text box.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "link_textbox",

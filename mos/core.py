@@ -58,6 +58,8 @@ class Task:
     title: str                      # Yêu cầu hiển thị cho người học
     hint: str                       # Hướng dẫn thao tác (hiện ở chế độ luyện tập / khi xem kết quả)
     check: Callable[[Path], bool | None]   # Hàm chấm: True nếu đúng; None = không chấm tự động được
+    title_en: str = ""              # bản tiếng Anh (để trống = dùng bản tiếng Việt)
+    hint_en: str = ""
 
 
 @dataclass
@@ -67,6 +69,8 @@ class Project:
     intro: str                      # Mô tả tình huống
     build: Callable[[Path], None]   # Hàm tạo file khởi đầu
     tasks: list[Task]
+    name_en: str = ""
+    intro_en: str = ""
 
 
 @dataclass
@@ -76,6 +80,7 @@ class Exam:
     projects: list[Project]
     minutes: int = 50
     standalone: bool = False        # đề riêng (bộ đề nhập), không gộp vào bài thi có sẵn
+    name_en: str = ""
 
 
 @dataclass
@@ -85,6 +90,9 @@ class TaskResult:
     hint: str
     correct: bool | None            # None = tự kiểm tra (không tính điểm)
     error: str = ""
+    task_en: str = ""
+    hint_en: str = ""
+    project_en: str = ""
 
 
 @dataclass
@@ -137,7 +145,8 @@ def check_project(session: Session, project_idx: int) -> list[TaskResult]:
     results = []
     for task in project.tasks:
         ok, err = run_check(task, path)
-        results.append(TaskResult(project.name, task.title, task.hint, ok, err))
+        results.append(TaskResult(project.name, task.title, task.hint, ok, err,
+                                  task.title_en, task.hint_en, project.name_en))
     return results
 
 
@@ -150,6 +159,8 @@ def grade(session: Session) -> dict:
     score = round(MAX_SCORE * correct / total) if total else 0
     return {
         "exam": session.exam.name,
+        "exam_en": session.exam.name_en,
+        "code": session.exam.code,
         "user": session.user,
         "mode": session.mode,
         "time": datetime.now().strftime("%Y-%m-%d %H:%M"),

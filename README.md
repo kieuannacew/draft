@@ -36,6 +36,17 @@ Mục **Kết quả học viên** hiện mọi lượt làm bài. Có thể lọ
 > **Phòng máy dùng chung dữ liệu:** tạo file `cau_hinh.json` cạnh `main.py` (hoặc cạnh `LuyenThiMOS.exe`):
 > `{"thu_muc_du_lieu": "\\\\MAYCHU\\MOS"}`. Khi đó mọi máy dùng chung tài khoản, đề và kết quả trong thư mục mạng đó.
 
+## Giao diện, song ngữ Việt / Anh và "vui học"
+
+- Giao diện theo chủ đề màu **Forest Canopy** (xanh rừng, xanh ô liu, nền ngà; tiêu đề chữ có chân).
+- Nút **VI | EN** ở màn đăng nhập, thanh bên và thanh làm bài: đổi toàn bộ giao diện **và cả đề, gợi ý / đáp án**
+  sang tiếng Anh hoặc tiếng Việt (đang làm bài cũng đổi được – tiện đối chiếu với đề tiếng Anh như thi thật).
+  App nhớ ngôn ngữ đã chọn cho lần mở sau.
+- **Vui học**: mỗi lần nộp bài được **XP** (điểm/10, +50 nếu đạt, +100 nếu 1000 điểm, thi thử ×1.2), lên **cấp**
+  (Mầm non → Rừng già), **chuỗi ngày học** 🔥, 9 **huy hiệu** để mở khóa, **sao** ★★★ cho từng đề, **mẹo mỗi ngày**,
+  pháo giấy khi đạt bài.
+- Đề tự soạn: trong form Soạn đề có thêm ô **bản tiếng Anh** cho yêu cầu và gợi ý (tuỳ chọn).
+
 ## Nhập bộ đề có sẵn (tự động)
 
 App đã có sẵn **10 đề Word 365 "Đề thực tế"** (mỗi đề 7 project, 38 câu, tiếng Anh như thi thật) trong

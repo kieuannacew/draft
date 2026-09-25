@@ -1,19 +1,24 @@
 {
   "mon": "WORD",
   "ten": "Word – Đề 06 (Word365_DeThucTe)",
+  "ten_en": "Word – Test 06 (Word365_DeThucTe)",
   "thoi_gian": 50,
   "rieng": true,
   "nguon": "Word365_DeThucTe/De_06",
-  "dau_vet": "b168873e01be206c",
+  "dau_vet": "382158c2bd6858cb",
   "du_an": [
     {
-      "ten": "Project 1 – Computer",
+      "ten": "Dự án 1 – Computer",
+      "ten_en": "Project 1 – Computer",
       "file": "De06_P1_Computer.docx",
-      "mo_ta": "Mở file De06_P1_Computer.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P1_Computer.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P1_Computer.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Add a 3 pt Blue, Accent 5, Darker 25% Box page border to the first page only.",
+          "yeu_cau": "Thêm viền trang kiểu Box, dày 3 pt, màu Blue, Accent 5, Darker 25% chỉ cho trang đầu tiên.",
+          "yeu_cau_en": "Add a 3 pt Blue, Accent 5, Darker 25% Box page border to the first page only.",
           "goi_y": "1) Design > Page Borders.  2) Setting: Box; Color: Blue, Accent 5, Darker 25%; Width: 3 pt.  3) Apply to: This section - First page only > OK.",
+          "goi_y_en": "1) Design > Page Borders.  2) Setting: Box; Color: Blue, Accent 5, Darker 25%; Width: 3 pt.  3) Apply to: This section - First page only > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "page_border",
@@ -21,8 +26,10 @@
           }
         },
         {
-          "yeu_cau": "In the “How Are Computers Used Today?” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 2 lines.",
+          "yeu_cau": "Trong mục “How Are Computers Used Today?”, áp dụng drop cap kiểu Dropped cho đoạn văn đầu tiên, rơi xuống 2 dòng.",
+          "yeu_cau_en": "In the “How Are Computers Used Today?” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 2 lines.",
           "goi_y": "1) Đặt con trỏ trong đoạn đầu tiên của section.  2) Insert > Drop Cap > Drop Cap Options > Position: Dropped; Lines to drop: 2 > OK.",
+          "goi_y_en": "1) Put the cursor in the first paragraph of the section.  2) Insert > Drop Cap > Drop Cap Options > Position: Dropped; Lines to drop: 2 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "dropcap",
@@ -30,8 +37,10 @@
           }
         },
         {
-          "yeu_cau": "Crop the picture in the “How Are Computers Used Today?” section to the Flowchart: Alternate Process shape.",
+          "yeu_cau": "Cắt ảnh trong mục “How Are Computers Used Today?” theo hình Flowchart: Alternate Process.",
+          "yeu_cau_en": "Crop the picture in the “How Are Computers Used Today?” section to the Flowchart: Alternate Process shape.",
           "goi_y": "1) Chọn ảnh.  2) Picture Format > mũi tên Crop > Crop to Shape > Flowchart: Alternate Process.",
+          "goi_y_en": "1) Select the picture.  2) Picture Format > Crop arrow > Crop to Shape > Flowchart: Alternate Process.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_crop_shape",
@@ -39,8 +48,10 @@
           }
         },
         {
-          "yeu_cau": "In the “History of the Computer” section, highlight the sentence “The first electronic computers were built in the 1940s and filled entire rooms.” in Bright Green.",
+          "yeu_cau": "Trong mục “History of the Computer”, tô sáng (highlight) câu “The first electronic computers were built in the 1940s and filled entire rooms.” màu Bright Green.",
+          "yeu_cau_en": "In the “History of the Computer” section, highlight the sentence “The first electronic computers were built in the 1940s and filled entire rooms.” in Bright Green.",
           "goi_y": "1) Chọn câu văn.  2) Home > Text Highlight Color > Bright Green.",
+          "goi_y_en": "1) Select the sentence.  2) Home > Text Highlight Color > Bright Green.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "highlight",
@@ -48,8 +59,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Computer Connections” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell.",
+          "yeu_cau": "Trong mục “Computer Connections”, đặt chiều cao mọi hàng của bảng là 0.4\" (1.02 cm) và căn giữa theo chiều dọc chữ trong mọi ô.",
+          "yeu_cau_en": "In the “Computer Connections” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell.",
           "goi_y": "1) Chọn toàn bộ bảng.  2) Table Layout > Height: 0.4\".  3) Table Layout > Alignment > Align Center Left (hoặc Align Center) – căn giữa theo chiều dọc.",
+          "goi_y_en": "1) Select the whole table.  2) Table Layout > Height: 0.4\".  3) Table Layout > Alignment > Align Center Left (or Align Center) – centers vertically.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_rowheight",
@@ -59,13 +72,17 @@
       ]
     },
     {
-      "ten": "Project 2 – Bank",
+      "ten": "Dự án 2 – Bank",
+      "ten_en": "Project 2 – Bank",
       "file": "De06_P2_Bank.docx",
-      "mo_ta": "Mở file De06_P2_Bank.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P2_Bank.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P2_Bank.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "In the blank paragraph at the end of the “Checking Account” section, insert a Basic Block List SmartArt graphic that contains the items “Free debit card”, “Mobile banking”, “Daily interest” in that order. Apply the Subtle Effect SmartArt style.",
+          "yeu_cau": "Trong đoạn trống ở cuối mục “Checking Account”, chèn sơ đồ SmartArt Basic Block List gồm các mục “Free debit card”, “Mobile banking”, “Daily interest” theo đúng thứ tự. Áp dụng SmartArt style Subtle Effect.",
+          "yeu_cau_en": "In the blank paragraph at the end of the “Checking Account” section, insert a Basic Block List SmartArt graphic that contains the items “Free debit card”, “Mobile banking”, “Daily interest” in that order. Apply the Subtle Effect SmartArt style.",
           "goi_y": "1) Đặt con trỏ vào đoạn trống cuối section.  2) Insert > SmartArt > chọn Basic Block List > OK.  3) Mở Text Pane, nhập lần lượt: Free debit card; Mobile banking; Daily interest (xoá các dòng trống thừa).  4) SmartArt Design > SmartArt Styles > Subtle Effect.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph at the end of the section.  2) Insert > SmartArt > choose Basic Block List > OK.  3) Open the Text Pane and enter: Free debit card; Mobile banking; Daily interest (delete extra empty lines).  4) SmartArt Design > SmartArt Styles > Subtle Effect.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "smartart",
@@ -73,8 +90,10 @@
           }
         },
         {
-          "yeu_cau": "Just under the heading “Fast and Convenient”, insert a new table that has 4 columns and 3 rows. In the top row, from left to right, type “Country”, “Notes”, “Contact”, “Time”. Fit the table to its contents.",
+          "yeu_cau": "Ngay dưới tiêu đề “Fast and Convenient”, chèn bảng mới 4 cột và 3 hàng. Ở hàng trên cùng, từ trái sang phải, gõ “Country”, “Notes”, “Contact”, “Time”. Co giãn bảng vừa với nội dung.",
+          "yeu_cau_en": "Just under the heading “Fast and Convenient”, insert a new table that has 4 columns and 3 rows. In the top row, from left to right, type “Country”, “Notes”, “Contact”, “Time”. Fit the table to its contents.",
           "goi_y": "1) Đặt con trỏ cuối dòng tiêu đề, nhấn Enter để tạo dòng mới ngay dưới tiêu đề.  2) Insert > Table > Insert Table: Number of columns 4, Number of rows 3 > OK.  3) Gõ lần lượt Country, Notes, Contact, Time vào hàng đầu.  4) Table Layout > AutoFit > AutoFit Contents.",
+          "goi_y_en": "1) Put the cursor at the end of the heading line and press Enter to make a new line just below it.  2) Insert > Table > Insert Table: Number of columns 4, Number of rows 3 > OK.  3) Type Country, Notes, Contact, Time in the top row.  4) Table Layout > AutoFit > AutoFit Contents.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "insert_table",
@@ -82,8 +101,10 @@
           }
         },
         {
-          "yeu_cau": "Add the alt text description “Bank steps” to the SmartArt graphic in the “Contact Us” section.",
+          "yeu_cau": "Thêm mô tả alt text “Bank steps” cho sơ đồ SmartArt trong mục “Contact Us”.",
+          "yeu_cau_en": "Add the alt text description “Bank steps” to the SmartArt graphic in the “Contact Us” section.",
           "goi_y": "1) Bấm vào viền ngoài SmartArt > nhấp phải > Edit Alt Text.  2) Nhập: Bank steps.",
+          "goi_y_en": "1) Click the outer border of the SmartArt > right-click > Edit Alt Text.  2) Enter: Bank steps.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_alt",
@@ -91,8 +112,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Banking Fees” section, change the number format of the numbered list to (1).",
+          "yeu_cau": "Trong mục “Banking Fees”, đổi định dạng số của danh sách đánh số thành (1).",
+          "yeu_cau_en": "In the “Banking Fees” section, change the number format of the numbered list to (1).",
           "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn (1) (hoặc Define New Number Format).",
+          "goi_y_en": "1) Select the list.  2) Home > Numbering arrow > choose (1) (or Define New Number Format).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "num_format",
@@ -100,8 +123,10 @@
           }
         },
         {
-          "yeu_cau": "Apply the Title style to the heading “Welcome”.",
+          "yeu_cau": "Áp dụng style Title cho tiêu đề “Welcome”.",
+          "yeu_cau_en": "Apply the Title style to the heading “Welcome”.",
           "goi_y": "1) Đặt con trỏ trong tiêu đề Welcome.  2) Home > Styles > Title.",
+          "goi_y_en": "1) Put the cursor in the Welcome heading.  2) Home > Styles > Title.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "heading_style",
@@ -109,8 +134,10 @@
           }
         },
         {
-          "yeu_cau": "The “2026” value for “Overdraft” in the chart in the “Fast and Convenient” section is incorrect. Change the value to 22.5.",
+          "yeu_cau": "Giá trị “2026” của “Overdraft” trong biểu đồ ở mục “Fast and Convenient” bị sai. Đổi giá trị thành 22.5.",
+          "yeu_cau_en": "The “2026” value for “Overdraft” in the chart in the “Fast and Convenient” section is incorrect. Change the value to 22.5.",
           "goi_y": "1) Chọn biểu đồ > Chart Design > Edit Data (mở bảng dữ liệu Excel).  2) Tìm ô giao giữa dòng \"Overdraft\" và cột \"2026\", nhập 22.5, nhấn Enter.  3) Đóng cửa sổ bảng dữ liệu.",
+          "goi_y_en": "1) Select the chart > Chart Design > Edit Data (opens the Excel data sheet).  2) Find the cell where the \"Overdraft\" row meets the \"2026\" column, type 22.5 and press Enter.  3) Close the data window.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_data",
@@ -123,13 +150,17 @@
       ]
     },
     {
-      "ten": "Project 3 – Garden",
+      "ten": "Dự án 3 – Garden",
+      "ten_en": "Project 3 – Garden",
       "file": "De06_P3_Garden.docx",
-      "mo_ta": "Mở file De06_P3_Garden.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P3_Garden.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P3_Garden.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Display the Austin header on all pages of the document except page 1.",
+          "yeu_cau": "Hiển thị header Austin trên mọi trang của tài liệu trừ trang 1.",
+          "yeu_cau_en": "Display the Austin header on all pages of the document except page 1.",
           "goi_y": "1) Insert > Header > Austin.  2) Trên tab Header & Footer: tích Different First Page.  3) Kiểm tra trang 1 không có header, các trang sau có. Close Header and Footer.",
+          "goi_y_en": "1) Insert > Header > Austin.  2) On the Header & Footer tab: check Different First Page.  3) Check that page 1 has no header and later pages do. Close Header and Footer.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "header_gallery",
@@ -142,8 +173,10 @@
           }
         },
         {
-          "yeu_cau": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Garden picture”.",
+          "yeu_cau": "Kiểm tra lỗi trợ năng (accessibility) của tài liệu. Sửa lỗi liên quan đến ảnh bằng cách thêm mô tả alt text “Garden picture”.",
+          "yeu_cau_en": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Garden picture”.",
           "goi_y": "1) Review > Check Accessibility.  2) Mục Missing alternative text: bấm mũi tên cạnh tên ảnh > Add a description.  3) Nhập \"Garden picture\" vào ô mô tả trong ngăn Alt Text.",
+          "goi_y_en": "1) Review > Check Accessibility.  2) Under Missing alternative text: click the arrow next to the picture name > Add a description.  3) Enter \"Garden picture\" in the description box of the Alt Text pane.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "access_alt",
@@ -151,8 +184,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Easy Plants for Beginners” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
+          "yeu_cau": "Trong mục “Easy Plants for Beginners”, sao chép định dạng của đoạn văn đầu tiên và áp dụng cho đoạn văn thứ hai.",
+          "yeu_cau_en": "In the “Easy Plants for Beginners” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
           "goi_y": "1) Đặt con trỏ trong đoạn thứ nhất của section.  2) Home > Format Painter (bấm 1 lần).  3) Quét chọn toàn bộ đoạn thứ hai (hoặc bấm 3 lần vào đoạn thứ hai).",
+          "goi_y_en": "1) Put the cursor in the first paragraph of the section.  2) Home > Format Painter (click once).  3) Drag over the whole second paragraph (or triple-click it).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "format_painter",
@@ -160,8 +195,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Soil and Compost” section, convert the 5 paragraphs starting with “Basil” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
+          "yeu_cau": "Trong mục “Soil and Compost”, chuyển 5 đoạn văn bắt đầu từ “Basil” thành danh sách gạch đầu dòng. Dùng dấu tròn mặc định và căn dấu đầu dòng theo lề trái trang (không đổi khoảng thụt treo).",
+          "yeu_cau_en": "In the “Soil and Compost” section, convert the 5 paragraphs starting with “Basil” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
           "goi_y": "1) Chọn 5 đoạn từ \"Basil\" đến \"Chili pepper\".  2) Home > Bullets > chọn dấu chấm tròn •.  3) Nhấp phải vào danh sách > Adjust List Indents > Bullet position: 0\" (giữ nguyên Text indent/khoảng cách treo) > OK. (Hoặc Home > Decrease Indent 1 lần.)",
+          "goi_y_en": "1) Select the 5 paragraphs from \"Basil\" to \"Chili pepper\".  2) Home > Bullets > choose the round bullet •.  3) Right-click the list > Adjust List Indents > Bullet position: 0\" (keep the Text indent / hanging distance) > OK. (Or Home > Decrease Indent once.)",
           "cham": {
             "luat": "word_mau_de",
             "dang": "bullets_from_paras",
@@ -169,8 +206,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Choosing Containers” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Days to harvest” values above it. Use the #,##0.00 number format.",
+          "yeu_cau": "Trong mục “Choosing Containers”, ở ô cuối của hàng “Total” trong bảng, chèn công thức tính tổng các giá trị “Days to harvest” phía trên. Dùng định dạng số #,##0.00.",
+          "yeu_cau_en": "In the “Choosing Containers” section, in the last cell of the “Total” row of the table, insert a formula that calculates the sum of the “Days to harvest” values above it. Use the #,##0.00 number format.",
           "goi_y": "1) Đặt con trỏ vào ô cuối cùng của dòng Total.  2) Table Layout > Formula.  3) Formula: =SUM(ABOVE); Number format: #,##0.00 > OK.",
+          "goi_y_en": "1) Put the cursor in the last cell of the Total row.  2) Table Layout > Formula.  3) Formula: =SUM(ABOVE); Number format: #,##0.00 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "table_formula",
@@ -178,8 +217,10 @@
           }
         },
         {
-          "yeu_cau": "Insert the Copyright symbol (©) immediately after the first instance of “Green Thumb Garden Center” in the document.",
+          "yeu_cau": "Chèn ký hiệu Copyright (©) ngay sau lần xuất hiện đầu tiên của “Green Thumb Garden Center” trong tài liệu.",
+          "yeu_cau_en": "Insert the Copyright symbol (©) immediately after the first instance of “Green Thumb Garden Center” in the document.",
           "goi_y": "1) Đặt con trỏ ngay sau \"Green Thumb Garden Center\" đầu tiên (không có khoảng trắng).  2) Insert > Symbol > More Symbols > tab Special Characters > Copyright > Insert > Close.",
+          "goi_y_en": "1) Put the cursor right after the first \"Green Thumb Garden Center\" (no space).  2) Insert > Symbol > More Symbols > Special Characters tab > Copyright > Insert > Close.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "special_char",
@@ -189,13 +230,17 @@
       ]
     },
     {
-      "ten": "Project 4 – Rock",
+      "ten": "Dự án 4 – Rock",
+      "ten_en": "Project 4 – Rock",
       "file": "De06_P4_Rock.docx",
-      "mo_ta": "Mở file De06_P4_Rock.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P4_Rock.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P4_Rock.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Convert all endnotes to footnotes.",
+          "yeu_cau": "Chuyển mọi endnote thành footnote.",
+          "yeu_cau_en": "Convert all endnotes to footnotes.",
           "goi_y": "1) References > hộp thoại Footnote and Endnote > Convert.  2) Chọn Convert all endnotes to footnotes > OK > Close.",
+          "goi_y_en": "1) References > Footnote and Endnote dialog > Convert.  2) Choose Convert all endnotes to footnotes > OK > Close.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "convert_notes",
@@ -203,8 +248,10 @@
           }
         },
         {
-          "yeu_cau": "Change the page color of the document to Gold, Accent 4, Lighter 80%.",
+          "yeu_cau": "Đổi màu trang (page color) của tài liệu thành Gold, Accent 4, Lighter 80%.",
+          "yeu_cau_en": "Change the page color of the document to Gold, Accent 4, Lighter 80%.",
           "goi_y": "Design > Page Color > chọn ô Gold, Accent 4, Lighter 80% (di chuột để xem tên màu).",
+          "goi_y_en": "Design > Page Color > choose the Gold, Accent 4, Lighter 80% swatch (hover to see color names).",
           "cham": {
             "luat": "word_mau_de",
             "dang": "page_color",
@@ -212,8 +259,10 @@
           }
         },
         {
-          "yeu_cau": "Apply the Banded theme to the document.",
+          "yeu_cau": "Áp dụng theme Banded cho tài liệu.",
+          "yeu_cau_en": "Apply the Banded theme to the document.",
           "goi_y": "Design > Themes > Banded.",
+          "goi_y_en": "Design > Themes > Banded.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "doc_theme",
@@ -221,8 +270,10 @@
           }
         },
         {
-          "yeu_cau": "Change the orientation of only the page that contains the “Climbing Basics” heading to Landscape. Do not change the orientation of any other page.",
+          "yeu_cau": "Chỉ đổi hướng trang chứa tiêu đề “Climbing Basics” sang Landscape (ngang). Không đổi hướng các trang khác.",
+          "yeu_cau_en": "Change the orientation of only the page that contains the “Climbing Basics” heading to Landscape. Do not change the orientation of any other page.",
           "goi_y": "1) Chọn toàn bộ nội dung của trang có tiêu đề \"Climbing Basics\" (từ dòng đầu đến dòng cuối trang đó).  2) Layout > Margins > Custom Margins (mở Page Setup).  3) Orientation: Landscape; Apply to: Selected text > OK (Word tự chèn section break trước/sau).  4) Kiểm tra: chỉ trang đó nằm ngang, các trang khác vẫn dọc.",
+          "goi_y_en": "1) Select all content of the page with the heading \"Climbing Basics\" (from its first to its last line).  2) Layout > Margins > Custom Margins (opens Page Setup).  3) Orientation: Landscape; Apply to: Selected text > OK (Word adds section breaks before/after).  4) Check: only that page is landscape, the others stay portrait.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "orient_sec",
@@ -230,8 +281,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Base Camp” section, sort the table data by “Length (km)” in ascending order.",
+          "yeu_cau": "Trong mục “Base Camp”, sắp xếp dữ liệu bảng theo “Length (km)” tăng dần.",
+          "yeu_cau_en": "In the “Base Camp” section, sort the table data by “Length (km)” in ascending order.",
           "goi_y": "1) Table Layout > Sort; My list has: Header row.  2) Sort by: Length (km); Type: Number; Ascending > OK.",
+          "goi_y_en": "1) Table Layout > Sort; My list has: Header row.  2) Sort by: Length (km); Type: Number; Ascending > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sort_table",
@@ -239,8 +292,10 @@
           }
         },
         {
-          "yeu_cau": "Replace the picture in the “Mountain Locations Price” section with the Rock_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
+          "yeu_cau": "Thay ảnh trong mục “Mountain Locations Price” bằng ảnh Rock_new.png trong thư mục Files. Giữ nguyên kích thước và định dạng của ảnh cũ.",
+          "yeu_cau_en": "Replace the picture in the “Mountain Locations Price” section with the Rock_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
           "goi_y": "1) Nhấp phải ảnh > Change Picture > From a File (hoặc Picture Format > Change Picture).  2) Chọn Rock_new.png trong thư mục Files > Insert.",
+          "goi_y_en": "1) Right-click the picture > Change Picture > From a File (or Picture Format > Change Picture).  2) Choose Rock_new.png in the Files folder > Insert.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "pic_change",
@@ -256,13 +311,17 @@
       ]
     },
     {
-      "ten": "Project 5 – Weekdays",
+      "ten": "Dự án 5 – Weekdays",
+      "ten_en": "Project 5 – Weekdays",
       "file": "De06_P5_Weekdays.docx",
-      "mo_ta": "Mở file De06_P5_Weekdays.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P5_Weekdays.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P5_Weekdays.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Accept the tracked insertion of the text “and very popular”. Reject all other tracked changes in the document.",
+          "yeu_cau": "Chấp nhận phần chèn được theo dõi của đoạn chữ “and very popular”. Từ chối mọi thay đổi được theo dõi khác trong tài liệu.",
+          "yeu_cau_en": "Accept the tracked insertion of the text “and very popular”. Reject all other tracked changes in the document.",
           "goi_y": "1) Bấm vào đoạn chèn \"and very popular\" > Review > Accept > Accept This Change.  2) Review > Reject > Reject All Changes.",
+          "goi_y_en": "1) Click the inserted text \"and very popular\" > Review > Accept > Accept This Change.  2) Review > Reject > Reject All Changes.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "track_reject",
@@ -279,8 +338,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Which Day of the Week Is the Favourite?” section, add a new row to the bottom of the table. Enter “Sample”, “Moon”, and “10” in the new row.",
+          "yeu_cau": "Trong mục “Which Day of the Week Is the Favourite?”, thêm một hàng mới ở cuối bảng. Nhập “Sample”, “Moon” và “10” vào hàng mới.",
+          "yeu_cau_en": "In the “Which Day of the Week Is the Favourite?” section, add a new row to the bottom of the table. Enter “Sample”, “Moon”, and “10” in the new row.",
           "goi_y": "1) Đặt con trỏ ở ô cuối cùng của bảng.  2) Table Layout > Insert Below (hoặc nhấn Tab ở ô cuối).  3) Nhập lần lượt: Sample | Moon | 10.",
+          "goi_y_en": "1) Put the cursor in the last cell of the table.  2) Table Layout > Insert Below (or press Tab in the last cell).  3) Enter: Sample | Moon | 10.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "add_row",
@@ -288,8 +349,10 @@
           }
         },
         {
-          "yeu_cau": "The chart in the “Which Day of the Week Is the Favourite?” section contains only one data series. Remove the legend from the chart.",
+          "yeu_cau": "Biểu đồ trong mục “Which Day of the Week Is the Favourite?” chỉ có một chuỗi dữ liệu. Xóa chú giải (legend) khỏi biểu đồ.",
+          "yeu_cau_en": "The chart in the “Which Day of the Week Is the Favourite?” section contains only one data series. Remove the legend from the chart.",
           "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Legend > None.",
+          "goi_y_en": "1) Select the chart.  2) Chart Design > Add Chart Element > Legend > None.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "chart_legend",
@@ -297,8 +360,10 @@
           }
         },
         {
-          "yeu_cau": "Change the colors of the SmartArt graphic in the “Facts about Saturday and Sunday” section to Colored Fill - Accent 2.",
+          "yeu_cau": "Đổi màu sơ đồ SmartArt trong mục “Facts about Saturday and Sunday” thành Colored Fill - Accent 2.",
+          "yeu_cau_en": "Change the colors of the SmartArt graphic in the “Facts about Saturday and Sunday” section to Colored Fill - Accent 2.",
           "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > Change Colors > Colored Fill - Accent 2.",
+          "goi_y_en": "1) Select the SmartArt.  2) SmartArt Design > Change Colors > Colored Fill - Accent 2.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "sa_colors",
@@ -311,8 +376,10 @@
           }
         },
         {
-          "yeu_cau": "Save a copy of the document as a Word template named “Weekdays_Copy” that does not support macros. Save the template in the Documents folder.",
+          "yeu_cau": "Lưu một bản sao tài liệu dạng Word template tên “Weekdays_Copy” không hỗ trợ macro. Lưu template vào thư mục Documents.",
+          "yeu_cau_en": "Save a copy of the document as a Word template named “Weekdays_Copy” that does not support macros. Save the template in the Documents folder.",
           "goi_y": "1) File > Save a Copy > Browse.  2) Save as type: Word Template (*.dotx) (không chọn .dotm).  3) Chọn thư mục Documents, File name: Weekdays_Copy > Save.",
+          "goi_y_en": "1) File > Save a Copy > Browse.  2) Save as type: Word Template (*.dotx) (not .dotm).  3) Choose the Documents folder, File name: Weekdays_Copy > Save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "save_template",
@@ -322,13 +389,17 @@
       ]
     },
     {
-      "ten": "Project 6 – Robotics",
+      "ten": "Dự án 6 – Robotics",
+      "ten_en": "Project 6 – Robotics",
       "file": "De06_P6_Robotics.docx",
-      "mo_ta": "Mở file De06_P6_Robotics.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P6_Robotics.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P6_Robotics.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Reply to the comment attached to the text “sensors” with the text “Yes, this is correct.”.",
+          "yeu_cau": "Trả lời comment gắn với chữ “sensors” bằng nội dung “Yes, this is correct.”.",
+          "yeu_cau_en": "Reply to the comment attached to the text “sensors” with the text “Yes, this is correct.”.",
           "goi_y": "1) Bấm vào comment.  2) Ô Reply: gõ \"Yes, this is correct.\" > Post.",
+          "goi_y_en": "1) Click the comment.  2) In the Reply box type \"Yes, this is correct.\" > Post.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "comment_reply",
@@ -340,8 +411,10 @@
           }
         },
         {
-          "yeu_cau": "Change the orientation of the entire document to Landscape.",
+          "yeu_cau": "Đổi hướng toàn bộ tài liệu sang Landscape (ngang).",
+          "yeu_cau_en": "Change the orientation of the entire document to Landscape.",
           "goi_y": "Layout > Orientation > Landscape.",
+          "goi_y_en": "Layout > Orientation > Landscape.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "orient_all",
@@ -349,8 +422,10 @@
           }
         },
         {
-          "yeu_cau": "Set the line spacing to 1.3 lines for the entire document.",
+          "yeu_cau": "Đặt giãn dòng 1.3 lines cho toàn bộ tài liệu.",
+          "yeu_cau_en": "Set the line spacing to 1.3 lines for the entire document.",
           "goi_y": "1) Ctrl+A để chọn toàn bộ.  2) Home > Line and Paragraph Spacing > Line Spacing Options.  3) Line spacing: Multiple; At: 1.3 > OK.",
+          "goi_y_en": "1) Press Ctrl+A to select everything.  2) Home > Line and Paragraph Spacing > Line Spacing Options.  3) Line spacing: Multiple; At: 1.3 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "line_spacing_doc",
@@ -358,8 +433,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Game Rules” section, insert a caption above the table. Use the Table label and the caption text “: Robotics data”.",
+          "yeu_cau": "Trong mục “Game Rules”, chèn chú thích (caption) phía trên bảng. Dùng nhãn Table và nội dung chú thích “: Robotics data”.",
+          "yeu_cau_en": "In the “Game Rules” section, insert a caption above the table. Use the Table label and the caption text “: Robotics data”.",
           "goi_y": "1) Chọn bảng (hoặc đặt con trỏ trong bảng).  2) References > Insert Caption.  3) Label: Table; Position: Above selected item.  4) Caption: sau \"Table 1\" gõ thêm \": Robotics data\" > OK.",
+          "goi_y_en": "1) Select the table (or put the cursor in it).  2) References > Insert Caption.  3) Label: Table; Position: Above selected item.  4) Caption: after \"Table 1\" type \": Robotics data\" > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "caption_table",
@@ -367,8 +444,10 @@
           }
         },
         {
-          "yeu_cau": "In the “Important Dates” section, add a caption below the picture that reads “Figure 1 Robotics illustration”. Do not change the label or numbering format.",
+          "yeu_cau": "Trong mục “Important Dates”, thêm chú thích dưới ảnh với nội dung “Figure 1 Robotics illustration”. Không đổi nhãn hay định dạng đánh số.",
+          "yeu_cau_en": "In the “Important Dates” section, add a caption below the picture that reads “Figure 1 Robotics illustration”. Do not change the label or numbering format.",
           "goi_y": "1) Chọn ảnh > References > Insert Caption.  2) Label: Figure; Position: Below selected item.  3) Gõ thêm \" Robotics illustration\" sau Figure 1 > OK.",
+          "goi_y_en": "1) Select the picture > References > Insert Caption.  2) Label: Figure; Position: Below selected item.  3) Type \" Robotics illustration\" after Figure 1 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "caption_pic",
@@ -378,13 +457,17 @@
       ]
     },
     {
-      "ten": "Project 7 – Health (Expert)",
+      "ten": "Dự án 7 – Health (Expert)",
+      "ten_en": "Project 7 – Health (Expert)",
       "file": "De06_P7_Health_Expert.docx",
-      "mo_ta": "Mở file De06_P7_Health_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta": "Mở file De06_P7_Health_Expert.docx và làm lần lượt các yêu cầu bên dưới. File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "mo_ta_en": "Open De06_P7_Health_Expert.docx and complete the tasks below in order. Extra files (pictures, data, 3D Models) are in the same work folder.",
       "nhiem_vu": [
         {
-          "yeu_cau": "Lock change tracking by using the password “Track1”.",
+          "yeu_cau": "Khóa theo dõi thay đổi (Lock Tracking) bằng mật khẩu “Track1”.",
+          "yeu_cau_en": "Lock change tracking by using the password “Track1”.",
           "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập Track1 hai lần > OK.",
+          "goi_y_en": "1) Review > Track Changes arrow > Lock Tracking.  2) Enter Track1 twice > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "lock_tracking",
@@ -392,8 +475,10 @@
           }
         },
         {
-          "yeu_cau": "Mark all occurrences of the text “Wellness Clinic” as index entries. Then, in the blank paragraph at the end of the document, insert an index that uses the Modern format and two columns.",
+          "yeu_cau": "Đánh dấu mọi lần xuất hiện của chữ “Wellness Clinic” làm mục chỉ mục (index entry). Sau đó, trong đoạn trống ở cuối tài liệu, chèn chỉ mục (index) dùng định dạng Modern và hai cột.",
+          "yeu_cau_en": "Mark all occurrences of the text “Wellness Clinic” as index entries. Then, in the blank paragraph at the end of the document, insert an index that uses the Modern format and two columns.",
           "goi_y": "1) Chọn một cụm \"Wellness Clinic\" > References > Mark Entry (Alt+Shift+X) > Mark All > Close.  2) Home > Show/Hide ¶ để tắt ký hiệu (tránh lệch trang).  3) Đặt con trỏ vào đoạn trống cuối tài liệu > References > Insert Index > Formats: Modern; Columns: 2 > OK.",
+          "goi_y_en": "1) Select one \"Wellness Clinic\" > References > Mark Entry (Alt+Shift+X) > Mark All > Close.  2) Home > Show/Hide ¶ to hide the marks (avoids page shifts).  3) Put the cursor in the blank paragraph at the end > References > Insert Index > Formats: Modern; Columns: 2 > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "index",
@@ -404,8 +489,10 @@
           }
         },
         {
-          "yeu_cau": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”.",
+          "yeu_cau": "Ở cuối đoạn “Name:” (cuối tài liệu), chèn content control kiểu Plain Text. Đặt Title của control là “Name”.",
+          "yeu_cau_en": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”.",
           "goi_y": "1) File > Options > Customize Ribbon > tích Developer (nếu chưa có tab Developer).  2) Đặt con trỏ sau \"Name: \" ở cuối tài liệu.  3) Developer > Plain Text Content Control > Properties > Title: Name > OK.",
+          "goi_y_en": "1) File > Options > Customize Ribbon > check Developer (if the Developer tab is missing).  2) Put the cursor after \"Name: \" at the end of the document.  3) Developer > Plain Text Content Control > Properties > Title: Name > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "content_control",
@@ -413,8 +500,10 @@
           }
         },
         {
-          "yeu_cau": "Create a custom theme color set named “Health Colors” that uses Purple (Standard Colors) as the Accent 1 color.",
+          "yeu_cau": "Tạo bộ theme colors tùy chỉnh tên “Health Colors”, dùng màu Purple (Standard Colors) làm màu Accent 1.",
+          "yeu_cau_en": "Create a custom theme color set named “Health Colors” that uses Purple (Standard Colors) as the Accent 1 color.",
           "goi_y": "1) Design > Colors > Customize Colors.  2) Accent 1: chọn Purple trong Standard Colors.  3) Name: Health Colors > Save.",
+          "goi_y_en": "1) Design > Colors > Customize Colors.  2) Accent 1: choose Purple under Standard Colors.  3) Name: Health Colors > Save.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_colors",
@@ -422,8 +511,10 @@
           }
         },
         {
-          "yeu_cau": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4.",
+          "yeu_cau": "Trong đoạn trống ngay dưới băng tiêu đề, chèn mục lục tùy chỉnh hiện 3 cấp tiêu đề và gồm cả các mục dùng style Subtitle ở TOC level 4.",
+          "yeu_cau_en": "In the blank paragraph directly below the title banner, insert a custom table of contents that shows 3 heading levels and includes entries formatted with the Subtitle style at TOC level 4.",
           "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới banner tiêu đề.  2) References > Table of Contents > Custom Table of Contents > Show levels: 3.  3) Options… > tìm Subtitle, nhập 4 vào ô TOC level > OK > OK.",
+          "goi_y_en": "1) Put the cursor in the blank paragraph right below the title banner.  2) References > Table of Contents > Custom Table of Contents > Show levels: 3.  3) Options… > find Subtitle, type 4 in its TOC level box > OK > OK.",
           "cham": {
             "luat": "word_mau_de",
             "dang": "custom_toc",
