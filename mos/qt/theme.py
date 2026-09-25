@@ -5,7 +5,7 @@ Bảng màu (theme-factory · Forest Canopy):
     Sage         #7d8471 – chữ phụ, đường nét dịu
     Olive        #a4ac86 – điểm nhấn sáng (mục đang chọn, huy hiệu)
     Ivory        #faf9f6 – nền
-Tiêu đề dùng chữ có chân (FreeSerif / Georgia), nội dung dùng chữ không chân (FreeSans / Segoe UI).
+Chữ hiện đại, không chân cho cả tiêu đề và nội dung (Segoe UI trên Windows; tiêu đề dùng bản Semibold/Display).
 """
 from __future__ import annotations
 
@@ -63,15 +63,15 @@ def _first_family(candidates) -> str | None:
 
 
 def pick_font_family() -> str:
-    """Font nội dung (chữ không chân)."""
-    return _first_family(("FreeSans", "Segoe UI Variable Text", "Segoe UI", "Inter", "Noto Sans",
-                          "DejaVu Sans")) or QApplication.font().family()
+    """Font nội dung: chữ không chân, hiện đại."""
+    return _first_family(("Segoe UI Variable Text", "Segoe UI", "Inter", "Noto Sans", "Arial", "Helvetica",
+                          "FreeSans", "DejaVu Sans")) or QApplication.font().family()
 
 
 def pick_heading_family() -> str:
-    """Font tiêu đề (chữ có chân)."""
-    return _first_family(("FreeSerif", "Georgia", "Cambria", "Noto Serif", "DejaVu Serif",
-                          "Times New Roman")) or pick_font_family()
+    """Font tiêu đề: cùng họ chữ không chân, bản đậm/hiển thị nếu có."""
+    return _first_family(("Segoe UI Variable Display", "Segoe UI Semibold", "Segoe UI", "Inter", "Noto Sans",
+                          "Arial", "Helvetica", "FreeSans", "DejaVu Sans")) or pick_font_family()
 
 
 def _assets() -> dict[str, str]:
