@@ -14,6 +14,7 @@ Xem danh sách đầy đủ trong HUONG_DAN_SOAN_DE.md hoặc chạy:  py kiem_t
 from __future__ import annotations
 
 import inspect
+import json
 import re
 from pathlib import Path
 
@@ -494,6 +495,24 @@ def ppt_co_chu(path, chu, tieu_de=None, slide=None):
     return False
 
 
+# ====================================================================== BỘ ĐỀ NHẬP
+
+
+@rule
+def word_mau_de(path, dang, de_bai, goc=None):
+    """Chấm tự động theo dạng câu của bộ đề nhập (mos/word_auto.py): `dang` là mã dạng
+    (vd pic_size), `de_bai` là đề tiếng Anh, `goc` là thông tin file gốc. Dạng chưa hỗ trợ
+    thì không tính điểm (học viên tự kiểm tra)."""
+    from . import word_auto
+    return word_auto.grade(path, dang, de_bai, goc)
+
+
+@rule
+def tu_kiem_tra(path, ghi_chu=None):
+    """Không chấm tự động: học viên tự đối chiếu với gợi ý, nhiệm vụ không tính vào điểm."""
+    return None
+
+
 # ====================================================================== NÂNG CAO
 
 
@@ -541,6 +560,10 @@ PARAM_UI = {
     "nhom": ("Nhóm hiệu ứng", "choice", ["entr", "exit", "emph", "bat_ky"]),
     "ti_le": ("Tỉ lệ", "choice", ["16:9", "4:3"]),
     "tru_slide_dau": ("Bỏ qua slide tiêu đề", "bool"),
+    "dang": ("Mã dạng câu (vd pic_size)", "text"),
+    "de_bai": ("Đề bài gốc (tiếng Anh)", "text"),
+    "goc": ("Thông tin file gốc (tự sinh khi nhập đề)", "auto"),
+    "ghi_chu": ("Ghi chú", "text"),
     "part_regex": ("Part XML (regex, vd word/document\\.xml)", "text"),
     "bo_qua_hoa_thuong": ("Không phân biệt hoa/thường", "bool"),
 }
@@ -602,6 +625,8 @@ RULE_TITLES = {
     "ppt_section": "Có Section với tên cho trước",
     "ppt_so_trang": "Hiện số slide (Slide Number)",
     "ppt_co_chu": "Slide có chứa đoạn chữ",
+    "word_mau_de": "Bộ đề nhập: chấm tự động theo dạng câu",
+    "tu_kiem_tra": "Không chấm tự động (học viên tự kiểm tra)",
     "xml_chua": "Nâng cao: file chứa đoạn XML (regex)",
 }
 
@@ -613,7 +638,7 @@ def rule_title(name: str) -> str:
 
 def rules_for(mon: str) -> list[str]:
     prefix = {"EXCEL": "excel_", "WORD": "word_", "POWERPOINT": "ppt_"}.get(mon.upper(), "")
-    return [n for n in RULES if n.startswith(prefix)] + [n for n in RULES if n.startswith("xml_")]
+    return [n for n in RULES if n.startswith(prefix)] + [n for n in RULES if n.startswith(("xml_", "tu_"))]
 
 
 def rule_params(name: str) -> list[dict]:
@@ -640,6 +665,11 @@ def parse_value(kind: str, text: str):
         if text not in BOOL_TEXT:
             raise ValueError("chọn Có hoặc Không")
         return BOOL_TEXT[text]
+    if kind == "auto" and text[:1] in "{[":
+        try:
+            return json.loads(text)
+        except ValueError:
+            pass
     if kind in ("number", "auto"):
         for conv in (int, float):
             try:
@@ -658,6 +688,8 @@ def format_value(kind: str, value) -> str:
         return "; ".join(str(v) for v in _as_list(value))
     if kind == "bool":
         return "Có" if value else "Không"
+    if isinstance(value, (dict, list)):
+        return json.dumps(value, ensure_ascii=False)
     return str(value)
 
 
@@ -691,7 +723,10 @@ def make_check(specs):
     """Tạo hàm chấm từ một luật hoặc danh sách luật (phải đúng tất cả)."""
     specs = _as_list(specs)
 
-    def check(path: Path) -> bool:
-        return all(RULES[s["luat"]](path, **{k: v for k, v in s.items() if k != "luat"}) for s in specs)
+    def check(path: Path) -> bool | None:
+        results = [RULES[s["luat"]](path, **{k: v for k, v in s.items() if k != "luat"}) for s in specs]
+        if any(r is False or (r is not None and not r) for r in results):
+            return False
+        return None if any(r is None for r in results) else True
 
     return check

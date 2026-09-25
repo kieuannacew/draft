@@ -36,6 +36,20 @@ Mục **Kết quả học viên** hiện mọi lượt làm bài. Có thể lọ
 > **Phòng máy dùng chung dữ liệu:** tạo file `cau_hinh.json` cạnh `main.py` (hoặc cạnh `LuyenThiMOS.exe`):
 > `{"thu_muc_du_lieu": "\\\\MAYCHU\\MOS"}`. Khi đó mọi máy dùng chung tài khoản, đề và kết quả trong thư mục mạng đó.
 
+## Nhập bộ đề có sẵn (tự động)
+
+App đã có sẵn **10 đề Word 365 "Đề thực tế"** (mỗi đề 7 project, 38 câu, tiếng Anh như thi thật) trong
+`de_thi\Word365_DeThucTe_De_01 … _10`. Mỗi đề là một bài thi riêng trên Trang chủ, **chấm tự động**.
+
+Muốn thêm bộ đề khác cùng dạng (thư mục `De_xx` có `de_xx.json` + thư mục `Files`), chọn một trong ba cách:
+- Trong app: **Đề thi → Nhập bộ đề từ thư mục…** hoặc **Nhập từ file ZIP…**
+- Kéo thả thư mục bộ đề (hoặc file `.zip`) vào **`nhap_de.bat`**.
+- Chép bộ đề vào thư mục **`nhap_de`** cạnh `run.bat`: app tự nhập khi tài khoản quản trị mở Trang chủ.
+
+Ảnh / file dữ liệu trộn thư / thư mục `3D Models` được chép cùng file làm bài. Câu nào chưa chấm tự động được
+sẽ hiện **"Tự kiểm tra"** và không tính vào điểm. Các câu "Save a copy … in your Documents folder" được chấm bằng
+cách tìm file trong thư mục **Documents** của máy (hoặc trong thư mục bài làm).
+
 ## Soạn đề ngay trong app (không cần lập trình)
 
 Vào mục **Đề thi** ở thanh menu bên trái, bấm **Soạn đề mới**, rồi làm lần lượt:

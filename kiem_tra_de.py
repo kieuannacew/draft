@@ -40,6 +40,9 @@ def main(argv) -> int:
         if r["project"] != current:
             current = r["project"]
             print(f"\n■ {current}  [{r['file']}]")
+        if r["start_ok"] is None:
+            print(f"  {r['index']:>2}. {r['task'][:70]:<70}  (không chấm tự động – học viên tự kiểm tra)")
+            continue
         line = f"  {r['index']:>2}. {r['task'][:70]:<70}  file gốc: {'ĐÚNG ⚠' if r['start_ok'] else 'sai ✓'}"
         problems += r["start_ok"]
         if r["answer_ok"] is None:

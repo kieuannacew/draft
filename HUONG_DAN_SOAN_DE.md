@@ -186,6 +186,12 @@ Xem nhanh bằng lệnh `py kiem_tra_de.py --luat`.
 | `ppt_so_trang` | `tru_slide_dau` *(mặc định True)* | Hiện Slide number trên mọi slide (mặc định bỏ qua slide tiêu đề). |
 | `ppt_co_chu` | `chu`, `tieu_de` *(tuỳ chọn)*, `slide` *(tuỳ chọn)* | Slide (hoặc cả bài) có chứa `chu`. |
 
+### Bộ đề nhập
+
+- `word_mau_de(dang, de_bai, goc)` – chấm tự động theo mã dạng câu của bộ đề nhập (vd `pic_size`), tự sinh khi
+  bấm **Nhập bộ đề**. Không cần viết tay.
+- `tu_kiem_tra(ghi_chu)` – không chấm tự động: học viên tự đối chiếu, nhiệm vụ không tính điểm.
+
 ### Nâng cao
 
 | Luật | Tham số | Ý nghĩa |

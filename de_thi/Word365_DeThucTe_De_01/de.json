@@ -1,0 +1,456 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Đề 01 (Word365_DeThucTe)",
+  "thoi_gian": 50,
+  "rieng": true,
+  "nguon": "Word365_DeThucTe/De_01",
+  "dau_vet": "f7cd9dd3c7cd0976",
+  "du_an": [
+    {
+      "ten": "Project 1 – Space",
+      "file": "De01_P1_Space.docx",
+      "mo_ta": "Mở file De01_P1_Space.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the paper size of the document to A5.",
+          "goi_y": "Layout > Size > A5.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "paper",
+            "de_bai": "Change the paper size of the document to A5."
+          }
+        },
+        {
+          "yeu_cau": "In the “School Visits” section, apply the Tight Reflection: Touching Reflection effect to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Effects > Reflection > Tight Reflection: Touching.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_effect",
+            "de_bai": "In the “School Visits” section, apply the Tight Reflection: Touching Reflection effect to the picture."
+          }
+        },
+        {
+          "yeu_cau": "Locate the paragraph that starts with “Saturn's rings are made of billions …” and add a bookmark at the beginning of this paragraph named “Space”.",
+          "goi_y": "1) Đặt con trỏ ở đầu đoạn văn (trước chữ đầu tiên).  2) Insert > Bookmark > Bookmark name: Space > Add.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bookmark",
+            "de_bai": "Locate the paragraph that starts with “Saturn's rings are made of billions …” and add a bookmark at the beginning of this paragraph named “Space”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Planetarium Shows” section, set the alignment of the header row of the table to Align Top Center.",
+          "goi_y": "1) Chọn hàng đầu của bảng.  2) Table Layout > Alignment > Align Top Center.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cell_align",
+            "de_bai": "In the “Planetarium Shows” section, set the alignment of the header row of the table to Align Top Center."
+          }
+        },
+        {
+          "yeu_cau": "At the end of the second paragraph in the “Exhibition Overview” section, insert a citation for a new Book source. Use the following information: Author: Minh Nguyen; Title: Journey to the Planets; Year: 2022; City: Hanoi; Publisher: Starlight Science Center.",
+          "goi_y": "1) Đặt con trỏ cuối đoạn thứ hai của section.  2) References > Insert Citation > Add New Source.  3) Type of Source: Book.  4) Author: Nguyen, Minh (hoặc gõ Minh Nguyen); Title: Journey to the Planets; Year: 2022; City: Hanoi; Publisher: Starlight Science Center > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "citation_source",
+            "de_bai": "At the end of the second paragraph in the “Exhibition Overview” section, insert a citation for a new Book source. Use the following information: Author: Minh Nguyen; Title: Journey to the Planets; Year: 2022; City: Hanoi; Publisher: Starlight Science Center."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 2 – Rock",
+      "file": "De01_P2_Rock.docx",
+      "mo_ta": "Mở file De01_P2_Rock.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Accept the tracked insertion of the text “for all customers”. Reject all other tracked changes in the document.",
+          "goi_y": "1) Bấm vào đoạn chèn \"for all customers\" > Review > Accept > Accept This Change.  2) Review > Reject > Reject All Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_reject",
+            "de_bai": "Accept the tracked insertion of the text “for all customers”. Reject all other tracked changes in the document.",
+            "goc": {
+              "ins": [
+                " for all customers"
+              ],
+              "del": [
+                "offers rock climbing"
+              ],
+              "fmt": 1
+            }
+          }
+        },
+        {
+          "yeu_cau": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action.",
+          "goi_y": "1) Review > Check Accessibility.  2) Trong ngăn Accessibility, mở mục lỗi liên quan đến bảng (Missing table header / No header row).  3) Bấm mũi tên cạnh tên bảng > chọn hành động đầu tiên trong Recommended Actions (Use First Row as Header).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "access_table",
+            "de_bai": "Check the document for accessibility issues. Correct the table-related issue reported in the inspection result by using the first recommended action."
+          }
+        },
+        {
+          "yeu_cau": "In the “Climbing Basics” section, highlight the sentence “Beginners start on short walls with top-rope protection.” in Bright Green.",
+          "goi_y": "1) Chọn câu văn.  2) Home > Text Highlight Color > Bright Green.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "highlight",
+            "de_bai": "In the “Climbing Basics” section, highlight the sentence “Beginners start on short walls with top-rope protection.” in Bright Green."
+          }
+        },
+        {
+          "yeu_cau": "Add a primary vertical axis title to the chart in the “Base Camp” section. Change the axis title text to “Length (km)”.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Axis Titles > Primary Vertical.  3) Bấm vào \"Axis Title\" vừa xuất hiện, gõ: Length (km).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_axis",
+            "de_bai": "Add a primary vertical axis title to the chart in the “Base Camp” section. Change the axis title text to “Length (km)”."
+          }
+        },
+        {
+          "yeu_cau": "Apply the Moderate Effect SmartArt style to the SmartArt graphic in the “Mountain Locations Price” section.",
+          "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > SmartArt Styles > Moderate Effect.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_style",
+            "de_bai": "Apply the Moderate Effect SmartArt style to the SmartArt graphic in the “Mountain Locations Price” section.",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/default",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          }
+        },
+        {
+          "yeu_cau": "Save a copy of the document in your Documents folder as a plain-text file named “Memo”. Accept all default settings.",
+          "goi_y": "1) File > Save a Copy (hoặc Save As) > Browse > thư mục Documents.  2) File name: Memo; Save as type: Plain Text (*.txt) > Save.  3) Hộp thoại File Conversion: giữ mặc định > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_txt",
+            "de_bai": "Save a copy of the document in your Documents folder as a plain-text file named “Memo”. Accept all default settings."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 3 – Social",
+      "file": "De01_P3_Social.docx",
+      "mo_ta": "Mở file De01_P3_Social.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Convert all footnotes to endnotes.",
+          "goi_y": "1) References > mở hộp thoại Footnotes (mũi tên nhỏ) > Convert.  2) Chọn Convert all footnotes to endnotes > OK > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "convert_notes",
+            "de_bai": "Convert all footnotes to endnotes."
+          }
+        },
+        {
+          "yeu_cau": "Change the layout of the SmartArt graphic in the “Tables” section to Basic Block List.",
+          "goi_y": "1) Chọn SmartArt (bấm viền ngoài).  2) SmartArt Design > Layouts > More > chọn Basic Block List (trong nhóm Process/List) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_layout",
+            "de_bai": "Change the layout of the SmartArt graphic in the “Tables” section to Basic Block List.",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/vList5",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          }
+        },
+        {
+          "yeu_cau": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Common mistakes include posting too rarely, …”.",
+          "goi_y": "1) Chọn toàn bộ đoạn (bao gồm dấu ¶).  2) Home > Shading > Gold, Accent 4, Lighter 80%.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_shading",
+            "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Common mistakes include posting too rarely, …”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Measuring Results” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
+          "goi_y": "1) Nhấp phải vào mục \"Recruit employees\" (đang đánh số 1).  2) Chọn Continue Numbering.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "continue_num",
+            "de_bai": "In the “Measuring Results” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
+          }
+        },
+        {
+          "yeu_cau": "In the “What Are the Business Applications of Social Media?” section, change the number format of the numbered list to i..",
+          "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn i. (hoặc Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "num_format",
+            "de_bai": "In the “What Are the Business Applications of Social Media?” section, change the number format of the numbered list to i.."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 4 – Travel",
+      "file": "De01_P4_Travel.docx",
+      "mo_ta": "Mở file De01_P4_Travel.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "In the “Registration” section, insert a open book symbol before the phrase “Groups of five”. Use the Wingdings font and character code “38”.",
+          "goi_y": "1) Đặt con trỏ ngay trước \"Groups of five\".  2) Insert > Symbol > More Symbols > Font: Wingdings; Character code: 38 > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "symbol",
+            "de_bai": "In the “Registration” section, insert a open book symbol before the phrase “Groups of five”. Use the Wingdings font and character code “38”."
+          }
+        },
+        {
+          "yeu_cau": "Crop the picture in the “Venue” section to the Oval shape.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > mũi tên Crop > Crop to Shape > Oval.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_crop_shape",
+            "de_bai": "Crop the picture in the “Venue” section to the Oval shape."
+          }
+        },
+        {
+          "yeu_cau": "Find the word “primary” and delete it from the document.",
+          "goi_y": "1) Home > Find (Ctrl+F) > nhập \"primary\" trong ngăn Navigation.  2) Bấm vào kết quả để chọn từ > nhấn Delete (xoá luôn khoảng trắng thừa nếu có).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "find_delete",
+            "de_bai": "Find the word “primary” and delete it from the document.",
+            "goc": {
+              "n": 1
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the blank paragraph at the end of the “Contact Us” section, insert a Continuous Block Process SmartArt graphic that contains the items “Applying Psychological Theories to Classroom Instruction”, “Designing Project-Based Learning Activities”, “Using Technology to Support Reading”, “Building Positive Classroom Communities” in that order. Apply the Powder SmartArt style.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống cuối section.  2) Insert > SmartArt > chọn Continuous Block Process > OK.  3) Mở Text Pane, nhập lần lượt: Applying Psychological Theories to Classroom Instruction; Designing Project-Based Learning Activities; Using Technology to Support Reading; Building Positive Classroom Communities (xoá các dòng trống thừa).  4) SmartArt Design > SmartArt Styles > Powder.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "smartart",
+            "de_bai": "In the blank paragraph at the end of the “Contact Us” section, insert a Continuous Block Process SmartArt graphic that contains the items “Applying Psychological Theories to Classroom Instruction”, “Designing Project-Based Learning Activities”, “Using Technology to Support Reading”, “Building Positive Classroom Communities” in that order. Apply the Powder SmartArt style."
+          }
+        },
+        {
+          "yeu_cau": "In the “Conference Topics” section, delete the “Room” column from the table.",
+          "goi_y": "1) Đặt con trỏ trong cột \"Room\".  2) Table Layout > Delete > Delete Columns.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "delete_col",
+            "de_bai": "In the “Conference Topics” section, delete the “Room” column from the table.",
+            "goc": {
+              "cols": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "Apply the Plain Table 2 table style to the table that starts with “Date”. Clear the Header Row table style option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > Plain Table 2.  3) Table Style Options: bỏ tích Header Row.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_style",
+            "de_bai": "Apply the Plain Table 2 table style to the table that starts with “Date”. Clear the Header Row table style option."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 5 – Coffee",
+      "file": "De01_P5_Coffee.docx",
+      "mo_ta": "Mở file De01_P5_Coffee.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Apply the Wide margin setting to the entire document.",
+          "goi_y": "Layout > Margins > Wide.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "margins_preset",
+            "de_bai": "Apply the Wide margin setting to the entire document."
+          }
+        },
+        {
+          "yeu_cau": "Apply Quick Layout 3 (Layout 3) to the chart in the “Mixing the Batter” section.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Quick Layout > Layout 3.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_layout",
+            "de_bai": "Apply Quick Layout 3 (Layout 3) to the chart in the “Mixing the Batter” section.",
+            "goc": {
+              "fp": "8786d2b621c55f19a2e444d17abd6281"
+            }
+          }
+        },
+        {
+          "yeu_cau": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Tabs > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_to_text",
+            "de_bai": "Convert the table that starts with “Department” near the top of the document to text. Separate the text with tabs.",
+            "goc": {
+              "rows": [
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Depanning” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin.",
+          "goi_y": "1) Chọn hai đoạn.  2) Layout > Indent Left: 0.75\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "indent",
+            "de_bai": "In the “Depanning” section, indent both paragraphs after the heading 0.75\" (1.91 cm) from the left margin."
+          }
+        },
+        {
+          "yeu_cau": "Apply the Title style to the heading “Baking”.",
+          "goi_y": "1) Đặt con trỏ trong tiêu đề Baking.  2) Home > Styles > Title.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "heading_style",
+            "de_bai": "Apply the Title style to the heading “Baking”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 6 – League",
+      "file": "De01_P6_League.docx",
+      "mo_ta": "Mở file De01_P6_League.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "At the end of the sentence “Riverside Youth League offers soccer programs for boys and girls between the ages of six and fourteen.”, insert a continuous section break.",
+          "goi_y": "1) Đặt con trỏ ngay sau dấu chấm cuối câu.  2) Layout > Breaks > Section Breaks: Continuous.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sbreak_cont",
+            "de_bai": "At the end of the sentence “Riverside Youth League offers soccer programs for boys and girls between the ages of six and fourteen.”, insert a continuous section break."
+          }
+        },
+        {
+          "yeu_cau": "Change the Company property of the document to TOMO.",
+          "goi_y": "1) File > Info > Show All Properties.  2) Ô Company: nhập \"TOMO\" (nếu không thấy, dùng Properties > Advanced Properties > Summary > Company).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_company",
+            "de_bai": "Change the Company property of the document to TOMO."
+          }
+        },
+        {
+          "yeu_cau": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “Word365” as the password.",
+          "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập mật khẩu Word365 hai lần > OK (Track Changes tự bật).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_lock",
+            "de_bai": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “Word365” as the password."
+          }
+        },
+        {
+          "yeu_cau": "In the “Equipment” section, convert the table to text. Separate the text with commas.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Separate text with: Commas > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_to_text",
+            "de_bai": "In the “Equipment” section, convert the table to text. Separate the text with commas.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Team",
+                "Division",
+                "Practice day"
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Volunteer Opportunities” section, add a hyperlink to the text “Volunteers receive free” that links to the “Places to Play” heading in this document.",
+          "goi_y": "1) Chọn \"Volunteers receive free\".  2) Insert > Link > Place in This Document.  3) Mở Headings > chọn \"Places to Play\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_place",
+            "de_bai": "In the “Volunteer Opportunities” section, add a hyperlink to the text “Volunteers receive free” that links to the “Places to Play” heading in this document."
+          }
+        },
+        {
+          "yeu_cau": "In the “Volunteer Opportunities” section, add a caption below the picture that reads “Figure 1 League illustration”. Do not change the label or numbering format.",
+          "goi_y": "1) Chọn ảnh > References > Insert Caption.  2) Label: Figure; Position: Below selected item.  3) Gõ thêm \" League illustration\" sau Figure 1 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "caption_pic",
+            "de_bai": "In the “Volunteer Opportunities” section, add a caption below the picture that reads “Figure 1 League illustration”. Do not change the label or numbering format."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 7 – Weekdays (Expert)",
+      "file": "De01_P7_Weekdays_Expert.docx",
+      "mo_ta": "Mở file De01_P7_Weekdays_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection.",
+          "goi_y": "1) Review > Restrict Editing.  2) Formatting restrictions: tích Limit formatting to a selection of styles > Settings.  3) Bấm Recommended Minimum > OK (chọn No nếu hỏi xoá định dạng không cho phép). Không bấm Start Enforcing Protection.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restrict_format",
+            "de_bai": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection."
+          }
+        },
+        {
+          "yeu_cau": "Set the proofing language for the entire document to English (United Kingdom).",
+          "goi_y": "1) Ctrl+A.  2) Review > Language > Set Proofing Language > chọn English (United Kingdom) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "language",
+            "de_bai": "Set the proofing language for the entire document to English (United Kingdom)."
+          }
+        },
+        {
+          "yeu_cau": "Create a custom theme font set named “Weekdays Fonts” that uses Georgia as the heading font and Verdana as the body font.",
+          "goi_y": "1) Design > Fonts > Customize Fonts.  2) Heading font: Georgia; Body font: Verdana; Name: Weekdays Fonts > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_fonts",
+            "de_bai": "Create a custom theme font set named “Weekdays Fonts” that uses Georgia as the heading font and Verdana as the body font."
+          }
+        },
+        {
+          "yeu_cau": "Create a new paragraph style named “Info Box” that uses the Georgia font, 12 pt, italic, with 6 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “Some researchers believe that a relaxing …”.",
+          "goi_y": "1) Đặt con trỏ trong đoạn cần áp dụng.  2) Home > Styles pane (Ctrl+Alt+Shift+S) > New Style.  3) Name: Info Box; Style type: Paragraph; Font: Georgia, 12, Italic.  4) Format > Paragraph > Spacing After: 6 pt > OK > OK (style được áp dụng vào đoạn hiện tại).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_style_new",
+            "de_bai": "Create a new paragraph style named “Info Box” that uses the Georgia font, 12 pt, italic, with 6 pt of spacing after the paragraph. Apply the style to the paragraph that starts with “Some researchers believe that a relaxing …”."
+          }
+        },
+        {
+          "yeu_cau": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+          "goi_y": "1) Home > Replace > More >> > để trống Find what và Replace with.  2) Đặt con trỏ ở ô Find what > Format > Style > Heading 3 > OK.  3) Đặt con trỏ ở ô Replace with > Format > Style > Heading 2 > OK > Replace All.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_style",
+            "de_bai": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+            "goc": {
+              "n": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

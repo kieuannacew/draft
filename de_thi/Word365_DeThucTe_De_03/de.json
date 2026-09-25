@@ -1,0 +1,431 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Đề 03 (Word365_DeThucTe)",
+  "thoi_gian": 50,
+  "rieng": true,
+  "nguon": "Word365_DeThucTe/De_03",
+  "dau_vet": "d5df5abfa225c1c2",
+  "du_an": [
+    {
+      "ten": "Project 1 – Resume",
+      "file": "De03_P1_Resume.docx",
+      "mo_ta": "Mở file De03_P1_Resume.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "In the “Marketing Specialist” section, delete the comment that is attached to the text “social media”.",
+          "goi_y": "1) Bấm vào comment đó.  2) Review > Delete (hoặc … > Delete thread).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_delete",
+            "de_bai": "In the “Marketing Specialist” section, delete the comment that is attached to the text “social media”.",
+            "goc": {
+              "n": 1,
+              "done": 0
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Marketing Specialist” section, resize the picture to a width of 3\" (7.62 cm). Maintain the original aspect ratio.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Size: Shape Width = 3\" (Lock aspect ratio đang bật nên chiều còn lại tự đổi).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_size",
+            "de_bai": "In the “Marketing Specialist” section, resize the picture to a width of 3\" (7.62 cm). Maintain the original aspect ratio.",
+            "goc": {
+              "n": 1,
+              "cx": 2743200,
+              "cy": 1767840,
+              "img": "d0827bca1802cd900548ae0e3bc270fb"
+            }
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text description “Resume steps” to the SmartArt graphic in the “Marketing Assistant” section.",
+          "goi_y": "1) Bấm vào viền ngoài SmartArt > nhấp phải > Edit Alt Text.  2) Nhập: Resume steps.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_alt",
+            "de_bai": "Add the alt text description “Resume steps” to the SmartArt graphic in the “Marketing Assistant” section."
+          }
+        },
+        {
+          "yeu_cau": "In the “Education” section, change the chart to a Line with Markers chart.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Change Chart Type > All Charts > Line > Line with Markers > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_type",
+            "de_bai": "In the “Education” section, change the chart to a Line with Markers chart."
+          }
+        },
+        {
+          "yeu_cau": "In the “Skills” section, insert a endnote to the right of the heading. Enter the endnote text “Includes digital and printed files.”.",
+          "goi_y": "1) Đặt con trỏ ngay cuối tiêu đề Skills.  2) References > Insert Endnote.  3) Gõ: Includes digital and printed files.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "footnote",
+            "de_bai": "In the “Skills” section, insert a endnote to the right of the heading. Enter the endnote text “Includes digital and printed files.”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 2 – Pharma",
+      "file": "De03_P2_Pharma.docx",
+      "mo_ta": "Mở file De03_P2_Pharma.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Reply to the comment attached to the text “medicine” with the text “Confirmed.”.",
+          "goi_y": "1) Bấm vào comment.  2) Ô Reply: gõ \"Confirmed.\" > Post.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_reply",
+            "de_bai": "Reply to the comment attached to the text “medicine” with the text “Confirmed.”.",
+            "goc": {
+              "n": 1,
+              "done": 0
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Active Ingredients” section, insert a new column to the right of the “Function” column of the table. Type “Rating” in the first cell of the new column.",
+          "goi_y": "1) Đặt con trỏ trong cột \"Function\".  2) Table Layout > Insert Right.  3) Gõ \"Rating\" vào ô đầu tiên của cột mới.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_insert_col",
+            "de_bai": "In the “Active Ingredients” section, insert a new column to the right of the “Function” column of the table. Type “Rating” in the first cell of the new column.",
+            "goc": {
+              "cols": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Fill Material” section, convert the tab-delimited text that starts with “Phase” to a two-column table. Accept the default AutoFit behavior.",
+          "goi_y": "1) Chọn các dòng văn bản phân cách bằng Tab (bắt đầu từ \"Phase\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; giữ AutoFit mặc định (Fixed column width: Auto) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_to_table",
+            "de_bai": "In the “Fill Material” section, convert the tab-delimited text that starts with “Phase” to a two-column table. Accept the default AutoFit behavior."
+          }
+        },
+        {
+          "yeu_cau": "Resize the chart in the “Active Ingredients” section to 2.5\" (6.35 cm) high and 4.5\" (11.43 cm) wide.",
+          "goi_y": "1) Chọn biểu đồ.  2) Format > Size: Shape Height = 2.5\"; Shape Width = 4.5\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_size",
+            "de_bai": "Resize the chart in the “Active Ingredients” section to 2.5\" (6.35 cm) high and 4.5\" (11.43 cm) wide."
+          }
+        },
+        {
+          "yeu_cau": "In the “Manufacturing Process” section, apply the Colored Outline - Blue, Accent 5 shape style to the text box that starts with “Did”.",
+          "goi_y": "1) Chọn khung text box (bấm vào viền).  2) Shape Format > Shape Styles > Colored Outline - Blue, Accent 5.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "shape_style",
+            "de_bai": "In the “Manufacturing Process” section, apply the Colored Outline - Blue, Accent 5 shape style to the text box that starts with “Did”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 3 – Robotics",
+      "file": "De03_P3_Robotics.docx",
+      "mo_ta": "Mở file De03_P3_Robotics.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information.",
+          "goi_y": "1) File > Info > Check for Issues > Inspect Document > Inspect.  2) Tại mục Headers, Footers, and Watermarks bấm Remove All.  3) Không xoá các mục khác. Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "inspect_hf",
+            "de_bai": "Inspect the document and remove all headers, footers, and watermarks that are found. Do not remove any other information."
+          }
+        },
+        {
+          "yeu_cau": "In the “Safety” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt.",
+          "goi_y": "1) Chọn hai đoạn văn dưới tiêu đề.  2) Home > Paragraph dialog (mũi tên nhỏ) > Line spacing: Exactly; At: 18 pt > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_exact",
+            "de_bai": "In the “Safety” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt."
+          }
+        },
+        {
+          "yeu_cau": "In the “Game Rules” section, add a new row to the bottom of the table. Enter “Sample”, “North”, and “10” in the new row.",
+          "goi_y": "1) Đặt con trỏ ở ô cuối cùng của bảng.  2) Table Layout > Insert Below (hoặc nhấn Tab ở ô cuối).  3) Nhập lần lượt: Sample | North | 10.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "add_row",
+            "de_bai": "In the “Game Rules” section, add a new row to the bottom of the table. Enter “Sample”, “North”, and “10” in the new row."
+          }
+        },
+        {
+          "yeu_cau": "Format the heading “Competition Overview” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together.",
+          "goi_y": "1) Đặt con trỏ trong tiêu đề.  2) Home > Paragraph dialog > tab Line and Page Breaks.  3) Tích Keep with next và Keep lines together > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "keep_next",
+            "de_bai": "Format the heading “Competition Overview” so that it always appears on the same page as the paragraph that follows it and all lines of the heading are kept together."
+          }
+        },
+        {
+          "yeu_cau": "In the “Robot Requirements” section, change the bullet points to custom ones. Use the four-diamond symbol from the Wingdings font and character code “118”.",
+          "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Wingdings; Character code: 118 > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_bullet",
+            "de_bai": "In the “Robot Requirements” section, change the bullet points to custom ones. Use the four-diamond symbol from the Wingdings font and character code “118”."
+          }
+        },
+        {
+          "yeu_cau": "In the SmartArt graphic in the “Safety” section, change the text “Program” to “Program and Review”.",
+          "goi_y": "1) Chọn SmartArt > SmartArt Design > Text Pane.  2) Sửa dòng \"Program\" thành \"Program and Review\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_text",
+            "de_bai": "In the SmartArt graphic in the “Safety” section, change the text “Program” to “Program and Review”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 4 – Housing",
+      "file": "De03_P4_Housing.docx",
+      "mo_ta": "Mở file De03_P4_Housing.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Set the paragraph spacing for the entire document to Double.",
+          "goi_y": "Design > Paragraph Spacing > Double.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_spacing_doc",
+            "de_bai": "Set the paragraph spacing for the entire document to Double.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          }
+        },
+        {
+          "yeu_cau": "Use a Word feature to replace all instances of “Habitat Homes Vietnam” with “HHV Group”.",
+          "goi_y": "1) Home > Replace (Ctrl+H).  2) Find what: Habitat Homes Vietnam; Replace with: HHV Group.  3) Replace All > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_all",
+            "de_bai": "Use a Word feature to replace all instances of “Habitat Homes Vietnam” with “HHV Group”.",
+            "goc": {
+              "n": 4,
+              "n_new": 0
+            }
+          }
+        },
+        {
+          "yeu_cau": "Change the number format of all footnotes in the document to i, ii, iii, ….",
+          "goi_y": "1) References > hộp thoại Footnote and Endnote (mũi tên nhỏ).  2) Footnotes; Number format: i, ii, iii, …; Apply changes to: Whole document > Apply.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fn_format",
+            "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
+          }
+        },
+        {
+          "yeu_cau": "In the “How to Volunteer” section, insert a caption below the table. Use the Table label and the caption text “: Housing data”.",
+          "goi_y": "1) Chọn bảng (hoặc đặt con trỏ trong bảng).  2) References > Insert Caption.  3) Label: Table; Position: Below selected item.  4) Caption: sau \"Table 1\" gõ thêm \": Housing data\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "caption_table",
+            "de_bai": "In the “How to Volunteer” section, insert a caption below the table. Use the Table label and the caption text “: Housing data”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Stories from Families” section, set the spacing before the two paragraphs after the heading to 12 pt and the spacing after to 12 pt.",
+          "goi_y": "1) Chọn hai đoạn văn.  2) Layout > Spacing Before: 12 pt; After: 12 pt.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_spacing",
+            "de_bai": "In the “Stories from Families” section, set the spacing before the two paragraphs after the heading to 12 pt and the spacing after to 12 pt."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 5 – Recycle",
+      "file": "De03_P5_Recycle.docx",
+      "mo_ta": "Mở file De03_P5_Recycle.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Apply the Casual style set to the document.",
+          "goi_y": "Design > nhóm Document Formatting > mở gallery Style Set > chọn Casual.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "style_set",
+            "de_bai": "Apply the Casual style set to the document.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, change the Title property to “Clean City Initiative Overview”.",
+          "goi_y": "1) File > Info > Properties.  2) Ô Title: xoá nội dung cũ, nhập \"Clean City Initiative Overview\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_title",
+            "de_bai": "In the file properties, change the Title property to “Clean City Initiative Overview”."
+          }
+        },
+        {
+          "yeu_cau": "Apply the Intense Quote style to the paragraph that starts with “Clean City Initiative gives free compost …”.",
+          "goi_y": "1) Đặt con trỏ trong đoạn đó.  2) Home > Styles > Intense Quote (nếu không thấy, mở Styles pane Ctrl+Alt+Shift+S).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_style",
+            "de_bai": "Apply the Intense Quote style to the paragraph that starts with “Clean City Initiative gives free compost …”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Collection Schedule” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Layout > Height: 0.4\".  3) Table Layout > Alignment > Align Center Left (hoặc Align Center) – căn giữa theo chiều dọc.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_rowheight",
+            "de_bai": "In the “Collection Schedule” section, set the height of all rows in the table to 0.4\" (1.02 cm) and vertically center the text in every cell."
+          }
+        },
+        {
+          "yeu_cau": "In the “Get Involved” section, in the blank paragraph, use the 3D Models feature to insert the Cube model from the 3D Models folder. Position the model In Line with Text.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống.  2) Insert > 3D Models > This Device > mở thư mục 3D Models > chọn Cube.glb > Insert.  3) 3D Model > Wrap Text > In Line with Text.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "model3d",
+            "de_bai": "In the “Get Involved” section, in the blank paragraph, use the 3D Models feature to insert the Cube model from the 3D Models folder. Position the model In Line with Text."
+          }
+        },
+        {
+          "yeu_cau": "Save a copy of the document as a Word template named “Clean” that does not support macros. Save the template in the Documents folder.",
+          "goi_y": "1) File > Save a Copy > Browse.  2) Save as type: Word Template (*.dotx) (không chọn .dotm).  3) Chọn thư mục Documents, File name: Clean > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_template",
+            "de_bai": "Save a copy of the document as a Word template named “Clean” that does not support macros. Save the template in the Documents folder."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 6 – Museum",
+      "file": "De03_P6_Museum.docx",
+      "mo_ta": "Mở file De03_P6_Museum.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the theme colors of the document to Green Yellow and the theme fonts to Century Gothic.",
+          "goi_y": "1) Design > Colors > Green Yellow.  2) Design > Fonts > Century Gothic.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "theme_colors",
+            "de_bai": "Change the theme colors of the document to Green Yellow and the theme fonts to Century Gothic."
+          }
+        },
+        {
+          "yeu_cau": "Change the page color of the document to Blue, Accent 1, Lighter 80%.",
+          "goi_y": "Design > Page Color > chọn ô Blue, Accent 1, Lighter 80% (di chuột để xem tên màu).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_color",
+            "de_bai": "Change the page color of the document to Blue, Accent 1, Lighter 80%."
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, add “lotus” as a tag.",
+          "goi_y": "1) File > Info > Properties (bên phải).  2) Ô Tags: nhập \"lotus\" (Tags chính là Keywords).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_tags",
+            "de_bai": "In the file properties, add “lotus” as a tag."
+          }
+        },
+        {
+          "yeu_cau": "In the “Theropod Dinosaurs” section, convert the 5 paragraphs starting with “Walked on two legs” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance).",
+          "goi_y": "1) Chọn 5 đoạn từ \"Walked on two legs\" đến \"Laid eggs in nests\".  2) Home > Bullets > chọn dấu chấm tròn •.  3) Nhấp phải vào danh sách > Adjust List Indents > Bullet position: 0\" (giữ nguyên Text indent/khoảng cách treo) > OK. (Hoặc Home > Decrease Indent 1 lần.)",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "bullets_from_paras",
+            "de_bai": "In the “Theropod Dinosaurs” section, convert the 5 paragraphs starting with “Walked on two legs” to a bulleted list. Use the default round bullet and align the bullets with the left page margin (do not change the hanging indent distance)."
+          }
+        },
+        {
+          "yeu_cau": "In the “Kids Love Dinosaurs” section, apply a 1 ½ pt Blue, Accent 1 outside border to the table. Do not change the inside borders.",
+          "goi_y": "1) Chọn toàn bộ bảng.  2) Table Design > Pen Weight: 1 ½ pt; Pen Color: Blue, Accent 1.  3) Table Design > Borders > Outside Borders.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_borders",
+            "de_bai": "In the “Kids Love Dinosaurs” section, apply a 1 ½ pt Blue, Accent 1 outside border to the table. Do not change the inside borders."
+          }
+        },
+        {
+          "yeu_cau": "In the “Geologic Eras” section, format the two paragraphs after the heading into 2 columns with a line between the columns.",
+          "goi_y": "1) Chọn hai đoạn văn (không chọn tiêu đề).  2) Layout > Columns > More Columns > Two; tích Line between > Apply to: Selected text > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "columns",
+            "de_bai": "In the “Geologic Eras” section, format the two paragraphs after the heading into 2 columns with a line between the columns."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 7 – Scuba (Expert)",
+      "file": "De03_P7_Scuba_Expert.docx",
+      "mo_ta": "Mở file De03_P7_Scuba_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password.",
+          "goi_y": "1) Review > Restrict Editing.  2) Editing restrictions: tích Allow only this type of editing in the document > chọn Comments.  3) Yes, Start Enforcing Protection > để trống hai ô mật khẩu > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restrict_comments",
+            "de_bai": "Restrict editing of the document so that users can only insert comments. Start enforcing protection without a password."
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text title “Scuba table” to the table in the “Marine Life” section.",
+          "goi_y": "1) Nhấp phải bảng > Table Properties > tab Alt Text.  2) Title: Scuba table > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "alt_table",
+            "de_bai": "Add the alt text title “Scuba table” to the table in the “Marine Life” section."
+          }
+        },
+        {
+          "yeu_cau": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống dưới \"List of Tables\".  2) References > Insert Table of Figures.  3) Caption label: Table; Formats: Formal > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_of_figures",
+            "de_bai": "In the blank paragraph after the \"List of Tables\" heading, insert a table of figures that references the Table captions. Use the Formal format."
+          }
+        },
+        {
+          "yeu_cau": "Modify the Heading 1 style so that it uses 18 pt, bold, Orange, Accent 2, Darker 25% font color. Apply the changes to this document only.",
+          "goi_y": "1) Home > Styles > nhấp phải Heading 1 > Modify.  2) Size: 18; Bold; Color: Orange, Accent 2, Darker 25%.  3) Chọn Only in this document > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "modify_style",
+            "de_bai": "Modify the Heading 1 style so that it uses 18 pt, bold, Orange, Accent 2, Darker 25% font color. Apply the changes to this document only."
+          }
+        },
+        {
+          "yeu_cau": "Encrypt the document by using the password “MOSexpert”.",
+          "goi_y": "1) File > Info > Protect Document > Encrypt with Password.  2) Nhập MOSexpert > OK > nhập lại MOSexpert > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "encrypt",
+            "de_bai": "Encrypt the document by using the password “MOSexpert”."
+          }
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "3D Models"
+  ]
+}

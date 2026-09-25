@@ -1,0 +1,439 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Đề 07 (Word365_DeThucTe)",
+  "thoi_gian": 50,
+  "rieng": true,
+  "nguon": "Word365_DeThucTe/De_07",
+  "dau_vet": "cce28b17efb916c4",
+  "du_an": [
+    {
+      "ten": "Project 1 – League",
+      "file": "De07_P1_League.docx",
+      "mo_ta": "Mở file De07_P1_League.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Turn on Track Changes. Then, replace the word “programs” with “PROGRAMS”. Leave Track Changes turned on.",
+          "goi_y": "1) Review > Track Changes (bật, For Everyone).  2) Tìm từ \"programs\", chọn và gõ đè \"PROGRAMS\".  3) Không tắt Track Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_on",
+            "de_bai": "Turn on Track Changes. Then, replace the word “programs” with “PROGRAMS”. Leave Track Changes turned on."
+          }
+        },
+        {
+          "yeu_cau": "In the “Equipment” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt.",
+          "goi_y": "1) Chọn hai đoạn văn dưới tiêu đề.  2) Home > Paragraph dialog (mũi tên nhỏ) > Line spacing: Exactly; At: 18 pt > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_exact",
+            "de_bai": "In the “Equipment” section, change the line spacing of the two paragraphs after the heading to exactly 18 pt."
+          }
+        },
+        {
+          "yeu_cau": "In the “Code of Conduct” section, split the table so that the row that starts with “Dragons” becomes the first row of a new table.",
+          "goi_y": "1) Đặt con trỏ trong hàng bắt đầu bằng \"Dragons\".  2) Table Layout > Split Table.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "split_table",
+            "de_bai": "In the “Code of Conduct” section, split the table so that the row that starts with “Dragons” becomes the first row of a new table.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Team",
+                "Division",
+                "Practice day"
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "Resize the SmartArt graphic in the “Equipment” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide.",
+          "goi_y": "1) Chọn SmartArt (viền ngoài).  2) Format > Size: Height = 2\"; Width = 6\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_size",
+            "de_bai": "Resize the SmartArt graphic in the “Equipment” section to 2\" (5.08 cm) high and 6\" (15.24 cm) wide."
+          }
+        },
+        {
+          "yeu_cau": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Parents should check the league website …”.",
+          "goi_y": "1) Chọn toàn bộ đoạn (bao gồm dấu ¶).  2) Home > Shading > Gold, Accent 4, Lighter 80%.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_shading",
+            "de_bai": "Apply Gold, Accent 4, Lighter 80% shading to the paragraph that starts with “Parents should check the league website …”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 2 – Scuba",
+      "file": "De07_P2_Scuba.docx",
+      "mo_ta": "Mở file De07_P2_Scuba.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Display the Semaphore footer on all pages of the document.",
+          "goi_y": "1) Insert > Footer > Semaphore.  2) Đảm bảo Different First Page KHÔNG được tích. Close Header and Footer.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "footer_gallery",
+            "de_bai": "Display the Semaphore footer on all pages of the document.",
+            "goc": {
+              "old": [
+                "f2480850386b93201280ebca3c3df527"
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, add “scuba” as a tag.",
+          "goi_y": "1) File > Info > Properties (bên phải).  2) Ô Tags: nhập \"scuba\" (Tags chính là Keywords).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_tags",
+            "de_bai": "In the file properties, add “scuba” as a tag."
+          }
+        },
+        {
+          "yeu_cau": "In the “Join Us” section, indent both paragraphs after the heading 0.5\" (1.27 cm) from the left margin.",
+          "goi_y": "1) Chọn hai đoạn.  2) Layout > Indent Left: 0.5\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "indent",
+            "de_bai": "In the “Join Us” section, indent both paragraphs after the heading 0.5\" (1.27 cm) from the left margin."
+          }
+        },
+        {
+          "yeu_cau": "In the “Safety First” section, apply the Center Shadow Rectangle picture style to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Styles > Center Shadow Rectangle.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_style",
+            "de_bai": "In the “Safety First” section, apply the Center Shadow Rectangle picture style to the picture."
+          }
+        },
+        {
+          "yeu_cau": "In the “Open Water Dives” section, convert the tab-delimited text that starts with “Program” to a two-column table. Accept the default AutoFit behavior.",
+          "goi_y": "1) Chọn các dòng văn bản phân cách bằng Tab (bắt đầu từ \"Program\").  2) Insert > Table > Convert Text to Table.  3) Number of columns: 2; Separate text at: Tabs; giữ AutoFit mặc định (Fixed column width: Auto) > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_to_table",
+            "de_bai": "In the “Open Water Dives” section, convert the tab-delimited text that starts with “Program” to a two-column table. Accept the default AutoFit behavior."
+          }
+        },
+        {
+          "yeu_cau": "In the “Pool Training” section, change the shading of the header row of the table to Gold, Accent 4.",
+          "goi_y": "1) Chọn hàng tiêu đề của bảng.  2) Table Design > Shading > Gold, Accent 4.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_shading",
+            "de_bai": "In the “Pool Training” section, change the shading of the header row of the table to Gold, Accent 4."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 3 – DIY",
+      "file": "De07_P3_DIY.docx",
+      "mo_ta": "Mở file De07_P3_DIY.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "At the beginning of the heading “DIY Seminars”, insert a Next Page section break.",
+          "goi_y": "1) Đặt con trỏ trước chữ đầu tiên của tiêu đề.  2) Layout > Breaks > Section Breaks: Next Page.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sbreak_next",
+            "de_bai": "At the beginning of the heading “DIY Seminars”, insert a Next Page section break."
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, change the Title property to “Handy Home Stores Handbook”.",
+          "goi_y": "1) File > Info > Properties.  2) Ô Title: xoá nội dung cũ, nhập \"Handy Home Stores Handbook\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_title",
+            "de_bai": "In the file properties, change the Title property to “Handy Home Stores Handbook”."
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text description “DIY photo” to the picture in the “DIY Seminars” section.",
+          "goi_y": "1) Nhấp phải ảnh > View Alt Text.  2) Nhập \"DIY photo\" vào ô mô tả.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "alt_text",
+            "de_bai": "Add the alt text description “DIY photo” to the picture in the “DIY Seminars” section."
+          }
+        },
+        {
+          "yeu_cau": "Locate the text “Our friendly mascot, Handy Hammer, now has a little sister named Paint Brush.” and apply the Subtle Emphasis style to it.",
+          "goi_y": "1) Dùng Ctrl+F tìm câu trên và chọn đúng câu (kể cả dấu chấm).  2) Home > Styles > Subtle Emphasis.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style",
+            "de_bai": "Locate the text “Our friendly mascot, Handy Hammer, now has a little sister named Paint Brush.” and apply the Subtle Emphasis style to it."
+          }
+        },
+        {
+          "yeu_cau": "In the “Customer Rewards” section, insert a footnote to the right of the heading. Enter the footnote text “Information provided by Handy Home Stores.”.",
+          "goi_y": "1) Đặt con trỏ ngay cuối tiêu đề Customer Rewards.  2) References > Insert Footnote.  3) Gõ: Information provided by Handy Home Stores.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "footnote",
+            "de_bai": "In the “Customer Rewards” section, insert a footnote to the right of the heading. Enter the footnote text “Information provided by Handy Home Stores.”."
+          }
+        },
+        {
+          "yeu_cau": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “DIY2026”. Accept any compatibility warnings.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Word 97-2003 Document (*.doc); File name: DIY2026 > Save.  3) Nếu xuất hiện Compatibility Checker bấm Continue.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_97",
+            "de_bai": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “DIY2026”. Accept any compatibility warnings."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 4 – Farm",
+      "file": "De07_P4_Farm.docx",
+      "mo_ta": "Mở file De07_P4_Farm.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the paper size of the document to A4.",
+          "goi_y": "Layout > Size > A4.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "paper",
+            "de_bai": "Change the paper size of the document to A4."
+          }
+        },
+        {
+          "yeu_cau": "Insert the Registered symbol (®) immediately after the first instance of “Delta Organic Farm” in the document.",
+          "goi_y": "1) Đặt con trỏ ngay sau \"Delta Organic Farm\" đầu tiên (không có khoảng trắng).  2) Insert > Symbol > More Symbols > tab Special Characters > Registered > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "special_char",
+            "de_bai": "Insert the Registered symbol (®) immediately after the first instance of “Delta Organic Farm” in the document."
+          }
+        },
+        {
+          "yeu_cau": "Apply the List Table 1 Light - Accent 6 table style to the table that starts with “Organization”. Clear the Header Row table style option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > List Table 1 Light - Accent 6.  3) Table Style Options: bỏ tích Header Row.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_style",
+            "de_bai": "Apply the List Table 1 Light - Accent 6 table style to the table that starts with “Organization”. Clear the Header Row table style option."
+          }
+        },
+        {
+          "yeu_cau": "In the “About the Farm” section, change the list level for “Basil” to Level 3.",
+          "goi_y": "1) Đặt con trỏ vào mục \"Basil\".  2) Home > mũi tên Bullets/Numbering > Change List Level > Level 3.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "list_level",
+            "de_bai": "In the “About the Farm” section, change the list level for “Basil” to Level 3."
+          }
+        },
+        {
+          "yeu_cau": "In the SmartArt graphic in the “This Season's Harvest” section, demote “Carrots” so that it becomes a second-level item under “Sweet potatoes”.",
+          "goi_y": "1) Bấm chọn hình \"Carrots\" (hoặc đặt con trỏ ở dòng đó trong Text Pane).  2) SmartArt Design > Demote (hoặc nhấn Tab trong Text Pane).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_demote",
+            "de_bai": "In the SmartArt graphic in the “This Season's Harvest” section, demote “Carrots” so that it becomes a second-level item under “Sweet potatoes”."
+          }
+        },
+        {
+          "yeu_cau": "Replace the picture in the “Farm Visits” section with the Farm_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
+          "goi_y": "1) Nhấp phải ảnh > Change Picture > From a File (hoặc Picture Format > Change Picture).  2) Chọn Farm_new.png trong thư mục Files > Insert.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_change",
+            "de_bai": "Replace the picture in the “Farm Visits” section with the Farm_new.png picture from the Files folder. Keep the size and formatting of the original picture.",
+            "goc": {
+              "n": 1,
+              "cx": 3108960,
+              "cy": 2003552,
+              "img": "bda64e552cb566d6dd215106abffc48e"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 5 – School",
+      "file": "De07_P5_School.docx",
+      "mo_ta": "Mở file De07_P5_School.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Add the CONFIDENTIAL 1 watermark to the document.",
+          "goi_y": "Design > Watermark > chọn CONFIDENTIAL 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "watermark",
+            "de_bai": "Add the CONFIDENTIAL 1 watermark to the document."
+          }
+        },
+        {
+          "yeu_cau": "In the “The Examples Highlight” section, change the chart title from “Chart Title” to “Minutes Overview”.",
+          "goi_y": "1) Bấm vào tiêu đề \"Chart Title\" của biểu đồ.  2) Chọn hết chữ trong tiêu đề và gõ: Minutes Overview.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_title",
+            "de_bai": "In the “The Examples Highlight” section, change the chart title from “Chart Title” to “Minutes Overview”."
+          }
+        },
+        {
+          "yeu_cau": "Remove all borders from the table that starts with “Organization” near the top of the document.",
+          "goi_y": "1) Chọn toàn bộ bảng bắt đầu bằng \"Organization\".  2) Table Design > Borders > No Border.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_noborder",
+            "de_bai": "Remove all borders from the table that starts with “Organization” near the top of the document."
+          }
+        },
+        {
+          "yeu_cau": "In the “The Examples Highlight” section, apply the List Table 3 - Accent 5 table style to the table. Remove the formatting from the first column.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > List Table 3 - Accent 5.  3) Table Style Options: bỏ tích First Column.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_style",
+            "de_bai": "In the “The Examples Highlight” section, apply the List Table 3 - Accent 5 table style to the table. Remove the formatting from the first column."
+          }
+        },
+        {
+          "yeu_cau": "Find the word “communication” and delete it from the document.",
+          "goi_y": "1) Home > Find (Ctrl+F) > nhập \"communication\" trong ngăn Navigation.  2) Bấm vào kết quả để chọn từ > nhấn Delete (xoá luôn khoảng trắng thừa nếu có).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "find_delete",
+            "de_bai": "Find the word “communication” and delete it from the document.",
+            "goc": {
+              "n": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 6 – Housing",
+      "file": "De07_P6_Housing.docx",
+      "mo_ta": "Mở file De07_P6_Housing.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Remove the compatibility mode of this document.",
+          "goi_y": "1) File > Info > Convert (Compatibility Mode).  2) Bấm OK trong hộp thoại xác nhận nâng cấp định dạng.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "compat",
+            "de_bai": "Remove the compatibility mode of this document."
+          }
+        },
+        {
+          "yeu_cau": "Accept all tracked insertions and deletions. Reject all formatting changes.",
+          "goi_y": "1) Review > Show Markup > bỏ tích Formatting (chỉ còn hiện Insertions and Deletions).  2) Review > Accept > Accept All Changes Shown.  3) Review > Show Markup > tích lại Formatting.  4) Review > Reject > Reject All Changes (lúc này chỉ còn các thay đổi định dạng).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_accept",
+            "de_bai": "Accept all tracked insertions and deletions. Reject all formatting changes.",
+            "goc": {
+              "ins": [
+                " in 2026"
+              ],
+              "del": [
+                "build or repair"
+              ],
+              "fmt": 1
+            }
+          }
+        },
+        {
+          "yeu_cau": "Insert the Ion (Dark) cover page. Accept all default settings.",
+          "goi_y": "Insert > Cover Page > Ion (Dark).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "cover_page",
+            "de_bai": "Insert the Ion (Dark) cover page. Accept all default settings."
+          }
+        },
+        {
+          "yeu_cau": "Remove the major gridlines from the chart in the “Building with Heart” section.",
+          "goi_y": "1) Chọn biểu đồ.  2) Chart Design > Add Chart Element > Gridlines > bấm Primary Major Vertical để bỏ chọn.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_gridlines",
+            "de_bai": "Remove the major gridlines from the chart in the “Building with Heart” section."
+          }
+        },
+        {
+          "yeu_cau": "In the “Building with Heart” section, insert a caption above the table. Use the Table label and the caption text “: Housing data”.",
+          "goi_y": "1) Chọn bảng (hoặc đặt con trỏ trong bảng).  2) References > Insert Caption.  3) Label: Table; Position: Above selected item.  4) Caption: sau \"Table 1\" gõ thêm \": Housing data\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "caption_table",
+            "de_bai": "In the “Building with Heart” section, insert a caption above the table. Use the Table label and the caption text “: Housing data”."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 7 – Bakery (Expert)",
+      "file": "De07_P7_Bakery_Expert.docx",
+      "mo_ta": "Mở file De07_P7_Bakery_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật). File phụ (ảnh, dữ liệu, 3D Models) nằm cùng thư mục bài làm.",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Lock change tracking by using the password “Review365”.",
+          "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập Review365 hai lần > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "lock_tracking",
+            "de_bai": "Lock change tracking by using the password “Review365”."
+          }
+        },
+        {
+          "yeu_cau": "Start a Letters mail merge. Use the Recipients_Bakery.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma.",
+          "goi_y": "1) Mailings > Start Mail Merge > Letters.  2) Select Recipients > Use an Existing List > chọn Recipients_Bakery.xlsx > sheet Recipients$ > OK.  3) Đặt con trỏ giữa \"Dear \" và dấu phẩy > Insert Merge Field > First_Name.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "mailmerge",
+            "de_bai": "Start a Letters mail merge. Use the Recipients_Bakery.xlsx workbook in the Files folder as the recipient list. In the paragraph that starts with “Dear”, insert the First_Name merge field between the word “Dear” and the comma."
+          }
+        },
+        {
+          "yeu_cau": "Find all text that is formatted with the Dark Red font color and change the font color to Blue.",
+          "goi_y": "1) Home > Replace > More >> > Find what: để trống > Format > Font > Font color: Dark Red (Standard Colors) > OK.  2) Replace with: để trống > Format > Font > Font color: Blue > OK > Replace All.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_color",
+            "de_bai": "Find all text that is formatted with the Dark Red font color and change the font color to Blue.",
+            "goc": {
+              "n": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”.",
+          "goi_y": "1) File > Options > Customize Ribbon > tích Developer (nếu chưa có tab Developer).  2) Đặt con trỏ sau \"Name: \" ở cuối tài liệu.  3) Developer > Plain Text Content Control > Properties > Title: Name > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "content_control",
+            "de_bai": "At the end of the paragraph “Name:” at the end of the document, insert a Plain Text content control. Set the title of the control to “Name”."
+          }
+        },
+        {
+          "yeu_cau": "Record a macro named “FormatTitle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name.",
+          "goi_y": "1) View > Macros > Record Macro.  2) Macro name: FormatTitle; Store macro in: tên tài liệu hiện tại (không chọn All Documents) > OK.  3) Home > Styles > Heading 2.  4) View > Macros > Stop Recording.  5) File > Save As > Documents > Save as type: Word Macro-Enabled Document (*.docm) > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "macro",
+            "de_bai": "Record a macro named “FormatTitle” that is stored in this document only and applies the Heading 2 style to the selected paragraph. Save the document as a Word Macro-Enabled Document in the Documents folder with the same file name."
+          }
+        }
+      ]
+    }
+  ],
+  "file_phu": [
+    "Farm_new.png",
+    "Recipients_Bakery.xlsx"
+  ]
+}

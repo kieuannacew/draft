@@ -57,7 +57,7 @@ HISTORY_FILE = DATA_DIR / "history.json"
 class Task:
     title: str                      # Yêu cầu hiển thị cho người học
     hint: str                       # Hướng dẫn thao tác (hiện ở chế độ luyện tập / khi xem kết quả)
-    check: Callable[[Path], bool]   # Hàm chấm: trả về True nếu làm đúng
+    check: Callable[[Path], bool | None]   # Hàm chấm: True nếu đúng; None = không chấm tự động được
 
 
 @dataclass
@@ -75,6 +75,7 @@ class Exam:
     name: str                       # vd "Microsoft Excel (MO-200)"
     projects: list[Project]
     minutes: int = 50
+    standalone: bool = False        # đề riêng (bộ đề nhập), không gộp vào bài thi có sẵn
 
 
 @dataclass
@@ -82,7 +83,7 @@ class TaskResult:
     project: str
     task: str
     hint: str
-    correct: bool
+    correct: bool | None            # None = tự kiểm tra (không tính điểm)
     error: str = ""
 
 
@@ -120,10 +121,12 @@ def reset_project(session: Session, project_idx: int) -> None:
     session.exam.projects[project_idx].build(path)
 
 
-def run_check(task: Task, path: Path) -> tuple[bool, str]:
-    """Chạy hàm chấm một cách an toàn: lỗi đọc file = sai, kèm thông báo."""
+def run_check(task: Task, path: Path) -> tuple[bool | None, str]:
+    """Chạy hàm chấm một cách an toàn: lỗi đọc file = sai, kèm thông báo.
+    Trả về None nếu nhiệm vụ không chấm tự động được (học viên tự kiểm tra)."""
     try:
-        return bool(task.check(path)), ""
+        ok = task.check(path)
+        return (None if ok is None else bool(ok)), ""
     except Exception as exc:  # file hỏng, đang bị khóa, thiếu sheet...
         return False, f"{type(exc).__name__}: {exc}"
 
@@ -142,8 +145,8 @@ def grade(session: Session) -> dict:
     results: list[TaskResult] = []
     for i in range(len(session.exam.projects)):
         results.extend(check_project(session, i))
-    total = len(results)
-    correct = sum(r.correct for r in results)
+    total = sum(r.correct is not None for r in results)
+    correct = sum(r.correct is True for r in results)
     score = round(MAX_SCORE * correct / total) if total else 0
     return {
         "exam": session.exam.name,
@@ -185,7 +188,7 @@ def load_history(user: str | None = None) -> list[dict]:
 def save_history(report: dict) -> None:
     history = load_history()
     entry = {k: v for k, v in report.items() if k != "results"}
-    entry["wrong"] = [f"{r.project}: {r.task}" for r in report["results"] if not r.correct]
+    entry["wrong"] = [f"{r.project}: {r.task}" for r in report["results"] if r.correct is False]
     history.append(entry)
     HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
     HISTORY_FILE.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")

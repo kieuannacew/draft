@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QButtonGroup, QDialog, QFrame, QGri
                                QLineEdit, QMainWindow, QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
                                QVBoxLayout, QWidget)
 
-from .. import core
+from .. import core, nhap_de
 from ..accounts import ROLE_NAMES, AccountError, AccountStore
 from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
@@ -390,6 +390,11 @@ class HomePage(QScrollArea):
         super().__init__()
         self.shell = shell
         acc = shell.account
+        if acc.is_admin:
+            try:
+                nhap_de.auto_import()           # bộ đề đặt trong thư mục nhap_de/ cạnh app
+            except Exception:  # không để lỗi nhập đề chặn Trang chủ
+                pass
         custom, errors = load_custom_exams()
         self.exams = merge_exams(ALL_EXAMS, custom)
         history = core.load_history(acc.username)
@@ -611,8 +616,8 @@ class ResultPage(QScrollArea):
         per = QHBoxLayout()
         per.setSpacing(16)
         for project in session.exam.projects:
-            rs = [r for r in self.results if r.project == project.name]
-            ok = sum(r.correct for r in rs)
+            rs = [r for r in self.results if r.project == project.name and r.correct is not None]
+            ok = sum(r.correct is True for r in rs)
             c = Card(padding=16, spacing=8)
             row = QHBoxLayout()
             row.addWidget(label(project.name, "h3"), 1)
@@ -626,9 +631,10 @@ class ResultPage(QScrollArea):
         # --- chi tiết
         lay.addWidget(label("Chi tiết từng nhiệm vụ", "h2"))
         self.table = T.table([("Kết quả", 110), ("Dự án", 220), ("Nhiệm vụ", None)])
-        rows = [["✓  Đúng" if r.correct else "✗  Sai", r.project.split("–")[-1].strip(), r.task]
-                for r in self.results]
-        T.set_rows(self.table, rows, ["ok" if r.correct else "bad" for r in self.results], tone_cols={0})
+        verdict = {True: "✓  Đúng", False: "✗  Sai", None: "–  Tự kiểm tra"}
+        rows = [[verdict[r.correct], r.project.split("–")[-1].strip(), r.task] for r in self.results]
+        tones = [{True: "ok", False: "bad", None: "muted"}[r.correct] for r in self.results]
+        T.set_rows(self.table, rows, tones, tone_cols={0})
         self.table.setMinimumHeight(min(60 + 42 * len(rows), 420))
         self.table.itemSelectionChanged.connect(self.on_select)
         lay.addWidget(self.table)
@@ -725,9 +731,12 @@ class TaskCard(QFrame):
         self.hint.setVisible(not self.hint.isVisible())
         self.hint_btn.setText("Ẩn gợi ý" if self.hint.isVisible() else "Gợi ý")
 
-    def set_status(self, ok: bool):
-        T.set_chip(self.status, "✓ Đúng" if ok else "✗ Sai", SUCCESS if ok else DANGER,
-                   SUCCESS_SOFT if ok else DANGER_SOFT)
+    def set_status(self, ok: bool | None):
+        if ok is None:
+            T.set_chip(self.status, "Tự kiểm tra", WARN, WARN_SOFT)
+        else:
+            T.set_chip(self.status, "✓ Đúng" if ok else "✗ Sai", SUCCESS if ok else DANGER,
+                       SUCCESS_SOFT if ok else DANGER_SOFT)
         self.status.show()
 
 

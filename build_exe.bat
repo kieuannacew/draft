@@ -5,6 +5,8 @@ set PY=py
 where py >nul 2>nul || set PY=python
 %PY% -m pip install -q -r requirements.txt pyinstaller
 %PY% -m PyInstaller --noconfirm --onefile --windowed --name LuyenThiMOS main.py
+rem Chep kem thu muc de thi (de mau + bo de da nhap) canh file .exe
+xcopy /e /i /y /q de_thi dist\de_thi >nul
 echo.
-echo Xong! File chay: dist\LuyenThiMOS.exe
+echo Xong! File chay: dist\LuyenThiMOS.exe (chep ca thu muc dist\de_thi di kem)
 pause

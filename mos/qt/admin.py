@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QFil
                                QHBoxLayout, QLabel, QLineEdit, QListWidget, QPlainTextEdit, QScrollArea,
                                QSplitter, QVBoxLayout, QWidget)
 
-from .. import core, custom, rules
+from .. import core, custom, nhap_de, rules
 from ..accounts import ROLE_NAMES, STUDENT, AccountError
 from . import theme as T
 from .app import _banner, page_body
@@ -310,8 +310,11 @@ class ExamsPage(_Page):
         super().__init__()
         self.shell = shell
         self.lay.addWidget(T.page_header(
-            "Đề thi", "Soạn đề của riêng bạn. Đề được gộp vào bài thi của môn tương ứng trên Trang chủ.",
-            [button("+ Soạn đề mới", self.new, "primary")]))
+            "Đề thi", "Soạn đề của riêng bạn (được gộp vào bài thi cùng môn), hoặc nhập cả bộ đề có sẵn "
+                      "(mỗi đề thành một bài thi riêng trên Trang chủ, chấm tự động).",
+            [button("Nhập bộ đề từ thư mục…", self.import_folder),
+             button("Nhập từ file ZIP…", self.import_zip),
+             button("+ Soạn đề mới", self.new, "primary")]))
         self.lay.addLayout(_toolbar(right=(button("Sửa", self.edit), button("Kiểm tra đề", self.check),
                                            button("Mở thư mục", self.open_folder),
                                            button("Xóa", self.delete, "danger"))))
@@ -352,6 +355,33 @@ class ExamsPage(_Page):
         if key is None:
             T.info(self, "Chọn đề", "Hãy chọn một đề trong bảng.")
         return Path(key) if key else None
+
+    def import_folder(self):
+        path = QFileDialog.getExistingDirectory(self, "Chọn thư mục bộ đề (vd MOS_Word365_DeThucTe hoặc De_01)")
+        if path:
+            self._import(Path(path))
+
+    def import_zip(self):
+        path, _ = QFileDialog.getOpenFileName(self, "Chọn file ZIP bộ đề", "", "Bộ đề nén (*.zip)")
+        if path:
+            self._import(Path(path))
+
+    def _import(self, path: Path):
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        try:
+            done, warnings = nhap_de.import_path(path)
+        except (nhap_de.ImportError_, OSError, ValueError) as exc:
+            QApplication.restoreOverrideCursor()
+            T.error(self, "Không nhập được", str(exc))
+            return
+        QApplication.restoreOverrideCursor()
+        self.refresh()
+        msg = f"Đã nhập {len(done)} đề. Các đề hiện riêng trên Trang chủ (mỗi đề là một bài thi)."
+        if warnings:
+            msg += f"\n\nLưu ý ({len(warnings)}):\n" + "\n".join("• " + w for w in warnings[:8])
+            if len(warnings) > 8:
+                msg += f"\n… và {len(warnings) - 8} lưu ý khác."
+        T.info(self, "Nhập bộ đề", msg)
 
     def new(self):
         ExamEditor(self, None).exec()
@@ -974,8 +1004,8 @@ class CheckReportDialog(_Dialog):
             self.lay.addWidget(_banner("Đề còn lỗi khai báo:<br>" + "<br>".join("• " + e for e in errors), "bad"))
             self.buttons("Đóng", cancel=False)
             return
-        problems = sum(r["start_ok"] for r in rows) + sum(r["answer_ok"] is False for r in rows)
-        missing = sum(r["answer_ok"] is None for r in rows)
+        problems = sum(r["start_ok"] is True for r in rows) + sum(r["answer_ok"] is False for r in rows)
+        missing = sum(r["answer_ok"] is None and r["start_ok"] is not None for r in rows)
         head = QHBoxLayout()
         if problems:
             head.addWidget(chip(f"CẦN XEM LẠI {problems} CHỖ", DANGER, DANGER_SOFT))
@@ -989,6 +1019,10 @@ class CheckReportDialog(_Dialog):
         t = T.table([("Dự án", 200), ("Nhiệm vụ", None), ("File gốc", 130), ("File đáp án", 130)])
         data, tones = [], []
         for r in rows:
+            if r["start_ok"] is None:
+                data.append([r["project"], f"{r['index']}. {r['task']}", "tự kiểm tra", "tự kiểm tra"])
+                tones.append("muted")
+                continue
             data.append([r["project"], f"{r['index']}. {r['task']}",
                          "ĐÚNG sẵn ⚠" if r["start_ok"] else "sai ✓",
                          "chưa có" if r["answer_ok"] is None else ("đúng ✓" if r["answer_ok"] else "SAI ✗")])
@@ -998,7 +1032,7 @@ class CheckReportDialog(_Dialog):
         t.setMinimumHeight(min(80 + 42 * len(rows), 420))
         self.lay.addWidget(t)
         tips = []
-        if any(r["start_ok"] for r in rows):
+        if any(r["start_ok"] is True for r in rows):
             tips.append("<b>“ĐÚNG sẵn”</b>: file chưa làm đã đạt — luật chấm quá dễ, hãy siết điều kiện.")
         if any(r["answer_ok"] is False for r in rows):
             tips.append("<b>“SAI” ở đáp án</b>: làm đúng vẫn bị chấm sai — kiểm tra lại tham số của luật.")

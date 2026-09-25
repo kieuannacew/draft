@@ -1,0 +1,435 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Đề 10 (Word365_DeThucTe)",
+  "thoi_gian": 50,
+  "rieng": true,
+  "nguon": "Word365_DeThucTe/De_10",
+  "dau_vet": "aca56fa995bb2a5b",
+  "du_an": [
+    {
+      "ten": "Project 1 – Recycle",
+      "file": "De10_P1_Recycle.docx",
+      "mo_ta": "Mở file De10_P1_Recycle.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "At the end of the document title, insert a open book symbol. Use the Wingdings font and character code “38”.",
+          "goi_y": "1) Đặt con trỏ cuối tiêu đề.  2) Insert > Symbol > More Symbols > Font: Wingdings; Character code: 38 > Insert > Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "symbol",
+            "de_bai": "At the end of the document title, insert a open book symbol. Use the Wingdings font and character code “38”."
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, add “Training” as a category.",
+          "goi_y": "1) File > Info > Properties > Show All Properties (hoặc Advanced Properties > Summary).  2) Ô Categories: nhập \"Training\". Nhấn ra ngoài/OK để lưu.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_category",
+            "de_bai": "In the file properties, add “Training” as a category."
+          }
+        },
+        {
+          "yeu_cau": "In the “Get Involved” section, add a hyperlink to the text “clean-up day” that links to the “Composting at Home” heading in this document.",
+          "goi_y": "1) Chọn \"clean-up day\".  2) Insert > Link > Place in This Document.  3) Mở Headings > chọn \"Composting at Home\" > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_place",
+            "de_bai": "In the “Get Involved” section, add a hyperlink to the text “clean-up day” that links to the “Composting at Home” heading in this document."
+          }
+        },
+        {
+          "yeu_cau": "In the “What Cannot Be Recycled?” section, apply the 10 Point Soft Edges effect to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Picture Effects > Soft Edges > 10 Point.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_effect",
+            "de_bai": "In the “What Cannot Be Recycled?” section, apply the 10 Point Soft Edges effect to the picture."
+          }
+        },
+        {
+          "yeu_cau": "In the “What Can Be Recycled?” section, add a comment to the text “many plastic containers” that says “Add a photo here.”.",
+          "goi_y": "1) Chọn \"many plastic containers\".  2) Review > New Comment.  3) Gõ \"Add a photo here.\" > Post (Ctrl+Enter).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_add",
+            "de_bai": "In the “What Can Be Recycled?” section, add a comment to the text “many plastic containers” that says “Add a photo here.”.",
+            "goc": {
+              "n": 0,
+              "done": 0
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Get Involved” section, in the blank paragraph below the table, insert a Clustered Column chart that shows the “Recycling rate (%)” values for the first 4 items of the table: Paper (68), Glass (45), Plastic (30), Metal (55). Use “Recycling rate (%)” as the series name.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới bảng.  2) Insert > Chart > Column > Clustered Column > OK (mở cửa sổ dữ liệu).  3) Ô B1: Recycling rate (%). Cột A từ A2: Paper; Glass; Plastic; Metal. Cột B: 68; 45; 30; 55.  4) Xoá các cột/ dòng mẫu thừa (Series 2, Series 3, Category còn lại) hoặc kéo khung xanh thu hẹp vùng dữ liệu.  5) Đóng cửa sổ dữ liệu.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_insert",
+            "de_bai": "In the “Get Involved” section, in the blank paragraph below the table, insert a Clustered Column chart that shows the “Recycling rate (%)” values for the first 4 items of the table: Paper (68), Glass (45), Plastic (30), Metal (55). Use “Recycling rate (%)” as the series name.",
+            "goc": {
+              "n": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 2 – Health",
+      "file": "De10_P2_Health.docx",
+      "mo_ta": "Mở file De10_P2_Health.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the number format of all footnotes in the document to i, ii, iii, ….",
+          "goi_y": "1) References > hộp thoại Footnote and Endnote (mũi tên nhỏ).  2) Footnotes; Number format: i, ii, iii, …; Apply changes to: Whole document > Apply.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fn_format",
+            "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
+          }
+        },
+        {
+          "yeu_cau": "In the “Bedroom Environment” section, change the line spacing of the two paragraphs after the heading to exactly 14 pt.",
+          "goi_y": "1) Chọn hai đoạn văn dưới tiêu đề.  2) Home > Paragraph dialog (mũi tên nhỏ) > Line spacing: Exactly; At: 14 pt > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_exact",
+            "de_bai": "In the “Bedroom Environment” section, change the line spacing of the two paragraphs after the heading to exactly 14 pt."
+          }
+        },
+        {
+          "yeu_cau": "Change the Company property of the document to Fabrikam.",
+          "goi_y": "1) File > Info > Show All Properties.  2) Ô Company: nhập \"Fabrikam\" (nếu không thấy, dùng Properties > Advanced Properties > Summary > Company).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_company",
+            "de_bai": "Change the Company property of the document to Fabrikam."
+          }
+        },
+        {
+          "yeu_cau": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “MOS” as the password.",
+          "goi_y": "1) Review > mũi tên Track Changes > Lock Tracking.  2) Nhập mật khẩu MOS hai lần > OK (Track Changes tự bật).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_lock",
+            "de_bai": "Turn on Track Changes and lock tracking so that other users cannot turn it off. Use “MOS” as the password."
+          }
+        },
+        {
+          "yeu_cau": "In the “Screens and Sleep” section, sort the table data by “Category” (Ascending) and then by “Age group” (Descending).",
+          "goi_y": "1) Đặt con trỏ trong bảng > Table Layout > Sort.  2) My list has: Header row.  3) Sort by: Category, Ascending; Then by: Age group, Descending > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sort_table",
+            "de_bai": "In the “Screens and Sleep” section, sort the table data by “Category” (Ascending) and then by “Age group” (Descending)."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 3 – Robotics",
+      "file": "De10_P3_Robotics.docx",
+      "mo_ta": "Mở file De10_P3_Robotics.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Set the line spacing to 1.6 lines for the entire document.",
+          "goi_y": "1) Ctrl+A để chọn toàn bộ.  2) Home > Line and Paragraph Spacing > Line Spacing Options.  3) Line spacing: Multiple; At: 1.6 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "line_spacing_doc",
+            "de_bai": "Set the line spacing to 1.6 lines for the entire document."
+          }
+        },
+        {
+          "yeu_cau": "Convert the document title to WordArt by using the Fill: Blue, Accent color 1; Shadow style.",
+          "goi_y": "1) Chọn tiêu đề tài liệu.  2) Insert > WordArt > Fill: Blue, Accent color 1; Shadow.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "wordart",
+            "de_bai": "Convert the document title to WordArt by using the Fill: Blue, Accent color 1; Shadow style.",
+            "goc": {
+              "title": "Robotics Competition Handbook"
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the file properties, add “robotics” as a tag.",
+          "goi_y": "1) File > Info > Properties (bên phải).  2) Ô Tags: nhập \"robotics\" (Tags chính là Keywords).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "prop_tags",
+            "de_bai": "In the file properties, add “robotics” as a tag."
+          }
+        },
+        {
+          "yeu_cau": "Set the paragraph spacing for the entire document to Double.",
+          "goi_y": "Design > Paragraph Spacing > Double.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_spacing_doc",
+            "de_bai": "Set the paragraph spacing for the entire document to Double.",
+            "goc": {
+              "fp": "fcc82c677d599115971be0c244a3ecc0"
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Competition Overview” section, add a hyperlink to the text “Future Makers Club” that links to https://www.futuremakersclub.com.",
+          "goi_y": "1) Chọn cụm từ \"Future Makers Club\" trong section Competition Overview.  2) Insert > Link (Ctrl+K) > Existing File or Web Page.  3) Address: https://www.futuremakersclub.com  4) OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_url",
+            "de_bai": "In the “Competition Overview” section, add a hyperlink to the text “Future Makers Club” that links to https://www.futuremakersclub.com."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 4 – Museum",
+      "file": "De10_P4_Museum.docx",
+      "mo_ta": "Mở file De10_P4_Museum.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "In the empty space at the bottom of the last page, insert a Ribbon: Tilted Up shape that contains the text “Contact us today!”. Position the shape at the bottom left of the page with tight text wrapping.",
+          "goi_y": "1) Insert > Shapes > Ribbon: Tilted Up; kéo vẽ hình ở cuối trang cuối.  2) Nhấp phải hình > Add Text > gõ \"Contact us today!\".  3) Shape Format > Position > Position in Bottom Left with Square Text Wrapping.  4) Shape Format > Wrap Text > Tight.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "shape_insert",
+            "de_bai": "In the empty space at the bottom of the last page, insert a Ribbon: Tilted Up shape that contains the text “Contact us today!”. Position the shape at the bottom left of the page with tight text wrapping."
+          }
+        },
+        {
+          "yeu_cau": "In the “Fossil Discoveries” section, insert a new column to the right of the “Geologic period” column of the table. Type “Rating” in the first cell of the new column.",
+          "goi_y": "1) Đặt con trỏ trong cột \"Geologic period\".  2) Table Layout > Insert Right.  3) Gõ \"Rating\" vào ô đầu tiên của cột mới.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_insert_col",
+            "de_bai": "In the “Fossil Discoveries” section, insert a new column to the right of the “Geologic period” column of the table. Type “Rating” in the first cell of the new column.",
+            "goc": {
+              "cols": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "Apply the Quote style to the paragraph that starts with “Dinosaurs lived on every continent for …”.",
+          "goi_y": "1) Đặt con trỏ trong đoạn đó.  2) Home > Styles > Quote (nếu không thấy, mở Styles pane Ctrl+Alt+Shift+S).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "para_style",
+            "de_bai": "Apply the Quote style to the paragraph that starts with “Dinosaurs lived on every continent for …”."
+          }
+        },
+        {
+          "yeu_cau": "At the end of the second paragraph in the “Fossil Discoveries” section, insert a citation for a new Book source. Use the following information: Author: John Smith; Title: Dinosaurs Through Time; Year: 2024; City: Hanoi; Publisher: Lotus Museum.",
+          "goi_y": "1) Đặt con trỏ cuối đoạn thứ hai của section.  2) References > Insert Citation > Add New Source.  3) Type of Source: Book.  4) Author: Smith, John (hoặc gõ John Smith); Title: Dinosaurs Through Time; Year: 2024; City: Hanoi; Publisher: Lotus Museum > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "citation_source",
+            "de_bai": "At the end of the second paragraph in the “Fossil Discoveries” section, insert a citation for a new Book source. Use the following information: Author: John Smith; Title: Dinosaurs Through Time; Year: 2024; City: Hanoi; Publisher: Lotus Museum."
+          }
+        },
+        {
+          "yeu_cau": "In the “Kids Love Dinosaurs” section, change the bullet points to custom ones. Use the check box symbol from the Webdings font and character code “97”.",
+          "goi_y": "1) Chọn toàn bộ danh sách bullet.  2) Home > mũi tên Bullets > Define New Bullet > Symbol.  3) Font: Webdings; Character code: 97 > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "custom_bullet",
+            "de_bai": "In the “Kids Love Dinosaurs” section, change the bullet points to custom ones. Use the check box symbol from the Webdings font and character code “97”."
+          }
+        },
+        {
+          "yeu_cau": "Save a copy of the document in your Documents folder as a PDF file named “Lotus” that is optimized for standard (publishing online and printing). Do not open the file after publishing.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) File name: Lotus; Save as type: PDF (*.pdf).  3) Optimize for: chọn Standard (publishing online and printing); bỏ chọn Open file after publishing > Save.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_pdf",
+            "de_bai": "Save a copy of the document in your Documents folder as a PDF file named “Lotus” that is optimized for standard (publishing online and printing). Do not open the file after publishing."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 5 – Energy",
+      "file": "De10_P5_Energy.docx",
+      "mo_ta": "Mở file De10_P5_Energy.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the orientation of the entire document to Landscape.",
+          "goi_y": "Layout > Orientation > Landscape.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "orient_all",
+            "de_bai": "Change the orientation of the entire document to Landscape."
+          }
+        },
+        {
+          "yeu_cau": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới khung tiêu đề (banner).  2) References > Table of Contents > Automatic Table 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_insert",
+            "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
+          }
+        },
+        {
+          "yeu_cau": "Apply the List Table 2 - Accent 1 table style to the table that starts with “Organization”. Clear the Header Row table style option.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Design > Table Styles > List Table 2 - Accent 1.  3) Table Style Options: bỏ tích Header Row.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "info_style",
+            "de_bai": "Apply the List Table 2 - Accent 1 table style to the table that starts with “Organization”. Clear the Header Row table style option."
+          }
+        },
+        {
+          "yeu_cau": "In the “Charging Network” section, add a shape after “Smart meters” in the SmartArt graphic. Enter the text “Energy audits” in the new shape.",
+          "goi_y": "1) Bấm chọn hình \"Smart meters\" trong SmartArt.  2) SmartArt Design > Add Shape > Add Shape After.  3) Gõ: Energy audits (hoặc nhập trong Text Pane).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_add",
+            "de_bai": "In the “Charging Network” section, add a shape after “Smart meters” in the SmartArt graphic. Enter the text “Energy audits” in the new shape.",
+            "goc": {
+              "n": 4
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Solar Projects” section, continue the numbering of the second list so that the list items are numbered from 1 through 6.",
+          "goi_y": "1) Nhấp phải vào mục \"Smart meters\" (đang đánh số 1).  2) Chọn Continue Numbering.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "continue_num",
+            "de_bai": "In the “Solar Projects” section, continue the numbering of the second list so that the list items are numbered from 1 through 6."
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text description “Energy workflow” to the SmartArt graphic in the “Charging Network” section.",
+          "goi_y": "1) Bấm vào viền ngoài SmartArt > nhấp phải > Edit Alt Text.  2) Nhập: Energy workflow.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_alt",
+            "de_bai": "Add the alt text description “Energy workflow” to the SmartArt graphic in the “Charging Network” section."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 6 – Hotel",
+      "file": "De10_P6_Hotel.docx",
+      "mo_ta": "Mở file De10_P6_Hotel.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "In the “Dining” section, convert the table to text. Separate the text with tabs.",
+          "goi_y": "1) Đặt con trỏ trong bảng.  2) Table Layout > Convert to Text > Separate text with: Tabs > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_to_text",
+            "de_bai": "In the “Dining” section, convert the table to text. Separate the text with tabs.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Activity",
+                "Category",
+                "Price ($)"
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Rooms and Suites” section, change the list level for “Kayaking” to Level 3.",
+          "goi_y": "1) Đặt con trỏ vào mục \"Kayaking\".  2) Home > mũi tên Bullets/Numbering > Change List Level > Level 3.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "list_level",
+            "de_bai": "In the “Rooms and Suites” section, change the list level for “Kayaking” to Level 3."
+          }
+        },
+        {
+          "yeu_cau": "In the “Check-out Information” section, format the two paragraphs after the heading into 3 columns with column spacing of 0.3\" (0.76 cm).",
+          "goi_y": "1) Chọn hai đoạn văn (không chọn tiêu đề).  2) Layout > Columns > More Columns > Presets: Three; Spacing: 0.3\" > Apply to: Selected text > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "columns",
+            "de_bai": "In the “Check-out Information” section, format the two paragraphs after the heading into 3 columns with column spacing of 0.3\" (0.76 cm)."
+          }
+        },
+        {
+          "yeu_cau": "Change the case of the heading “Activities” to UPPERCASE.",
+          "goi_y": "1) Chọn tiêu đề.  2) Home > Change Case (Aa) > UPPERCASE.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "change_case",
+            "de_bai": "Change the case of the heading “Activities” to UPPERCASE."
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text description “Price ($) chart” to the chart in the “Dining” section.",
+          "goi_y": "1) Nhấp phải vào vùng biểu đồ (Chart Area) > Edit Alt Text (hoặc View Alt Text).  2) Nhập: Price ($) chart.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_alt",
+            "de_bai": "Add the alt text description “Price ($) chart” to the chart in the “Dining” section."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 7 – Computer (Expert)",
+      "file": "De10_P7_Computer_Expert.docx",
+      "mo_ta": "Mở file De10_P7_Computer_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Save the heading and paragraphs of the “How Are Computers Used Today?” section as a Quick Part named “Computer Intro” in the Quick Part gallery. Accept all other default settings.",
+          "goi_y": "1) Chọn tiêu đề và hai đoạn văn của section.  2) Insert > Quick Parts > Save Selection to Quick Part Gallery.  3) Name: Computer Intro; Gallery: Quick Parts > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "quickpart",
+            "de_bai": "Save the heading and paragraphs of the “How Are Computers Used Today?” section as a Quick Part named “Computer Intro” in the Quick Part gallery. Accept all other default settings."
+          }
+        },
+        {
+          "yeu_cau": "Use wildcards to find all instances of “Ms. Kim Akers” and “Miss Kim Akers” and replace them with “Kim Akers”.",
+          "goi_y": "1) Home > Replace > More >> > tích Use wildcards.  2) Find what: <M[! ]@ (Kim Akers)   (M + một hay nhiều ký tự khác khoảng trắng, rồi tên người)  3) Replace with: \\1 > Replace All > OK.  4) Kiểm tra: mọi chỗ \"Ms. Kim Akers\" và \"Miss Kim Akers\" chỉ còn \"Kim Akers\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "wildcard_replace",
+            "de_bai": "Use wildcards to find all instances of “Ms. Kim Akers” and “Miss Kim Akers” and replace them with “Kim Akers”.",
+            "goc": {
+              "n": 3,
+              "n_new": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection.",
+          "goi_y": "1) Review > Restrict Editing.  2) Formatting restrictions: tích Limit formatting to a selection of styles > Settings.  3) Bấm Recommended Minimum > OK (chọn No nếu hỏi xoá định dạng không cho phép). Không bấm Start Enforcing Protection.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restrict_format",
+            "de_bai": "Limit formatting in the document to the recommended minimum set of styles. Do not enforce protection."
+          }
+        },
+        {
+          "yeu_cau": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+          "goi_y": "1) Home > Replace > More >> > để trống Find what và Replace with.  2) Đặt con trỏ ở ô Find what > Format > Style > Heading 3 > OK.  3) Đặt con trỏ ở ô Replace with > Format > Style > Heading 2 > OK > Replace All.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "replace_style",
+            "de_bai": "Replace all instances of the Heading 3 style in the document with the Heading 2 style.",
+            "goc": {
+              "n": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "Mark the document as final.",
+          "goi_y": "File > Info > Protect Document > Mark as Final > OK > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "mark_final",
+            "de_bai": "Mark the document as final."
+          }
+        }
+      ]
+    }
+  ]
+}

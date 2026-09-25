@@ -1,0 +1,428 @@
+{
+  "mon": "WORD",
+  "ten": "Word – Đề 02 (Word365_DeThucTe)",
+  "thoi_gian": 50,
+  "rieng": true,
+  "nguon": "Word365_DeThucTe/De_02",
+  "dau_vet": "ebde560b7b4a0d1b",
+  "du_an": [
+    {
+      "ten": "Project 1 – Garden",
+      "file": "De02_P1_Garden.docx",
+      "mo_ta": "Mở file De02_P1_Garden.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "At the beginning of the heading “Workshops”, insert a Next Page section break.",
+          "goi_y": "1) Đặt con trỏ trước chữ đầu tiên của tiêu đề.  2) Layout > Breaks > Section Breaks: Next Page.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sbreak_next",
+            "de_bai": "At the beginning of the heading “Workshops”, insert a Next Page section break."
+          }
+        },
+        {
+          "yeu_cau": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới khung tiêu đề (banner).  2) References > Table of Contents > Automatic Table 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_insert",
+            "de_bai": "In the blank paragraph directly below the title banner, insert a table of contents. Use the Automatic Table 1 style."
+          }
+        },
+        {
+          "yeu_cau": "Apply the Ion theme to the document.",
+          "goi_y": "Design > Themes > Ion.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "doc_theme",
+            "de_bai": "Apply the Ion theme to the document."
+          }
+        },
+        {
+          "yeu_cau": "Change the direction of the SmartArt graphic in the “Choosing Containers” section so that it flows from right to left.",
+          "goi_y": "1) Chọn SmartArt.  2) SmartArt Design > Right to Left.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_rtl",
+            "de_bai": "Change the direction of the SmartArt graphic in the “Choosing Containers” section so that it flows from right to left."
+          }
+        },
+        {
+          "yeu_cau": "In the “Watering” section, split the “Days to harvest” header cell into two columns and one row.",
+          "goi_y": "1) Đặt con trỏ vào ô \"Days to harvest\".  2) Table Layout > Split Cells > Number of columns: 2; Number of rows: 1 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "split_cell",
+            "de_bai": "In the “Watering” section, split the “Days to harvest” header cell into two columns and one row.",
+            "goc": {
+              "cols": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Easy Plants for Beginners” section, add a hyperlink to the text “grow quickly” that links to https://www.greenthumbgardencenter.com.",
+          "goi_y": "1) Chọn cụm từ \"grow quickly\" trong section Easy Plants for Beginners.  2) Insert > Link (Ctrl+K) > Existing File or Web Page.  3) Address: https://www.greenthumbgardencenter.com  4) OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "hyperlink_url",
+            "de_bai": "In the “Easy Plants for Beginners” section, add a hyperlink to the text “grow quickly” that links to https://www.greenthumbgardencenter.com."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 2 – DIY",
+      "file": "De02_P2_DIY.docx",
+      "mo_ta": "Mở file De02_P2_DIY.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Turn on Track Changes. Then, replace the word “program” with “PROGRAM”. Leave Track Changes turned on.",
+          "goi_y": "1) Review > Track Changes (bật, For Everyone).  2) Tìm từ \"program\", chọn và gõ đè \"PROGRAM\".  3) Không tắt Track Changes.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "track_on",
+            "de_bai": "Turn on Track Changes. Then, replace the word “program” with “PROGRAM”. Leave Track Changes turned on."
+          }
+        },
+        {
+          "yeu_cau": "Insert a page break before the heading “Tips of the Month”.",
+          "goi_y": "1) Đặt con trỏ đầu tiêu đề.  2) Insert > Page Break (hoặc Ctrl+Enter).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_break",
+            "de_bai": "Insert a page break before the heading “Tips of the Month”."
+          }
+        },
+        {
+          "yeu_cau": "Apply the Fill: Black, Text color 1; Shadow text effect to the heading “New Stores Opening”.",
+          "goi_y": "1) Chọn tiêu đề \"New Stores Opening\".  2) Home > Text Effects and Typography > Fill: Black, Text color 1; Shadow.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "text_effect",
+            "de_bai": "Apply the Fill: Black, Text color 1; Shadow text effect to the heading “New Stores Opening”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Mascot Family Growing, Too!” section, split the table so that the row that starts with “Tiling Basics” becomes the first row of a new table.",
+          "goi_y": "1) Đặt con trỏ trong hàng bắt đầu bằng \"Tiling Basics\".  2) Table Layout > Split Table.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "split_table",
+            "de_bai": "In the “Mascot Family Growing, Too!” section, split the table so that the row that starts with “Tiling Basics” becomes the first row of a new table.",
+            "goc": {
+              "n": 1,
+              "head": [
+                "Seminar",
+                "Category",
+                "Duration (min)"
+              ]
+            }
+          }
+        },
+        {
+          "yeu_cau": "Locate the text “Holiday opening hours are posted on our website.” and apply the Subtle Emphasis style to it.",
+          "goi_y": "1) Dùng Ctrl+F tìm câu trên và chọn đúng câu (kể cả dấu chấm).  2) Home > Styles > Subtle Emphasis.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style",
+            "de_bai": "Locate the text “Holiday opening hours are posted on our website.” and apply the Subtle Emphasis style to it."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 3 – Bakery",
+      "file": "De02_P3_Bakery.docx",
+      "mo_ta": "Mở file De02_P3_Bakery.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the margins of the entire document by setting the top and bottom margins to 0.5\" (1.27 cm) and the left and right margins to 0.25\" (0.64 cm).",
+          "goi_y": "1) Layout > Margins > Custom Margins.  2) Top = Bottom = 0.5\"; Left = Right = 0.25\" (hoặc nhập theo cm).  3) Apply to: Whole document > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "margins",
+            "de_bai": "Change the margins of the entire document by setting the top and bottom margins to 0.5\" (1.27 cm) and the left and right margins to 0.25\" (0.64 cm)."
+          }
+        },
+        {
+          "yeu_cau": "Add a 3 pt Automatic Box page border to the first page only.",
+          "goi_y": "1) Design > Page Borders.  2) Setting: Box; Color: Automatic; Width: 3 pt.  3) Apply to: This section - First page only > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "page_border",
+            "de_bai": "Add a 3 pt Automatic Box page border to the first page only."
+          }
+        },
+        {
+          "yeu_cau": "In the “Introduction” section, format the 5 paragraphs starting with “Choose your products” as a numbered list that uses the A. number format.",
+          "goi_y": "1) Chọn các đoạn từ \"Choose your products\" đến \"Confirm delivery\".  2) Home > Numbering > chọn định dạng A. (nếu không có: Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "numbers_from_paras",
+            "de_bai": "In the “Introduction” section, format the 5 paragraphs starting with “Choose your products” as a numbered list that uses the A. number format."
+          }
+        },
+        {
+          "yeu_cau": "Clear all formatting from the paragraph that starts with “Pastry platters include croissants, egg tarts, …”.",
+          "goi_y": "1) Chọn toàn bộ đoạn văn đó.  2) Home > Clear All Formatting (biểu tượng chữ A có cục tẩy).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "clear_format",
+            "de_bai": "Clear all formatting from the paragraph that starts with “Pastry platters include croissants, egg tarts, …”."
+          }
+        },
+        {
+          "yeu_cau": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “Golden”. Accept any compatibility warnings.",
+          "goi_y": "1) File > Save a Copy > Browse > Documents.  2) Save as type: Word 97-2003 Document (*.doc); File name: Golden > Save.  3) Nếu xuất hiện Compatibility Checker bấm Continue.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "save_97",
+            "de_bai": "Save a copy of the document in your Documents folder in a format that is compatible with Word 97-2003. Name the file “Golden”. Accept any compatibility warnings."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 4 – Hotel",
+      "file": "De02_P4_Hotel.docx",
+      "mo_ta": "Mở file De02_P4_Hotel.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information.",
+          "goi_y": "1) File > Info > Check for Issues > Inspect Document (chọn Yes nếu được hỏi lưu).  2) Bấm Inspect.  3) Tại dòng Document Properties and Personal Information bấm Remove All.  4) Không bấm Remove All ở các mục khác. Close.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "inspect_props",
+            "de_bai": "Inspect the document and remove all Document Properties and Personal Information. Do not remove any other information."
+          }
+        },
+        {
+          "yeu_cau": "In the “Rooms and Suites” section, sort the table data by “Category” (Ascending) and then by “Activity” (Descending).",
+          "goi_y": "1) Đặt con trỏ trong bảng > Table Layout > Sort.  2) My list has: Header row.  3) Sort by: Category, Ascending; Then by: Activity, Descending > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sort_table",
+            "de_bai": "In the “Rooms and Suites” section, sort the table data by “Category” (Ascending) and then by “Activity” (Descending)."
+          }
+        },
+        {
+          "yeu_cau": "In the “Dining” section, apply the Cement artistic effect to the picture.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Artistic Effects > Cement.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "art_effect",
+            "de_bai": "In the “Dining” section, apply the Cement artistic effect to the picture."
+          }
+        },
+        {
+          "yeu_cau": "Position the text box that starts with “Remember:” in the Bottom Left of the page with square text wrapping.",
+          "goi_y": "1) Chọn khung text box.  2) Shape Format > Position > Position in Bottom Left with Square Text Wrapping.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "callout_pos",
+            "de_bai": "Position the text box that starts with “Remember:” in the Bottom Left of the page with square text wrapping."
+          }
+        },
+        {
+          "yeu_cau": "In the “Spa and Wellness” section, add a comment to the text “discount on spa” that says “Add a photo here.”.",
+          "goi_y": "1) Chọn \"discount on spa\".  2) Review > New Comment.  3) Gõ \"Add a photo here.\" > Post (Ctrl+Enter).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "comment_add",
+            "de_bai": "In the “Spa and Wellness” section, add a comment to the text “discount on spa” that says “Add a photo here.”.",
+            "goc": {
+              "n": 0,
+              "done": 0
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Activities” section, apply the Glow: 5 point; Blue, Accent color 1 Glow shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
+          "goi_y": "1) Bấm vào viền ngoài SmartArt, sau đó Ctrl+A để chọn tất cả các hình bên trong.  2) Format > Shape Effects > Glow > Glow: 5 point; Blue, Accent color 1.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "sa_effect",
+            "de_bai": "In the “Activities” section, apply the Glow: 5 point; Blue, Accent color 1 Glow shape effect to the SmartArt graphic (be sure to select the entire SmartArt graphic).",
+            "goc": {
+              "lo": "urn:microsoft.com/office/officeart/2005/8/layout/process3",
+              "qs": "urn:microsoft.com/office/officeart/2005/8/quickstyle/simple1",
+              "cs": "urn:microsoft.com/office/officeart/2005/8/colors/accent1_2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 5 – Fitness",
+      "file": "De02_P5_Fitness.docx",
+      "mo_ta": "Mở file De02_P5_Fitness.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the table of contents to show only Heading 1 headings.",
+          "goi_y": "1) References > Table of Contents > Custom Table of Contents.  2) Show levels: 1 > OK > Yes (thay thế mục lục hiện có).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "toc_modify",
+            "de_bai": "Change the table of contents to show only Heading 1 headings."
+          }
+        },
+        {
+          "yeu_cau": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Fitness picture”.",
+          "goi_y": "1) Review > Check Accessibility.  2) Mục Missing alternative text: bấm mũi tên cạnh tên ảnh > Add a description.  3) Nhập \"Fitness picture\" vào ô mô tả trong ngăn Alt Text.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "access_alt",
+            "de_bai": "Check the document for accessibility issues. Correct the picture-related error by adding the alt text description “Fitness picture”."
+          }
+        },
+        {
+          "yeu_cau": "In the “Why Choose Us?” section, change the text wrapping for the picture to Through.",
+          "goi_y": "1) Chọn ảnh.  2) Picture Format > Wrap Text > Through.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "pic_wrap",
+            "de_bai": "In the “Why Choose Us?” section, change the text wrapping for the picture to Through."
+          }
+        },
+        {
+          "yeu_cau": "In the “Personal Training” section, change the shading of the header row of the table to Green, Accent 6.",
+          "goi_y": "1) Chọn hàng tiêu đề của bảng.  2) Table Design > Shading > Green, Accent 6.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "table_shading",
+            "de_bai": "In the “Personal Training” section, change the shading of the header row of the table to Green, Accent 6."
+          }
+        },
+        {
+          "yeu_cau": "In the “Become a Member Today!” section, change the number format of the numbered list to (1).",
+          "goi_y": "1) Chọn danh sách.  2) Home > mũi tên Numbering > chọn (1) (hoặc Define New Number Format).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "num_format",
+            "de_bai": "In the “Become a Member Today!” section, change the number format of the numbered list to (1)."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 6 – Farm",
+      "file": "De02_P6_Farm.docx",
+      "mo_ta": "Mở file De02_P6_Farm.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Change the number format of all footnotes in the document to i, ii, iii, ….",
+          "goi_y": "1) References > hộp thoại Footnote and Endnote (mũi tên nhỏ).  2) Footnotes; Number format: i, ii, iii, …; Apply changes to: Whole document > Apply.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fn_format",
+            "de_bai": "Change the number format of all footnotes in the document to i, ii, iii, …."
+          }
+        },
+        {
+          "yeu_cau": "In the “How the Subscription Works” section, in the blank paragraph below the table, insert a Clustered Bar chart that shows the “Weight (kg)” values for the first 4 items of the table: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Use “Weight (kg)” as the series name.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống ngay dưới bảng.  2) Insert > Chart > Bar > Clustered Bar > OK (mở cửa sổ dữ liệu).  3) Ô B1: Weight (kg). Cột A từ A2: Morning glory; Sweet potato; Bok choy; Carrot. Cột B: 1.0; 2.0; 0.8; 1.5.  4) Xoá các cột/ dòng mẫu thừa (Series 2, Series 3, Category còn lại) hoặc kéo khung xanh thu hẹp vùng dữ liệu.  5) Đóng cửa sổ dữ liệu.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_insert",
+            "de_bai": "In the “How the Subscription Works” section, in the blank paragraph below the table, insert a Clustered Bar chart that shows the “Weight (kg)” values for the first 4 items of the table: Morning glory (1.0), Sweet potato (2.0), Bok choy (0.8), Carrot (1.5). Use “Weight (kg)” as the series name.",
+            "goc": {
+              "n": 1
+            }
+          }
+        },
+        {
+          "yeu_cau": "In the “Farm Visits” section, change the numbered list so that it starts at 5.",
+          "goi_y": "1) Nhấp phải vào mục đầu tiên của danh sách > Set Numbering Value.  2) Start new list; Set value to: 5 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "restart_num",
+            "de_bai": "In the “Farm Visits” section, change the numbered list so that it starts at 5."
+          }
+        },
+        {
+          "yeu_cau": "In the “About the Farm” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 3 lines.",
+          "goi_y": "1) Đặt con trỏ trong đoạn đầu tiên của section.  2) Insert > Drop Cap > Drop Cap Options > Position: Dropped; Lines to drop: 3 > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "dropcap",
+            "de_bai": "In the “About the Farm” section, apply a Dropped drop cap to the first paragraph. The drop cap should drop 3 lines."
+          }
+        },
+        {
+          "yeu_cau": "Add the alt text description “Weight (kg) chart” to the chart in the “How the Subscription Works” section.",
+          "goi_y": "1) Nhấp phải vào vùng biểu đồ (Chart Area) > Edit Alt Text (hoặc View Alt Text).  2) Nhập: Weight (kg) chart.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "chart_alt",
+            "de_bai": "Add the alt text description “Weight (kg) chart” to the chart in the “How the Subscription Works” section."
+          }
+        },
+        {
+          "yeu_cau": "In the “Customer Feedback” section, copy the formatting of the first paragraph and apply it to the second paragraph.",
+          "goi_y": "1) Đặt con trỏ trong đoạn thứ nhất của section.  2) Home > Format Painter (bấm 1 lần).  3) Quét chọn toàn bộ đoạn thứ hai (hoặc bấm 3 lần vào đoạn thứ hai).",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "format_painter",
+            "de_bai": "In the “Customer Feedback” section, copy the formatting of the first paragraph and apply it to the second paragraph."
+          }
+        }
+      ]
+    },
+    {
+      "ten": "Project 7 – School (Expert)",
+      "file": "De02_P7_School_Expert.docx",
+      "mo_ta": "Mở file De02_P7_School_Expert.docx và làm lần lượt các yêu cầu bên dưới (đề tiếng Anh như thi thật).",
+      "nhiem_vu": [
+        {
+          "yeu_cau": "Link the text box in the “A Typical Day” section to the empty text box in the “Working with Families” section so that the overflow text flows into the second text box.",
+          "goi_y": "1) Chọn text box thứ nhất.  2) Shape Format > Create Link (con trỏ đổi thành bình).  3) Bấm vào text box trống thứ hai.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "link_textbox",
+            "de_bai": "Link the text box in the “A Typical Day” section to the empty text box in the “Working with Families” section so that the overflow text flows into the second text box."
+          }
+        },
+        {
+          "yeu_cau": "In the blank paragraph at the end of the document, insert the NumWords field.",
+          "goi_y": "1) Đặt con trỏ vào đoạn trống cuối tài liệu.  2) Insert > Quick Parts > Field > Field names: NumWords.  3) OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "fields",
+            "de_bai": "In the blank paragraph at the end of the document, insert the NumWords field."
+          }
+        },
+        {
+          "yeu_cau": "Create a character style named “Key Term” that uses bold, Dark Blue font color. Apply the style to the text “Teachers meet every two weeks to share ideas and review student work together.”.",
+          "goi_y": "1) Chọn câu văn.  2) Styles pane > New Style.  3) Name: Key Term; Style type: Character; Bold; Font color: Dark Blue > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "char_style_new",
+            "de_bai": "Create a character style named “Key Term” that uses bold, Dark Blue font color. Apply the style to the text “Teachers meet every two weeks to share ideas and review student work together.”."
+          }
+        },
+        {
+          "yeu_cau": "Use wildcards to find all instances of “Ms. Linh Tran” and “Miss Linh Tran” and replace them with “Linh Tran”.",
+          "goi_y": "1) Home > Replace > More >> > tích Use wildcards.  2) Find what: <M[! ]@ (Linh Tran)   (M + một hay nhiều ký tự khác khoảng trắng, rồi tên người)  3) Replace with: \\1 > Replace All > OK.  4) Kiểm tra: mọi chỗ \"Ms. Linh Tran\" và \"Miss Linh Tran\" chỉ còn \"Linh Tran\".",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "wildcard_replace",
+            "de_bai": "Use wildcards to find all instances of “Ms. Linh Tran” and “Miss Linh Tran” and replace them with “Linh Tran”.",
+            "goc": {
+              "n": 3,
+              "n_new": 3
+            }
+          }
+        },
+        {
+          "yeu_cau": "Save the heading and paragraphs of the “Assessment” section as a Quick Part named “School Summary” in the Quick Part gallery. Accept all other default settings.",
+          "goi_y": "1) Chọn tiêu đề và hai đoạn văn của section.  2) Insert > Quick Parts > Save Selection to Quick Part Gallery.  3) Name: School Summary; Gallery: Quick Parts > OK.",
+          "cham": {
+            "luat": "word_mau_de",
+            "dang": "quickpart",
+            "de_bai": "Save the heading and paragraphs of the “Assessment” section as a Quick Part named “School Summary” in the Quick Part gallery. Accept all other default settings."
+          }
+        }
+      ]
+    }
+  ]
+}
