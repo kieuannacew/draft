@@ -13,22 +13,29 @@ Giao diện dùng **Qt (PySide6)**: sắc nét trên màn hình độ phân gi�
 
 Muốn có file `.exe` để chép sang máy khác: nhấp đúp **`build_exe.bat`** → file nằm ở `dist\LuyenThiMOS.exe`.
 
-## Tài khoản
+## Tài khoản và phân quyền
 
 | Vai trò | Được làm gì |
 |---|---|
-| **Quản trị** (giáo viên) | Làm bài, **tạo / khóa / xóa tài khoản**, đặt lại mật khẩu, **soạn đề**, **xem kết quả của mọi học viên** |
+| **Quản trị** | Toàn quyền: quản lý mọi tài khoản (kể cả giáo viên), soạn đề, xem kết quả của tất cả |
+| **Giáo viên** | Tạo / nhập / khóa tài khoản **học viên của mình**, soạn đề, xem kết quả **học viên của mình** |
 | **Học viên** | Làm bài, xem lịch sử của chính mình, đổi mật khẩu |
 
-**Lần đầu chạy:** đăng nhập bằng `admin` / `admin`. App sẽ bắt đổi mật khẩu ngay lần đăng nhập này.
+**Lần đầu chạy:** đăng nhập `admin` / `admin`. App sẽ bắt đổi mật khẩu ngay lần đăng nhập này.
+Sau đó vào mục **Tài khoản**, bấm **+ Thêm tài khoản** và chọn vai trò **Giáo viên** để tạo tài khoản cho từng giáo viên.
 
-Cấp tài khoản cho học viên: vào mục **Tài khoản** ở thanh menu bên trái (chỉ tài khoản quản trị mới thấy), rồi chọn:
-- **Thêm tài khoản**: tạo từng người. Mật khẩu được tạo ngẫu nhiên, và có thể đặt **hạn dùng** (ví dụ `2026-12-31`).
-- **Tạo cho cả lớp**: dán danh sách, mỗi dòng dạng `tên_đăng_nhập, Họ tên`. App tạo tài khoản hàng loạt và cho
-  **lưu danh sách tên đăng nhập / mật khẩu ra file CSV** để phát cho học viên.
-- **Đặt lại mật khẩu**, **Khóa / Mở khóa**, **Xóa**.
+Cấp tài khoản học viên (mục **Tài khoản** / **Học viên** ở thanh menu bên trái):
+- **Nhập từ file (CSV / Excel):** chọn file danh sách. App cho **xem trước** từng dòng (sẽ tạo hay bị bỏ qua và
+  vì sao), rồi mới tạo tài khoản. Chỉ cột **Họ tên** là bắt buộc; các cột tuỳ chọn là **Tên đăng nhập**,
+  **Mật khẩu**, **Lớp**, **Hạn dùng**. Thiếu tên đăng nhập thì app tự tạo từ họ tên (Nguyễn Văn An → `nguyenvanan`);
+  thiếu mật khẩu thì app tạo ngẫu nhiên. Nút **Tải file mẫu** cho sẵn một file Excel mẫu để điền.
+- **Tạo cho cả lớp:** dán danh sách họ tên, mỗi dòng một người.
+- **+ Thêm tài khoản:** tạo từng người.
 
-Mục **Kết quả học viên** hiện mọi lượt làm bài. Có thể lọc theo học viên và **xuất CSV** để mở bằng Excel.
+Tài khoản giáo viên tạo ra tự động thuộc về giáo viên đó. Quản trị có thể chọn **giáo viên phụ trách** cho từng học viên.
+Sau khi tạo, app hiện danh sách **tên đăng nhập / mật khẩu** để lưu ra file CSV phát cho học viên.
+
+Mục **Kết quả học viên** cho xem điểm theo lớp hoặc theo từng học viên, và **xuất CSV** để mở bằng Excel.
 
 > Mật khẩu được lưu dạng mã băm (PBKDF2), không lưu mật khẩu thật. Dữ liệu nằm trong
 > `C:\Users\<tên>\MOS_Practice\` (`tai_khoan.json`, `history.json`, `de_thi\`).
@@ -125,12 +132,20 @@ Mục **🔎 Tra từ khóa**: gõ tên lệnh tiếng Anh hoặc tiếng Việt
 **thuật ngữ** (giải thích + đường dẫn menu), **slide bài giảng** có từ đó và **câu luyện trong đề** kèm cách làm;
 bấm **▶ Luyện câu này** để làm riêng câu đó.
 
+## Nếu Word / Excel / PowerPoint mở file bị mờ
+
+Khi app được giải nén từ file ZIP tải trên mạng, Office có thể mở file ở **chế độ bảo vệ (Protected View)**:
+thanh công cụ mờ đi và không sửa được. App đã tự gỡ dấu này cho file bài làm. Nếu vẫn gặp:
+- Bấm **Enable Editing / Bật chỉnh sửa** trên dải vàng ở đầu cửa sổ, hoặc
+- Trước khi giải nén: chuột phải file ZIP, chọn **Properties**, tick **Unblock**, bấm OK, rồi giải nén lại.
+
 ## Cách làm bài
 
 1. Đăng nhập, chọn bài thi và chế độ:
    - **Luyện tập**: không giới hạn giờ, có nút *Gợi ý*, nút *Kiểm tra dự án* để chấm ngay.
    - **Thi thử**: 50 phút, không gợi ý, hết giờ tự nộp.
-2. Phần mềm tự mở file bài làm bằng Office. Thanh yêu cầu nằm ở **cạnh dưới màn hình**, luôn nổi trên cùng.
+2. Phần mềm tự mở file bài làm bằng Office. Thanh đề **gắn ở cạnh dưới màn hình** (giống Taskbar), và cửa sổ
+   Word/Excel/PowerPoint được **tự thu nhỏ vừa phần trống phía trên**, không bị thanh đề che.
 3. Làm các nhiệm vụ, bấm **Ctrl+S để lưu**, chuyển sang *Dự án sau*, làm lần lượt đến hết rồi bấm **Nộp bài**.
 4. Xem điểm và từng nhiệm vụ đúng/sai. Bấm vào một dòng để xem cách làm.
 
@@ -140,7 +155,8 @@ bấm **▶ Luyện câu này** để làm riêng câu đó.
 main.py              ← điểm khởi động
 mos/
   core.py            ← Đề thi / Dự án / Nhiệm vụ, chấm điểm, lịch sử, thư mục dữ liệu
-  accounts.py        ← tài khoản: đăng nhập, vai trò, khóa, hạn dùng, mật khẩu băm
+  accounts.py        ← tài khoản: đăng nhập, vai trò quản trị / giáo viên / học viên, lớp, khóa, hạn dùng
+  importer.py        ← nhập danh sách học viên từ CSV / Excel
   rules.py           ← 46 luật chấm + thông tin để dựng form soạn đề
   custom.py          ← đọc / lưu đề tự soạn (de_thi/), gộp vào bài thi, kiểm tra đề
   ooxml.py           ← đọc XML bên trong file Office (.docx/.xlsx/.pptx là file ZIP)
@@ -151,10 +167,11 @@ mos/
   qt/                ← giao diện (Qt / PySide6)
     theme.py         ← hệ thống thiết kế: màu, font, stylesheet, thẻ, nút, bảng, vòng điểm
     app.py           ← đăng nhập, khung ứng dụng (thanh bên), trang chủ, lịch sử, thanh làm bài, kết quả
-    admin.py         ← Quản trị: tài khoản, đề thi + form soạn đề, kết quả học viên
     hoc.py           ← Tài liệu học: danh sách, trình xem slide / video / SCORM, thêm bài giảng
     tra_cuu.py       ← trang Tra từ khóa
     lop.py           ← trang Lớp học, Tài khoản máy chủ, Đăng ký bằng mã lớp, Cài đặt máy chủ
+    admin.py         ← Quản trị: tài khoản, nhập học viên từ file, đề thi + form soạn đề, kết quả
+    winlayout.py     ← Windows: gắn thanh đề ở đáy màn hình, thu cửa sổ Office vừa phần trống
   exams/             ← đề có sẵn (word.py, excel.py, powerpoint.py)
 de_thi/              ← đề mẫu tự soạn (de.json + file gốc + dap_an/)
 may_chu/             ← supabase_lop_hoc.sql: cài đặt máy chủ Lớp học (chạy 1 lần trong Supabase)

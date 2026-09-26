@@ -10,10 +10,10 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QGridLayout
                                QVBoxLayout)
 
 from .. import lop_hoc
-from ..accounts import ROLE_NAMES, USERNAME_RE
+from ..accounts import ROLE_NAMES, USERNAME_RE, random_password
 from ..i18n import pick, role_name, tr
 from . import theme as T
-from .admin import _Dialog, _Page, _random_password, _toolbar
+from .admin import _Dialog, _Page, _toolbar
 from .app import _banner, esc, mode_name
 from .theme import PRIMARY_SOFT, SUCCESS, WARN, Card, button, label
 
@@ -240,7 +240,7 @@ class ClassPage(_Page):
         self.user = shell.account.username
         if self.cloud is None:
             self._offline()
-        elif shell.account.is_teacher:
+        elif shell.account.is_staff:
             self._teacher(lop_id)
         else:
             self._student()
@@ -488,7 +488,7 @@ class ClassPage(_Page):
         m = self._selected_student()
         if not m:
             return
-        pw = _random_password()
+        pw = random_password()
         if T.confirm(self, tr("Đặt lại mật khẩu"), tr("Đặt mật khẩu mới cho “{user}” là:\n\n      {pw}")
                      .format(user=m["username"], pw=pw)):
             if act(self, self.cloud.reset_password, m["id"], pw):
@@ -633,7 +633,7 @@ class OnlineAccountsPage(_Page):
         p = self._selected()
         if not p:
             return
-        pw = _random_password()
+        pw = random_password()
         if T.confirm(self, tr("Đặt lại mật khẩu"), tr("Đặt mật khẩu mới cho “{user}” là:\n\n      {pw}")
                      .format(user=p["username"], pw=pw)):
             if not act(self, self.cloud.reset_password, p["id"], pw):

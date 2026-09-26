@@ -30,6 +30,7 @@ from ..custom import load_custom_exams, merge_exams
 from ..exams import ALL_EXAMS
 from ..i18n import pick, tr
 from . import theme as T
+from . import winlayout
 from .theme import (DANGER, DANGER_SOFT, GOLD_SOFT, PRIMARY, PRIMARY_SOFT, SUCCESS, SUCCESS_SOFT, WARN,
                     WARN_SOFT, Card, ClickableCard, button, chip, label)
 
@@ -356,11 +357,12 @@ class Shell(QWidget):
         nav("history", "📈", tr("Lịch sử của tôi"))
         if self.main.online:
             nav("lop", "🏫", tr("Lớp học"))
-        if self.account.is_admin:
+        if self.account.is_staff:
             lay.addSpacing(18)
-            lay.addWidget(label(tr("QUẢN TRỊ"), "overline"))
+            lay.addWidget(label(tr("QUẢN TRỊ") if self.account.is_admin else tr("GIÁO VIÊN"), "overline"))
             lay.addSpacing(4)
-            nav("accounts", "👥", tr("Tài khoản"))
+            if self.account.is_admin or not self.main.online:
+                nav("accounts", "👥", tr("Tài khoản") if self.account.is_admin else tr("Học viên"))
             nav("exams", "📝", tr("Đề thi"))
             if not self.main.online:
                 nav("results", "📊", tr("Kết quả học viên"))
@@ -379,7 +381,8 @@ class Shell(QWidget):
         ml = QVBoxLayout(me)
         ml.setContentsMargins(12, 12, 12, 12)
         top = QHBoxLayout()
-        top.addWidget(T.avatar(self.account.ho_ten, 36, T.OLIVE if self.account.is_admin else T.SAGE))
+        top.addWidget(T.avatar(self.account.ho_ten, 36, T.OLIVE if self.account.is_admin
+                               else T.GOLD if self.account.is_teacher else T.SAGE))
         names = QVBoxLayout()
         names.setSpacing(0)
         n = label(self.account.ho_ten)
@@ -415,6 +418,8 @@ class Shell(QWidget):
             "exams": lambda: admin.ExamsPage(self),
             "results": lambda: admin.ResultsPage(self),
         }
+        if key in ("accounts", "exams", "results") and not self.account.is_staff:
+            key = "home"                       # học viên không vào được trang quản lý
         page = factories[key]()
         old = self.content.currentWidget()
         self.content.addWidget(page)
@@ -585,7 +590,7 @@ class HomePage(QScrollArea):
 
         body, lay = page_body()
         lay.addWidget(self._hero(acc, history))
-        if errors and acc.is_admin:
+        if errors and acc.is_staff:
             lay.addWidget(_banner(tr("Có đề tự soạn bị lỗi nên chưa được nạp: {err}{more}. Vào Đề thi để sửa.")
                                   .format(err=errors[0], more=tr(" (và {n} lỗi khác)").format(n=len(errors) - 1)
                                           if len(errors) > 1 else ""), tone="warn"))
@@ -1186,7 +1191,10 @@ class ExamBar(QWidget):
     HEIGHT = 390
 
     def __init__(self, session: core.Session, on_finish, on_quit):
-        super().__init__(None, Qt.Window | Qt.WindowStaysOnTopHint)
+        flags = Qt.Window | Qt.WindowStaysOnTopHint
+        if winlayout.IS_WINDOWS:
+            flags |= Qt.FramelessWindowHint      # thanh đề gắn ở đáy màn hình như Taskbar
+        super().__init__(None, flags)
         self.s, self.on_finish, self.on_quit = session, on_finish, on_quit
         self.training = session.mode in ("training", "chapter")
         self.idx = 0
@@ -1201,6 +1209,9 @@ class ExamBar(QWidget):
         self.setAttribute(Qt.WA_StyledBackground, True)
         geo = QGuiApplication.primaryScreen().availableGeometry()
         self.setGeometry(geo.x(), geo.y() + geo.height() - self.HEIGHT - 30, geo.width(), self.HEIGHT)
+        # Windows: giữ chỗ ở đáy màn hình + thu cửa sổ Office vừa phần trống phía trên
+        self.dock = winlayout.BottomDock(self)
+        self.fitter = winlayout.OfficeFitter(self.dock, self)
         outer = QVBoxLayout(self)
         outer.setContentsMargins(0, 0, 0, 0)
         self.root = None
@@ -1208,7 +1219,7 @@ class ExamBar(QWidget):
         self.timer.timeout.connect(self.tick)
         self.timer.start(1000)
         self._build()
-        QTimer.singleShot(0, self.open_file)
+        QTimer.singleShot(0, self._start)
 
     def _build(self):
         """Dựng (lại) toàn bộ nội dung thanh – gọi lại khi đổi ngôn ngữ."""
@@ -1255,6 +1266,7 @@ class ExamBar(QWidget):
         hl.addWidget(T.lang_switch(i18n.get_lang(), self.change_language, dark=True))
         self.timer_lbl = QLabel()
         hl.addWidget(self.timer_lbl)
+        hl.addWidget(button("✕  " + tr("Thoát"), self.close, "side"))
         lay.addWidget(head)
 
         # --- mô tả dự án
@@ -1307,6 +1319,10 @@ class ExamBar(QWidget):
     def change_language(self, code: str):
         i18n.set_lang(code)
         self._build()
+
+    def _start(self):
+        self.dock.attach(self.HEIGHT)
+        self.open_file()
 
     # ------------------------------------------------------------ hiển thị
     def show_project(self):
@@ -1366,6 +1382,8 @@ class ExamBar(QWidget):
             core.open_in_office(path)
         except OSError as exc:
             T.error(self, tr("Không mở được file"), f"{exc}\n\n" + tr("Hãy tự mở file:") + f"\n{path}")
+            return
+        self.fitter.watch(path.stem)
 
     def go(self, idx):
         if 0 <= idx < len(self.s.exam.projects) and idx != self.idx:
@@ -1437,10 +1455,12 @@ class ExamBar(QWidget):
 
     def closeEvent(self, e):
         if self.finished:
+            self.dock.detach()
             return super().closeEvent(e)
         if T.confirm(self, tr("Thoát bài thi"), tr("Thoát bài thi? Kết quả sẽ không được chấm.")):
             self.finished = True
             self.timer.stop()
+            self.dock.detach()
             super().closeEvent(e)
             self.on_quit()
         else:

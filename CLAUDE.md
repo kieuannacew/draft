@@ -15,7 +15,9 @@ Có tài khoản (quản trị / học viên) và form soạn đề trong app.
 ```
 main.py                 điểm khởi động (gọi mos.qt.app.main)
 mos/core.py             Exam / Project / Task, chấm điểm, lịch sử, DATA_DIR (cau_hinh.json → thư mục dữ liệu chung)
-mos/accounts.py         tài khoản: PBKDF2, vai trò quan_tri / hoc_vien, khóa, hạn dùng; admin/admin lần đầu
+mos/accounts.py         tài khoản: PBKDF2, vai trò quan_tri / giao_vien / hoc_vien, lop, giao_vien (chủ quản);
+                        visible_to / can_manage / assignable_roles = phân quyền; admin/admin lần đầu
+mos/importer.py         nhập học viên từ CSV/XLSX: plan() xem trước → apply(); write_template()
 mos/rules.py            46 luật chấm (@rule) + RULE_TITLES + PARAM_UI (dựng form soạn đề)
 mos/custom.py           đề tự soạn de_thi/<tên>/de.json; merge_exams gộp vào bài thi cùng môn ("rieng": đề riêng;
                         "file_phu": file phụ chép cùng file làm bài); check_exam
@@ -40,7 +42,8 @@ mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(pa
 mos/qt/theme.py         hệ thống thiết kế Forest Canopy: màu, QSS, Card, chip, badge, table(), ScoreRing,
                         LevelBadge, stars, badge_tile, lang_switch, Confetti, hộp thoại
 mos/qt/app.py           đăng nhập, Shell (sidebar + trang), Home, History, Result, ExamBar (thanh làm bài)
-mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ExamEditor, RuleDialog, CheckReportDialog
+mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ImportDialog, ExamEditor, RuleDialog, CheckReportDialog
+mos/qt/winlayout.py     Windows (ctypes): AppBar gắn thanh đề ở đáy, OfficeFitter thu cửa sổ Office vừa phần trống
 mos/qt/hoc.py           LessonsPage, open_viewer → LessonViewer (slide) / VideoViewer (QtMultimedia, phát từ QBuffer) /
                         ScormViewer (QtWebEngine, profile ẩn danh chặn tải; API SCORM 1.2+2004 giả lập bằng JS,
                         gửi cmi về qua console.log "MOS_SCORM:"); practice_button = "Thực hành ngay"; ImportLessonDialog
@@ -62,7 +65,7 @@ tests/                  pytest
 Dữ liệu người dùng (không nằm trong repo): `~/MOS_Practice/` → `tai_khoan.json`, `history.json`, `de_thi/`, `work/`,
 `tai_lieu/`, `tien_do_hoc.json`, `scorm_hoc_vien.json`, `cho_dong_bo.json` (hàng đợi gửi lên máy chủ lớp học).
 Chế độ Lớp học: tài khoản thật trên Supabase; `tai_khoan.json` giữ bản sao (Account.nguon="may_chu") để đăng nhập
-lúc mất mạng. Vai trò: quan_tri / giao_vien (chỉ dùng khi có máy chủ) / hoc_vien.
+lúc mất mạng. Vai trò: quan_tri / giao_vien / hoc_vien — `is_teacher` chỉ giáo viên, `is_staff` = quản trị hoặc giáo viên.
 
 ## Lệnh
 ```bash
@@ -102,3 +105,7 @@ Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcomm
   `apt-get install -y postgresql-16 && service postgresql start`, đặt mật khẩu postgres, tải PostgREST (github
   releases, bản linux-static-x64). Không bao giờ đưa khóa service_role vào app.
 - Hàm chấm trả `None` = không chấm tự động (hiện "Tự kiểm tra", không tính điểm).
+- Phân quyền: trang quản lý chỉ cho `is_staff`; giáo viên chỉ thấy/sửa học viên có `giao_vien` = mình
+  (luôn dùng `store.visible_to` / `store.can_manage`, không tự lọc).
+- Code Windows-only (`winlayout.py`, `core.unblock`) không chạy được trên cloud: kiểm bằng API giả lập
+  (`tests/test_winlayout.py`) và nói rõ với người dùng là chưa thử trên Windows thật.

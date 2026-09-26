@@ -1,8 +1,10 @@
 """Tài khoản người dùng (lưu trong DATA_DIR/tai_khoan.json).
 
-Vai trò:
-  * quan_tri – quản trị: tạo/khóa tài khoản, soạn đề, xem kết quả mọi người.
-  * giao_vien – giáo viên (chế độ Lớp học trực tuyến): tạo lớp, xem kết quả học sinh lớp mình.
+Vai trò (phân quyền):
+  * quan_tri – quản trị: toàn quyền, quản lý mọi tài khoản (kể cả giáo viên).
+  * giao_vien – giáo viên: tạo / nhập / khóa tài khoản HỌC VIÊN của mình, soạn đề,
+                xem kết quả học viên của mình. Không sửa được giáo viên khác hay quản trị.
+                (Chế độ Lớp học trực tuyến: tạo lớp, xem kết quả học sinh lớp mình.)
   * hoc_vien – chỉ làm bài và xem kết quả của mình.
 
 Khi dùng máy chủ lớp học (mos/lop_hoc.py), tài khoản thật nằm trên máy chủ; máy chỉ giữ bản sao (mirror) để
@@ -18,7 +20,9 @@ import hmac
 import json
 import os
 import re
-from dataclasses import asdict, dataclass
+import secrets
+import unicodedata
+from dataclasses import asdict, dataclass, fields
 from datetime import date, datetime
 from pathlib import Path
 
@@ -45,6 +49,8 @@ class Account:
     doi_mat_khau: bool = False         # bắt đổi mật khẩu ở lần đăng nhập tới
     tao_luc: str = ""
     nguon: str = ""                    # "may_chu" = bản sao tài khoản trên máy chủ lớp học
+    lop: str = ""                      # lớp của học viên (vd "10A1")
+    giao_vien: str | None = None       # tên đăng nhập giáo viên phụ trách (học viên)
 
     @property
     def is_admin(self) -> bool:
@@ -52,7 +58,11 @@ class Account:
 
     @property
     def is_teacher(self) -> bool:
-        """Giáo viên hoặc quản trị: quản lý lớp học."""
+        return self.vai_tro == TEACHER
+
+    @property
+    def is_staff(self) -> bool:
+        """Quản trị hoặc giáo viên: được vào các trang quản lý / quản lý lớp học."""
         return self.vai_tro in (ADMIN, TEACHER)
 
     def expired(self, today: date | None = None) -> bool:
@@ -82,7 +92,8 @@ class AccountStore:
             raw = json.loads(self.path.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             raw = {}
-        self.accounts = {k: Account(**v) for k, v in raw.items()}
+        known = {f.name for f in fields(Account)}
+        self.accounts = {k: Account(**{f: x for f, x in v.items() if f in known}) for k, v in raw.items()}
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -99,7 +110,8 @@ class AccountStore:
         return self.accounts.get(username.strip().lower())
 
     def create(self, username: str, ho_ten: str, password: str, vai_tro: str = STUDENT,
-               han_dung: str | None = None, must_change: bool = True) -> Account:
+               han_dung: str | None = None, must_change: bool = True, lop: str = "",
+               giao_vien: str | None = None) -> Account:
         username = username.strip().lower()
         if not USERNAME_RE.fullmatch(username):
             raise AccountError("Tên đăng nhập 3–32 ký tự, chỉ gồm chữ thường không dấu, số, dấu _ hoặc .")
@@ -109,13 +121,15 @@ class AccountStore:
             raise AccountError("Vai trò không hợp lệ.")
         acc = Account(username, ho_ten.strip() or username, vai_tro,
                       han_dung=_check_date(han_dung), doi_mat_khau=must_change,
-                      tao_luc=datetime.now().strftime("%Y-%m-%d %H:%M"))
+                      tao_luc=datetime.now().strftime("%Y-%m-%d %H:%M"), lop=(lop or "").strip(),
+                      giao_vien=giao_vien if vai_tro == STUDENT else None)
         self._set_pw(acc, password)
         self.accounts[username] = acc
         self.save()
         return acc
 
-    def update(self, username: str, *, ho_ten=None, vai_tro=None, khoa=None, han_dung="giu") -> Account:
+    def update(self, username: str, *, ho_ten=None, vai_tro=None, khoa=None, han_dung="giu", lop=None,
+               giao_vien="giu") -> Account:
         acc = self._require(username)
         if vai_tro is not None and vai_tro not in ROLE_NAMES:
             raise AccountError("Vai trò không hợp lệ.")
@@ -129,6 +143,12 @@ class AccountStore:
             acc.khoa = khoa
         if han_dung != "giu":
             acc.han_dung = _check_date(han_dung)
+        if lop is not None:
+            acc.lop = lop.strip()
+        if giao_vien != "giu":
+            acc.giao_vien = giao_vien or None
+        if acc.vai_tro != STUDENT:
+            acc.giao_vien = None
         self.save()
         return acc
 
@@ -170,6 +190,40 @@ class AccountStore:
             raise AccountError(tr("Tài khoản đã hết hạn ngày {date}. Liên hệ giáo viên.").format(date=acc.han_dung))
         return acc
 
+    # ------------------------------------------------------------ phân quyền
+    def visible_to(self, actor: Account) -> list[Account]:
+        """Tài khoản `actor` được xem trong trang quản lý."""
+        if actor.is_admin:
+            return self.list()
+        if actor.is_teacher:
+            return [a for a in self.list() if a.username == actor.username or self.can_manage(actor, a)]
+        return [actor]
+
+    @staticmethod
+    def can_manage(actor: Account, target: Account) -> bool:
+        """`actor` có được sửa / khóa / xóa / đặt lại mật khẩu cho `target` không."""
+        if actor.is_admin:
+            return True
+        return actor.is_teacher and target.vai_tro == STUDENT and target.giao_vien == actor.username
+
+    @staticmethod
+    def assignable_roles(actor: Account) -> list[str]:
+        return list(ROLE_NAMES) if actor.is_admin else [STUDENT] if actor.is_teacher else []
+
+    def teachers(self) -> list[Account]:
+        return [a for a in self.list() if a.is_teacher]
+
+    def unique_username(self, ho_ten: str, taken: set[str] | None = None) -> str:
+        """Gợi ý tên đăng nhập từ họ tên: "Nguyễn Văn An" → "nguyenvanan" (thêm số nếu trùng)."""
+        base = slugify(ho_ten) or "hocvien"
+        base = base[:28] if len(base) >= 3 else (base + "hv")[:28]
+        taken = taken or set()
+        name, n = base, 1
+        while name in self.accounts or name in taken:
+            n += 1
+            name = f"{base}{n}"
+        return name
+
     # ------------------------------------------------------------ nội bộ
     def _require(self, username: str) -> Account:
         acc = self.get(username)
@@ -186,6 +240,18 @@ class AccountStore:
             raise AccountError(tr("Mật khẩu phải có ít nhất {n} ký tự.").format(n=MIN_PASSWORD))
         salt = os.urandom(16)
         acc.salt, acc.hash = salt.hex(), _hash(password, salt)
+
+
+def slugify(text: str) -> str:
+    """Bỏ dấu tiếng Việt, chữ thường, chỉ giữ a-z0-9."""
+    text = (text or "").replace("đ", "d").replace("Đ", "D")
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", text.lower())
+
+
+def random_password(n: int = 6) -> str:
+    return "".join(secrets.choice("abcdefghjkmnpqrstuvwxyz23456789") for _ in range(n))
 
 
 def _check_date(value: str | None) -> str | None:
