@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import csv
-import secrets
 import shutil
 from pathlib import Path
 
@@ -12,7 +11,8 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog, QFil
                                QSplitter, QVBoxLayout, QWidget)
 
 from .. import core, custom, rules
-from ..accounts import ROLE_NAMES, STUDENT, AccountError
+from .. import importer
+from ..accounts import ROLE_NAMES, STUDENT, AccountError, random_password
 from . import theme as T
 from .app import _banner, page_body
 from .theme import (DANGER, DANGER_SOFT, MUTED, SUCCESS, SUCCESS_SOFT, WARN, WARN_SOFT, Card, button, chip,
@@ -20,10 +20,6 @@ from .theme import (DANGER, DANGER_SOFT, MUTED, SUCCESS, SUCCESS_SOFT, WARN, WAR
 
 MON_NAMES = {"WORD": "Word", "EXCEL": "Excel", "POWERPOINT": "PowerPoint"}
 FILE_FILTERS = {"WORD": "Word (*.docx)", "EXCEL": "Excel (*.xlsx)", "POWERPOINT": "PowerPoint (*.pptx)"}
-
-
-def _random_password() -> str:
-    return "".join(secrets.choice("abcdefghjkmnpqrstuvwxyz23456789") for _ in range(6))
 
 
 class _Page(QScrollArea):
@@ -62,83 +58,129 @@ def _save_csv(parent, default_name, header, rows):
 
 
 class AccountsPage(_Page):
+    """Quản trị: mọi tài khoản. Giáo viên: chỉ học viên của mình."""
+
     def __init__(self, shell):
         super().__init__()
         self.shell, self.store, self.me = shell, shell.main.store, shell.account
-        self.lay.addWidget(T.page_header(
-            "Tài khoản", "Tạo tài khoản cho học viên, đặt lại mật khẩu, khóa hoặc đặt hạn dùng.",
-            [button("Tạo cho cả lớp", self.bulk), button("+ Thêm tài khoản", self.add, "primary")]))
+        title = "Tài khoản" if self.me.is_admin else "Học viên của tôi"
+        sub = ("Tạo / nhập tài khoản, phân quyền giáo viên, đặt lại mật khẩu, khóa hoặc đặt hạn dùng."
+               if self.me.is_admin else "Tạo hoặc nhập danh sách học viên, đặt lại mật khẩu, khóa hoặc đặt hạn dùng.")
+        self.lay.addWidget(T.page_header(title, sub, [
+            button("Nhập từ file (CSV / Excel)", self.import_file),
+            button("Tạo cho cả lớp", self.bulk), button("+ Thêm tài khoản", self.add, "primary")]))
         self.stats = QHBoxLayout()
         self.stats.setSpacing(16)
         self.lay.addLayout(self.stats)
 
         self.search = QLineEdit()
-        self.search.setPlaceholderText("Tìm theo tên đăng nhập hoặc họ tên…")
-        self.search.setMaximumWidth(340)
+        self.search.setPlaceholderText("Tìm theo tên đăng nhập, họ tên hoặc lớp…")
+        self.search.setMinimumWidth(300)
         self.search.textChanged.connect(self.refresh)
-        self.lay.addLayout(_toolbar(self.search, right=(
+        self.lop = QComboBox()
+        self.lop.setMinimumWidth(150)
+        self.lop.currentIndexChanged.connect(self.refresh)
+        self.lay.addLayout(_toolbar(self.search, self.lop, right=(
             button("Sửa", self.edit), button("Đặt lại mật khẩu", self.reset_password),
             button("Khóa / Mở khóa", self.toggle_lock), button("Xóa", self.delete, "danger"))))
-        self.table = T.table([("Tên đăng nhập", 160), ("Họ tên", None), ("Vai trò", 110), ("Trạng thái", 120),
-                              ("Hạn dùng", 120), ("Số lần thi", 100), ("Điểm cao nhất", 120)])
+        cols = [("Tên đăng nhập", 150), ("Họ tên", None), ("Lớp", 90), ("Vai trò", 100)]
+        if self.me.is_admin:
+            cols.append(("Giáo viên phụ trách", 150))
+        cols += [("Trạng thái", 110), ("Hạn dùng", 110), ("Số lần thi", 90), ("Điểm cao nhất", 110)]
+        self.table = T.table(cols)
+        self.status_col = [c[0] for c in cols].index("Trạng thái")
         self.table.setMinimumHeight(380)
         self.table.doubleClicked.connect(lambda *_: self.edit())
         self.lay.addWidget(self.table, 1)
+        self._fill_classes()
         self.refresh()
+
+    def _fill_classes(self):
+        current = self.lop.currentData()
+        self.lop.blockSignals(True)
+        self.lop.clear()
+        self.lop.addItem("Tất cả lớp", None)
+        for c in sorted({a.lop for a in self.store.visible_to(self.me) if a.lop}):
+            self.lop.addItem(f"Lớp {c}", c)
+        self.lop.setCurrentIndex(max(0, self.lop.findData(current)))
+        self.lop.blockSignals(False)
 
     def refresh(self):
         while self.stats.count():
             item = self.stats.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
-        accounts = self.store.list()
+        accounts = self.store.visible_to(self.me)
         students = [a for a in accounts if a.vai_tro == STUDENT]
-        active = [a for a in accounts if not a.khoa and not a.expired()]
-        self.stats.addWidget(T.stat_card("Tổng số tài khoản", str(len(accounts))))
+        active = [a for a in students if not a.khoa and not a.expired()]
+        if self.me.is_admin:
+            self.stats.addWidget(T.stat_card("Tổng số tài khoản", str(len(accounts))))
+            self.stats.addWidget(T.stat_card("Giáo viên", str(sum(a.is_teacher for a in accounts)), accent="#7A5AF8"))
         self.stats.addWidget(T.stat_card("Học viên", str(len(students)), accent=SUCCESS))
-        self.stats.addWidget(T.stat_card("Đang hoạt động", str(len(active)), accent=WARN))
+        self.stats.addWidget(T.stat_card("Học viên đang hoạt động", str(len(active)), accent=WARN))
+        self.stats.addWidget(T.stat_card("Số lớp", str(len({a.lop for a in students if a.lop}))))
 
-        q = self.search.text().strip().casefold()
+        q, lop = self.search.text().strip().casefold(), self.lop.currentData()
         history = core.load_history()
         rows, tones, keys = [], [], []
         for a in accounts:
-            if q and q not in a.username and q not in a.ho_ten.casefold():
+            if q and q not in a.username and q not in a.ho_ten.casefold() and q not in a.lop.casefold():
+                continue
+            if lop and a.lop != lop:
                 continue
             mine = [h for h in history if h.get("user") == a.username]
             status = "Bị khóa" if a.khoa else "Hết hạn" if a.expired() else "Hoạt động"
-            rows.append([a.username, a.ho_ten, ROLE_NAMES[a.vai_tro], status, a.han_dung or "—", len(mine),
-                         max((h["score"] for h in mine), default="—")])
+            row = [a.username, a.ho_ten, a.lop or "—", ROLE_NAMES[a.vai_tro]]
+            if self.me.is_admin:
+                gv = self.store.get(a.giao_vien) if a.giao_vien else None
+                row.append(gv.ho_ten if gv else "—")
+            row += [status, a.han_dung or "—", len(mine), max((h["score"] for h in mine), default="—")]
+            rows.append(row)
             tones.append("ok" if status == "Hoạt động" else "bad")
             keys.append(a.username)
-        T.set_rows(self.table, rows, tones, tone_cols={3}, keys=keys)
+        T.set_rows(self.table, rows, tones, tone_cols={self.status_col}, keys=keys)
 
-    def _selected(self):
+    def _reload(self):
+        self._fill_classes()
+        self.refresh()
+
+    def _selected(self, manage=True):
         key = T.selected_key(self.table)
         if key is None:
             T.info(self, "Chọn tài khoản", "Hãy chọn một tài khoản trong bảng.")
             return None
-        return self.store.get(key)
+        acc = self.store.get(key)
+        if manage and not self.store.can_manage(self.me, acc):
+            T.warn(self, "Không có quyền", "Giáo viên chỉ quản lý được tài khoản học viên của mình.")
+            return None
+        return acc
 
     def add(self):
-        if UserDialog(self, self.store, None).exec():
-            self.refresh()
+        if UserDialog(self, self.store, self.me, None).exec():
+            self._reload()
 
     def edit(self):
         acc = self._selected()
-        if acc and UserDialog(self, self.store, acc).exec():
-            self.refresh()
+        if acc and UserDialog(self, self.store, self.me, acc).exec():
+            self._reload()
 
     def bulk(self):
-        dlg = BulkUsersDialog(self, self.store)
+        dlg = BulkUsersDialog(self, self.store, self.me)
         if dlg.exec():
-            self.refresh()
+            self._reload()
+            CredentialsDialog(self, dlg.created, dlg.errors).exec()
+
+    def import_file(self):
+        dlg = ImportDialog(self, self.store, self.me)
+        if dlg.exec():
+            self._reload()
             CredentialsDialog(self, dlg.created, dlg.errors).exec()
 
     def reset_password(self):
         acc = self._selected()
         if not acc:
             return
-        pw = _random_password()
+        pw = random_password()
         if T.confirm(self, "Đặt lại mật khẩu", f"Đặt mật khẩu mới cho “{acc.username}” là:\n\n      {pw}\n\n"
                                                "Người dùng sẽ phải đổi mật khẩu khi đăng nhập."):
             self.store.set_password(acc.username, pw, must_change=True)
@@ -171,7 +213,7 @@ class AccountsPage(_Page):
                 self.store.delete(acc.username)
             except AccountError as exc:
                 T.error(self, "Lỗi", str(exc))
-            self.refresh()
+            self._reload()
 
 
 class _Dialog(QDialog):
@@ -202,20 +244,47 @@ class _Dialog(QDialog):
         self.lay.addLayout(row)
 
 
+def _teacher_combo(store, me, current=None) -> QComboBox | None:
+    """Ô chọn giáo viên phụ trách (chỉ quản trị mới chọn; giáo viên luôn là chính mình)."""
+    if not me.is_admin:
+        return None
+    cb = QComboBox()
+    cb.addItem("(Không có – quản trị quản lý)", None)
+    for t in store.teachers():
+        cb.addItem(f"{t.ho_ten} ({t.username})", t.username)
+    cb.setCurrentIndex(max(0, cb.findData(current)))
+    return cb
+
+
+def _owner(me, combo) -> str | None:
+    return me.username if me.is_teacher else (combo.currentData() if combo else None)
+
+
 class UserDialog(_Dialog):
-    def __init__(self, parent, store, acc):
+    def __init__(self, parent, store, me, acc):
         super().__init__(parent, "Sửa tài khoản" if acc else "Thêm tài khoản")
-        self.store, self.acc = store, acc
+        self.store, self.me, self.acc = store, me, acc
         self.username = self.field("Tên đăng nhập", QLineEdit(acc.username if acc else ""),
-                                   "Chữ thường không dấu, số, dấu _ hoặc . (vd: nguyenvana)")
+                                   "Chữ thường không dấu, số, dấu _ hoặc . (để trống = tạo từ họ tên)")
         self.username.setEnabled(acc is None)
         self.ho_ten = self.field("Họ tên", QLineEdit(acc.ho_ten if acc else ""))
         if not acc:
-            self.password = self.field("Mật khẩu", QLineEdit(_random_password()), "Đã tạo ngẫu nhiên, có thể sửa.")
+            self.password = self.field("Mật khẩu", QLineEdit(random_password()), "Đã tạo ngẫu nhiên, có thể sửa.")
         self.role = QComboBox()
-        self.role.addItems(list(ROLE_NAMES.values()))
-        self.role.setCurrentText(ROLE_NAMES[acc.vai_tro if acc else STUDENT])
-        self.field("Vai trò", self.role)
+        roles = store.assignable_roles(me)
+        if acc and acc.vai_tro not in roles:
+            roles = [acc.vai_tro] + roles
+        for r in roles:
+            self.role.addItem(ROLE_NAMES[r], r)
+        self.role.setCurrentIndex(max(0, self.role.findData(acc.vai_tro if acc else STUDENT)))
+        self.role.setEnabled(len(roles) > 1)
+        self.field("Vai trò", self.role, "Giáo viên: quản lý học viên của mình, soạn đề, xem kết quả."
+                   if me.is_admin else None)
+        self.lop = self.field("Lớp (tuỳ chọn)", QLineEdit(acc.lop if acc else ""))
+        self.lop.setPlaceholderText("vd: 10A1")
+        self.teacher = _teacher_combo(store, me, acc.giao_vien if acc else None)
+        if self.teacher:
+            self.field("Giáo viên phụ trách (với học viên)", self.teacher)
         self.han = self.field("Hạn dùng (tuỳ chọn)", QLineEdit((acc.han_dung or "") if acc else ""),
                               "Dạng YYYY-MM-DD, vd 2026-12-31. Để trống = không giới hạn.")
         self.han.setPlaceholderText("YYYY-MM-DD")
@@ -226,13 +295,18 @@ class UserDialog(_Dialog):
         self.buttons(ok=self.save)
 
     def save(self):
-        role = next(k for k, v in ROLE_NAMES.items() if v == self.role.currentText())
+        role = self.role.currentData()
+        owner = _owner(self.me, self.teacher) if role == STUDENT else None
         try:
             if self.acc:
-                self.store.update(self.acc.username, ho_ten=self.ho_ten.text(), vai_tro=role, han_dung=self.han.text())
+                kw = {"giao_vien": owner} if self.me.is_admin else {}
+                self.store.update(self.acc.username, ho_ten=self.ho_ten.text(), vai_tro=role,
+                                  han_dung=self.han.text(), lop=self.lop.text(), **kw)
             else:
-                acc = self.store.create(self.username.text(), self.ho_ten.text(), self.password.text(), role,
-                                        han_dung=self.han.text(), must_change=self.must.isChecked())
+                username = self.username.text().strip() or self.store.unique_username(self.ho_ten.text())
+                acc = self.store.create(username, self.ho_ten.text(), self.password.text(), role,
+                                        han_dung=self.han.text(), must_change=self.must.isChecked(),
+                                        lop=self.lop.text(), giao_vien=owner)
                 T.info(self, "Đã tạo tài khoản", f"Tên đăng nhập:  {acc.username}\nMật khẩu:  {self.password.text()}"
                                                  "\n\nHãy gửi thông tin này cho người dùng.")
         except AccountError as exc:
@@ -242,28 +316,38 @@ class UserDialog(_Dialog):
 
 
 class BulkUsersDialog(_Dialog):
-    def __init__(self, parent, store):
+    def __init__(self, parent, store, me):
         super().__init__(parent, "Tạo tài khoản cho cả lớp", 560)
-        self.store = store
+        self.store, self.me = store, me
         self.created, self.errors = [], []
-        self.lay.addWidget(label("Mỗi dòng một học viên theo dạng <b>tên_đăng_nhập, Họ tên</b>. "
-                                 "Mật khẩu được tạo ngẫu nhiên cho từng người.", "muted", wrap=True))
+        self.lay.addWidget(label("Dán danh sách, mỗi dòng một học viên: chỉ <b>Họ tên</b>, hoặc "
+                                 "<b>tên_đăng_nhập, Họ tên</b>. Tên đăng nhập và mật khẩu được tạo tự động nếu thiếu.",
+                                 "muted", wrap=True))
         self.text = QPlainTextEdit()
-        self.text.setPlaceholderText("nguyenvana, Nguyễn Văn A\ntranthib, Trần Thị B\nlevanc, Lê Văn C")
-        self.text.setMinimumHeight(220)
+        self.text.setPlaceholderText("Nguyễn Văn An\nTrần Thị Bình\nlevanc, Lê Văn Cường")
+        self.text.setMinimumHeight(200)
         self.lay.addWidget(self.text)
+        self.lop = self.field("Lớp", QLineEdit())
+        self.lop.setPlaceholderText("vd: 10A1")
+        self.teacher = _teacher_combo(store, me)
+        if self.teacher:
+            self.field("Giáo viên phụ trách", self.teacher)
         self.han = self.field("Hạn dùng chung (tuỳ chọn)", QLineEdit(), "Dạng YYYY-MM-DD. Để trống = không giới hạn.")
         self.buttons("Tạo tài khoản", self.create)
 
     def create(self):
+        owner = _owner(self.me, self.teacher)
         for n, line in enumerate(self.text.toPlainText().splitlines(), start=1):
             if not line.strip():
                 continue
-            username, _, name = line.partition(",")
-            pw = _random_password()
+            first, sep, rest = line.partition(",")
+            username, name = (first.strip(), rest.strip()) if sep else ("", first.strip())
+            username = username or self.store.unique_username(name)
+            pw = random_password()
             try:
-                acc = self.store.create(username, name, pw, STUDENT, han_dung=self.han.text())
-                self.created.append((acc.username, acc.ho_ten, pw))
+                acc = self.store.create(username, name, pw, STUDENT, han_dung=self.han.text(),
+                                        lop=self.lop.text(), giao_vien=owner)
+                self.created.append((acc.username, acc.ho_ten, acc.lop, pw))
             except AccountError as exc:
                 self.errors.append(f"Dòng {n}: {exc}")
         if not self.created:
@@ -273,20 +357,99 @@ class BulkUsersDialog(_Dialog):
         self.accept()
 
 
+class ImportDialog(_Dialog):
+    """Nhập danh sách học viên từ file CSV / Excel: chọn file → xem trước → tạo."""
+
+    def __init__(self, parent, store, me):
+        super().__init__(parent, "Nhập học viên từ file", 860)
+        self.store, self.me = store, me
+        self.entries, self.created, self.errors = [], [], []
+        self.lay.addWidget(label(
+            "File <b>Excel (.xlsx)</b> hoặc <b>CSV</b> có dòng tiêu đề. Chỉ cột <b>Họ tên</b> là bắt buộc; "
+            "các cột tuỳ chọn: <b>Tên đăng nhập</b>, <b>Mật khẩu</b>, <b>Lớp</b>, <b>Hạn dùng</b>. "
+            "Thiếu tên đăng nhập / mật khẩu thì app tự tạo.", "muted", wrap=True))
+        row = QHBoxLayout()
+        row.addWidget(button("Chọn file…", self.pick, "primary"))
+        row.addWidget(button("Tải file mẫu (Excel)", lambda: self.template(".xlsx")))
+        row.addWidget(button("Tải file mẫu (CSV)", lambda: self.template(".csv")))
+        row.addStretch()
+        self.file_lbl = label("Chưa chọn file", "muted")
+        row.addWidget(self.file_lbl)
+        self.lay.addLayout(row)
+        self.teacher = _teacher_combo(store, me)
+        if self.teacher:
+            self.field("Giáo viên phụ trách các học viên này", self.teacher)
+        self.summary = label("", wrap=True)
+        self.lay.addWidget(self.summary)
+        self.table = T.table([("Dòng", 60), ("Tên đăng nhập", 150), ("Họ tên", None), ("Lớp", 80),
+                              ("Mật khẩu", 100), ("Trạng thái", 260)])
+        self.table.setMinimumHeight(300)
+        self.lay.addWidget(self.table, 1)
+        row = QHBoxLayout()
+        row.addStretch()
+        row.addWidget(button("Hủy", self.reject))
+        self.ok_btn = button("Tạo tài khoản", self.create, "primary")
+        self.ok_btn.setEnabled(False)
+        row.addWidget(self.ok_btn)
+        self.lay.addLayout(row)
+
+    def template(self, ext):
+        path, _ = QFileDialog.getSaveFileName(self, "Lưu file mẫu", f"mau_danh_sach_hoc_vien{ext}",
+                                              "Excel (*.xlsx)" if ext == ".xlsx" else "CSV (*.csv)")
+        if path:
+            importer.write_template(Path(path))
+            T.info(self, "Đã lưu", f"Đã lưu file mẫu:\n{path}\n\nMở bằng Excel, điền danh sách rồi chọn lại ở đây.")
+
+    def pick(self):
+        path, _ = QFileDialog.getOpenFileName(self, "Chọn danh sách học viên", "",
+                                              "Excel / CSV (*.xlsx *.csv);;Tất cả (*.*)")
+        if path:
+            self.load(Path(path))
+
+    def load(self, path: Path):
+        try:
+            self.entries = importer.plan(path, self.store)
+        except (importer.ImportFileError, OSError, ValueError) as exc:
+            T.error(self, "Không đọc được file", str(exc))
+            return
+        self.file_lbl.setText(path.name)
+        ok = [e for e in self.entries if not e.error]
+        T.set_rows(self.table, [[e.row, e.username, e.ho_ten, e.lop or "—", e.password,
+                                 e.error or "✓ Sẽ tạo"] for e in self.entries],
+                   ["bad" if e.error else "ok" for e in self.entries])
+        bad = len(self.entries) - len(ok)
+        self.summary.setText(f"<b>{len(ok)}</b> học viên sẽ được tạo" +
+                             (f" · <span style='color:{DANGER}'><b>{bad}</b> dòng bị bỏ qua (xem cột Trạng thái)"
+                              "</span>" if bad else ""))
+        self.ok_btn.setText(f"Tạo {len(ok)} tài khoản")
+        self.ok_btn.setEnabled(bool(ok))
+
+    def create(self):
+        created, self.errors = importer.apply(self.entries, self.store, _owner(self.me, self.teacher))
+        self.created = [(e.username, e.ho_ten, e.lop, e.password) for e in created]
+        if not self.created:
+            T.error(self, "Chưa tạo được", "\n".join(self.errors[:12]))
+            return
+        self.accept()
+
+
 class CredentialsDialog(_Dialog):
     """Danh sách tài khoản vừa tạo – lưu ra CSV để phát cho học viên."""
 
+    HEADER = ["Tên đăng nhập", "Họ tên", "Lớp", "Mật khẩu"]
+
     def __init__(self, parent, rows, errors):
-        super().__init__(parent, f"Đã tạo {len(rows)} tài khoản", 620)
+        super().__init__(parent, f"Đã tạo {len(rows)} tài khoản", 680)
         self.rows = rows
         self.lay.addWidget(label("Hãy lưu danh sách này để phát cho học viên. Mật khẩu sẽ không hiển thị lại.",
                                  "muted", wrap=True))
-        t = T.table([("Tên đăng nhập", 170), ("Họ tên", None), ("Mật khẩu", 120)])
+        t = T.table([("Tên đăng nhập", 160), ("Họ tên", None), ("Lớp", 80), ("Mật khẩu", 110)])
         T.set_rows(t, [list(r) for r in rows])
         t.setMinimumHeight(min(80 + 42 * len(rows), 380))
         self.lay.addWidget(t)
         if errors:
-            self.lay.addWidget(_banner("Bỏ qua: " + "; ".join(errors[:6]), "bad"))
+            self.lay.addWidget(_banner("Bỏ qua: " + "; ".join(errors[:6]) +
+                                       (f" … (+{len(errors) - 6})" if len(errors) > 6 else ""), "bad"))
         row = QHBoxLayout()
         row.addWidget(button("Chép vào clipboard", self.copy))
         row.addStretch()
@@ -295,11 +458,11 @@ class CredentialsDialog(_Dialog):
         self.lay.addLayout(row)
 
     def copy(self):
-        QApplication.clipboard().setText("\n".join("\t".join(r) for r in self.rows))
+        QApplication.clipboard().setText("\n".join("\t".join(r) for r in [self.HEADER, *self.rows]))
         T.info(self, "Đã chép", "Đã chép danh sách vào clipboard – dán được vào Excel.")
 
     def save(self):
-        _save_csv(self, "tai_khoan_hoc_vien.csv", ["Tên đăng nhập", "Họ tên", "Mật khẩu"], self.rows)
+        _save_csv(self, "tai_khoan_hoc_vien.csv", self.HEADER, self.rows)
 
 
 # ====================================================================== Đề thi
@@ -384,35 +547,49 @@ class ExamsPage(_Page):
 
 
 class ResultsPage(_Page):
+    """Quản trị: kết quả của mọi người. Giáo viên: chỉ học viên của mình."""
+
     def __init__(self, shell):
         super().__init__()
-        self.store = shell.main.store
+        self.store, self.me = shell.main.store, shell.account
+        self.people = {a.username: a for a in self.store.visible_to(self.me)}
         self.export_btn = button("Xuất CSV (mở bằng Excel)", self.export)
-        self.lay.addWidget(T.page_header("Kết quả học viên", "Mọi lượt nộp bài của tất cả tài khoản.",
-                                         [self.export_btn]))
+        sub = "Mọi lượt nộp bài của tất cả tài khoản." if self.me.is_admin else "Các lượt nộp bài của học viên bạn phụ trách."
+        self.lay.addWidget(T.page_header("Kết quả học viên", sub, [self.export_btn]))
         self.stats = QHBoxLayout()
         self.stats.setSpacing(16)
         self.lay.addLayout(self.stats)
+        self.lop = QComboBox()
+        self.lop.addItem("Tất cả lớp", None)
+        for c in sorted({a.lop for a in self.people.values() if a.lop}):
+            self.lop.addItem(f"Lớp {c}", c)
+        self.lop.setMinimumWidth(150)
         self.who = QComboBox()
         self.who.addItem("Tất cả học viên", None)
-        for a in self.store.list():
+        for a in self.people.values():
             self.who.addItem(f"{a.ho_ten} ({a.username})", a.username)
         self.who.setMinimumWidth(280)
-        self.who.currentIndexChanged.connect(self.refresh)
-        self.lay.addLayout(_toolbar(label("Lọc:", "h3"), self.who))
-        self.table = T.table([("Thời gian", 150), ("Tài khoản", 120), ("Họ tên", 180), ("Bài thi", None),
-                              ("Chế độ", 100), ("Làm trong", 100), ("Điểm", 80), ("Kết quả", 100)])
+        for cb in (self.lop, self.who):
+            cb.currentIndexChanged.connect(self.refresh)
+        self.lay.addLayout(_toolbar(label("Lọc:", "h3"), self.lop, self.who))
+        self.table = T.table([("Thời gian", 150), ("Tài khoản", 120), ("Họ tên", 180), ("Lớp", 80),
+                              ("Bài thi", None), ("Chế độ", 100), ("Làm trong", 100), ("Điểm", 80), ("Kết quả", 100)])
         self.table.setMinimumHeight(380)
         self.lay.addWidget(self.table, 1)
         self.refresh()
 
     def _rows(self):
-        rows = []
-        for h in reversed(core.load_history(self.who.currentData())):
-            acc = self.store.get(h["user"]) if h.get("user") else None
-            rows.append([h["time"], h.get("user") or "—", acc.ho_ten if acc else "—", h["exam"],
-                         "Luyện tập" if h["mode"] == "training" else "Thi thử", T.fmt_time(h.get("duration")),
-                         h["score"], "Đạt" if h["passed"] else "Chưa đạt"])
+        rows, who, lop = [], self.who.currentData(), self.lop.currentData()
+        for h in reversed(core.load_history(who)):
+            user = h.get("user")
+            acc = self.people.get(user) if user else None
+            if not self.me.is_admin and acc is None:          # giáo viên: chỉ học viên của mình
+                continue
+            if lop and (acc is None or acc.lop != lop):
+                continue
+            rows.append([h["time"], user or "—", acc.ho_ten if acc else "—", (acc.lop if acc else "") or "—",
+                         h["exam"], "Luyện tập" if h["mode"] == "training" else "Thi thử",
+                         T.fmt_time(h.get("duration")), h["score"], "Đạt" if h["passed"] else "Chưa đạt"])
         return rows
 
     def refresh(self):
@@ -426,14 +603,14 @@ class ResultsPage(_Page):
         self.stats.addWidget(T.stat_card("Lượt làm bài", str(len(rows))))
         self.stats.addWidget(T.stat_card("Lượt đạt", str(passed), accent=SUCCESS))
         self.stats.addWidget(T.stat_card("Điểm trung bình",
-                                         str(round(sum(r[6] for r in rows) / len(rows))) if rows else "—",
+                                         str(round(sum(r[7] for r in rows) / len(rows))) if rows else "—",
                                          accent="#7A5AF8"))
         self.stats.addWidget(T.stat_card("Tỉ lệ đạt", f"{round(100 * passed / len(rows))}%" if rows else "—",
                                          accent=WARN))
 
     def export(self):
-        _save_csv(self, "ket_qua_MOS.csv", ["Thời gian", "Tài khoản", "Họ tên", "Bài thi", "Chế độ", "Làm trong",
-                                            "Điểm", "Kết quả"], self._rows())
+        _save_csv(self, "ket_qua_MOS.csv", ["Thời gian", "Tài khoản", "Họ tên", "Lớp", "Bài thi", "Chế độ",
+                                            "Làm trong", "Điểm", "Kết quả"], self._rows())
 
 
 # ====================================================================== Soạn đề

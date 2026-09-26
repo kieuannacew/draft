@@ -108,6 +108,7 @@ def new_session(exam: Exam, mode: str, base: Path | None = None, user: str | Non
     workdir.mkdir(parents=True, exist_ok=True)
     for project in exam.projects:
         project.build(workdir / project.filename)
+        unblock(workdir / project.filename)
     return Session(exam=exam, mode=mode, workdir=workdir, user=user)
 
 
@@ -118,6 +119,20 @@ def reset_project(session: Session, project_idx: int) -> None:
         backup = path.with_name(path.stem + "_cu" + path.suffix)
         shutil.copyfile(path, backup)
     session.exam.projects[project_idx].build(path)
+    unblock(path)
+
+
+def unblock(path: Path) -> None:
+    """Windows: gỡ dấu "tải từ Internet" (luồng Zone.Identifier) của file.
+
+    File mang dấu này bị Office mở ở chế độ Protected View: thanh công cụ mờ đi,
+    không sửa được. Hay gặp khi app được giải nén từ file ZIP tải trên mạng.
+    """
+    if os.name == "nt":
+        try:
+            os.remove(f"{path}:Zone.Identifier")
+        except OSError:
+            pass
 
 
 def run_check(task: Task, path: Path) -> tuple[bool, str]:

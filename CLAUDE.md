@@ -15,14 +15,17 @@ Có tài khoản (quản trị / học viên) và form soạn đề trong app.
 ```
 main.py                 điểm khởi động (gọi mos.qt.app.main)
 mos/core.py             Exam / Project / Task, chấm điểm, lịch sử, DATA_DIR (cau_hinh.json → thư mục dữ liệu chung)
-mos/accounts.py         tài khoản: PBKDF2, vai trò quan_tri / hoc_vien, khóa, hạn dùng; admin/admin lần đầu
+mos/accounts.py         tài khoản: PBKDF2, vai trò quan_tri / giao_vien / hoc_vien, lop, giao_vien (chủ quản);
+                        visible_to / can_manage / assignable_roles = phân quyền; admin/admin lần đầu
+mos/importer.py         nhập học viên từ CSV/XLSX: plan() xem trước → apply(); write_template()
 mos/rules.py            46 luật chấm (@rule) + RULE_TITLES + PARAM_UI (dựng form soạn đề)
 mos/custom.py           đề tự soạn de_thi/<tên>/de.json; merge_exams gộp vào bài thi cùng môn; check_exam
 mos/ooxml.py            đọc XML trong file .docx/.xlsx/.pptx (ZIP)
 mos/exams/*.py          đề có sẵn: build(path) tạo file gốc + chk_*(path) -> bool
 mos/qt/theme.py         hệ thống thiết kế: màu, QSS, Card, chip, badge, table(), ScoreRing, hộp thoại
 mos/qt/app.py           đăng nhập, Shell (sidebar + trang), Home, History, Result, ExamBar (thanh làm bài)
-mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ExamEditor, RuleDialog, CheckReportDialog
+mos/qt/admin.py         trang Tài khoản / Đề thi / Kết quả, ImportDialog, ExamEditor, RuleDialog, CheckReportDialog
+mos/qt/winlayout.py     Windows (ctypes): AppBar gắn thanh đề ở đáy, OfficeFitter thu cửa sổ Office vừa phần trống
 kiem_tra_de.py          kiểm tra đề bằng dòng lệnh
 de_thi/Excel_Mau/       đề mẫu (de.json + file gốc + dap_an/)
 tests/                  pytest
@@ -49,3 +52,7 @@ Trên Linux cloud có thể cần: `apt-get install -y libegl1 libgl1 libxkbcomm
 - Hàm chấm phải chịu được cách Office thật lưu file (tiền tố XML khác nhau, shared formula, style tên tiếng Anh…);
   khi không chắc, chấm lỏng phần cốt lõi thay vì so khớp nguyên văn.
 - Không sửa `de_thi/Excel_Mau` khi chạy thử (dùng thư mục tạm / HOME tạm).
+- Phân quyền: trang quản lý chỉ cho `is_staff`; giáo viên chỉ thấy/sửa học viên có `giao_vien` = mình
+  (luôn dùng `store.visible_to` / `store.can_manage`, không tự lọc).
+- Code Windows-only (`winlayout.py`, `core.unblock`) không chạy được trên cloud: kiểm bằng API giả lập
+  (`tests/test_winlayout.py`) và nói rõ với người dùng là chưa thử trên Windows thật.
