@@ -229,3 +229,19 @@ def test_tra_cau_trong_de(exams):
     assert hits
     assert all(h.exam.code == "WORD" for h in hits)
     assert tu_khoa.search_tasks("zzzkhongcozzz", exams) == []
+
+
+def test_anh_slide_theo_mat_do_diem_anh():
+    """Slide co theo mật độ điểm ảnh thật (Windows phóng to 150% vẫn nét)."""
+    pytest.importorskip("PySide6")
+    from PySide6.QtGui import QPixmap
+    from PySide6.QtWidgets import QApplication, QLabel
+    from mos.qt import hoc
+    QApplication.instance() or QApplication([])
+    w = QLabel()
+    src = QPixmap(2560, 1440)
+    out = hoc.sharp(src, 800, 600, w)
+    dpr = w.devicePixelRatioF()
+    assert out.devicePixelRatio() == dpr
+    assert out.width() == round(800 * dpr) and out.height() == round(450 * dpr)
+    assert tai_lieu.SLIDE_WIDTH >= 2560

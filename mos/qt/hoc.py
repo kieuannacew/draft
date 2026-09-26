@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 from PySide6.QtCore import QByteArray, QBuffer, QIODevice, QSize, Qt, QUrl
-from PySide6.QtGui import QPixmap
+from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog, QFormLayout, QFrame, QGridLayout,
                                QHBoxLayout, QLabel, QLineEdit, QListWidget, QListWidgetItem, QScrollArea,
                                QSizePolicy, QSlider, QVBoxLayout, QWidget)
@@ -27,6 +27,15 @@ KIND_ICON = {"slides": "🖼", "video": "🎬", "scorm": "🧩"}
 
 def kind_name(loai: str) -> str:
     return {"slides": tr("Slide"), "video": tr("Video"), "scorm": tr("Tương tác (SCORM)")}.get(loai, loai)
+
+
+def sharp(pix: QPixmap, w: int, h: int, widget: QWidget) -> QPixmap:
+    """Co ảnh vừa khung w×h (điểm logic) theo mật độ điểm ảnh thật của màn hình → không mờ khi Windows
+    phóng to giao diện 125–200%."""
+    dpr = widget.devicePixelRatioF() if widget is not None else 1.0
+    out = pix.scaled(max(1, round(w * dpr)), max(1, round(h * dpr)), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+    out.setDevicePixelRatio(dpr)
+    return out
 
 
 def lesson_name(lesson) -> str:
@@ -142,7 +151,7 @@ class LessonsPage(QScrollArea):
                 pix = QPixmap()
                 pix.loadFromData(lesson.image(1))
                 thumb = QLabel()
-                thumb.setPixmap(pix.scaledToWidth(360, Qt.SmoothTransformation))
+                thumb.setPixmap(sharp(pix, 360, 203, self))
                 thumb.setStyleSheet(f"border: 1px solid {T.BORDER}; border-radius: 8px;")
                 card.lay.addWidget(thumb)
             except Exception:  # gói ảnh hỏng: vẫn hiện thẻ
@@ -212,8 +221,8 @@ class SlideView(QLabel):
 
     def _rescale(self):
         if not self._pix.isNull():
-            self.setPixmap(self._pix.scaled(self.size() - QSize(24, 24), Qt.KeepAspectRatio,
-                                            Qt.SmoothTransformation))
+            box = self.size() - QSize(24, 24)
+            self.setPixmap(sharp(self._pix, box.width(), box.height(), self))
 
 
 class LessonViewer(QWidget):
@@ -257,7 +266,7 @@ class LessonViewer(QWidget):
             try:
                 pix = QPixmap()
                 pix.loadFromData(lesson.image(i))
-                item.setIcon(pix.scaled(160, 90, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                item.setIcon(QIcon(sharp(pix, 160, 90, self)))
             except Exception:  # ảnh hỏng: chỉ hiện số
                 pass
             self.thumbs.addItem(item)

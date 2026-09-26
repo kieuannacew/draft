@@ -33,7 +33,7 @@ VIDEO = "video.mosv"
 SCORM_DIR = "scorm"
 VIDEO_EXT = (".mp4", ".m4v", ".mov", ".webm", ".mkv", ".avi", ".wmv")
 META = "bai.json"
-SLIDE_WIDTH = 1600
+SLIDE_WIDTH = 2560          # đủ nét cho màn hình 2K và Windows phóng to 150%
 _MAGIC = b"MOSL1"
 _QT_APP = None
 
